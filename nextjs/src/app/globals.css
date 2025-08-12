@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+:root {
+  --background-color: #ffffff;
+  --foreground-color: #171717;
+  --heading-color: #172a28;
+  --default-color: #222222;
+  --primary-color: #008374;
+  --dropdown-color: #01433c;
+  --secondary-color: #ef3340;
+  --hover-color: #00796b;
+  --primary-light-color: #008d7d;
+  --primary-light-hover-color: #009786;
+  --tertiary-color: #006a5d;
+  --default-color: #222222;
+  --link-color: #286ac7;
+  --indicator-shadow: 0 0 29px 0;
+  --indicator-shadow-color: rgba(0, 0, 0, 0.08);
+  scroll-behavior: smooth;
+}
+
+@theme inline {
+  --color-heading: var(--heading-color);
+  --color-primary: var(--primary-color);
+  --color-primary-light: var(--primary-light-color);
+  --color-primary-light-hover: var(--primary-light-hover-color);
+  --color-default: var(--default-color);
+  --color-dropdown: var(--dropdown-color);
+  --color-hover: var(--hover-color);
+  --color-heading: var(--heading-color);
+  --color-background: var(--background-color);
+  --color-foreground: var(--foreground-color);
+  --color-default: var(--default-color);
+  --color-secondary: var(--secondary-color);
+  --color-tertiary: var(--tertiary-color);
+  --color-link: var(--link-color);
+  --font-roboto-sans: var(--font-roboto-sans);
+  --font-roboto-mono: var(--font-roboto-mono);
+  --font-montserrat: var(--font-montserrat);
+  --font-poppins: var(--font-poppins);
+  --indicator-shadow: var(--indicator-shadow);
+  --indicator-shadow-color: var(--indicator-shadow-color);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #0a0a0a;
+    --foreground-color: #ededed;
+  }
+}
+
+body {
+  background: var(--background-color);
+  color: var(--foreground-color);
+  font-family: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.topbar {
+  background-color: color-mix(in srgb, var(--primary-color) 90%, black 10%);
+}
