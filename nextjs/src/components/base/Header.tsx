@@ -3,10 +3,23 @@ import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/base/Navbar";
 import MobileNavbar from "./MobileNavbar";
+import { fetchMenu } from "@/actions/menu";
 
-export default function Header() {
+export interface MenuItem {
+  id: string;
+  label: string;
+  description: string | null;
+  url: string;
+  display_order: number;
+  is_active: boolean;
+  parentId: string | null;
+  children: MenuItem[];
+}
+
+export default async function Header() {
+  const menu = await fetchMenu();
   return (
-    <header className="w-full mx-auto sticky top-0 bg-primary text-default border border-slate-500 z-10 transition-all duration-500">
+    <header className="w-full mx-auto sticky top-0 bg-primary text-default z-10 transition-all duration-500">
       <Topbar />
       <div className="container mx-auto px-4 relative flex items-center justify-between min-h-15 pt-[10px]">
         {/* BRANDING */}
@@ -24,8 +37,8 @@ export default function Header() {
           <span className="text-secondary ml-0.5 text-5xl">.</span>
         </Link>
         {/* NAVBAR */}
-        <Navbar />
-        <MobileNavbar />
+        <Navbar menu={menu} />
+        <MobileNavbar menu={menu} />
       </div>
     </header>
   );

@@ -8,6 +8,8 @@ import {
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 
+import { MenuItem } from "@/components/base/Header";
+
 import {
   Sheet,
   SheetContent,
@@ -15,25 +17,12 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { fetchMenu } from "@/actions/menu";
+
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-interface MenuItem {
-  id: string;
-  label: string;
-  description: string | null;
-  url: string;
-  display_order: number;
-  is_active: boolean;
-  parentId: string | null;
-  children: MenuItem[];
-}
-
-export default async function MobileNavbar() {
-  const menu = await fetchMenu();
-
+export default function MobileNavbar({ menu }: { menu: MenuItem[] }) {
   return (
     <section className="py-4 font-montserrat!">
       <div className="block bg-primary xl:hidden">
