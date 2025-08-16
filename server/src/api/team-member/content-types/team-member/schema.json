@@ -12,20 +12,22 @@
   "pluginOptions": {},
   "attributes": {
     "name": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "description": {
-      "type": "text"
+      "type": "string",
+      "required": true
     },
     "photo": {
       "type": "media",
       "multiple": false,
       "allowedTypes": [
-        "images"
+        "images",
+        "files",
+        "videos",
+        "audios"
       ]
-    },
-    "slug": {
-      "type": "uid"
     },
     "twitter": {
       "type": "string"
@@ -41,16 +43,13 @@
     },
     "group": {
       "type": "enumeration",
-      "required": true,
-      "default": "inseed",
       "enum": [
         "inseed",
         "statcap"
       ]
     },
     "order": {
-      "type": "integer",
-      "unique": false
+      "type": "integer"
     }
   }
 }

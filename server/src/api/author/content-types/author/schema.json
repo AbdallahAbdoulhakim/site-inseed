@@ -11,24 +11,21 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "firstname": {
+    "name": {
       "type": "string"
     },
-    "lastname": {
-      "type": "string"
-    },
-    "email": {
-      "type": "email"
+    "active": {
+      "type": "boolean"
     },
     "image": {
       "type": "media",
       "multiple": false,
       "allowedTypes": [
-        "images"
+        "images",
+        "files",
+        "videos",
+        "audios"
       ]
-    },
-    "position": {
-      "type": "string"
     }
   }
 }

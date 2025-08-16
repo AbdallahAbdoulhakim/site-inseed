@@ -49,7 +49,7 @@ export default function TeamMember({
         <div className="relative h-[276px] w-[276px]">
           <Image
             src={img}
-            className="rounded-[10px] overflow-hidden object-cover"
+            className="rounded-[10px] overflow-hidden object-cover max-w-full h-auto"
             alt=""
             fill
             quality={80}

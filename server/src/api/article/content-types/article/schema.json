@@ -11,40 +11,50 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "title": {
-      "type": "string",
-      "required": true
-    },
     "content": {
-      "type": "blocks",
-      "required": true
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultMarkdown"
+      }
     },
-    "featuredImages": {
+    "title": {
+      "type": "string"
+    },
+    "images": {
       "type": "media",
       "multiple": true,
       "allowedTypes": [
         "images",
-        "videos"
+        "files",
+        "videos",
+        "audios"
       ]
+    },
+    "category": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::category.category"
     },
     "author": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::author.author"
     },
-    "published": {
-      "type": "boolean",
-      "required": true,
-      "default": false
-    },
-    "publication_date": {
+    "publicationDate": {
       "type": "datetime"
     },
-    "article_categories": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::article-category.article-category",
-      "mappedBy": "article"
+    "thumbnail": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "slug": {
+      "type": "string",
+      "required": true,
+      "unique": true
     }
   }
 }

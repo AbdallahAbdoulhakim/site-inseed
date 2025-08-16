@@ -11,17 +11,21 @@
   },
   "pluginOptions": {},
   "attributes": {
+    "label": {
+      "type": "string"
+    },
     "description": {
       "type": "string"
     },
     "value": {
       "type": "decimal"
     },
-    "label": {
+    "unit": {
       "type": "string"
     },
     "type": {
       "type": "enumeration",
+      "default": "default",
       "enum": [
         "population",
         "inflation",
@@ -29,9 +33,6 @@
         "croissance",
         "default"
       ]
-    },
-    "unit": {
-      "type": "string"
     }
   }
 }
