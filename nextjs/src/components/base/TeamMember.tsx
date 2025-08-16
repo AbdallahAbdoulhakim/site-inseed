@@ -5,11 +5,22 @@ import "aos/dist/aos.css";
 import Image from "next/image";
 import { useEffect } from "react";
 
+import {
+  FaXTwitter,
+  FaFacebook,
+  FaInstagram,
+  FaLinkedin,
+} from "react-icons/fa6";
+
 interface TeamMemberProps {
   delay: number;
   name: string;
   description: string;
   img: string;
+  twitter: string | null;
+  facebook: string | null;
+  instagram: string | null;
+  linkedin: string | null;
 }
 
 export default function TeamMember({
@@ -17,6 +28,10 @@ export default function TeamMember({
   name,
   description,
   img,
+  twitter,
+  facebook,
+  linkedin,
+  instagram,
 }: TeamMemberProps) {
   useEffect(() => {
     AOS.init({
@@ -30,31 +45,54 @@ export default function TeamMember({
       data-aos="fade-up"
       data-aos-delay={delay}
     >
-      <div className="">
-        <Image
-          src={img}
-          className="rounded-[10px] overflow-hidden"
-          alt=""
-          width={276}
-          height={276}
-        />
+      <div className="flex flex-col items-center justify-around">
+        <div className="relative h-[276px] w-[276px]">
+          <Image
+            src={img}
+            className="rounded-[10px] overflow-hidden object-cover"
+            alt=""
+            fill
+            quality={80}
+          />
+        </div>
+
         <h4 className="font-bold font-montserrat mt-4 mb-0.5 text-xl">
           {name}
         </h4>
         <span className="block text-[14px] text-[#6c757d]">{description}</span>
-        <div className="social">
-          <a href="">
-            <i className="bi bi-twitter"></i>
-          </a>
-          <a href="">
-            <i className="bi bi-facebook"></i>
-          </a>
-          <a href="">
-            <i className="bi bi-instagram"></i>
-          </a>
-          <a href="">
-            <i className="bi bi-linkedin"></i>
-          </a>
+        <div className="mt-4 mb-2.5 flex items-center justify-around h-8 w-full">
+          {twitter && (
+            <a
+              className="text-[#a2a2a2] group hover:border-primary/90 transition-all rounded-[50%] w-[40px] h-[40px] flex items-center justify-center border border-[#bbbbbb]"
+              href={twitter}
+            >
+              <FaXTwitter className="group-hover:text-primary/90" size={18} />
+            </a>
+          )}
+          {facebook && (
+            <a
+              className="text-[#a2a2a2] group hover:border-primary/90 transition-all rounded-[50%] w-[40px] h-[40px] flex items-center justify-center border border-[#bbbbbb]"
+              href={facebook}
+            >
+              <FaFacebook className="group-hover:text-primary/90" size={18} />
+            </a>
+          )}
+          {instagram && (
+            <a
+              className="text-[#a2a2a2] group hover:border-primary/90 transition-all rounded-[50%] w-[40px] h-[40px] flex items-center justify-center border border-[#bbbbbb]"
+              href={instagram}
+            >
+              <FaInstagram className="group-hover:text-primary/90" size={18} />
+            </a>
+          )}
+          {linkedin && (
+            <a
+              className="text-[#a2a2a2] group hover:border-primary/90 transition-all rounded-[50%] w-[40px] h-[40px] flex items-center justify-center border border-[#bbbbbb]"
+              href={linkedin}
+            >
+              <FaLinkedin className="group-hover:text-primary/90" size={18} />
+            </a>
+          )}
         </div>
       </div>
     </div>

@@ -5,7 +5,8 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <Team />
+      <Team title="Équipe INSEED" group="inseed" />
+      <Team title="Équipe STATCAP-KM" group="statcap" />
     </>
   );
 }

@@ -21,30 +21,36 @@
       "type": "media",
       "multiple": false,
       "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
+        "images"
       ]
     },
     "slug": {
       "type": "uid"
     },
     "twitter": {
-      "type": "string",
-      "regex": "/^https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*)$/"
+      "type": "string"
     },
     "facebook": {
-      "type": "string",
-      "regex": "/^https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*)$/"
+      "type": "string"
     },
     "instagram": {
-      "type": "string",
-      "regex": "/^https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*)$/"
+      "type": "string"
     },
     "linkedin": {
-      "type": "string",
-      "regex": "/^https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*)$/"
+      "type": "string"
+    },
+    "group": {
+      "type": "enumeration",
+      "required": true,
+      "default": "inseed",
+      "enum": [
+        "inseed",
+        "statcap"
+      ]
+    },
+    "order": {
+      "type": "integer",
+      "unique": false
     }
   }
 }

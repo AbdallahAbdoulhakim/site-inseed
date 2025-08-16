@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "main_indicators",
+  "info": {
+    "singularName": "main-indicator",
+    "pluralName": "main-indicators",
+    "displayName": "Main Indicator"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "description": {
+      "type": "string"
+    },
+    "value": {
+      "type": "decimal"
+    },
+    "label": {
+      "type": "string"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "population",
+        "inflation",
+        "chomage",
+        "croissance",
+        "default"
+      ]
+    },
+    "unit": {
+      "type": "string"
+    }
+  }
+}
