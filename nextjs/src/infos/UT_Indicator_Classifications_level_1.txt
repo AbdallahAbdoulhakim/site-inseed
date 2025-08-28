@@ -1,0 +1,31 @@
+﻿IC_NId;IC_Parent_GId;IC_GId;IC_Name;IC_Global;IC_Info;IC_Type
+108;;EA58CD83-9AB1-42A1-8FA4-6C1EE05A4817;Objectifs du Millénaire pour le développement;TRUE;;GL
+135;;513207ED-A731-4CEA-A2B5-8D462CA4B7BB;Démographie;FALSE;;SC
+211;;06f2544e-3f15-466e-9392-45359515dece;Forum Mondial sur l'Education;FALSE;;GL
+242;;d28a274e-53e1-4465-ae5e-eff3fc804503;SCRP aux Comores;FALSE;;GL
+244;;2f42a9e5-aab1-4d6b-b058-a8305a2fdfc9;Sommet Mondial pour l'Enfant;FALSE;;GL
+245;;80fdf55e-154b-4ed3-935f-b675f09c4cc8;Santé;FALSE;;SC
+259;;0d7e809e-0f05-4fc7-aa24-9cd826331cf5;Education;FALSE;;SC
+267;;21b96b99-83f3-4d48-84e5-f92f9e281f4d;Economie et Finances;FALSE;;SC
+288;;2d4e1d30-9fae-49b4-9012-e4510f596485;Energie;FALSE;;SC
+293;;c14b23a1-596a-4b1e-a490-0c6013290326;Production;FALSE;;SC
+297;;0af8b29f-045a-4d80-9461-f2b8225e72c3;Tourisme;FALSE;;SC
+298;;5cbd76ce-26a9-4563-a451-ab49de28dc29;Transport;FALSE;;SC
+302;;c2757037-7c85-415f-977f-301549440654;Gouvernance;FALSE;;SC
+307;;bf8beee5-c314-46a3-b280-172698926965;Protection et Justice;FALSE;;SC
+313;;0ace0257-5216-43af-a4c5-eb69a7c3088f;Informations et Communication;FALSE;;SC
+324;;a600e7bb-6b47-471e-ae2a-2812d1192688;Environnement;FALSE;;SC
+438;;b9e054f1-d299-402f-a47d-f9def683d02e;Amenagement du territoire;FALSE;;SC
+549;;82a7e9ff-d989-4140-8617-d7e43310ea67;Stratégie de Croissance Accélérée et de;FALSE;;GL
+550;;ca09e32b-8363-4362-ab29-9d5cfc82161d;CIPD;FALSE;;GL
+551;;f98ba00d-2b94-4d49-8d6c-25893750aed2;(SCA2D) Stratégie de Croissance Accélérée et de Développement Durable;FALSE;;GL
+568;;01b51e0a-af66-4f21-93ee-11514bc9d683;Global;FALSE;;SR
+570;;107244db-285d-4dbb-9580-c82f5080b839;FMI;FALSE;;SR
+572;;0d3f3829-c39b-43b0-af0f-ed95a3d7bd41;COI;FALSE;;SR
+574;;6c28ad28-a450-4b9a-995e-1319f5eb4fc2;COM;FALSE;;SR
+622;;6d61167a-75bd-4004-b76e-e5656421064b;UN;FALSE;;SR
+640;;b9adfeaf-c94d-4481-9d0e-fbafb399f3aa;UNDP;FALSE;;SR
+642;;519f63e9-8270-4c06-9ea1-2e28f8c2e8aa;UNFPA;FALSE;;SR
+644;;cc5b3bef-7acc-4aa7-a1f8-e004282bd33e;UNICEF;FALSE;;SR
+647;;02764270-7791-40a4-9d00-4dabd500a5d7;UNSD;FALSE;;SR
+656;;01f9a172-ba2f-452a-ab6c-a32249e27ae1;WORLD BANK;FALSE;;SR

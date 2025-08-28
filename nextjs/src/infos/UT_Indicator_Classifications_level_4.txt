@@ -1,0 +1,8 @@
+﻿IC_NId;IC_Parent_GId;IC_GId;IC_Name;IC_Global;IC_Info;IC_Type
+556;427d8e8a-67fd-411e-ad64-e6447f097f6d;079ecfab-eac1-41f0-bc2d-53b0db726f61;Condition de vie des Ménages;FALSE;;SC
+557;427d8e8a-67fd-411e-ad64-e6447f097f6d;506e2533-c544-412c-8bef-7bf84002eef8;Caractéristique du logement;FALSE;;SC
+558;427d8e8a-67fd-411e-ad64-e6447f097f6d;64707408-baab-4bd1-8a97-7d8a0e1940cb;Biens possédés par les ménages;FALSE;;SC
+562;73189446-44d1-4b4c-838c-a122d08338c8;0cca52b3-0430-48bc-98c5-ac7fa32f5e9e;Secteur primaire;FALSE;;SC
+563;73189446-44d1-4b4c-838c-a122d08338c8;545e1576-a5f4-4c5a-907a-1496c9285e0e;Secteur secondaire;FALSE;;SC
+565;73189446-44d1-4b4c-838c-a122d08338c8;490121e2-183f-4a49-91cd-bb23c5168dd2;Secteur terciaire;FALSE;;SC
+566;73189446-44d1-4b4c-838c-a122d08338c8;ba31ff82-4395-45d5-99ef-f133ef87c461;Consommation finale;FALSE;;SC

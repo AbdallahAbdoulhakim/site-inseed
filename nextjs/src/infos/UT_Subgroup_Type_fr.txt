@@ -1,0 +1,5 @@
+"Subgroup_Type_NId","Subgroup_Type_Name","Subgroup_Type_GID","Subgroup_Type_Order","Subgroup_Type_Global"
+1,"Sex","1439b584-ec06-441a-8e6b-197481a37302",1.00,0
+2,"Location","48bbd0d6-a7a4-41ff-8228-4815a32a9da9",3.00,0
+3,"Age","f1541d65-602b-432b-9788-7953503918d4",2.00,0
+4,"Other","810a8545-ab7b-40d2-a2e5-d38a642e84af",4.00,0

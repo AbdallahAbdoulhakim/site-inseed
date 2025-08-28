@@ -1,0 +1,5 @@
+AgePeriod_NId;AgePeriod
+1;yr
+2;mo
+3;dy
+4;wk

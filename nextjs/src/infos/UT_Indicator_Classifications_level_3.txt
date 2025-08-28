@@ -1,0 +1,63 @@
+﻿IC_NId;IC_Parent_GId;IC_GId;IC_Name;IC_Global;IC_Info;IC_Type
+118;13F6C4BD-0D85-4856-BBFF-E08D1587E7AB;BD5D6773-3B38-4A05-A130-1851FED3689D;Cible 1. Réduire de moitié, entre 1990 et 2015, la proportion de la population dont le revenu est inférieur à un dollar par jour;TRUE;;GL
+119;13F6C4BD-0D85-4856-BBFF-E08D1587E7AB;009B0C7B-37F6-4B5F-BFE3-55DBCE894B37;Cible 2. Réduire de moitié, entre 1990 et 2015, la proportion de la population qui souffre de la faim;TRUE;;GL
+125;56B5BADA-CEBE-4AA1-ADC6-5E4FE17B6059;A57296CE-2931-4FB9-84E0-AA37672975C7;Cible 3. D'ici à 2015, donner à tous les enfants, garçons et filles, partout dans le monde, les moyens d'achever un cycle complet d'études primaires;TRUE;;GL
+134;E990F012-1BB0-42AF-B582-24581B04C917;E5604F5D-EC9B-457D-BF52-02CCE19EAC83;Cible 4. Éliminer les disparités entre les sexes dans les enseignements primaire et secondaire d'ici à 2005 si possible, et à tous les niveaux de l'enseignement en 2015 au plus tard;TRUE;;GL
+117;1191B9EC-F63B-44B0-855D-D8A787DF411A;7A611BD3-983B-4BBD-B059-A4A145511C18;Cible 5. Réduire de deux tiers, entre 1990 et 2015, le taux de mortalité des enfants de moins de cinq ans;TRUE;;GL
+126;CD8FCDB9-A44C-41EF-8DC8-C70182873B51;658FF97B-EB6E-45F7-8E3A-2D8E8DE70195;Cible 6. Réduire de trois quarts, entre 1990 et 2015, le taux de mortalité maternelle;TRUE;;GL
+123;3EDBBEB3-06CE-4EFC-9C81-18E29D104737;3F1F9C07-B8BD-4E72-A87A-D6762C484301;Cible 7. D'ici à 2015, avoir stoppé la propagation du VIH/sida et commencé à inverser la tendance actuelle;TRUE;;GL
+124;3EDBBEB3-06CE-4EFC-9C81-18E29D104737;C0038747-5AE0-402D-A05E-DC3EEF2B88C8;Cible 8. D'ici à 2015, avoir maîtrisé le paludisme et d'autres grandes maladies, et avoir commencé à inverser la tendance actuelle;TRUE;;GL
+120;2384F7ED-9D34-4771-BCE0-141BF2486E52;D09E6768-E5E9-4550-B689-B571CE3CDA11;Cible 10. Réduire de moitié, d'ici à 2015, le pourcentage de la population qui n'a pas accès de façon durable à un approvisionnement en eau de boisson salubre et à des services d'assainissement de base;TRUE;;GL
+121;2384F7ED-9D34-4771-BCE0-141BF2486E52;CBD4C914-3120-40D4-840A-3DD9B43F2D1F;Cible 11. Réussir, d'ici à 2020, à améliorer sensiblement la vie d'au moins 100 millions d'habitants de taudis;TRUE;;GL
+122;2384F7ED-9D34-4771-BCE0-141BF2486E52;36D558D9-90A2-418F-886A-7D8DB00D3345;Cible 9. Intégrer les principes du développement durable dans les politiques nationales et inverser la tendance actuelle à la déperdition des ressources environnementales;TRUE;;GL
+127;D7FE9463-BBEE-4B47-BD2B-1EDA3563171F;96BC2EB9-24F8-470C-82D5-809A756F6190;Cible 12. Poursuivre la mise en place d'un système commercial et financier multilatéral ouvert, fondé sur des règles, prévisible et non discriminatoire;TRUE;;GL
+128;D7FE9463-BBEE-4B47-BD2B-1EDA3563171F;1697BC8F-06CD-46CA-AC6D-DCE63BEAF591;Cible 13. S'attaquer aux besoins particuliers des pays les moins avancés;TRUE;;GL
+129;D7FE9463-BBEE-4B47-BD2B-1EDA3563171F;215F2551-DFB9-4A8A-872D-FE53013CD736;Cible 14. Répondre aux besoins particuliers des petits Etats insulaires en développement (PEID) (en appliquant le Programme d'action pour le développement durable des PEID et les conclusions de la 22ème session extraordinaire de l'Assemblée générale);TRUE;;GL
+130;D7FE9463-BBEE-4B47-BD2B-1EDA3563171F;DAED44B8-D57B-4364-9182-E4D5020422C0;Cible 15. Traiter globalement le problème de la dette des pays en développement, par des mesures d'ordre national et international propres à rendre leur endettement viable à long terme;TRUE;;GL
+131;D7FE9463-BBEE-4B47-BD2B-1EDA3563171F;5D771A1A-BD97-4F2E-ADDE-C46541F98AD2;Cible 16. En coopération avec les pays en développement, formuler et appliquer des stratégies qui permettent aux jeunes de trouver un travail décent et utile;TRUE;;GL
+132;D7FE9463-BBEE-4B47-BD2B-1EDA3563171F;27394848-2D54-4B01-ADFB-2A7E5AEDC564;Cible 17. En coopération avec l'industrie pharmaceutique, rendre les médicaments essentiels disponibles et abordables dans les pays en développement;TRUE;;GL
+133;D7FE9463-BBEE-4B47-BD2B-1EDA3563171F;159B089A-0FD2-4C34-A577-DE9604E8DB67;Cible 18. En coopération avec le secteur privé, faire en sorte que les avantages des nouvelles technologies, en particulier des technologies de l'information et de la communication, soient accordés à tous;TRUE;;GL
+206;40357d22-5787-4c94-85fb-fc21a8a88ceb;e55ea852-395d-401a-abb4-4d7c92a048d4;Etat de la population;FALSE;;SC
+208;40357d22-5787-4c94-85fb-fc21a8a88ceb;2603813b-bf69-4f47-9e22-9d7d7878e7ab;Structure de la population;FALSE;;SC
+209;40357d22-5787-4c94-85fb-fc21a8a88ceb;759baa7e-9bc6-4bdb-b1e4-f0c8b60716de;Croissance démographique;FALSE;;SC
+239;bc5edcb6-45f9-453f-a4f8-f273e2c5c43b;307de31a-7db1-4adb-80ed-a8715bf79331;Petite enfance;FALSE;;GL
+238;7d6b92a6-3e53-4684-8243-3c173038f118;5279edeb-eeed-4bbb-ad74-d484641cddad;Education primaire;FALSE;;GL
+241;df8f7638-4840-4b8b-89b4-ac83f1c53e4f;99dd1c55-1763-4fac-8a15-e6ef8d2c1321;Qualité de l'éducation;FALSE;;GL
+237;a4061169-7743-4dce-a655-f94526bc32e7;8a5c96ad-ab0e-40ac-ac63-4e3602dce703;Education des adultes;FALSE;;GL
+236;c9e3a688-6c67-4f95-a0fd-35953ae75a1d;4b698c12-9355-431b-b2c1-3cf4fa846012;Disparités scolaires;FALSE;;GL
+240;1e9ec81d-88c8-4b78-ac29-af6f2f835a37;90c55e47-3ce4-46bf-94a4-000b8a64d363;Qualité de l'éducation;FALSE;;GL
+254;e9af65ed-2e5c-44a3-bb8f-4289d1bab121;63bd2803-2d37-4195-80e3-81de12b8dfa7;Allaitement maternelle;FALSE;;SC
+255;e9af65ed-2e5c-44a3-bb8f-4289d1bab121;55d42071-05eb-4184-ada2-a6449b0c419e;Carence nutritionnelle;FALSE;;SC
+256;e9af65ed-2e5c-44a3-bb8f-4289d1bab121;181acc1a-f861-4440-bdf0-e29dccf8ff62;Etat nutritionnelle;FALSE;;SC
+257;e9af65ed-2e5c-44a3-bb8f-4289d1bab121;51735712-6c67-4a5f-a692-70ae83423d64;Sécurité alimentaire;FALSE;;SC
+561;32e831ac-0652-49c6-8ed1-977ed2177fd6;73189446-44d1-4b4c-838c-a122d08338c8;FMI;FALSE;;SC
+567;32e831ac-0652-49c6-8ed1-977ed2177fd6;c5e77cda-6254-4fe7-bebe-1841d065f4e8;CN Global;FALSE;;SC
+452;64010563-9470-45e5-b0b5-f1570f6928d1;8e5c829f-b0c2-4ef1-a1ff-a2445c3fc3fd;Balance de paiement;FALSE;;SC
+467;64010563-9470-45e5-b0b5-f1570f6928d1;3808247c-f747-4704-a67c-7b90348bb4f1;Monnaie et Banques;FALSE;;SC
+468;64010563-9470-45e5-b0b5-f1570f6928d1;a9b2c9ec-cbcc-4c2c-8579-43592aaab651;Microfinance;FALSE;;SC
+469;784eb7e3-7a27-492f-b7ab-0ba494686b8c;9b5bfcfc-cbd8-4104-95c7-e8fd3036e0e4;Pauvrete et Conditions de vie des menage;FALSE;;SC
+471;784eb7e3-7a27-492f-b7ab-0ba494686b8c;f26df585-aae4-4b31-9bad-295e02861fb4;Developpement humain;FALSE;;SC
+448;6f822eb9-ddc6-4949-96e1-6503247291fe;8f5f43a0-28bc-4583-b99d-246feeb31377;Dettes;FALSE;;SC
+451;6f822eb9-ddc6-4949-96e1-6503247291fe;b3a2eb36-ce8e-4b9d-97ba-ded32b3f0ac5;Budget;FALSE;;SC
+466;6f822eb9-ddc6-4949-96e1-6503247291fe;05cf22cc-3d63-443e-9f2a-57f0b7031793;Aide au Développement;FALSE;;SC
+336;b04e145e-1a50-443e-878a-af4563aa4124;f2a20be5-f124-498b-9e26-ab5ae6810ece;Equité entre les sexes;FALSE;;SC
+337;b04e145e-1a50-443e-878a-af4563aa4124;9cc4c97c-cfd3-4e8a-9e8d-c67a4c911f2a;Accès à l'autonomie;FALSE;;SC
+363;a158f1f1-ffc5-46f5-bf11-f97867cd8e7c;7674cfba-4497-4e3a-a6a1-813771b26168;Amélioration du capital humain ;FALSE;;GL
+364;ef18072c-3624-410f-8d06-4fda8e48a85d;70581afe-be25-4b5d-b71c-db6bfd54b9c7;Amélioration du capital humain ;FALSE;;GL
+365;5e852935-9cae-42d7-bee5-94fb5930f762;3df07adc-91b3-4d63-8fc5-bbda23b70cb5;Amélioration du capital humain ;FALSE;;GL
+366;a1d29c15-0f41-4961-aab5-3572497b6774;6ca1cf7a-d403-4557-9382-f611052c916d;Amélioration du capital humain ;FALSE;;GL
+367;ec3b6d41-9dbe-430f-961b-fb81609f5df1;5a2d515c-799d-457c-afd4-e6435071278e;Amélioration du capital humain ;FALSE;;GL
+368;acea3602-c2a5-4d3d-a1aa-8a7e4a2f33e0;bcac5a80-c741-4960-9722-a0417a233946;Amélioration du capital humain ;FALSE;;GL
+369;5c9639a7-9d6a-4fe7-825c-74399ee8fd96;51f296b9-acd8-47df-8c9c-72d4876ec581;Amélioration du capital humain ;FALSE;;GL
+370;2ccff911-428e-40c6-ac10-8cb1745c57d6;16e0f28c-373e-45f5-b8ef-d7d2f5c05b9d;Amélioration du capital humain ;FALSE;;GL
+371;ba1b2666-32eb-4fc7-b61f-2f1a3c45d2bb;7246b46e-5efb-40b0-b424-46653601a375;Amélioration du capital humain ;FALSE;;GL
+372;fd0b2211-1a26-42a1-8d99-619b662bebdc;427f91fb-a85d-447f-8857-ce8baefafb6a;Amélioration du capital humain ;FALSE;;GL
+373;bb465c7e-de8f-4e64-aa64-3e76f6cf6c20;9e644e53-e887-4678-acb0-62facab9cd3a;Amélioration du capital humain ;FALSE;;GL
+374;b265d1ca-59d1-49a6-a953-775bc9325a39;55959afe-5777-4051-940b-71149f44f30f;Amélioration du capital humain ;FALSE;;GL
+445;11acc66f-2d3d-4996-8863-169ec4d8c387;427d8e8a-67fd-411e-ad64-e6447f097f6d;Caractéristique des ménages;FALSE;;SC
+555;11acc66f-2d3d-4996-8863-169ec4d8c387;1f403a9c-729f-49d3-8846-ab3ec3f827b0;Echantionnage de l'enquête;FALSE;;SC
+547;9e638599-421e-431c-a6eb-f250dc691619;e86ba768-e563-4b77-9c26-89377418fd7a;Public;FALSE;;SC
+548;9e638599-421e-431c-a6eb-f250dc691619;161338b1-2f1c-4031-98ba-edf50edf7ec8;Privé;FALSE;;SC
+474;98c31385-de91-472e-ad81-85b6d39d10f4;92fcfb06-3a8f-41d4-90b0-4b8971981aae;TV;FALSE;;SC
+475;98c31385-de91-472e-ad81-85b6d39d10f4;a2423b48-e7e2-46a6-9b9c-28dcfb950527;Radio;FALSE;;SC
+476;98c31385-de91-472e-ad81-85b6d39d10f4;68e05736-3fe0-4c20-b8ae-91ddbe866d2d;Presse écrite;FALSE;;SC

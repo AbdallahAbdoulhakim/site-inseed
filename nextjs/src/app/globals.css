@@ -60,3 +60,18 @@ body {
 .topbar {
   background-color: color-mix(in srgb, var(--primary-color) 90%, black 10%);
 }
+
+.swiper-pagination .swiper-pagination-bullet {
+  width: 12px !important;
+  height: 12px !important;
+  background-color: rgba(0, 0, 0, 0.2) !important;
+  opacity: 1 !important;
+}
+
+.swiper-pagination .swiper-pagination-bullet-active {
+  background-color: var(--color-primary) !important;
+}
+
+.swiper-wrapper {
+  padding-bottom: 50px !important;
+}

@@ -1,0 +1,517 @@
+"Subgroup_Val_NId","Subgroup_Val","Subgroup_Val_GId","Subgroup_Val_Global"
+1,"Féminin Rural","971fc4f1-f2f8-47ff-8875-129c258ebf2e",0
+2,"Total","15235530-8209-469e-8333-dc93254f2ec9",0
+4,"Rural Femme","a23efb4e-9bb0-4b7c-9c18-ab2f6ab802f7",0
+5,"Rural Homme","5769cd91-f57b-4786-a4bc-0ee50253f616",0
+6,"Urbain Femme","c7ecd91c-75bb-42e2-a962-ea1b42502abb",0
+7,"Urbain Homme","e8204187-3e74-47ff-ae28-f6dae02174d1",0
+8,"Femme","9d0bc5f6-9e75-49c8-9511-8be75aba9275",0
+9,"Homme","a829fab7-cfdd-46f7-a8b7-678a952d2055",0
+10,"Femme 1 an","c340db17-9cdc-4ad8-9407-624d7e894442",0
+11,"Homme 1 an","9ac32fc8-7039-48da-8e7d-d8dff9c7b51d",0
+12,"Femme <5 ans","9546b01d-0548-4a8d-8186-779b0d44c2f0",0
+13,"Homme <5 ans","79c25d40-e43b-4ad7-8c4d-9bce1d9657de",0
+14,"Femme 6-14 ans","5ae9e0cb-009f-426c-b1d3-30f809287416",0
+15,"Homme 6-14 ans","81894cd6-eb4b-4be3-90db-026265f2a8d5",0
+16,"Femme 18+ ans","4aeb19ee-11c2-4d2e-9edc-dc0e044ef188",0
+17,"Homme 18+ ans","972f17de-98a3-4899-bd0a-1a3b738d2458",0
+18,"Femme 15-49 ans","1389dc4f-530f-4c04-9871-22188a10461a",0
+19,"Femme 0-14 ans","27f67fb3-6909-4687-8c03-6f118c05f792",0
+20,"Homme 0-14 ans","33af2af7-891b-458f-a5d3-a80eef5e3149",0
+21,"Femme 60+ ans","74544690-7df2-42a2-b9aa-139265dd1c70",0
+22,"Homme 60+ ans","1a7d3164-ff1a-41aa-af1a-d8336a9dd696",0
+23,"Femme 15-59 ans","97f3e953-c0db-4303-b79b-565b33df92c4",0
+24,"Homme 15-59 ans","32ece903-5f3c-4923-b80b-a715bb988234",0
+25,"Total <5 ans","0ed66e48-635e-4ca5-b7ab-d5fa8c6d000d",0
+26,"Total 0-14 ans","cc57948a-c5f1-44de-8090-de912fd695dc",0
+27,"Total 1 an","fd741aa8-c416-4b41-a3fb-5ab197ef2d26",0
+28,"Total < 20 ans","9a7acfb0-28ef-4163-bbfc-c2f6f783d381",0
+29,"Total 15-59 ans","8de95fda-8195-479b-bca4-0539051b4f9f",0
+30,"Total 18+ ans","48c70e58-6ff2-4cfc-91ea-2d033ad4f9dd",0
+31,"Total 60+ ans","de61398b-82e4-4e45-b854-9871b89df553",0
+32,"Total 6-11 ans","2bf50bc6-f238-495b-a1dc-ec5a00d078e4",0
+33,"Total 6-14 ans","da4493dd-b5e8-467e-a67f-c824d36eccd6",0
+34,"Femme 6-11 ans","527a3715-29a1-469c-82a0-c6a95344fe41",0
+35,"Homme 6-11 ans","313f7545-ec02-4c19-87c6-d4ac59c996e7",0
+36,"CE1","b2c3a462-d048-4977-96bf-a1f3b95c2506",0
+37,"CE2","1a4e86b5-d7ab-4f06-9752-408659c10895",0
+38,"CM1","8e8888aa-f299-4a3f-8e56-2ab19779ae50",0
+39,"CM2","43b823b5-bf2f-42e1-b99f-4bc4bcfe08c4",0
+40,"CP1","6a1e6e3e-3ea4-45ec-9a87-09f92e778f4b",0
+41,"CP2","e0500035-fdd7-4ee2-9886-52b72e2dc7cc",0
+42,"Arrivée","2856b9e8-e860-4b41-91a7-92ef0c878863",0
+43,"Départ","520dd72c-ad29-4853-810a-2e4dfb01cc97",0
+44,"Urbain secondaire","80e3d781-4a4c-42d4-bbf7-4dd64899ebad",0
+45,"Moroni","09afe682-1337-4521-a73e-2b9e54743c9a",0
+46,"Autres Multilatéraux","07be6c78-694d-4745-9add-06bf46cac9ff",0
+47,"Bilatéraux","dfb6173f-b6b9-40fc-8670-64e7ebdb7b81",0
+48,"ONG","545af44f-58e3-4297-9f59-2571162efad7",0
+49,"SNU","f461835a-0683-4594-a6d1-0ec937572911",0
+50,"Bitumés","b4002601-42aa-4b49-995f-5b5997482be7",0
+51,"En terre","a86595d8-9ce0-418e-8602-410acd5d7a40",0
+52,"Privé","01ff4910-aad1-4e6d-afb8-86c06b46586c",0
+53,"Public","ad7176a2-b471-46b9-a4e5-25e7901069a1",0
+54,"Administration","92df0e1b-4008-4eb4-9156-4da5fc15a947",0
+55,"Collèges","68a29f31-0088-4822-b8c3-6cd53f4ff7e4",0
+56,"Enseignement élementaire","c012d033-2264-46b2-95d1-6e18fdd73af0",0
+57,"Enseignement technique et professionnel","494a1ee8-5f6d-4af6-9413-69665a5518b5",0
+58,"IFERE/EESP","045a10bf-7026-4509-ba07-62de2ab9d3c0",0
+59,"Inspection/CIPR/DR","591249f1-8eca-41a2-a994-31913eabdbcc",0
+60,"ISFR/ENAC","3d6c0abe-f8bc-4f20-b6a2-7eea9d35ac0e",0
+61,"Lycée","9c0b74fa-110c-4827-ac3d-17ab4a389036",0
+62,"Recherche","33ef30c9-0696-4348-bccd-f15da8cb7449",0
+63,"MECK","ac0334b2-fc8e-40d8-b27c-7f111175cad6",0
+64,"SANDUK","b257a50e-127d-4a5f-9207-31dc855ea9ed",0
+65,"Non résident","3e6c6274-2ec1-426e-a190-4017e1de858f",0
+66,"Bachlor","0214e9e6-53a9-4aef-b805-80dfeea625c1",0
+67,"CAPEN","9f9b4a5a-4017-4ea8-b565-168f89746a35",0
+68,"DEA","1a11d85c-1f4a-4d1b-850e-a904f164c8a9",0
+69,"DEPA","92db2eb5-52db-4fdc-b0ab-1900fb578503",0
+70,"DESS","a970fd6f-bb34-407e-a3aa-7dfc97da4671",0
+71,"Doctorat","cc926a8b-1c4d-457a-85f0-2a5503d791e4",0
+72,"Ingénieur","a32d7538-38e9-4f83-8e42-ed77d4c205ac",0
+73,"Licences","ac4f3a9f-ce2d-46ea-b590-767ac4182b28",0
+74,"Maîtrise","df8a941e-a33a-4489-bcb0-1c9108a5c8f5",0
+75,"Masters","f6fbb37e-dfa2-4285-bfd1-53c1ba617dd3",0
+76,"Aux Echelle II","2242a5a1-0182-45f5-b47a-7ab49251fc6b",0
+77,"BAC/BEPC","80b65854-9479-46ab-a596-5aa85b481c47",0
+78,"CAP/CAE","25be64ca-1051-43df-9fb4-738a08cd7599",0
+79,"CAP/DIFOSI","5303f9ea-aee3-4d44-8287-c8a5318ed283",0
+80,"Insectes","7f37efb8-346b-4415-8bef-0913f2015ef4",0
+81,"Mamifères","4bbf2134-c08d-4bdd-bf9d-157b389fdfd1",0
+82,"Mollusques","f1c822c0-915e-4f11-bc6e-d0c38147e99b",0
+83,"Oiseaux","bf6d5d17-d6e3-4855-bbe6-25070c94fdf9",0
+84,"Plantes","f15242c4-4806-4691-9782-d0969bc20000",0
+85,"Poissons","f4f16f9b-048e-46c3-8490-4ed6c3d35295",0
+86,"Reptiles","1a5a9f1a-c150-4852-a596-1164f30cec4c",0
+87,"Droit et sciences économiques","b59510ec-a549-46d8-ac00-4fea7ce168af",0
+88,"Ecole de médecine","47a16854-89d9-4a1a-a0f5-138ed28c754a",0
+89,"IFERE","0a175f81-1457-4e5a-99b7-8fcfcd1c7699",0
+90,"Imamu Shanfii","7f3673ee-73c9-4427-b22c-92b26e19f3ad",0
+91,"Institut Univ de technologie","e396cc7a-89f3-4b52-b24f-f11c6560e808",0
+92,"Lettres, sciences humaines","bea163af-6088-467e-b4eb-d7dd5af17b19",0
+93,"Administratif","fd99dd9b-1a53-4230-b0b1-fc43ec27b30d",0
+94,"Infrastructure","5cd8b5ec-da07-4216-81b8-c3bb6aad7bea",0
+95,"Social/action sociale/éducation/santé/cuture jeunesse et spo","c74702a5-f15d-485b-881c-cf580e9abed1",0
+96,"International","dc33a7c3-ef61-463d-bacb-3f34612564ff",0
+97,"National","a756fca5-0881-4688-99bb-68c62a36e1b9",0
+98,"Hahaya","86777037-9b24-49f9-b353-8e5a32e5b4e4",0
+99,"Total <18 ans","67da46a7-6aa2-4311-a577-e86892e4e80f",0
+100,"Biologiste","910e3e05-cab5-498e-8590-f8917ecf276e",0
+101,"Cadre Infirmier","f2bef621-9bf3-4c20-aff0-37513808ed8b",0
+102,"Cardiologue","5d4c3ca5-ee68-4245-a658-23ce8f3745a7",0
+103,"Chururgien","4e89606e-5e3f-4946-b372-b01f97bcbda3",0
+104,"Dermatologue","e12166bb-8a76-41ce-8b92-48d797b63965",0
+105,"Gynécologue","bd30f865-355c-4f0e-a7ed-b5c35a3e072e",0
+106,"Inf Anesthésiste","68def858-b0d3-499b-8beb-8dcf1ea6ca5e",0
+107,"Inf santé publique","d8557b5c-d5c4-4f66-9a2f-7fae25e3dfd7",0
+108,"Inf.Diplômé d'Etat","79ae6692-557b-4454-a4f9-a8f94326fb94",0
+109,"Med anesthesiste","d9d5ac15-52d0-4827-a872-33839bc42137",0
+110,"Médecin biologiste","f36fe3a3-bc0e-42c4-9425-54a3f137e84a",0
+111,"Médecin Généraliste","fef234d3-50f6-4130-8913-4f3321cc3379",0
+112,"Médecin ORL","9dab061f-4746-4f8b-bae7-159a6061d108",0
+113,"Médecin radio","18cca749-91d7-482e-80c9-9c2827cc26a8",0
+114,"Neurologue","e1882347-9104-470e-8360-3af9757020e4",0
+115,"Ophtalmologue","7ca9840b-cc94-47f7-9edf-f19118b31fc3",0
+116,"Pédiatre","a4c93ebe-3a46-44a8-ae39-d3b63f315ea4",0
+117,"Pharmacien","baed3cfa-74ea-4038-ac93-6c6b65366e97",0
+118,"Administration publique","788d69bc-c826-473c-8796-09a6ff0944e5",0
+120,"Banques, Assurances, AI et SRE","f07cf862-cd85-40af-a27f-38a2b97e62ea",0
+121,"Bâtiments et travaux publics","c92801e3-31e6-4a3a-91eb-62515b5d34c1",0
+122,"Commerce, hôtels, restaurants","77be10c7-329a-4bf6-8783-d1a7ab537089",0
+123,"Eléctricité, gaz, eau","4595ebf7-48e3-462d-a68e-71d6490e2923",0
+124,"industrie manufacturière","6e8af028-8300-410e-9231-73288c5f8a98",0
+125,"Transport et télécommunication","bd5a7535-dd9d-4954-9979-684d2a115a3d",0
+126,"Borne fontaine","71d84e84-04db-4b01-b0fa-6a1fce31a7b1",0
+127,"Pluie/citerne","a88d9092-e9ba-4b9f-b68a-61a33a698f04",0
+128,"Puits","7f40c998-51d8-4fea-9ccf-5a307d5b6234",0
+129,"Riviere/Source","9b82df95-beb9-4f42-a235-537c1195b5a6",0
+130,"Robinet dans la cour/maison","d1269616-252d-48d6-a1cc-0bbc40aa33ef",0
+131,"Ferme ou affaire","9a8f21f7-db44-4d4b-8ce5-d41ea8c03184",0
+132,"Travail domestique>4heure/jour","cdc09ed3-2539-4815-994a-d73c39bda6c3",0
+133,"Travail non rémunéré","a29e2e96-9383-41b3-b88d-27dd011f82f2",0
+134,"Travail rémunéré","fb06c82a-688f-4754-974e-3f84af9181d7",0
+135,"Travaille courament","151e2ac4-02d2-4925-8c19-1798445eed73",0
+136,"Agents de santé","44f07ee1-aff6-4e11-8c25-29d57eb11c33",0
+137,"Amis","6bd561f1-e38a-4d83-ad39-2b470296496c",0
+138,"Au travail","66baaf39-94c1-4e08-81a0-3bc563fdfd85",0
+139,"Journaux","7a5c9fa8-18dd-4c04-9f0b-f816717d8d49",0
+140,"Mosquée","67e98f7f-57a8-468b-bb2b-e89f48003bfb",0
+141,"Panphlets/affiches","f3c1d2d3-0535-4cb2-a0bc-f735f4d92fec",0
+142,"Parents","bda256ed-fd8a-478f-bd1a-fc9d7eecf600",0
+143,"Radio","6ebea230-d5fb-42b4-92af-753ee536fe74",0
+144,"Réunions communautaires","2aecb9e3-4dd0-416e-bea9-48045df66e8f",0
+145,"Candidose","9c9a07f5-7772-4754-8739-4d3094466d41",0
+146,"Clamidiae","4aa2536e-2842-41b9-8387-d893fc52b190",0
+147,"Gonocoque","8b797089-6123-4e56-9769-93d8cd2f29ea",0
+148,"Syphilis","1eb0b987-8abb-4e8d-ae65-09ecc347bcf9",0
+149,"Trichomonas","b7202d5c-6a76-421e-83e7-94d3e56a269a",0
+150,"Vaginité bactérienne","eb2aef1a-ccbe-44c7-9cf8-1978c9d7a12c",0
+151,"Coranique","f2b736db-553d-4f62-bf87-20bb2d0f3400",0
+152,"Primaire","4933bea1-0b92-4f3e-9c19-213f397d76a7",0
+153,"Professionnel","409a06e6-9f7b-4e82-84fb-98a524a199a3",0
+154,"Secondaire","3d2e2e96-324d-4686-a7cc-47d0f75bae79",0
+155,"Superieur","ea990f80-8836-4553-9a85-23a1cd90ad1e",0
+156,"Sage Femme","0a02b950-cc24-4e5e-a9ec-3f9d9801bb63",0
+157,"Générateurs collectifs","1224e6ef-7210-4313-85d5-0b8247c73c38",0
+158,"Générateurs individuels","fdefde7a-7426-46fa-9fa5-bf164319d3e0",0
+159,"Lampes à pétroles","2dd893f5-43f3-44fa-92bd-2998932b5777",0
+160,"MAMWE","b893bd5e-bfdd-4638-b3f9-dc568baec4da",0
+161,"Petromax","12286a6a-1828-42a3-bfbc-a1b767fc8cee",0
+162,"Aveugle","62313e8a-586b-492e-b752-2f08ce996ca0",0
+163,"infirme mental","32ee55f4-4070-40ea-a787-99321b6f6a1e",0
+164,"Infirme moteur","97050b2b-6ec6-4441-af5b-5237acc5e920",0
+165,"Muet","f5d86138-caeb-4315-8b87-74a08a3f32f8",0
+166,"Sourd","bfa99f42-3440-4c44-81a6-2bf1e46ef7e0",0
+167,"Fosse optique","a3dd2606-919d-463b-ae53-d8ac37c770c1",0
+168,"Lattrine à chasse d'eau ou à seau","5d551198-bfbe-463f-9219-fb46fd2d0e18",0
+169,"Lattrines améliorées","6aafb036-0cba-4520-be2d-3e2c58544767",0
+170,"Lattrines traditionnelles","79a7e29f-b305-485f-9c3c-3190b7ea7f43",0
+171,"Système d'égouts","774fd4f2-9537-4ed7-ad4f-3f16d81e4388",0
+172,"Trou ouvert","d37fde8b-d2f1-4131-b9c9-be92df5d1287",0
+173,"Connaissent trois moyens","46cf3566-f189-4c37-8f8e-9a581159855b",0
+174,"Identifient correctement 3 conception erronées","c2736a03-c15c-4109-ab36-edf090f6bbf8",0
+175,"Pluie","b8360379-437f-4680-8b20-c77c8a8e0a7b",0
+176,"12 ans +","686ea13d-0494-47ba-bbb2-3b8bbcb5e677",0
+177,"Moyenne","18ce408f-3b7b-485a-9add-db3c9c261f4f",0
+178,"Autres pays","38d7e422-95ce-497c-9286-158ddc827204",0
+179,"Autres pays de l'Afrique","cf9affb8-5e6a-4cc3-adfb-5324bfb84c89",0
+180,"France","d514b523-c818-4a0e-b788-54a87fea6803",0
+181,"Madagascar","dc4d4a2c-8fdb-4508-9b0c-2268bd77da39",0
+182,"Mayotte","68c544b6-8fe4-4fd5-8144-d8deb2514611",0
+183,"Total 65+ ans","23043574-9a15-43d0-bba9-1529d003225f",0
+184,"Total 65 ans et +","91ab0816-b839-4a11-9442-0933105cb67b",0
+185,"Total 15-64 ans","63db5148-6c64-4ce5-8031-3dea25988db2",0
+186,"1ère","c82e5716-8486-4397-a63e-55e07e2aa831",0
+187,"2nde","f48b07f1-c642-4753-87db-3c28d9820106",0
+188,"3ème","625bc570-f412-4d9f-9bc8-c41ac6ad3f3f",0
+189,"4ème","b458919f-5061-4c1b-ab67-2be5f5ae9148",0
+190,"5ème","b42c4c38-1d6f-4f4c-b6dc-f6220b23c504",0
+191,"6ème","1fd35ca5-6ba9-4124-956a-9a31041c6e8b",0
+192,"Terminale","c699666b-6506-4552-8868-81b6c7bf647a",0
+193,"15 ans +","fc918fde-f14d-40cb-8cc0-edae59a65f20",0
+194,"Série A","2c1c845d-65e9-4fd9-b1b9-81f26e7ec1b2",0
+195,"Série A1","a0dfdab0-2f77-4fa6-8245-90a991025c20",0
+196,"Série C","dfabd51c-c1fc-4d81-8839-816a1f87e0c1",0
+197,"Série D","97c31d6f-9574-49b6-8b9a-810a93cffc86",0
+198,"Série G","326d1e4f-1509-418f-b9a8-cf85b81f1b64",0
+199,"Avril à Hahaya","b9d9d461-f08d-4746-bf32-dd5022f3efe6",0
+200,"Décembre à Hahaya","4b720c1c-a094-4451-8015-0c7d32fa0d24",0
+201,"Février à Hahaya","b31a94e4-66c6-46cd-832b-7ab2e63b9262",0
+202,"Janv./Avril à Hahaya","2139219b-ebe7-4569-b45c-b594f346ae88",0
+203,"Janvier à Hahaya","3300ee15-3d6d-4feb-9a5e-91c1903e573f",0
+204,"Mars à Hahaya","2f4d0643-a325-4801-90cc-e755a34a136a",0
+205,"Débarquée","ca65379f-31d7-435d-9dbb-08c4dcad142e",0
+206,"Embarquée","484453f3-0c5b-4a20-a55b-0dbf6202af43",0
+207,"Transit","e3c32d66-a817-4c93-8cb0-f99ae4850770",0
+208,"Féminin","A4AF6DD2-2467-454F-BC9D-5042DAAD4EA2",1
+209,"Féminin 15-24 ans","53C2E3AE-B57E-4A9E-A9DB-81AE1F539E35",1
+210,"Masculin","5B840D1E-1143-4C88-9451-17FEA79E2BBD",1
+211,"Masculin 15-24 ans","BFC8EF7A-9813-47D4-ABA3-B67E838B3751",1
+212,"0-14 ans Total","6C488313-445B-494D-A9E3-14CA715E9F50",1
+213,"10-14 ans Total","B28917C7-2A5F-40E8-BED5-1A4834216094",1
+214,"15-24 ans Total","C1D3CF76-B6CC-4670-9252-5018B6AB0DB1",1
+215,"<5 ans Total","7F01DFB3-3115-49ED-A981-5A1D95A6EA54",1
+216,"Féminin 15-49 ans","DCBE9AAF-56F8-4821-B870-3BAF7295CAEF",1
+217,"Féminin 15-24 ans Urbain","45743995-2508-464D-877C-8D854B0DDBEB",1
+218,"Féminin 15-24 ans Rural","BC696A4A-24D8-425A-B137-82EA19A3B5E1",1
+219,"Total 0-17 ans","87BD5B46-9ADF-4104-B8DB-2E6644307942",0
+220,"Femme < 20 ans","4b4be1d5-e32d-403d-9509-485f3a83c124",0
+221,"Femme 0 an","4b4fc796-b9e1-4b0e-866a-de240d5e3043",0
+222,"Femme 0-17 ans","bad355b9-2164-4ec1-8ea7-024e68ba4aaf",0
+223,"Femme 10-14 ans","f584cab5-9eb1-4894-b5c0-6c18c9ccfd20",0
+224,"Femme 10-64 ans","1e3dd492-145a-4e88-b6f2-d90afe1443cd",0
+225,"Femme 12-18 ans","edf114bc-d1cf-4fa4-8456-0bb45cf61758",0
+226,"Femme 1-4 ans","89513577-40d8-4132-b6bd-270dba5e867b",0
+227,"Femme 15 ans et +","26c15076-5cc5-4ee6-9ad7-2d72be4a3be2",0
+228,"Femme 15-17 ans","716694cc-6158-4c24-8c6c-2678a0ce1393",0
+229,"Femme 15-19 ans","a7b26577-237c-418d-8481-baaadd952f88",0
+230,"Femme 15-24 ans","7418c013-8540-469e-a110-5a1fe98aca92",0
+231,"Femme 15-64 ans","aecce7fd-e8b8-4e7f-8f8f-96a56e67ad50",0
+232,"Femme 18 ans et +","ccb49068-4a4b-43d9-be25-881e375d1aae",0
+233,"Femme 18-19 ans","4ef895e0-a889-4b09-a1ff-58e2ba8c09f4",0
+234,"Femme 19-24 ans","5e8af0aa-95a6-46cf-a4c5-3d21bb2a5078",0
+235,"Femme 20-24 ans","c57e2ea5-a253-4312-8418-bdfdb054b500",0
+236,"Femme 3-5 ans","f95eafb2-9b61-4f35-ab89-61187adfe5e8",0
+237,"Femme 60 ans et +","22407588-4f33-4739-ac48-8cb5bd638027",0
+238,"Femme 65 ans et +","ba5cf148-32bd-437b-9bd7-53aaae68a206",0
+239,"Homme < 20 ans","27b98958-7538-4486-a99e-305fe0fb71da",0
+240,"Homme 0 an","96029fbf-06ff-4971-b1a7-f7288dbf032f",0
+241,"Homme 0-17 ans","f160a8bb-8ca7-4bd1-89d5-3c897074a4a1",0
+242,"Homme 10-14 ans","e51da893-874b-4010-b7ca-ae053c708b84",0
+243,"Homme 10-64 ans","184888d1-a477-401b-a990-dd2c394660af",0
+244,"Homme 12-18 ans","2f37a87c-b789-4a0d-b7e2-26de663896e8",0
+245,"Homme 1-4 ans","6177ab78-352a-4aeb-a7b5-9e64a60c66a2",0
+246,"Homme 15 ans et +","6a8b81ed-a0fa-4e41-9028-cb7be3ac8a12",0
+247,"Homme 15-17 ans","ebee25ff-db9f-4861-a111-2a6ec693bbec",0
+248,"Homme 15-19 ans","daee9739-af9c-490f-ac73-f6a8bbd53f77",0
+249,"Homme 15-24 ans","ac9ff79d-0698-4510-9dd2-f026324cb280",0
+250,"Homme 15-49 ans","3f29dc2a-bd14-4744-9faa-cef5554aceea",0
+251,"Homme 15-64 ans","958a255e-8f4f-43c0-a289-5c5bfea224b7",0
+252,"Homme 18 ans et +","89c2d3b1-3979-4585-80eb-638a30eadd03",0
+253,"Homme 18-19 ans","ac3012d5-a139-48b9-99a7-2d8206a1fc87",0
+254,"Homme 19-24 ans","3e1d06a7-d207-4462-881a-481f5b0a94e6",0
+255,"Homme 20-24 ans","58defce0-8602-4f9a-ac53-8987a7eaa07a",0
+256,"Homme 3-5 ans","875c1a84-8269-41be-bbe8-a34e97f3f6bc",0
+257,"Homme 60 ans et +","34555cee-9758-468b-ab75-b05dffa268ef",0
+258,"Homme 65 ans et +","37aa6fbf-3d60-4c11-a8d6-9273bea258b3",0
+259,"Total 0 an","eaa43e3e-137f-4b4d-9bbc-7dbd3d73f1bd",0
+260,"Total 10-64 ans","24f93328-637f-4c1b-b1b0-609313c9527f",0
+261,"Total 12-18 ans","2f51d24f-25e1-4c2a-b00a-53b755ded300",0
+262,"Total 1-4 ans","c0aa947b-96d9-463a-a5ed-d5711f52084e",0
+263,"Total 15 ans et +","d2ef66dc-0412-4167-a753-7e6f83159197",0
+264,"Total 15-17 ans","dea2347e-ce20-46ea-a960-74d1034d465a",0
+265,"Total 15-19 ans","282d51c9-ba58-4d63-a53c-9de816d81eea",0
+266,"Total 15-49 ans","0b0fce3c-faf9-4480-b201-12ff62141a68",0
+267,"Total 18 ans et +","8b34ef4f-dfee-4bcb-95a9-96427caa2ddd",0
+268,"Total 18-19 ans","6ccdc3f8-68fb-480d-b43d-4f80ea32aee8",0
+269,"Total 19-24 ans","9e1f867c-c54f-4d74-b4ca-e9adf3fcf07d",0
+270,"Total 20-24 ans","edb304d8-004b-49e0-8395-cae63d69e526",0
+271,"Total 3-5 ans","a8cff062-29c9-4592-9c0f-3da46ebcd2e5",0
+272,"Total 60 ans et +","e7c09beb-d4e0-4474-ad1d-26290273c3ca",0
+273,"Point de décision atteint","0135F34A-2511-4667-B383-53147071A970",1
+274,"Point d'achèvement atteint","7A2EE04C-615D-4595-937C-6710FFE1762B",1
+275,"À considérer","D702AB7E-F057-4F5B-B061-DC5C6D3C8A43",1
+276,"15-49 ans Rural","E99AEBB4-4314-4A8C-9533-ED6F845A34B7",0
+277,"15-49 ans Urbain","E6EC05C2-16FE-400C-B273-9C59C2959854",0
+278,"Féminin 5-14 ans","F6E80D54-D9F2-4BC0-B181-35A7F14B7275",0
+279,"Masculin 5-14 ans","6E6C596D-BCDA-4C57-9DF2-5A793F89E7D0",0
+280,"5-14 ans Rural","5A141D6F-3583-4CC7-8510-D2491AC40CA3",0
+281,"5-14 ans Total","90347914-AEBF-4575-9A5D-1E54F9CB356D",0
+282,"5-14 ans Urbain","4E5BCC22-6FB1-49B0-8CD6-6339A2EFB0E1",0
+283,"Femme Cadre Infirmier","47730241-86a7-41dd-9b49-1335f2aceb95",0
+284,"Femme Cardiologue","376d8ed6-8565-42dd-aa12-adceb3b161d7",0
+285,"Femme Chururgien","d512d899-d635-4a6c-980e-a80d1e11a0dc",0
+286,"Femme Dermatologue","0922fa04-0a20-417b-8211-7a5e1b56a023",0
+287,"Femme Gynécologue","06be449c-ff24-42c9-b16b-58672748303d",0
+288,"Femme Inf Anesthésiste","e621e0e2-c30e-4360-864e-afdcc72fb1f9",0
+289,"Femme Inf santé publique","3a68ea9a-651a-426f-95d4-c5d8dc29e6cf",0
+290,"Femme Inf.Diplômé d'Etat","61558852-f3f2-44ca-b460-a612b31b6640",0
+291,"Femme Med anesthesiste","1e4b63a0-9f5a-4dba-aaf9-454927c29536",0
+292,"Femme Médecin biologiste","a24448fc-bd2d-4d26-a2f2-8e5f5f78009c",0
+293,"Femme Médecin Généraliste","efc117d7-5148-410c-b8cb-c96848438858",0
+294,"Femme Médecin ORL","6a9f4798-b1d8-4d38-b532-5fee9dfb2c6d",0
+295,"Femme Médecin radio","b24addf4-ba38-4a84-9c75-563161d77491",0
+296,"Femme Neurologue","31e331d4-b44c-4ba8-aa0e-5a9a7cdfaa70",0
+297,"Femme Ophtalmologue","eda0824b-bcd4-4cef-a19a-6b811e3c18f1",0
+298,"Femme Pharmacien","2f2ceb70-44df-4818-a97c-d74dbc3fa723",0
+299,"Homme Cadre Infirmier","02435c77-f096-42a5-832e-bd8fb18ff73f",0
+300,"Homme Cardiologue","a7c06ff5-8dde-4bed-acc8-1c357404010f",0
+301,"Homme Chururgien","59817ee9-4ac2-47cb-9b61-ec4b5b7d52ab",0
+302,"Homme Dermatologue","e8054bcf-355e-4891-9606-1b5fb7077f54",0
+303,"Homme Gynécologue","6e086276-36b8-4be5-8fb8-6ec5134c6b1b",0
+304,"Homme Inf Anesthésiste","c5af29fb-08b9-432a-9017-5d53c94b03e4",0
+305,"Homme Inf santé publique","f0729938-6f65-481e-b541-facafda52a1d",0
+306,"Homme Inf.Diplômé d'Etat","ee0c775a-3a38-45e5-87bc-a8a6252370f9",0
+307,"Homme Med anesthesiste","4a1156c6-d683-4d3e-adce-c026eb98a5ab",0
+308,"Homme Médecin biologiste","b7651de5-11c2-488a-b528-65712848b3dc",0
+309,"Homme Médecin Généraliste","08d00fa1-2ef9-45cb-ad49-015631d26132",0
+310,"Homme Médecin ORL","023f3799-b43f-454e-8ebf-12c24689a175",0
+311,"Homme Médecin radio","983f540e-0d94-49f8-8db4-9a59fa44a13d",0
+312,"Homme Neurologue","efba0cda-196e-40cf-8595-8bc641af0e86",0
+313,"Homme Ophtalmologue","8b5a7bfe-202f-44e9-b8f2-78d867db8874",0
+314,"Homme Pharmacien","70a0072d-756e-4819-affa-30a01d830d46",0
+315,"Femme Agents de santé","d6552827-d1cc-45f2-9a95-83a9607b6346",0
+316,"Femme Biologiste","5fb807cb-1cf6-4e21-86e3-ce16cb83a21a",0
+317,"Homme Agents de santé","ca45d25c-56aa-4d18-8976-91419c8b2eae",0
+318,"Homme Biologiste","e6f0615d-9dfa-43c9-8b14-b2c8b58eed7a",0
+319,"Femme Dentiste","a04fef2c-9ace-4834-9e9f-82a5e5147e65",0
+320,"Homme Dentiste","891fbb84-16e2-480d-9ccd-e4ef26aed502",0
+321,"Dentiste","00425c82-ee24-47b3-bbc0-85af08505d12",0
+322,"Femme Droit et sciences économiques","7e1f2980-fb5b-4c95-b2b1-f211f94632d9",0
+323,"Femme Ecole de médecine","62d744e9-16aa-40dc-9530-4ef517cb1466",0
+324,"Femme IFERE","b258407d-829a-41da-8e2f-c5b9eddd1f64",0
+325,"Femme Imamu Shanfii","e3e760be-f081-4706-8708-b27517f97bcf",0
+326,"Femme Institut Univ de technologie","022ba103-5840-4d57-b4ad-c14487c10326",0
+327,"Femme Lettres, sciences humaines","b7d9dcb1-81d8-42c3-bc5d-466f7893aeb1",0
+328,"Homme Droit et sciences économiques","5bdefaae-a715-4f1e-b91a-712184660408",0
+329,"Homme Ecole de médecine","a39ef61e-752a-4b8a-ac00-7614e9d01002",0
+330,"Homme IFERE","35387cf0-9cd9-4c52-aab0-4a847b41bde2",0
+331,"Homme Imamu Shanfii","6713dd05-a3fd-41f4-8977-3011779198b0",0
+332,"Homme Institut Univ de technologie","4e75e19e-0b65-4dc1-979c-1e8fe4a5d951",0
+333,"Homme Lettres, sciences humaines","600442ce-81e2-4157-a27a-004d5bfcc1bf",0
+334,"Scences et techniques","6ecfe4c0-8e10-4188-922c-579e46a160a9",0
+335,"Fille","79a56670-43f4-47a0-b808-f48a70cc5646",0
+336,"Garçon","9a258dae-ad16-4fcf-86cf-f3f9dff91c8f",0
+337,"Au large","f08496c6-5a4b-47c3-bd93-c2f03e5b39e3",0
+338,"Côtier","19bbb303-1b9c-4b75-bd05-820117c4c36b",0
+339,"BDC","f5fd943b-515f-4d22-8dbd-6fdf0f8594dd",0
+340,"BIC","a63110f1-f3d5-41f1-8056-912eed0504ad",0
+341,"Export","2c4ed3a9-b292-4de6-b244-340fbce1e2e5",0
+342,"Import","918f99dc-3f88-486e-9be2-b3474c7c46dc",0
+343,"15-64 ans","a85c7196-2354-44af-acf1-c5b1b10082dd",0
+344,"65 ans et +","134f5ec2-33e1-422d-b6c6-54a0f679c683",0
+345,"Moins de 15 ans","9003b48a-4b50-4489-aa34-492beae5e56f",0
+346,"Autre","3fada7bd-01d3-4241-8ddc-e7188def9635",0
+347,"CAE","afc6843a-d887-4ce9-b67c-58c20bb6be6d",0
+348,"Culture générale","ae7acd99-dc18-426d-a1c0-e736767971b4",0
+349,"Doctorat / DEA","10556a00-8491-4c37-b39c-cd91253b0e16",0
+350,"DEUG","145d727b-0eab-4b3d-a9ce-14a78fd8b44b",0
+351,"AES","81e6a4f6-8edf-47c2-8ba7-78eba0b19784",0
+352,"Droit","744cfb54-6653-4ecf-9a81-a2eb1235091e",0
+353,"Sce.Economiques","caef27db-3748-40b3-8604-265d40d302a5",0
+354,"Commerce","4b0b5fff-ddd0-4bdf-885c-4ec284602520",0
+355,"G. Informatique","598a0136-9c88-4f42-974c-2cd09b630340",0
+356,"GEA","441f8162-10d5-4242-b679-9f7dc92c3f6c",0
+357,"Tourisme et Hotelerie","9e09b31a-8f8e-4017-be09-fb049f93bdba",0
+358,"Géographie","cd7c21ac-7a6d-4db0-8763-4d7b3cd46fad",0
+359,"Histoire","559254e3-c3db-4c22-83da-4068103461dd",0
+360,"LEA","b65251f7-cc6b-402a-80e6-93f4ed55ec8e",0
+361,"Lettres Modernes Françaises","cd0173ed-79e8-4024-b14b-2674bd79f2cc",0
+362,"Lettres Arabes","77673375-6400-4434-849f-6309c066d2a9",0
+363,"S. Islamiques","7d8311cf-68b5-41bc-8175-8b0339f68ef7",0
+364,"Math-Phys-Chimie","9a3c3b12-e4ee-40b7-a177-6a3ec6c1331c",0
+365,"STE","065d19a7-b0b7-4e35-8e7c-f7d7712a9695",0
+366,"SV","9032bd11-f364-492d-bb8d-75aa1ea1fb0a",0
+367,"Soins Infirmiers","9a672e15-f8c8-4fde-9c6b-d71b22d3ca6c",0
+368,"Tronc Commun","a38aaf24-6363-4211-8bc0-4a269a11a870",0
+369,"EESP","f848f6b5-28e8-422f-85b4-45d2a88ea39c",0
+370,"ENTP","9208b127-e7f2-4eac-ac09-5bcb7a64dfd1",0
+371,"CNAED","7a59d0aa-a97d-4607-b420-c6a05e777a44",0
+372,"ENAC","2f5557e1-1a99-42c3-a2ba-d494399f1232",0
+373,"ISFR","d7333aac-5c66-4bc1-94bf-0e8d3d466f65",0
+374,"Productif","3825eeed-d7e5-4864-b123-9ce61a5f1311",0
+375,"Bandarsalama","b9c8641a-537c-40b1-8dd5-af91da898fad",0
+376,"Ouani","db005630-36f2-442a-b30c-b006a0b2fbcb",0
+377,"Mboigoma","bedeaf72-58d4-4dad-85ca-46ccb0ad49f4",0
+378,"Mutsamudu","64dd4c7a-89ff-4c20-8916-748812f353da",0
+379,"Bambao","e4c769a6-3b06-42a6-9779-3512eb05d530",0
+380,"Djando-Mlédjélé","4dde6b94-5f54-4b2d-9ad7-0d249225aab0",0
+381,"Domoni","d86b40b7-f45a-4ad5-8e13-94c8c6dad092",0
+382,"Itsandra","b9a7f69d-4d09-452e-b5c2-bf80d6909771",0
+383,"Mboudé","2e5d2fa6-a04b-47c0-80a3-b5ce6d870c8a",0
+384,"Mitsamiouli","cb5912f7-771f-4969-9f90-b880697a3604",0
+385,"Nyoumakélé","26530f3e-5bcb-4205-8187-0569c71fc011",0
+386,"Oichili-Dimani","a333ada2-6a83-4574-960d-bd4990320ec5",0
+387,"Ouzioini","b759a5f5-20b9-4bab-8c92-bdec11ae3e66",0
+388,"Sima","f054d518-a451-4b64-adf1-c1cde06cfe21",0
+389,"Dewa-Mwambao","f5b56192-dab0-4a26-ac18-962f1078e9f1",0
+390,"Foumbouni","53dd6e81-2e3f-4b2e-88e2-674afade2f76",0
+391,"Hamahamet","648a1936-8d20-411b-97bb-6f605c987680",0
+392,"Hambou","812f82dc-873e-4231-a37c-84322b8fe5c5",0
+393,"Femme 0-4 ans","4dc69d16-d4cc-457d-937c-2adab572ca7b",0
+394,"Femme 25-29 ans","9187e17b-c99c-45d2-b706-e096483e5875",0
+395,"Femme 30-34 ans","9daa9268-b431-4b58-8fa9-a9733dc1cd05",0
+396,"Femme 35-39 ans","e6f63516-3092-4a72-97bd-1036c054054c",0
+397,"Femme 40-44 ans","be03b288-04bb-49d5-aea6-ab30c92c8b08",0
+398,"Femme 45-49 ans","bebad517-cf0d-4a33-a315-2136886cc024",0
+399,"Femme 50-54 ans","2cec1e26-4cab-4051-8ea9-197cf027148c",0
+400,"Femme 55-59 ans","20f5e2cf-88bc-4f22-a4c9-650195e95dd2",0
+401,"Femme 5-9 ans","d91c9a95-dfbd-49a0-a7fd-d40c09b09daf",0
+402,"Femme 60-64 ans","a5feb11b-4b87-4907-80f9-6d21e785e54f",0
+403,"Femme 65-69 ans","040005d6-5d26-487d-8528-5cb1508b51fc",0
+404,"Femme 70-74 ans","19cf4206-6912-4123-950c-267d036db176",0
+405,"Femme 75-79 ans","dc1229e5-5f65-4d56-929e-abeef7795c40",0
+406,"Femme 80 ans et +","adf14056-a85a-4eb3-8380-547bc814c9d2",0
+407,"Homme 0-4 ans","577874f8-3d56-4662-9d57-9471a633d98c",0
+408,"Homme 25-29 ans","4a093c00-9c14-48e5-a5e8-3ea97359f220",0
+409,"Homme 30-34 ans","a1dc00fb-4754-4040-9ae1-b3f8adf91df6",0
+410,"Homme 35-39 ans","4ace48d5-0991-4a4a-97b8-e56cd5c149b0",0
+411,"Homme 40-44 ans","93ba730e-ffb7-468b-a619-6f527218a7e1",0
+412,"Homme 45-49 ans","8388a324-91d8-4f62-b51e-056574d4a869",0
+413,"Homme 50-54 ans","8f90fdb6-07ae-4756-a63c-bc842407cc25",0
+414,"Homme 55-59 ans","8589c595-4809-442e-b066-68cf9617ef6f",0
+415,"Homme 5-9 ans","76189036-ab60-4a20-b42b-71ad98de0446",0
+416,"Homme 60-64 ans","07f77047-b45b-43d4-af5f-1825cb629f6b",0
+417,"Homme 65-69 ans","9466d0a0-0cbe-4327-b698-a984aa404428",0
+418,"Homme 70-74 ans","aa892e95-a799-48b5-9dce-7c32af1bbfb5",0
+419,"Homme 75-79 ans","1f4a7ecb-a8f3-441f-ab7d-f7bc4bef12a6",0
+420,"Homme 80 ans et +","4e79cc66-20ec-4cd7-86da-1e888ac8f1a9",0
+421,"Total 0-4 ans","7c602d16-13da-4c82-8f97-60d9086480aa",0
+422,"Total 25-29 ans","3e8ae2c9-6232-4c92-8870-4ff59b8306a2",0
+423,"Total 30-34 ans","6f79fc4e-bfa2-4a86-8175-eae2f0944c4b",0
+424,"Total 35-39 ans","096ee0c0-b789-4b7c-a7e2-d2b4fd01a190",0
+425,"Total 40-44 ans","7e3b5a04-04da-4db4-99c7-d17f444b94fb",0
+426,"Total 45-49 ans","65d8a7f0-a607-4ddd-8416-9bbf52b7f511",0
+427,"Total 50-54 ans","18be2734-f951-4803-b35e-4b6d055cfe1a",0
+428,"Total 55-59 ans","fb981a2e-d168-4bc5-9873-3f6f246dbb50",0
+429,"Total 5-9 ans","f206647f-a587-4253-965d-401eb7456e05",0
+430,"Total 60-64 ans","7d49ba93-90ca-4ceb-ab97-0145eb909ddf",0
+431,"Total 65-69 ans","b4e87f28-7ca9-4154-9ade-f1b8f14a44a9",0
+432,"Total 70-74 ans","027c36b3-cccb-4d8a-8f3f-7273ddfb6100",0
+433,"Total 75-79 ans","8ce15e5b-e768-4551-a845-3f9ebb68b147",0
+434,"Total 80 ans et +","2758ab24-97d4-43c6-84fd-3448aea36ecb",0
+435,"Féminin Urbain","fd94e78e-ab14-4be6-a232-a40d24d55617",0
+436,"Masculin Rural","c4ef44c0-2a66-4c27-96cf-0307ddc67e3b",0
+437,"Masculin Urbain","a47c5fee-8a28-4ebd-80ce-e4b253951c5d",0
+438,"Urbain","07456efb-d969-4a21-8fb3-8385c7d2c7e2",0
+439,"Rural","6a7b3fc9-e3be-4b98-beb0-48d144fb392b",0
+440,"Autres villes Urbain","8e8626d7-a925-489f-b99c-18988656cc1b",0
+441,"Féminin Moroni","962f535f-70c8-40a8-83d7-ac2ddc2b6b12",0
+442,"Homme Moroni","31f0dfc7-b94b-4b74-bb6d-40f1526d667c",0
+443,"Féminin Autres villes Urbain","74840a90-938e-4cc5-910f-0dc828018a7c",0
+444,"Homme Autres villes Urbain","737f0279-5fb8-48af-8162-a93b43077957",0
+445,"Masculin Autres villes Urbain","02fe6d23-0a69-4262-b860-1a1b43e998cb",0
+446,"Autres villes Urbain Total","6735b3de-ef32-430d-ab18-67601cb3d2ab",0
+447,"Moroni Total","dfd7dccf-5aa8-4b99-9e38-4ec760533540",0
+448,"Masculin Moroni","37deb42d-46a3-4f96-8b5b-9d1f92627198",0
+454,"Femme 40-41 ans","bb15ec6c-1eb2-4a8b-98af-1a549f571cd5",0
+455,"Femme 42-43 ans","27c281d3-b23b-4869-8b55-472128c682d5",0
+456,"Femme 44-45 ans","f00e446c-d2a6-4e22-ac53-21992bbdc70f",0
+457,"Femme 46-47 ans","4de7a5fa-72b6-440b-8b36-c021040c99f3",0
+458,"Femme 48-49 ans","ad10f973-ad2e-4047-a357-49519a2a2084",0
+459,"Condom féminin","e372ac3b-5bda-4673-899a-a46fa1daa706",0
+460,"Condom masculin","81e73c4b-0237-468d-8a91-90ca48965696",0
+461,"DIU","09bad5f3-f1d8-4f60-8fcd-e91aad651705",0
+462,"Injectable","2d086e95-afe2-4f7c-9edc-e0ba84154cd7",0
+463,"Méthode de l'allaitement maternel et de l'aménorrhée (MAMA)","0b82fe82-f3f3-4afb-be3b-7a4cbece8ef9",0
+464,"N'importe quelle méthode","6ff5a9b9-ecfa-4dc3-9203-c7b4f0155042",0
+465,"Pilule","44751518-24c0-4a6d-a61c-85d8be4cf819",0
+466,"Pilule du lendemain","2644dc7a-7465-4489-a06b-83d83810338b",0
+467,"Retrait","428d416a-6248-4357-85f4-4401a8c702e5",0
+468,"Rythme","5a21562a-ccdf-4a36-94dc-043ddf0f1c0c",0
+469,"Stérilisation féminine","81397a61-63ee-4124-b625-4e420092ff51",0
+470,"Stérilisation masculine","ef98629d-8bf6-436e-b48b-dfc928f33d7b",0
+471,"Une méthode moderne","4c0be5bc-2f05-4102-a0dd-4b7ef0a87e49",0
+472,"Une méthode traditionnelle","dee943b7-efbb-417e-a175-c85f5c135edd",0
+473,"Implants","859950cc-aaa9-4d4a-b758-44209d7d99c9",0
+474,"Aucun","2ede66ce-0da3-4792-aad1-70e5f73ec760",0
+475,"Ne sait pas/manquant","8813fe4d-628b-4852-a413-8208fccadeba",0
+476,"Primaire complet","c1d6df11-1abd-4e93-9556-bdb51832e2b1",0
+477,"Primaire incomplet","384eaa6f-6814-4acc-b24c-fb631ed24e59",0
+478,"Secondaire complet","4dd5a6b2-a560-4c88-bdd0-f2ed38756e05",0
+479,"Secondaire incomplet","9bb47676-e9bf-4763-bfcf-65251468e7e2",0
+480,"Supérieur","71087e9f-073c-4c33-8700-cd61f68cbd9f",0
+481,"Femme Autres villes Urbain","b47bcdb4-9697-437f-b7e5-581c3ca819c1",0
+482,"Femme Moroni","73e5f2a8-af77-4626-9d44-65a9788dbfa8",0
+483,"Femme Rural","53e5d8b8-f9f4-49e9-ae01-7e771803d74c",0
+484,"Homme Rural","7118f766-1898-47ff-b312-541db8984179",0
+485,"Femme Total","bc45d739-12d2-4ac5-a322-c8d634474cf3",0
+486,"Homme Total","758d3cdc-1492-4026-ad41-dda3da62ad95",0
+487,"Femme Urbain","b85c95eb-be77-4179-9028-c51f4fc1999a",0
+488,"Homme Urbain","21d7fc6b-6446-45c6-84b1-a49bf4a80188",0
+489,"Autres services","b9fc88e8-87b7-4366-9cd4-55bf563dc610",0
+490,"Production bancaire imputée","45c17644-d407-40ca-a633-cd8ab4642956",0
+491,"Agriculture, élevage, pêche, sylviculture","ac45b37d-6626-4577-a288-51a70274e84f",0
+492,"Consommation privée","a5a7eb9b-43f8-48a2-b17d-71603d0fe513",0
+493,"Consommation publique","f64594ae-31a4-4aa3-8813-32a26d2257c4",0
+494,"Exportations de biens et services","952ac569-80b7-4609-baf0-34e135f34cb0",0
+495,"Formation brute de capital fixe","c3261754-b488-427e-9960-28ed7fe78a3c",0
+496,"Importations de biens et services","77f180dd-f6b2-4bfb-b798-e4bd3e1b3212",0
+497,"Produit national brut","a7eab03a-bbf3-41ab-8db4-e64c54aefb97",0
+498,"Revenus des facteurs","609e2e81-8ffb-4fe7-8855-c8cffa864375",0
+499,"Variations de stocks","ecb0002c-70eb-453b-be13-f2731e0bf541",0
+500,"Consommations finales","526a220e-d0d3-42cd-ab0f-9f344514202c",0
+501,"Exportations nettes","4219084e-ed9d-4b81-9249-2f630e649ba4",0
+502,"Hôptial du Gouvernement","bddd5262-c256-4211-9f75-f4fbf82d7e86",0
+503,"Secteur privé","e4bbc312-bfd0-4d67-9f3f-974181a8a063",0
+504,"Secteur public","df7f1725-f04f-4a7c-9226-59ebd63be88a",0
+505,"Centre de santé du Gouvernement","ce1409fe-f107-422b-8eab-5d64ae9e0471",0
+506,"Centre Médico-chirurgical","216a6fca-7b92-472a-ac55-a900b4f1dbb9",0
+507,"Agent de santé","807d023b-88b1-41a3-97f9-bc591544bb7b",0
+508,"ASCOBEF","2d06b38d-943b-48ca-841c-eaaf6522bb0e",0
+509,"Centre médical urbain","6a80fd0c-83f0-45da-9e94-b4581644dfea",0
+510,"Medcin privée","1de552bf-23ba-453c-b620-0991385f2358",0
+511,"Amis/parents","76399e78-ae90-41a7-b731-01f4006ec163",0
+512,"Autre secteur public","5e494a14-e6de-488b-aa90-3f510e6e698f",0
+513,"Autres sources","dee3f0b7-0624-4ad2-9a1d-47e3566bd1e1",0
+514,"Boutique/marché","a614f3af-39b2-45d1-8e06-dbd2845c5184",0
+515,"Centre de santé communautaire","1c5b943b-0ddb-41a7-9f26-8fcce81898a3",0
+516,"Clinique privée","1920d899-8bed-45a4-99bd-a1bd32c2527f",0
+517,"Manquant","f3512336-04e3-4ce8-a7a3-045dab492d8c",0
+518,"Medecin privé","22b2294c-54e8-4c78-a39c-034d3b9acd54",0
+519,"Pharmacie privée","34c42ade-6351-4796-92d7-9713fbb4ba28",0
+520,"Poste de santé","53cad14e-e964-41af-ad31-64d07907ebec",0
+521,"Secteur médicale privé","a6ebe860-ac08-4926-9d69-bdbdba54f32e",0
+522,"Secteur médical privé","2e10d085-9cbe-4c29-bda9-19e215154f2e",0
+523,"Médecin privé","ef354654-fe49-45ad-bd63-c321dbd70f6e",0

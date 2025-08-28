@@ -27,4 +27,129 @@ model MenuItem {
 
 }
 
+model TimePeriod {
+  TimePeriod_NId Int @id @default(autoincrement())
+  TimePeriod String @unique
+}
 
+model Unit {
+  Unit_NId Int @id @default(autoincrement())
+  Unit_Name String @unique
+  Unit_GId String @default(uuid())
+  Unit_Global Boolean @default(false)
+  IUS IUS[]
+}
+
+model SubGroupType {
+  Subgroup_Type_NId Int @id @default(autoincrement())
+  Subgroup_Type_Name String @unique
+  Subgroup_Type_GId String @default(uuid())
+  Subgroup_Type_Order Int @unique @default(autoincrement())
+  Subgroup_Type_Global Boolean @default(false)
+  children SubGroup[]
+}
+
+model SubGroup {
+  Subgroup_NId Int @id @default(autoincrement())
+  Subgroup_Name String @unique
+  Subgroup_GId String @default(uuid())
+  Subgroup_Global Boolean @default(false)
+  Type SubGroupType? @relation(fields: [Subgroup_Type], references: [Subgroup_Type_NId])
+  Subgroup_Type Int?
+  SubgroupSubGroupVals SubGroupValSubgroups[]
+}
+
+
+model SubgroupVal {
+  Subgroup_Val_NId Int @id @default(autoincrement())
+  Subgroup_Val String @unique
+  Subgroup_Val_GId String @default(uuid())
+  Subgroup_Val_Global Boolean @default(false)
+  SubgroupSubGroupVals SubGroupValSubgroups[]
+  IUS IUS[]
+}
+
+model SubGroupValSubgroups {
+  id Int @id @default(autoincrement())
+  SubgroupVal SubgroupVal? @relation(fields: [Subgroup_Val_NId], references: [Subgroup_Val_NId])
+  Subgroup SubGroup? @relation(fields: [Subgroup_NId], references: [Subgroup_NId])
+  Subgroup_Val_NId Int?
+  Subgroup_NId Int?
+
+}
+
+enum ICType {
+  GL
+  SC
+  SR
+}
+
+model IndicatorClassification {
+  IC_NId Int @id @default(autoincrement())
+  IC_GId String @unique @default(uuid())
+  IC_Name String
+  IC_Global Boolean @default(false)
+  IC_Info String?
+  IC_Type ICType @default(GL)
+  IC_Parent_NId Int? 
+  children IndicatorClassification[] @relation("Classification")
+  parent IndicatorClassification? @relation("Classification",references: [IC_NId], fields: [IC_Parent_NId])
+  IUSIC IUSIndicatorClassification[]
+}
+
+model Indicator {
+  Indicator_NId Int @id @default(autoincrement())
+  Indictor_Name String 
+  Indicator_GId String @unique
+  Indicator_Info String
+  Indicator_Global Boolean
+  IUS IUS[]
+}
+
+model IUS {
+  IUSNId Int @id @default(autoincrement())
+  Indicator Indicator @relation(references: [Indicator_NId], fields: [Indicator_NId])
+  Indicator_NId Int
+  Unit Unit @relation(references: [Unit_NId], fields: [Unit_NId])
+  Unit_NId Int
+  SubgroupVal SubgroupVal? @relation(references: [Subgroup_Val_NId], fields: [Subgroup_Val_NId])
+  Subgroup_Val_NId Int
+  Min_Value Int?
+  Max_Value Int?
+  IUSIC IUSIndicatorClassification[]
+}
+
+model IUSIndicatorClassification {
+  IC_IUSNId Int @id @default(autoincrement())
+  indicatorClassification IndicatorClassification @relation(references: [IC_NId], fields: [IC_NId])
+  IC_NId Int
+  IUS IUS @relation(references: [IUSNId], fields: [IUSNId])
+  IUSNId Int
+  IC_IUS_Order Int?
+  IC_IUS_Label String?
+  RecommendedSource Boolean @default(false)
+}
+
+model AgePeriod {
+  AgePeriod_NId Int @id @default(autoincrement())
+  AgePeriod String @unique
+}
+
+model AreaLevel {
+  Level_NId Int @id @default(autoincrement())
+  Area_Level Int @unique
+  Area_Level_Name String @unique
+  Areas Area[]
+}
+
+model Area {
+  Area_NId Int @id @default(autoincrement())
+  Area_ID String @unique
+  Area_Name String
+  Area_GId String @unique
+  Area_Level Int
+  AreaLevel AreaLevel @relation(references: [Area_Level], fields: [Area_Level])
+  AreaMap String?
+  AreaBlock String?
+  Area_Global Boolean @default(false)
+}

@@ -1,0 +1,2 @@
+﻿Area_NId;Area_ID;Area_Name;Area_GId;Area_Level;Area_Map;Area_Block;Area_Global
+491;AFR;Afrique;CD5C5210-940A-4923-A6A5-9B07BB533D7E;1;AFR_AFRICA_2003.SHP;;TRUE

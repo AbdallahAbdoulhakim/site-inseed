@@ -1,0 +1,226 @@
+﻿IC_NId;IC_Parent_GId;IC_Parent_NId;IC_GId;IC_Name;IC_Global;IC_Info;IC_Type
+109;EA58CD83-9AB1-42A1-8FA4-6C1EE05A4817;108;13F6C4BD-0D85-4856-BBFF-E08D1587E7AB;Objectif 1. Réduire l'extrême pauvreté et la faim;TRUE;;GL
+110;EA58CD83-9AB1-42A1-8FA4-6C1EE05A4817;108;56B5BADA-CEBE-4AA1-ADC6-5E4FE17B6059;Objectif 2. Assurer l'éducation primaire pour tous;TRUE;;GL
+111;EA58CD83-9AB1-42A1-8FA4-6C1EE05A4817;108;E990F012-1BB0-42AF-B582-24581B04C917;Objectif 3. Promouvoir l'égalité des sexes et l'autonomisation des femmes;TRUE;;GL
+112;EA58CD83-9AB1-42A1-8FA4-6C1EE05A4817;108;1191B9EC-F63B-44B0-855D-D8A787DF411A;Objectif 4. Réduire la mortalité des enfants;TRUE;;GL
+113;EA58CD83-9AB1-42A1-8FA4-6C1EE05A4817;108;CD8FCDB9-A44C-41EF-8DC8-C70182873B51;Objectif 5. Améliorer la santé maternelle;TRUE;;GL
+114;EA58CD83-9AB1-42A1-8FA4-6C1EE05A4817;108;3EDBBEB3-06CE-4EFC-9C81-18E29D104737;Objectif 6. Combattre le VIH/sida, le paludisme et d'autres maladies;TRUE;;GL
+115;EA58CD83-9AB1-42A1-8FA4-6C1EE05A4817;108;2384F7ED-9D34-4771-BCE0-141BF2486E52;Objectif 7. Assurer un environnement durable;TRUE;;GL
+116;EA58CD83-9AB1-42A1-8FA4-6C1EE05A4817;108;D7FE9463-BBEE-4B47-BD2B-1EDA3563171F;Objectif 8. Mettre en place un partenariat mondial pour le développement;TRUE;;GL
+192;513207ED-A731-4CEA-A2B5-8D462CA4B7BB;135;373c9030-83f3-41ad-a2fe-ed0a79600b76;Fécondité;FALSE;;SC
+194;513207ED-A731-4CEA-A2B5-8D462CA4B7BB;135;8a6f3daf-b23a-4613-8774-ef557883221f;Mortalité;FALSE;;SC
+205;513207ED-A731-4CEA-A2B5-8D462CA4B7BB;135;40357d22-5787-4c94-85fb-fc21a8a88ceb;Etat et structure de la population;FALSE;;SC
+210;513207ED-A731-4CEA-A2B5-8D462CA4B7BB;135;f78e6e6b-3b3a-44b0-942c-30c95263b57a;Etat matrimonial et Nuptialité;FALSE;;SC
+280;513207ED-A731-4CEA-A2B5-8D462CA4B7BB;135;b9fa352e-ae57-4dcc-a3f8-b0349953a334;Migration;FALSE;;SC
+230;06f2544e-3f15-466e-9392-45359515dece;211;bc5edcb6-45f9-453f-a4f8-f273e2c5c43b;0bjectif (1) - Développer et améliorer la protection et l'éducation de la petite enfance;FALSE;;GL
+231;06f2544e-3f15-466e-9392-45359515dece;211;7d6b92a6-3e53-4684-8243-3c173038f118;0bjectif (2) - Universaliser une éducation primaire obligatoire et gratuite de qualité;FALSE;;GL
+232;06f2544e-3f15-466e-9392-45359515dece;211;df8f7638-4840-4b8b-89b4-ac83f1c53e4f;0bjectif (3) - Répondre aux besoins éducatifs des jeunes et des adultes;FALSE;;GL
+233;06f2544e-3f15-466e-9392-45359515dece;211;a4061169-7743-4dce-a655-f94526bc32e7;0bjectif (4) - Améliorer de 50% les niveaux d'alphabétisation des adultes d'ici 2015;FALSE;;GL
+234;06f2544e-3f15-466e-9392-45359515dece;211;c9e3a688-6c67-4f95-a0fd-35953ae75a1d;0bjectif (5) - Eliminer les disparités entre les sexes dans l'enseignement primaire et secondaire d'ici 2005 et instaurer l'équité;FALSE;;GL
+235;06f2544e-3f15-466e-9392-45359515dece;211;1e9ec81d-88c8-4b78-ac29-af6f2f835a37;0bjectif (6) - Améliorer sous tous ses aspects la qualité de l'éducation;FALSE;;GL
+349;d28a274e-53e1-4465-ae5e-eff3fc804503;242;a158f1f1-ffc5-46f5-bf11-f97867cd8e7c;Objectif 22. Promouvoir  l’accès des populations pauvres à une éducation primaire et secondaire de qualité;FALSE;;GL
+350;d28a274e-53e1-4465-ae5e-eff3fc804503;242;ef18072c-3624-410f-8d06-4fda8e48a85d;Objectif 23. Redynamiser la formation professionnelle;FALSE;;GL
+351;d28a274e-53e1-4465-ae5e-eff3fc804503;242;5e852935-9cae-42d7-bee5-94fb5930f762;Objectif 24. Mettre en place une politique volontariste de lutte contre le paludisme;FALSE;;GL
+352;d28a274e-53e1-4465-ae5e-eff3fc804503;242;a1d29c15-0f41-4961-aab5-3572497b6774;Objectif 25. Développer un programme intégré de santé reproductive et de planification familiale;FALSE;;GL
+353;d28a274e-53e1-4465-ae5e-eff3fc804503;242;ec3b6d41-9dbe-430f-961b-fb81609f5df1;Objectif 26. Lutter contre le VIH/SIDA et  les IST;FALSE;;GL
+354;d28a274e-53e1-4465-ae5e-eff3fc804503;242;acea3602-c2a5-4d3d-a1aa-8a7e4a2f33e0;Objectif 27. Favoriser l’accessibilité et promouvoir l’utilisation des services de santé par les populations pauvres;FALSE;;GL
+355;d28a274e-53e1-4465-ae5e-eff3fc804503;242;5c9639a7-9d6a-4fe7-825c-74399ee8fd96;Objectif 28. Améliorer les capacités de stockage et de conservation des produits alimentaires;FALSE;;GL
+357;d28a274e-53e1-4465-ae5e-eff3fc804503;242;2ccff911-428e-40c6-ac10-8cb1745c57d6;Objectif 30. Prévenir les carences nutritionnelles spécifiques chez les groupes vulnérables;FALSE;;GL
+359;d28a274e-53e1-4465-ae5e-eff3fc804503;242;ba1b2666-32eb-4fc7-b61f-2f1a3c45d2bb;Objectif 31. Mettre en œuvre un système de gestion des déchets;FALSE;;GL
+360;d28a274e-53e1-4465-ae5e-eff3fc804503;242;fd0b2211-1a26-42a1-8d99-619b662bebdc;Objectif 32. Améliorer l’accessibilité des populations défavorisées à l’eau potable;FALSE;;GL
+361;d28a274e-53e1-4465-ae5e-eff3fc804503;242;bb465c7e-de8f-4e64-aa64-3e76f6cf6c20;Objectif 33. Mettre en place une politique intégrée de gestion des zones côtières ;FALSE;;GL
+362;d28a274e-53e1-4465-ae5e-eff3fc804503;242;b265d1ca-59d1-49a6-a953-775bc9325a39;Objectif 34. Mettre en place un programme d’assainissement des zones d’habitation défavorisées;FALSE;;GL
+375;d28a274e-53e1-4465-ae5e-eff3fc804503;242;0607f646-8b9d-4945-b4f2-6c88b25916d8;Objectif 01. Promouvoir une croissance économique d’au moins 5 % par an;FALSE;;GL
+376;d28a274e-53e1-4465-ae5e-eff3fc804503;242;47ce6d00-04a1-40a6-82b5-c92d7a103d2e;Objectif 11. Éliminer les entraves  au commerce inter- îles des produits agroalimentaires;FALSE;;GL
+377;d28a274e-53e1-4465-ae5e-eff3fc804503;242;8a8bb813-ebbc-406f-90f4-141079646e12;Objectif 12. Promouvoir une meilleure exploitation des ressources halieutiques;FALSE;;GL
+378;d28a274e-53e1-4465-ae5e-eff3fc804503;242;34798a01-b78e-487a-8ae7-8af3d6665e5e;Objectif 13. Intensifier les cultures vivrières de grande consommation‚ les cultures maraîchères et le petit élevage;FALSE;;GL
+379;d28a274e-53e1-4465-ae5e-eff3fc804503;242;56c300cd-deda-484a-ace7-fed5756c1bec;Objectif 14. Améliorer la production des cultures d’exportation et la qualité des produits dérivés;FALSE;;GL
+380;d28a274e-53e1-4465-ae5e-eff3fc804503;242;8e06e76e-0c40-4036-b91a-0c94e5e15b3c;Objectif 15. Promouvoir le développement d’une industrie agroalimentaire;FALSE;;GL
+381;d28a274e-53e1-4465-ae5e-eff3fc804503;242;dbb99e1c-5644-4ffc-9bf8-2b5f083fa0ca;Objectif 16. Assurer la protection des écosystèmes terrestre et marin;FALSE;;GL
+424;d28a274e-53e1-4465-ae5e-eff3fc804503;242;d0e2781e-3cb7-440e-98d6-f3f8ff1c65bc;Objectif 18. Améliorer la gestion des affaires publiques;FALSE;;GL
+425;d28a274e-53e1-4465-ae5e-eff3fc804503;242;9e82ad4c-0885-4e0d-8d23-32ecd6a6487c;Objectif 19. Rendre effective et efficace la décentralisation à tous les niveaux;FALSE;;GL
+426;d28a274e-53e1-4465-ae5e-eff3fc804503;242;d5bf0782-31c8-4f2f-a61b-c9d7ccd7a940;Objectif   2. Promouvoir le développement du secteur bancaire et financier;FALSE;;GL
+427;d28a274e-53e1-4465-ae5e-eff3fc804503;242;c32e648e-bb47-49a3-a171-52d1cd7c94ce;Objectif 20. Promouvoir la lutte contre la corruption;FALSE;;GL
+428;d28a274e-53e1-4465-ae5e-eff3fc804503;242;3c669495-ad94-4d8b-922e-d978cc6113be;Objectif 21. Mettre à niveau l’institution judiciaire et en faciliter l’accès aux pauvres;FALSE;;GL
+429;d28a274e-53e1-4465-ae5e-eff3fc804503;242;712d388c-d848-491c-b4fe-bf67fe770b13;Objectif   3. Assurer un approvisionnement régulier des entreprises et des ménages en énergie à un prix accessible ;FALSE;;GL
+430;d28a274e-53e1-4465-ae5e-eff3fc804503;242;ad59cee4-7ad0-43a0-9d76-263c7ad99da3;Objectif   4. Améliorer les infrastructures économiques et les services de communication;FALSE;;GL
+431;d28a274e-53e1-4465-ae5e-eff3fc804503;242;2e05621d-d316-4d5f-ba47-c277435319aa;Objectif   5. Réformer la fiscalité des entreprises et améliorer le cadre juridique‚ administratif et réglementaire régissant le secteur privé;FALSE;;GL
+432;d28a274e-53e1-4465-ae5e-eff3fc804503;242;7f237cde-ea29-4a87-810b-adf52011fbc3;Objectif   6. Promouvoir le développement du secteur touristique à moyen terme;FALSE;;GL
+433;d28a274e-53e1-4465-ae5e-eff3fc804503;242;9ee14d40-acda-41bc-8b56-7f0e736ae379;Objectif   7. Promouvoir les services financiers en appui au secteur privé;FALSE;;GL
+434;d28a274e-53e1-4465-ae5e-eff3fc804503;242;f21d8cac-2dbe-4562-b270-b6b53b5438c5;Objectif   8. Favoriser l’émergence et le développement des services d’appui au secteur privé;FALSE;;GL
+435;d28a274e-53e1-4465-ae5e-eff3fc804503;242;1368dddf-04df-4f86-bcb8-136bd1209554;Objectif   9. Réformer le cadre foncier;FALSE;;GL
+436;d28a274e-53e1-4465-ae5e-eff3fc804503;242;480c806e-cfeb-4668-bed3-fca4cb383c4d;Objectif   1. Assainir les finances publiques;FALSE;;GL
+437;d28a274e-53e1-4465-ae5e-eff3fc804503;242;928ecb54-141a-4812-b969-168c6a9e1cf2;Objectif 02. Réduire la pauvreté monétaire de 50% d’ici 2015;FALSE;;GL
+392;2f42a9e5-aab1-4d6b-b058-a8305a2fdfc9;244;3bfb38a0-f02f-4170-b920-b3baca6721ca;Objectif   1. Réduire d'un tiers le taux de mortalité infantile (TMl);FALSE;;GL
+393;2f42a9e5-aab1-4d6b-b058-a8305a2fdfc9;244;1e173d65-ea0a-44e0-bb93-eee084a4bbaa;Objectif 10. Assurer l'accès de toutes les femmes enceintes à des services de traitement en cas de grossesses à hauts risques et d'urgences obstétriques;FALSE;;GL
+394;2f42a9e5-aab1-4d6b-b058-a8305a2fdfc9;244;26418e5d-3f50-4418-8329-c4c803030dd1;Objectif 11. Assurer un accès universel à l'éducation primaire, l'accent étant mis tout particulièrement sur l'éducation des filles;FALSE;;GL
+395;2f42a9e5-aab1-4d6b-b058-a8305a2fdfc9;244;4cf9bc02-72fb-4f86-b959-545e4f5508bd;Objectif 12. Réduire de 50 %, la malnutrition sévère et modérée chez les enfants de moins de cinq ans;FALSE;;GL
+396;2f42a9e5-aab1-4d6b-b058-a8305a2fdfc9;244;1ca4ac65-04da-48a7-a410-91eb0887fba3;Objectif 13. Ramener à moins de 10 % la proportion d'enfants ayant un poids insuffisant à la naissance (moins de 2,5 kg);FALSE;;GL
+397;2f42a9e5-aab1-4d6b-b058-a8305a2fdfc9;244;da8fad50-35c0-4e8e-aecc-75cf2a94328d;Objectif 14. Réduire d'un tiers, par rapport à 1990, les cas d'anémie ferriprive chez les femmes;FALSE;;GL
+398;2f42a9e5-aab1-4d6b-b058-a8305a2fdfc9;244;703bf8d2-e605-4510-bce2-a40b3d1fd0c0;Objectif 15. Eliminer presque totalement les troubles dus à la carence en iode;FALSE;;GL
+399;2f42a9e5-aab1-4d6b-b058-a8305a2fdfc9;244;8fb44349-418b-4501-abfd-111ddc90ded5;Objectif 16. Eliminer presque totalement l'avitaminose A et ses effets, y compris la cécité;FALSE;;GL
+400;2f42a9e5-aab1-4d6b-b058-a8305a2fdfc9;244;63340c4c-c5ed-462a-aeab-6087aadc28d2;Objectif 17. Permettre à toutes les femmes de nourrir exclusivement au sein leurs enfants pendant une période de 4 â 6 mois et de continuer à les allaiter;FALSE;;GL
+401;2f42a9e5-aab1-4d6b-b058-a8305a2fdfc9;244;9c78087b-72b2-474e-9462-114f6e95346e;Objectif 19. Faire connaître les moyens d'accroître la production alimentaire et de fournir des services d'appui nécessaires pour garantir la sécurité alimentaire des ménages;FALSE;;GL
+402;2f42a9e5-aab1-4d6b-b058-a8305a2fdfc9;244;94268b3a-3316-4084-8f0c-8f097d2b8973;Objectif   2. Réduire de moitié le taux de mortalité maternelle (TMM);FALSE;;GL
+403;2f42a9e5-aab1-4d6b-b058-a8305a2fdfc9;244;180a67c3-1693-477f-b675-03a88ae25b5f;Objectif 20. Eradiquer la poliomyélite dans le monde entier d'ici l'an 2000;FALSE;;GL
+404;2f42a9e5-aab1-4d6b-b058-a8305a2fdfc9;244;d85f3063-e095-471e-8d56-df6bf20adc04;Objectif 21. Eradiquer le tétanos néonatal d'ici 1995;FALSE;;GL
+405;2f42a9e5-aab1-4d6b-b058-a8305a2fdfc9;244;1be1d527-251c-45cb-be8b-e57d1192dd60;Objectif 22. Réduire de 95%  les décès dus à la rougeole et de 90% les cas de rougeole;FALSE;;GL
+406;2f42a9e5-aab1-4d6b-b058-a8305a2fdfc9;244;fcaf10f7-d58b-4c06-b686-3e4c4fada42a;Objectif 23. Maintenir un taux élevé de couverture vaccinale (au moins 90% des enfants de moins d'un an);FALSE;;GL
+407;2f42a9e5-aab1-4d6b-b058-a8305a2fdfc9;244;7ebc4ab0-4024-4af8-bc12-78a708d58934;Objectif 24. Réduire de 50% le nombre de décès dus aux diarrhées chez les moins de 5 ans et de 25 % le taux d'incidence des diarrhées;FALSE;;GL
+408;2f42a9e5-aab1-4d6b-b058-a8305a2fdfc9;244;27a022df-0159-4d48-bc7d-fda81e0b9037;Objectif 25. Réduire d'un tiers les décès causés par les infections respiratoires aiguës (IRA) chez les enfants de moins de cinq ans 3;FALSE;;GL
+409;2f42a9e5-aab1-4d6b-b058-a8305a2fdfc9;244;fab44293-e28b-4457-a224-e11def99a6ab;Objectif 26. Assurer un accès universel à l'eau potable;FALSE;;GL
+410;2f42a9e5-aab1-4d6b-b058-a8305a2fdfc9;244;0f061d73-f5c5-4d12-92cc-bcbc0e52e102;Objectif 27. Assurer un accès universel à des moyens sanitaires d'évacuation des excréta;FALSE;;GL
+411;2f42a9e5-aab1-4d6b-b058-a8305a2fdfc9;244;9de47f9c-3574-4857-bde1-067c33d1eea8;Objectif 29. Elargir les activités visant à favoriser le développement des jeunes enfants;FALSE;;GL
+412;2f42a9e5-aab1-4d6b-b058-a8305a2fdfc9;244;990927f3-1c03-411c-95db-fba293846e33;Objectif   3. Réduire de moitié la malnutrition sévère et modérée chez les enfants de moins de cinq ans;FALSE;;GL
+413;2f42a9e5-aab1-4d6b-b058-a8305a2fdfc9;244;a085c613-beb4-475e-b558-cda410c236bf;Objectif 30. Assurer un accès universel à l'éducation de base;FALSE;;GL
+414;2f42a9e5-aab1-4d6b-b058-a8305a2fdfc9;244;1b9d3427-6134-4272-9a6d-c950ce4ef50a;Objectif 31. Réduire de moitié le taux d'analphabétisme des adultes, l'accent étant mis sur l'alphabétisation des femmes;FALSE;;GL
+415;2f42a9e5-aab1-4d6b-b058-a8305a2fdfc9;244;bfa1106e-bc10-46cf-955e-8861402aabbc;Objectif 32. Permettre aux familles et aux individus d'acquérir davantage de connaissances, de compétences et de valeurs pour la vie;FALSE;;GL
+416;2f42a9e5-aab1-4d6b-b058-a8305a2fdfc9;244;8995e089-57b4-4e76-b72e-61ee9be0b5f9;Objectif 33. Améliorer la protection des enfants vivant dans des circonstances particulièrement difficiles et s'attaquer aux causes profondes de ces situations.;FALSE;;GL
+417;2f42a9e5-aab1-4d6b-b058-a8305a2fdfc9;244;dd1f6e6e-030f-4a5d-a3f1-5218f7a8b2fb;Objectif   4. Assurer à des moyens hygiéniques d'évacuations des excréta;FALSE;;GL
+418;2f42a9e5-aab1-4d6b-b058-a8305a2fdfc9;244;edfadfa8-73c5-4811-8b59-d36928785c8b;Objectif   5. Faire en sorte que 80% des enfants en âge de fréquenter l'école primaire achèvent leurs études primaires;FALSE;;GL
+419;2f42a9e5-aab1-4d6b-b058-a8305a2fdfc9;244;04056e77-63db-4488-a12c-f9e700e801c0;Objectif   6. Ramener à au moins la moitié le taux d'analphabétisme chez les adultes, accent sur l'alphabétisation des femmes;FALSE;;GL
+420;2f42a9e5-aab1-4d6b-b058-a8305a2fdfc9;244;02b982eb-2b95-4e36-a73a-16220dfdb16c;Objectif   7. Améliorer la protection des enfants vivant dans des circonstances particulièrement difficiles;FALSE;;GL
+421;2f42a9e5-aab1-4d6b-b058-a8305a2fdfc9;244;f331e475-41c6-44f9-8d16-194bfdcbd84e;Objectif   8. Accorder une attention spéciale à la santé et à la nutrition des filles, des femmes enceintes et des mères allaitantes;FALSE;;GL
+422;2f42a9e5-aab1-4d6b-b058-a8305a2fdfc9;244;9401c1cd-d4ba-44da-b704-3ea321dde3dc;Objectif   9. Faire en sorte que tous les couples aient accès à l'information et aux services voulus pour prévenir une grossesses;FALSE;;GL
+423;2f42a9e5-aab1-4d6b-b058-a8305a2fdfc9;244;0fc5bcf6-29f4-4101-9f93-5cbcfab92a8d;Objectif 1b. Réduire le taux de mortalité des enfants de moins de cinq ans (TMM5);FALSE;;GL
+246;80fdf55e-154b-4ed3-935f-b675f09c4cc8;245;646cb49a-b064-4677-9a90-131bff1a6e5c;IST et VIH/SIDA;FALSE;;SC
+247;80fdf55e-154b-4ed3-935f-b675f09c4cc8;245;48de7fde-dc3c-4242-af78-a532e4fd2186;Maladies;FALSE;;SC
+248;80fdf55e-154b-4ed3-935f-b675f09c4cc8;245;86fb1814-0628-42de-8df7-998ec87e16cd;Santé maternelle;FALSE;;SC
+249;80fdf55e-154b-4ed3-935f-b675f09c4cc8;245;ea267571-1ac2-451b-82c3-60cdde87a8c1;Services de santé;FALSE;;SC
+250;80fdf55e-154b-4ed3-935f-b675f09c4cc8;245;85f68079-cd62-4f29-8971-4c56dfc56f64;Soins de santé primaires;FALSE;;SC
+251;80fdf55e-154b-4ed3-935f-b675f09c4cc8;245;b564cd0b-2def-4edf-b350-6e398baaeac9;Santé de la mère et de l’enfant;FALSE;;SC
+252;80fdf55e-154b-4ed3-935f-b675f09c4cc8;245;75b62fb0-adb1-437b-aece-8cbe016e3e40;Vaccinations;FALSE;;SC
+253;80fdf55e-154b-4ed3-935f-b675f09c4cc8;245;e9af65ed-2e5c-44a3-bb8f-4289d1bab121;Nutrition;FALSE;;SC
+441;80fdf55e-154b-4ed3-935f-b675f09c4cc8;245;c01f47cc-7b02-4aec-8f6d-7c952244335e;Santé de la reproduction et Planification familiale;FALSE;;SC
+260;0d7e809e-0f05-4fc7-aa24-9cd826331cf5;259;903827a3-0b96-4d32-89c2-7caec4dc9a2e;Alphabétisation;FALSE;;SC
+262;0d7e809e-0f05-4fc7-aa24-9cd826331cf5;259;4a4e5e00-3814-4e0e-b946-474de32d7ff1;Primaire;FALSE;;SC
+263;0d7e809e-0f05-4fc7-aa24-9cd826331cf5;259;38f371b2-4da0-43bb-95b2-b691f808fae1;Secondaire;FALSE;;SC
+264;0d7e809e-0f05-4fc7-aa24-9cd826331cf5;259;f6daec48-7d29-49e7-ab61-851e0562bee9;Supérieure;FALSE;;SC
+266;0d7e809e-0f05-4fc7-aa24-9cd826331cf5;259;5a801319-718b-43e2-bfa0-9d75ac32db02;Arts, Culture et Sports;FALSE;;SC
+286;0d7e809e-0f05-4fc7-aa24-9cd826331cf5;259;22ed79e7-6fc9-4978-9339-0acfa5683d72;Infrastructures et Dépenses de l'Education;FALSE;;SC
+453;0d7e809e-0f05-4fc7-aa24-9cd826331cf5;259;4762cd6a-5b9d-4b5b-9ad2-0e94cc80f730;Formation professionnelle et technique;FALSE;;SC
+454;0d7e809e-0f05-4fc7-aa24-9cd826331cf5;259;9e638599-421e-431c-a6eb-f250dc691619;Préscolaire;FALSE;;SC
+273;21b96b99-83f3-4d48-84e5-f92f9e281f4d;267;bb70ffe5-3133-4c03-9f41-56c6d233addd;Commerce extérieur;FALSE;;SC
+281;21b96b99-83f3-4d48-84e5-f92f9e281f4d;267;32e831ac-0652-49c6-8ed1-977ed2177fd6;Comptabilité Nationale;FALSE;;SC
+282;21b96b99-83f3-4d48-84e5-f92f9e281f4d;267;64010563-9470-45e5-b0b5-f1570f6928d1;Monnaie et Balance de paiement;FALSE;;SC
+283;21b96b99-83f3-4d48-84e5-f92f9e281f4d;267;784eb7e3-7a27-492f-b7ab-0ba494686b8c;Pauvreté et Developpement;FALSE;;SC
+284;21b96b99-83f3-4d48-84e5-f92f9e281f4d;267;6f822eb9-ddc6-4949-96e1-6503247291fe;Finances publiques;FALSE;;SC
+285;21b96b99-83f3-4d48-84e5-f92f9e281f4d;267;f2b5e328-fe3b-429b-a8f4-c7f2fa3fe98d;Emploi et Travail;FALSE;;SC
+560;21b96b99-83f3-4d48-84e5-f92f9e281f4d;267;53c3bc1c-8784-4171-9f5d-5957a9e92041;IPC;FALSE;;SC
+338;2d4e1d30-9fae-49b4-9012-e4510f596485;288;b4359c9a-8baf-4a74-92d1-17da08ff07de;Hydro-Electrique;FALSE;;SC
+339;2d4e1d30-9fae-49b4-9012-e4510f596485;288;00b1c9ea-c5d6-43e8-a818-74d65ed75efd;Autres;FALSE;;SC
+340;2d4e1d30-9fae-49b4-9012-e4510f596485;288;c4931d55-b787-432d-8811-69c8c0bccf84;Hydrocarbures;FALSE;;SC
+341;2d4e1d30-9fae-49b4-9012-e4510f596485;288;02dc3c88-1bfe-4534-bbb1-52a8e3a3cf7f;Bois;FALSE;;SC
+294;c14b23a1-596a-4b1e-a490-0c6013290326;293;1d679e4c-a22c-4460-a812-c14a1e248547;Agriculture;FALSE;;SC
+295;c14b23a1-596a-4b1e-a490-0c6013290326;293;7f24d360-5bb7-4808-8185-88f5a63490a7;Pêche;FALSE;;SC
+296;c14b23a1-596a-4b1e-a490-0c6013290326;293;4e2b7893-f256-4614-935c-723952fe1812;Elevage;FALSE;;SC
+461;c14b23a1-596a-4b1e-a490-0c6013290326;293;b7b54e1f-32f6-4d51-a45b-5d7e9e326cad;Forêt;FALSE;;SC
+462;0af8b29f-045a-4d80-9461-f2b8225e72c3;297;a305c40b-f17d-4fc6-a049-29db52341cb0;Hôtélerie et Restauration;FALSE;;SC
+463;0af8b29f-045a-4d80-9461-f2b8225e72c3;297;8647faa5-d0c1-4986-9ea3-270fd17bec0a;Voyage;FALSE;;SC
+464;0af8b29f-045a-4d80-9461-f2b8225e72c3;297;b66eac86-ad54-41b3-bbb8-d42d12ff396f;Ecotourisme;FALSE;;SC
+465;0af8b29f-045a-4d80-9461-f2b8225e72c3;297;81eb0bcb-b551-4ae0-95a0-76843754848d;Animation touristique;FALSE;;SC
+299;5cbd76ce-26a9-4563-a451-ab49de28dc29;298;9c4240a8-6ba5-40d1-a149-6ed251ad2b13;Maritime;FALSE;;SC
+300;5cbd76ce-26a9-4563-a451-ab49de28dc29;298;c14c215f-e908-4ab8-9efc-48929a31c918;Terrestre;FALSE;;SC
+301;5cbd76ce-26a9-4563-a451-ab49de28dc29;298;c088cd16-34a3-4e08-99a1-c02cceee084e;Aérien;FALSE;;SC
+303;c2757037-7c85-415f-977f-301549440654;302;d2f304cb-82f1-4cd6-ad4a-13c7d0453eb7;Gestion Publique;FALSE;;SC
+304;c2757037-7c85-415f-977f-301549440654;302;a7ae4978-5ce3-4cc7-9ed0-3bcf75d128cf;Administration;FALSE;;SC
+305;c2757037-7c85-415f-977f-301549440654;302;9c5ea17b-1404-4921-8c2d-f8251f0cb71a;Participation;FALSE;;SC
+306;c2757037-7c85-415f-977f-301549440654;302;1140b02c-b99c-4e70-a96e-1b8b486c5528;Politique;FALSE;;SC
+335;c2757037-7c85-415f-977f-301549440654;302;b04e145e-1a50-443e-878a-af4563aa4124;Genre;FALSE;;SC
+308;bf8beee5-c314-46a3-b280-172698926965;307;58b9a6ca-e82f-43c6-9eaa-b91dee3f54cd;Droit de l’enfant et de la femme;FALSE;;SC
+309;bf8beee5-c314-46a3-b280-172698926965;307;f277d35b-88eb-4651-9fc3-63f8b4e3409a;Exploitation et incapacité;FALSE;;SC
+310;bf8beee5-c314-46a3-b280-172698926965;307;f2db521e-5a3a-4702-9a6f-6d77d311cd35;Infractions et crimes;FALSE;;SC
+314;0ace0257-5216-43af-a4c5-eb69a7c3088f;313;12b30a6f-8683-436d-83e8-6f7b0bded52b;NTIC et Téléphonie;FALSE;;SC
+460;0ace0257-5216-43af-a4c5-eb69a7c3088f;313;a4bfa455-d936-40da-a9ba-608e99c497fa;Législation;FALSE;;SC
+473;0ace0257-5216-43af-a4c5-eb69a7c3088f;313;98c31385-de91-472e-ad81-85b6d39d10f4;Médias;FALSE;;SC
+326;a600e7bb-6b47-471e-ae2a-2812d1192688;324;cddc2b7b-0b5d-4b49-ab57-8b7788303fe7;Occupation des logements;FALSE;;SC
+327;a600e7bb-6b47-471e-ae2a-2812d1192688;324;6b4665f3-493e-4b52-9d21-ed2ecbeda116;Pollution;FALSE;;SC
+329;a600e7bb-6b47-471e-ae2a-2812d1192688;324;ea13bb8d-73e0-4976-8f7c-31df92f2e3f1;Ecosystème marin et côtier;FALSE;;SC
+330;a600e7bb-6b47-471e-ae2a-2812d1192688;324;809dd740-6ccf-4840-9d25-9a292b617f97;Ecosystème terrestre;FALSE;;SC
+332;a600e7bb-6b47-471e-ae2a-2812d1192688;324;7c8ada20-2ff1-4c3a-acf7-984eb1e14017;Météorologie;FALSE;;SC
+455;a600e7bb-6b47-471e-ae2a-2812d1192688;324;5d9b7f9b-606b-40fe-ab26-1a5720eaab1a;Gestion des risques et catastrophes;FALSE;;SC
+456;a600e7bb-6b47-471e-ae2a-2812d1192688;324;7f1fa51e-98e6-43ea-ad77-8d52dd567a74;Gestion des dechets;FALSE;;SC
+472;a600e7bb-6b47-471e-ae2a-2812d1192688;324;26541bac-7c38-4bb8-9bc9-214055da99cf;Protection des Especes;FALSE;;SC
+442;b9e054f1-d299-402f-a47d-f9def683d02e;438;11acc66f-2d3d-4996-8863-169ec4d8c387;Habitat;FALSE;;SC
+443;b9e054f1-d299-402f-a47d-f9def683d02e;438;763cb122-4259-47e1-8548-e19a647c80c6;Eau et Assainisement;FALSE;;SC
+444;b9e054f1-d299-402f-a47d-f9def683d02e;438;9f98356f-da23-44c4-a64b-f3e689744e6a;Urbanisation;FALSE;;SC
+569;01b51e0a-af66-4f21-93ee-11514bc9d683;568;a136aeb4-297d-44d3-8a34-b02cb4a4a13d;BCC;FALSE;;SR
+620;01b51e0a-af66-4f21-93ee-11514bc9d683;568;1cee6861-4eb2-4bd5-a54a-070cc7b4375c;Global_ BCC;FALSE;;SR
+621;01b51e0a-af66-4f21-93ee-11514bc9d683;568;d65150e4-b8b5-445f-84d5-52fe127b2efb;Global_86812;FALSE;;SR
+571;107244db-285d-4dbb-9580-c82f5080b839;570;81389c45-b259-47af-adb8-be35b35e79e9;FMI_1990-2010;FALSE;;SR
+573;0d3f3829-c39b-43b0-af0f-ed95a3d7bd41;572;c3618b69-bb1b-47eb-bedd-4fe9fa0674ae;COI_ODEROI_2006;TRUE;;SR
+575;6c28ad28-a450-4b9a-995e-1319f5eb4fc2;574;f40f8c06-6086-486d-8de5-2d5b3f1c9739;COM_AIMPSI / ASECNA / SERVICE DE LA CIRCULATION AERIENNE_1990-2010;TRUE;;SR
+576;6c28ad28-a450-4b9a-995e-1319f5eb4fc2;574;73b82ff3-8f74-4adc-ad1f-ac3c9d10f795;COM_BANQUE CENTRALE DES COMORES_1990-2010;TRUE;;SR
+577;6c28ad28-a450-4b9a-995e-1319f5eb4fc2;574;8ae47cd6-cc1c-4d1c-9f59-042594db78d3;COM_CGP / PIP_2001-2010;FALSE;;SR
+578;6c28ad28-a450-4b9a-995e-1319f5eb4fc2;574;bdf751b3-c84d-4f25-88b3-cf543b36478c;COM_CGP_SERVICE PIP_1990-2010;TRUE;;SR
+579;6c28ad28-a450-4b9a-995e-1319f5eb4fc2;574;6e014296-d0de-431c-bed4-dc590f0f1c3a;COM_DIRECTION COMMERCIALE DE LA SNPT_2002-2010;TRUE;;SR
+580;6c28ad28-a450-4b9a-995e-1319f5eb4fc2;574;7c67756a-30fb-4a04-8657-a8eb8820e4b7;COM_DIRECTION DES HYDROCARBURES_1990-2010;TRUE;;SR
+581;6c28ad28-a450-4b9a-995e-1319f5eb4fc2;574;fd45cacb-48d0-45de-8410-9833504a3d5e;COM_DIRECTION GENERALE DES DOUANES_1990-2003;TRUE;;SR
+582;6c28ad28-a450-4b9a-995e-1319f5eb4fc2;574;e2ff5128-cc28-43d5-8075-d45c922bfd4b;COM_DIRECTION GENERALE DES TRAVAUX PUBLICS_1991-2002;TRUE;;SR
+583;6c28ad28-a450-4b9a-995e-1319f5eb4fc2;574;793f3340-b707-4aac-adf5-14c45f64a228;COM_DIRECTION NATIONALE DE LA STATISTIQUE_1990-2010;TRUE;;SR
+584;6c28ad28-a450-4b9a-995e-1319f5eb4fc2;574;c8c060cf-08f1-4a59-bf7a-d5a2580ce246;COM_DIRECTION NATIONALE DU TOURISME_1990-2010;TRUE;;SR
+585;6c28ad28-a450-4b9a-995e-1319f5eb4fc2;574;5067088c-af6c-4a9f-ac46-ded734d30682;COM_EEDC / CEE / MAMWE_2000-2010;TRUE;;SR
+586;6c28ad28-a450-4b9a-995e-1319f5eb4fc2;574;051320af-7c01-4534-8699-5d8630367978;COM_ENQUETE A INDICATEURS MULTIPLES MICS_2000;TRUE;;SR
+587;6c28ad28-a450-4b9a-995e-1319f5eb4fc2;574;3c9a6d23-4664-4789-8c89-b4b98bc7bb91;COM_ENQUETE BUDGET CONSOMMATION (EBC)_1995;TRUE;;SR
+588;6c28ad28-a450-4b9a-995e-1319f5eb4fc2;574;9c5fe209-42a4-4a85-956c-45dd2a20b5d4;COM_ENQUETE DEMOGRAPHIQUE ET DE SANTE COMORES_1996;TRUE;;SR
+589;6c28ad28-a450-4b9a-995e-1319f5eb4fc2;574;2bcf1ebf-93e6-436e-84d9-7059d128ac90;COM_ENQUÊTE DEMOGRAPHIQUE ET DE SANTE ET A INDICATEURS MULTIPLES (EDS-MICS)_2012;FALSE;;SR
+590;6c28ad28-a450-4b9a-995e-1319f5eb4fc2;574;3f15093b-75d4-445c-9740-b3cb0a22a699;COM_ENQUETE INTEGRALE AUPRES DES MENAGES (EIM)_2004;TRUE;;SR
+591;6c28ad28-a450-4b9a-995e-1319f5eb4fc2;574;0ecc4965-63a7-4804-a1c9-ccaa90559eb0;COM_EVALUATION PEV_1992-1996;TRUE;;SR
+592;6c28ad28-a450-4b9a-995e-1319f5eb4fc2;574;9dec772e-a7d2-4e8b-9afa-57ef5f52b902;COM_FAO / STRATEGIE AGRICOLE_1992;TRUE;;SR
+593;6c28ad28-a450-4b9a-995e-1319f5eb4fc2;574;d69c8329-c697-40af-a86d-96c1b028cfa1;COM_FAO_STRATEGIE AGRICOLE_1992;TRUE;;SR
+594;6c28ad28-a450-4b9a-995e-1319f5eb4fc2;574;5b4f7d9d-112f-4e59-a8ed-d3f705a93f14;COM_FMI / TABLEAU DE SYNTHESE BUDGETAIRE_1990-2010;TRUE;;SR
+595;6c28ad28-a450-4b9a-995e-1319f5eb4fc2;574;35dfcb1f-a2eb-42dd-b5bf-e1ae59f8c36f;COM_FMI_TABLEAUX DE SYNTHESE BUDGETAIRE_1990-2010;TRUE;;SR
+596;6c28ad28-a450-4b9a-995e-1319f5eb4fc2;574;33dc55e7-c2bf-465a-a8ae-e2ee93cf3080;COM_INSTITUT NATIONAL DE LA STATISTIQUE ET DES ETUDES ECONOMIQUES ET DEMOGRAPHIQUES (INSEED)_2014;FALSE;;SR
+597;6c28ad28-a450-4b9a-995e-1319f5eb4fc2;574;fcfe0612-e4a6-47fe-8097-382e4f81526e;COM_MEN / DG PLANIFICATION_1990-2010;TRUE;;SR
+598;6c28ad28-a450-4b9a-995e-1319f5eb4fc2;574;abe55d4e-be10-4ea9-9adf-0fe5b835e71a;COM_MEN / TABLEAU DE BORD_2006-2007;TRUE;;SR
+599;6c28ad28-a450-4b9a-995e-1319f5eb4fc2;574;11038a81-86ff-473f-9aa4-e390a8647926;COM_MINISTERE DE LA SANTE / PLANIFICATION SANITAIRE_1990-2010;TRUE;;SR
+600;6c28ad28-a450-4b9a-995e-1319f5eb4fc2;574;ca811722-29b3-4ca0-a6ce-f3a5fb9b1e9a;COM_MINISTERE DES FINANCES / DIRECTION DU BUDGET_1990-2010;TRUE;;SR
+601;6c28ad28-a450-4b9a-995e-1319f5eb4fc2;574;bbc11646-2815-4ca6-ba5a-661b6098bd3f;COM_MINISTERE DES FINANCES / SERVICE DE LA DETTE EXTERIEURE_1990-2010;TRUE;;SR
+602;6c28ad28-a450-4b9a-995e-1319f5eb4fc2;574;bdb66350-74a9-4270-a2c2-fc0edfcc1115;COM_MINISTERE DES FINANCES_1990-2010;TRUE;;SR
+603;6c28ad28-a450-4b9a-995e-1319f5eb4fc2;574;ebc86e6e-9bcc-470e-9a52-ab7e97a94602;COM_MINISTERES DES FINANCES;FALSE;;SR
+604;6c28ad28-a450-4b9a-995e-1319f5eb4fc2;574;c3fad591-2918-497b-a0c3-8b65a47ffc91;COM_MINISTERES DES FINANCES / BCC / FMI_1990-2010;TRUE;;SR
+605;6c28ad28-a450-4b9a-995e-1319f5eb4fc2;574;c30f01d8-4299-4cbc-b12d-6b6136892db6;COM_MINISTERES DES FINANCES, BCC, FMI_1990-2010;TRUE;;SR
+606;6c28ad28-a450-4b9a-995e-1319f5eb4fc2;574;2383bdb7-1f2b-46af-b5f8-2f35df47041d;COM_PNUD / RAPPORT D'ANALYSE COMMUNE DE LA SITUATION ECONOMIQUE_2002;TRUE;;SR
+607;6c28ad28-a450-4b9a-995e-1319f5eb4fc2;574;9242711d-acee-4ef6-b857-69405977bc4a;COM_PNUD / RAPPORT DE COOPERATION AU DEVELOPPEMENT_1999;FALSE;;SR
+608;6c28ad28-a450-4b9a-995e-1319f5eb4fc2;574;93b399a5-3952-4b0b-a347-77a8a0e5ae1a;COM_PNUD, RAPPORT DE COOPERATION AU DEVELOPPEMENT_1999;TRUE;;SR
+609;6c28ad28-a450-4b9a-995e-1319f5eb4fc2;574;c44e9301-8fc5-4da0-9b1e-f015b3ec6053;COM_PNUD_RAPPORT D'ANALYSE COMMUNE DE LA SITUATION ECONOMIQUE DES COMORES_2002;TRUE;;SR
+610;6c28ad28-a450-4b9a-995e-1319f5eb4fc2;574;defe815d-7829-4cf7-af44-aaf2e7e36e7c;COM_PNUD_RAPPORT DE COOPERATION AU DEVELOPPEMENT_1999;FALSE;;SR
+611;6c28ad28-a450-4b9a-995e-1319f5eb4fc2;574;91fc1555-9d01-4e3a-b36c-71f682092ae1;COM_PORT DE MORONI / SERVICE CAPITENERIE_1990-2010;TRUE;;SR
+612;6c28ad28-a450-4b9a-995e-1319f5eb4fc2;574;123f9b24-2c06-4a88-b61c-8697d7fea147;COM_PROGRAMME NATIONAL DE LUTTE CONTRE LA LEPRE ET LA TUBERCULOSE (PNLLT)_1994-2004;TRUE;;SR
+613;6c28ad28-a450-4b9a-995e-1319f5eb4fc2;574;3f2e3177-3f89-4a77-965b-8e5c5a5e0044;COM_PROGRAMME NATIONAL DE LUTTE CONTRE LE SIDA (PNLS)_1989-2000;TRUE;;SR
+614;6c28ad28-a450-4b9a-995e-1319f5eb4fc2;574;c677b113-0f36-4d16-b9f0-136935aeb77a;COM_RAPPORT PNUD / BIT_2000;TRUE;;SR
+615;6c28ad28-a450-4b9a-995e-1319f5eb4fc2;574;a49bd86d-c079-480a-9770-4cc6ed649371;COM_RECENSEMENT GENERAL DE LA POPULATION ET DE L HABITAT_1980;TRUE;;SR
+616;6c28ad28-a450-4b9a-995e-1319f5eb4fc2;574;b2cf361c-9987-4012-8df5-6cfc1c066ee5;COM_RECENSEMENT GENERAL DE LA POPULATION ET DE L HABITAT_1991;TRUE;;SR
+617;6c28ad28-a450-4b9a-995e-1319f5eb4fc2;574;4b1236b4-9a7e-483b-a51f-9215c4c47e0b;COM_RECENSEMENT GENERAL DE LA POPULATION ET DE L HABITAT_2003;TRUE;;SR
+618;6c28ad28-a450-4b9a-995e-1319f5eb4fc2;574;90a056ba-5eb4-4a2f-8d54-eac06c052ef3;COM_SHAFOP_2006-2010;TRUE;;SR
+619;6c28ad28-a450-4b9a-995e-1319f5eb4fc2;574;43810f92-b797-4850-badc-265362bf7055;COM_TRIBUNAL / PARQUET DE LA REPUBLIQUE_2000-2015;FALSE;;SR
+623;6d61167a-75bd-4004-b76e-e5656421064b;622;1e286b6b-f706-401a-a52e-fab3816c91d5;"UN_AIDS Indicator Surveys (AIS), Behavioural Surveillance Surveys (BSS), Demographic and Health Surveys (DHS), Multiple Indicator Cluster Surveys (MICS), Reproductive Health Surveys (RHS) and other national household surveys, 2003–2008; ‘HIV/AIDS Survey Indicators Database', <www.measuredhs.com/hivdata>";FALSE;;SR
+624;6d61167a-75bd-4004-b76e-e5656421064b;622;3c872677-0e35-4f1b-9194-6170e213e7b0;"UN_AIDS Indicator Surveys (AIS), Behavioural Surveillance Surveys (BSS), Demographic and Health Surveys (DHS), Reproductive Health Surveys (RHS) and other national household surveys, 2003–2008; ‘HIV/AIDS Survey Indicators Database', <www.measuredhs.com/hivdata>";FALSE;;SR
+625;6d61167a-75bd-4004-b76e-e5656421064b;622;77383c16-6088-4289-b878-0aa932f3d0a1;"UN_AIDS Indicator Surveys (AIS), Demographic and Health Surveys (DHS), Multiple Indicator Cluster Surveys (MICS) and other national household surveys, 2003–2008; ‘HIV/AIDS Survey Indicators Database', <www.measuredhs.com/hivdata>";FALSE;;SR
+626;6d61167a-75bd-4004-b76e-e5656421064b;622;ef799d09-1e7c-46cc-bc01-bcbfa432b4c4;UN_Demographic and Health Surveys (DHS), Multiple Indicator Cluster Surveys (MICS) and malaria indicator surveys;FALSE;;SR
+627;6d61167a-75bd-4004-b76e-e5656421064b;622;06fb3adb-f01c-48aa-af93-1f28413de982;UN_Demographic and Health Surveys (DHS), Multiple Indicator Cluster Surveys (MICS) and other national household surveys;FALSE;;SR
+628;6d61167a-75bd-4004-b76e-e5656421064b;622;6f420927-444a-424f-9723-04cead184313;UN_Demographic and Health Surveys (DHS), Multiple Indicator Cluster Surveys (MICS), other national household surveys, World Health Organization (WHO) and UNICEF - (NCHS/WHO);FALSE;;SR
+629;6d61167a-75bd-4004-b76e-e5656421064b;622;699fe8fe-9ece-42d9-940e-731c5377b34a;UN_Demographic and Health Surveys (DHS), Multiple Indicator Cluster Surveys (MICS), other national household surveys, World Health Organization (WHO) and UNICEF - (WHO ref.pop.);FALSE;;SR
+630;6d61167a-75bd-4004-b76e-e5656421064b;622;184a8054-08de-47d7-b77b-8755ef139756;UN_Demographic and Health Surveys (DHS), Multiple Indicator Cluster Surveys (MICS), United Nations Population Division and UNICEF;FALSE;;SR
+631;6d61167a-75bd-4004-b76e-e5656421064b;622;46a3308e-0890-4ab6-9ccb-11ed174a909b;UN_Demographic and Health Surveys (DHS), Multiple Indicator Cluster Surveys (MICS), World Health Organization (WHO) and UNICEF;FALSE;;SR
+632;6d61167a-75bd-4004-b76e-e5656421064b;622;51fc3651-3419-4166-a19d-e0d1d523328a;UN_Inter-agency Group for Child Mortality Estimation (UNICEF, World Health Organization, United Nations Population Division and the World Bank);FALSE;;SR
+633;6d61167a-75bd-4004-b76e-e5656421064b;622;8f644958-b664-4300-bac2-32e9c295c89f;UN_International Telecommunications Union, Geneva;FALSE;;SR
+634;6d61167a-75bd-4004-b76e-e5656421064b;622;bb7d37be-22da-4773-9a93-19998e2dcfcb;UN_Joint United Nations Programme on HIV/AIDS (UNAIDS), Report on the Global AIDS Epidemic, 2008;FALSE;;SR
+635;6d61167a-75bd-4004-b76e-e5656421064b;622;11815fba-5ff0-4974-9257-09cf3a646766;UN_UNAIDS, AIDS epidemic update, 2009;FALSE;;SR
+636;6d61167a-75bd-4004-b76e-e5656421064b;622;b6b3689d-ddd2-464a-93d4-9dc7d6123d4c;UN_UNESCO Institute for Statistics (UIS);FALSE;;SR
+637;6d61167a-75bd-4004-b76e-e5656421064b;622;85321f03-f040-42bf-9832-ca726094be26;UN_UNICEF and World Health Organization (WHO);FALSE;;SR
+638;6d61167a-75bd-4004-b76e-e5656421064b;622;3bae1bc8-0f32-4234-9123-d1ef516e8b13;UN_UNICEF and World Health Organization (WHO), Joint Monitoring Programme;FALSE;;SR
+639;6d61167a-75bd-4004-b76e-e5656421064b;622;d18aa847-9480-49b6-8c90-ca2dde6a98a1;UN_World Bank;FALSE;;SR
+641;b9adfeaf-c94d-4481-9d0e-fbafb399f3aa;640;280aa0e4-c2c2-4e20-8acb-91fb7bd45d21;UNDP_HDR_2003;TRUE;;SR
+643;519f63e9-8270-4c06-9ea1-2e28f8c2e8aa;642;501421d3-7fe7-43d9-8b0a-b4fd572e1f2e;UNFPA_SOWP_2003;TRUE;;SR
+645;cc5b3bef-7acc-4aa7-a1f8-e004282bd33e;644;77b2bc2b-4df3-4c22-976c-87e7712de8fb;UNICEF_SOWC 2006;TRUE;;SR
+646;cc5b3bef-7acc-4aa7-a1f8-e004282bd33e;644;6676191f-a443-44ce-8258-c0b581a9e7e9;UNICEF_SOWC_2004;TRUE;;SR
+648;02764270-7791-40a4-9d00-4dabd500a5d7;647;6bc0b17e-27c4-4152-9d4b-0ec147c92d4a;UNSD_MDG_2006;FALSE;;SR
+649;02764270-7791-40a4-9d00-4dabd500a5d7;647;0d4f6296-e02f-4f1d-83eb-b6cabdbea038;UNSD_MDG_2006 Country Adjusted;FALSE;;SR
+650;02764270-7791-40a4-9d00-4dabd500a5d7;647;c166906b-ad48-40d6-9056-e76b02aec1ae;UNSD_MDG_2006 Country Data;FALSE;;SR
+651;02764270-7791-40a4-9d00-4dabd500a5d7;647;d15b23c4-8386-4afc-9eb1-676d6419c792;UNSD_MDG_2006 Country Data (UNFCCC);FALSE;;SR
+652;02764270-7791-40a4-9d00-4dabd500a5d7;647;011bcdb3-1259-46c0-b2f7-a5f80091ab87;UNSD_MDG_2006 Estimated;FALSE;;SR
+653;02764270-7791-40a4-9d00-4dabd500a5d7;647;e01b0d45-cacd-446a-9c95-032544c630de;UNSD_MDG_2006 Global Monitoring Data;FALSE;;SR
+654;02764270-7791-40a4-9d00-4dabd500a5d7;647;f0e84990-1a43-47fc-975e-217809013721;UNSD_MDG_2006 Global Monitoring Data (CDIAC);FALSE;;SR
+655;02764270-7791-40a4-9d00-4dabd500a5d7;647;999fd135-52c2-4f92-8e93-2b6ec6467a3e;UNSD_MDG_2006 Modelled;FALSE;;SR
+657;01f9a172-ba2f-452a-ab6c-a32249e27ae1;656;6b248b06-c97a-4e27-bad0-d474d9b54f28;WORLD BANK_WDR_2004;TRUE;;SR

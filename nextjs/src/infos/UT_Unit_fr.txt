@@ -1,0 +1,78 @@
+"Unit_NId","Unit_Name","Unit_GId","Unit_Global"
+1,"$ É.-U.","E0A16B24-DB3E-4F89-9DC0-EB570A55F709",1
+2,"$ É.-U. en PPA par kg d'équivalent pétrole","3B133994-A1A2-45BE-A04C-4ACD9BC4E125",1
+3,"1 sur n","3934860C-CCCF-41EE-A8F5-6DE84E334127",0
+4,"Années","18E62BCA-BABA-4A00-B804-7255E169BAC2",0
+5,"Décès pour 100,000 naissances vivantes","20BAC13F-9C51-4312-8D8A-C9A787D19185",1
+6,"Décès pour 1000 naissances vivantes","E009CCF1-8466-4816-B705-169EDB7E9802",1
+9,"Nombre","784D95D4-0CE0-45D9-BAFF-C9D19082FFDD",1
+10,"Pour 100 habitants","18EBDC26-DBD5-4F46-93C3-624C14400D50",1
+11,"Pour 100,000 habitants","4F5FCB7B-B738-463D-B124-1DFDD5678A26",1
+12,"Pour 1000 habitants","D5089CA6-D75B-4A54-B2AA-A5E9A8F86B38",0
+13,"Pour cent","B602B58B-6879-4188-9D49-DD833281FE4E",1
+14,"Rang","91186FD5-F0A1-48A3-81E4-0F1CDBA3E061",0
+15,"Rapport","85135146-615C-4B9E-87C5-9BCDE27771E9",1
+16,"Risque de décès maternel sur la vie entière, 1 sur n","6509F1DD-C699-474D-8172-6A85EBC924C2",0
+17,"Taux","B199B242-B747-43E2-964E-92FB64BFE0A4",1
+18,"Tonnes métriques","0DC810EE-EB83-4C1A-A673-62C4782756F6",1
+19,"$ É-U","E0A16B24-DB3E-4F89-9DC0-EB570A55F709",1
+20,"$ É-U en PPA par kg d'équivalent pétrole","3B133994-A1A2-45BE-A04C-4ACD9BC4E125",1
+22,"An","1279050B-A942-4EC1-B399-ADC0D0C61B85",0
+23,"Ans","FEF2B512-1C6A-48C5-A0DB-BB0737BCC4CD",0
+24,"Décès pour 100.000 naissances vivantes","20BAC13F-9C51-4312-8D8A-C9A787D19185",1
+25,"Habitants au km2","4E39CDF0-2F60-4CC2-A894-A88D9A0A84A3",0
+26,"Indice","A8CCFB05-AE5F-4035-92FF-FFB8A98B879A",0
+27,"Kg d'équivalent pétrole par habitant","D743C1F2-AB1B-4805-8ADA-5D59BC255B6D",0
+28,"Kilowatts-Heure","6051E382-A6D9-46F2-B83E-473A75F55DA8",0
+29,"Mille km2","55DE9569-7C85-4F16-9F91-E4231CE80D2F",0
+34,"Moyenne annuelle par adulte","CC51D630-24E5-4008-99E6-95DF4AFFE5BB",0
+35,"Par hectare","7BA61A38-81DB-4368-A373-2363F4013CB1",0
+36,"Par million d'habitants","5CB52430-83BC-453A-966D-A1E5DD2F1863",0
+37,"Pour 100.000 habitants","4F5FCB7B-B738-463D-B124-1DFDD5678A26",1
+38,"Pour 1000 femmes","E6AAFF97-AFE7-4FC1-849E-B29E84A57EA5",0
+39,"Ratio","85135146-615C-4B9E-87C5-9BCDE27771E9",1
+40,"Taux féminin en pourcentage du taux masculin","16271A96-22AA-4ACB-987D-F184D5ED4F04",0
+41,"Valeur","59A9A2B6-B069-49FC-807D-9CE3A876D03D",0
+43,"Année","7b386841-63da-44c8-b7da-5083d96c9e62",0
+44,"Millions de Fc","f2eb4109-f603-4a79-bdc1-b7014deb1bfc",0
+45,"Kcal/j/pers","a40a8be9-21b5-408c-b314-1a173860f28c",0
+46,"Nombre de lits","2c67af8a-6dfa-4663-88d6-50b1a8554d73",0
+47,"Franc comorien","63452381-9e42-4cdd-8289-d29522bf2ce8",0
+48,"Mètres cubes","a4059ea7-df9d-4cb6-8442-65e61f1f321d",0
+49,"Kwh","ffe30c53-ec8f-4462-82b1-b000ef33e06f",0
+50,"Litres","f2e9fb10-60c9-402a-8b11-db3df6a3a6d4",0
+51,"Durée en minutes","44d0bafc-dd17-4e8b-bb75-e6593402dfc5",0
+52,"Millions USD","7deb2e8c-f281-4027-ace3-e0899aec6118",0
+53,"Km","0adb139f-5bc1-4aea-bb15-0d27020d9492",0
+54,"Habitant par Km²","a3d79057-9ec5-48bd-a640-0c59ba6480cb",0
+55,"Milliers de FC","9fbbcfb3-88a8-4e7e-bc31-09262192867f",0
+56,"Jours","8ec7eac8-9ba6-41e0-bfba-a32d6b115921",0
+57,"Millier de tonnes","5f0b837d-d4ba-4cce-8403-47e77652ca36",0
+58,"Km par heure","1f3ca754-0ee8-4f2b-bbd6-cd6081f60027",0
+59,"Nuitées","8ef31a92-755f-4afc-9471-d470033b76de",0
+60,"Millimètre","81e330fd-1b60-4341-80cd-732036c7822a",0
+61,"Tonnes","99cdc8d0-860d-4bb1-b2fe-3b43f3d7ffc6",0
+62,"Mois","8bbea2b2-8c8e-4e4a-8660-90c4520859a1",0
+63,"Nombre de lignes","9704afc4-0430-4c8d-a01c-5f8d1cff4cfa",0
+64,"Millier de têtes","b6fdec94-d04b-4806-a751-885515064104",0
+65,"Hectopascals","4bb22cb8-b79b-4b11-81c0-01c7b5444914",0
+66,"Millions de Mètres cubes","c34883eb-3214-4df2-a51b-d5296a197eba",0
+67,"Méga Wh","2087284d-9c83-4cd2-a3f3-c2a42baafc53",0
+68,"km2","32371A33-91A5-4083-AA7A-C3785138E628",1
+69,"Pour 1000","7a6ead17-a68b-44bb-998e-7fbf661b774c",0
+70,"Pour 1000 naissances","1e4a4828-6c1f-4cb8-9804-7b47de4cc83e",0
+71,"Pour 100 000 naissances vivantes","251d6a3e-46f7-4ed8-8dc0-990f6e00f015",0
+72,"Degré Celsius","0e86a380-fcb4-45d2-bafb-d4a39d6f21d6",0
+73,"Millier de personnes","d17b7ae9-f210-431b-a384-9bf6c3830068",0
+74,"Milliers","A66A72BE-4B70-4F13-A63D-8EFFA99F6EB1",0
+75,"Tonnes métriques d'APD","EC499764-C026-4F10-A153-67A26F0CF800",1
+76,"Millions de $ É-U","CDA84C07-5250-4CA4-9DE9-C1831EB2577A",1
+77,"Milliers de tonnes métriques","C1F6F04A-1D0F-4E38-959C-7E0AE884D1BC",1
+78,"Unité monétaire locale en dollars Americain","b5e0b8c4-3ade-4f6f-abe2-32e1ac808ae1",1
+79,"Kg d'équivalent pétrole par 1000 $ É-U PPA","5B82F4DC-448B-434D-98A8-93A93B32E94D",1
+80,"m2","438e54e2-5c96-4fad-8ed9-e51eda099ea4",0
+81,"Kbs","e984b9a2-13a8-4010-8d8c-9834ab8a1127",0
+84,"Nombre de vol","098e9939-9c98-4a95-b100-80049ccf316b",0
+85,"Jour","f58bece3-c22f-461c-9233-dcb9690f30b9",0
+89,"Décès pour 1000 naissances","4f903237-9939-435b-b7bc-f8716f317d3c",0
+95,"Nomnbre","e6cc087f-ef3b-4ed9-9275-37c97117b061",0
