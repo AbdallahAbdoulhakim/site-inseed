@@ -41,7 +41,9 @@ interface SubGroupValData {
 interface SubGroupValSubGroupData {
   Subgroup_Val_Subgroup_NId: string;
   Subgroup_Val_NId: string;
+  Subgroup_Val_GId: string;
   Subgroup_NId: string;
+  Subgroup_GId: string;
 }
 
 interface IndicatorClassificationData {
@@ -91,6 +93,43 @@ interface AreaLevelData {
   Level_NId: string;
   Area_Level: string;
   Area_Level_Name: string;
+}
+
+interface AreaData {
+  Area_NId: string;
+  Area_Parent_NId: string;
+  Area_Parent_GId: string;
+  Area_ID: string;
+  Area_Name: string;
+  Area_GId: string;
+  Area_Level: string;
+  Area_Map: string;
+  Area_Block: string;
+  Area_Global: string;
+}
+
+interface ICSource {
+  Source_NId: string;
+  Source_GId: string;
+  Source_Name: string;
+}
+
+interface DataData {
+Data_NId:string;
+IUSNId:string;
+TimePeriod_NId:string;
+Area_NId:string;
+Data_Value:string;
+Source_NId:string;
+Indicator_NId:string;
+Unit_NId:string;
+Subgroup_Val_NId:string;
+Indicator_GId:string;
+Unit_GId:string;
+Subgroup_Val_GId:string;
+TimePeriod:string;
+Area_GId:string;
+Source_GId:string;
 }
 
 function delay(ms: number) {
@@ -167,6 +206,50 @@ async function main() {
     "utf-8"
   );
 
+  const csvAreaLevel = await fsp.readFile(
+    "./src/infos/UT_Area_Level_fr.txt",
+    "utf-8"
+  );
+
+  const csvAreaLevel1 = await fsp.readFile(
+    "./src/infos/UT_Area_fr_level-1.txt",
+    "utf-8"
+  );
+  const csvAreaLevel2 = await fsp.readFile(
+    "./src/infos/UT_Area_fr_level-2.txt",
+    "utf-8"
+  );
+  const csvAreaLevel3 = await fsp.readFile(
+    "./src/infos/UT_Area_fr_level-3.txt",
+    "utf-8"
+  );
+  const csvAreaLevel4 = await fsp.readFile(
+    "./src/infos/UT_Area_fr_level-4.txt",
+    "utf-8"
+  );
+  const csvAreaLevel5 = await fsp.readFile(
+    "./src/infos/UT_Area_fr_level-5.txt",
+    "utf-8"
+  );
+
+    const csvSources = await fsp.readFile(
+    "./src/infos/UT_Source_fr.txt",
+    "utf-8"
+  );
+
+    const csvData = await fsp.readFile(
+    "./src/infos/UT_Data.txt",
+    "utf-8"
+  );
+
+
+  
+  await delay(1000);
+
+  await prisma.timePeriod.deleteMany({});
+
+  await delay(1000);
+
   // TimePeriod SEED
   Papa.parse<TimePeriodData>(csvTimePeriod, {
     header: true,
@@ -175,22 +258,24 @@ async function main() {
 
       rows.forEach(async (row) => {
         if (!row.TimePeriod_NId) return;
-        await prisma.timePeriod.upsert({
-          where: {
-            TimePeriod: row.TimePeriod,
-          },
-          create: {
-            TimePeriod: row.TimePeriod,
-          },
-          update: {
-            TimePeriod: row.TimePeriod,
-          },
+
+        await prisma.timePeriod.create({
+          data:{
+            TimePeriod:row.TimePeriod
+          }
         });
+       
       });
     },
   });
 
   // Unit Seed
+
+  await delay(1000);
+
+  await prisma.unit.deleteMany({});
+
+  await delay(1000);
 
   Papa.parse<UnitData>(csvUnit, {
     header: true,
@@ -257,6 +342,11 @@ async function main() {
   });
 
   // SubGroup SEED
+  await delay(1000);
+
+  await prisma.subGroup.deleteMany({});
+
+  await delay(1000);
 
   Papa.parse<SubGroupData>(csvSubgroup, {
     header: true,
@@ -265,19 +355,8 @@ async function main() {
 
       rows.forEach(async (row) => {
         if (!row.Subgroup_NId) return;
-        await prisma.subGroup.upsert({
-          where: {
-            Subgroup_Name: row.Subgroup_Name,
-          },
-          create: {
-            Subgroup_NId: parseInt(row.Subgroup_NId),
-            Subgroup_Name: row.Subgroup_Name,
-            Subgroup_Type: parseInt(row.Subgroup_Type),
-            Subgroup_GId: row.Subgroup_GId,
-            Subgroup_Global: row.Subgroup_Global === "0" ? false : true,
-          },
-          update: {
-            Subgroup_NId: parseInt(row.Subgroup_NId),
+        await prisma.subGroup.create({
+          data: {
             Subgroup_Name: row.Subgroup_Name,
             Subgroup_Type: parseInt(row.Subgroup_Type),
             Subgroup_GId: row.Subgroup_GId,
@@ -290,6 +369,12 @@ async function main() {
 
   // SubGroup Val SEED
 
+  await delay(1000);
+
+  await prisma.subgroupVal.deleteMany({});
+
+  await delay(1000);
+
   Papa.parse<SubGroupValData>(csvSubgroupVal, {
     header: true,
     complete: (results) => {
@@ -297,23 +382,54 @@ async function main() {
 
       rows.forEach(async (row) => {
         if (!row.Subgroup_Val_NId) return;
-        await prisma.subgroupVal.upsert({
-          where: {
-            Subgroup_Val: row.Subgroup_Val,
-          },
-          create: {
-            Subgroup_Val_NId: parseInt(row.Subgroup_Val_NId),
-            Subgroup_Val: row.Subgroup_Val,
-            Subgroup_Val_GId: row.Subgroup_Val_GId,
-            Subgroup_Val_Global: row.Subgroup_Val_Global === "0" ? false : true,
-          },
-          update: {
-            Subgroup_Val_NId: parseInt(row.Subgroup_Val_NId),
+        await prisma.subgroupVal.create({
+          data: {
             Subgroup_Val: row.Subgroup_Val,
             Subgroup_Val_GId: row.Subgroup_Val_GId,
             Subgroup_Val_Global: row.Subgroup_Val_Global === "0" ? false : true,
           },
         });
+      });
+    },
+  });
+
+  await delay(1000);
+
+  // SubGroup Subgroup_Val SEED
+  await prisma.subGroupValSubgroups.deleteMany();
+
+  await delay(1000);
+
+  Papa.parse<SubGroupValSubGroupData>(csvSubgroupValSubGroups, {
+    header: true,
+    complete: (results) => {
+      const rows: SubGroupValSubGroupData[] = results.data;
+
+      rows.forEach(async (row) => {
+        if (!row.Subgroup_Val_Subgroup_NId) return;
+
+        await delay(5000);
+
+        try {
+          await prisma.subGroupValSubgroups.create({
+            data: {
+              Subgroup: {
+                connect: {
+                  Subgroup_GId: row.Subgroup_GId,
+                },
+              },
+              SubgroupVal: {
+                connect: {
+                  Subgroup_Val_GId: row.Subgroup_Val_GId,
+                },
+              },
+            },
+          });
+        } catch (error) {
+          console.log(
+            `SubgroupVal Subgroup Was not created Subgroup_NId: ${row.Subgroup_NId}, Subgroup_Val_NId: ${row.Subgroup_Val_NId}`
+          );
+        }
       });
     },
   });
@@ -569,7 +685,230 @@ async function main() {
     },
   });
 
+  await delay(3000);
+  // Age Period SEED
+  Papa.parse<AgePeriodData>(csvAgePeriod, {
+    header: true,
+    complete: (results) => {
+      const rows: AgePeriodData[] = results.data;
+      rows.forEach(async (row) => {
+        if (!row.AgePeriod_NId) return;
+
+        await prisma.agePeriod.create({
+          data: {
+            AgePeriod: row.AgePeriod,
+          },
+        });
+      });
+    },
+  });
+
+  // Area Level SEED
+
+  await prisma.areaLevel.deleteMany();
+
+  await delay(3000);
+
+  Papa.parse<AreaLevelData>(csvAreaLevel, {
+    header: true,
+    delimiter: ";",
+    complete: (results) => {
+      const rows: AreaLevelData[] = results.data;
+
+      rows.forEach(async (row) => {
+        if (!row.Level_NId) {
+          console.log(row);
+          return;
+        }
+        await prisma.areaLevel.create({
+          data: {
+            Area_Level: parseInt(row.Area_Level),
+            Area_Level_Name: row.Area_Level_Name,
+          },
+        });
+
+        await delay(1000);
+      });
+    },
+  });
+
+  // Area Seed
+
+  await prisma.area.deleteMany();
+
+  await delay(3000);
+
+  // Area Level 1
+
+  Papa.parse<AreaData>(csvAreaLevel1, {
+    header: true,
+    complete: (results) => {
+      const rows: AreaData[] = results.data;
+
+      rows.forEach(async (row) => {
+        if (!row.Area_NId) return;
+
+        await prisma.area.create({
+          data: {
+            Area_GId: row.Area_GId,
+            Area_ID: row.Area_ID,
+            Area_Name: row.Area_Name,
+            AreaBlock: row.Area_Block,
+            Area_Global: row.Area_Global === "TRUE" ? true : false,
+            AreaLevel: {
+              connect: {
+                Area_Level: parseInt(row.Area_Level),
+              },
+            },
+          },
+        });
+      });
+    },
+  });
+
+  await delay(3000);
+
+  // Area Level 2
+
+  Papa.parse<AreaData>(csvAreaLevel2, {
+    header: true,
+    complete: (results) => {
+      const rows: AreaData[] = results.data;
+
+      rows.forEach(async (row) => {
+        if (!row.Area_NId) return;
+
+        await prisma.area.create({
+          data: {
+            Area_GId: row.Area_GId,
+            Area_ID: row.Area_ID,
+            Area_Name: row.Area_Name,
+            AreaBlock: row.Area_Block,
+            Area_Global: row.Area_Global === "TRUE" ? true : false,
+            AreaLevel: {
+              connect: {
+                Area_Level: parseInt(row.Area_Level),
+              },
+            },
+            ParentArea: {
+              connect: {
+                Area_GId: row.Area_Parent_GId,
+              },
+            },
+          },
+        });
+      });
+    },
+  });
+
+  await delay(3000);
+
+  // Area Level 3
+
+  Papa.parse<AreaData>(csvAreaLevel3, {
+    header: true,
+    complete: (results) => {
+      const rows: AreaData[] = results.data;
+
+      rows.forEach(async (row) => {
+        if (!row.Area_NId) return;
+
+        await prisma.area.create({
+          data: {
+            Area_GId: row.Area_GId,
+            Area_ID: row.Area_ID,
+            Area_Name: row.Area_Name,
+            AreaBlock: row.Area_Block,
+            Area_Global: row.Area_Global === "TRUE" ? true : false,
+            AreaLevel: {
+              connect: {
+                Area_Level: parseInt(row.Area_Level),
+              },
+            },
+            ParentArea: {
+              connect: {
+                Area_GId: row.Area_Parent_GId,
+              },
+            },
+          },
+        });
+      });
+    },
+  });
+
+  await delay(3000);
+
+  // Area Level 4
+
+  Papa.parse<AreaData>(csvAreaLevel4, {
+    header: true,
+    complete: (results) => {
+      const rows: AreaData[] = results.data;
+
+      rows.forEach(async (row) => {
+        if (!row.Area_NId) return;
+
+        await prisma.area.create({
+          data: {
+            Area_GId: row.Area_GId,
+            Area_ID: row.Area_ID,
+            Area_Name: row.Area_Name,
+            AreaBlock: row.Area_Block,
+            Area_Global: row.Area_Global === "TRUE" ? true : false,
+            AreaLevel: {
+              connect: {
+                Area_Level: parseInt(row.Area_Level),
+              },
+            },
+            ParentArea: {
+              connect: {
+                Area_GId: row.Area_Parent_GId,
+              },
+            },
+          },
+        });
+      });
+    },
+  });
+
+  await delay(3000);
+
+  // Area Level 5
+
+  Papa.parse<AreaData>(csvAreaLevel5, {
+    header: true,
+    complete: (results) => {
+      const rows: AreaData[] = results.data;
+
+      rows.forEach(async (row) => {
+        if (!row.Area_NId) return;
+
+        await prisma.area.create({
+          data: {
+            Area_GId: row.Area_GId,
+            Area_ID: row.Area_ID,
+            Area_Name: row.Area_Name,
+            AreaBlock: row.Area_Block,
+            Area_Global: row.Area_Global === "TRUE" ? true : false,
+            AreaLevel: {
+              connect: {
+                Area_Level: parseInt(row.Area_Level),
+              },
+            },
+            ParentArea: {
+              connect: {
+                Area_GId: row.Area_Parent_GId,
+              },
+            },
+          },
+        });
+      });
+    },
+  });
+
   //IUS Indicator Classification
+
+  await delay(3000);
 
   Papa.parse<ICIUSData>(csvICIUS, {
     header: true,
@@ -623,94 +962,102 @@ async function main() {
     },
   });
 
-  // SubGroup Subgroup_Val SEED
-  /*
-  Papa.parse<SubGroupValSubGroupData>(csvSubgroupValSubGroups, {
+  // Source SEED
+
+  await delay(1000);
+
+  await prisma.source.deleteMany({});
+
+  await delay(1000);
+
+  Papa.parse<ICSource>(csvSources, {
     header: true,
     complete: (results) => {
-      const rows: SubGroupValSubGroupData[] = results.data;
+      const rows: ICSource[] = results.data;
 
-      rows.forEach(async (row) => {
-        if (!row.Subgroup_Val_Subgroup_NId) return;
-
-        await prisma.subGroupValSubgroups.upsert({
-          where: {
-            id: parseInt(row.Subgroup_Val_Subgroup_NId),
-          },
-          create: {
-            Subgroup_Val_NId: parseInt(row.Subgroup_Val_NId),
-            Subgroup_NId: parseInt(row.Subgroup_NId),
-          },
-          update: {
-            Subgroup_Val_NId: parseInt(row.Subgroup_Val_NId),
-            Subgroup_NId: parseInt(row.Subgroup_NId),
-          },
-        });
-      });
-    },
-  });
-  */
-
-  // Age Period SEED
-  Papa.parse<AgePeriodData>(csvAgePeriod, {
-    header: true,
-    complete: (results) => {
-      const rows: AgePeriodData[] = results.data;
-      rows.forEach(async (row) => {
-        if (!row.AgePeriod_NId) return;
-
-        await prisma.agePeriod.create({
-          data: {
-            AgePeriod: row.AgePeriod,
-          },
-        });
-      });
+      rows.forEach(async (row)=>{
+        await prisma.source.create({
+          data:{
+            Source_Name:row.Source_Name,
+            Source_GId:row.Source_GId
+          }
+        })
+      })
     },
   });
 
-  // Area Level SEED
+  // DATA SEED
 
-  const areaLevels = [
-    {
-      Level_NId: 1,
-      Area_Level: 1,
-      Area_Level_Name: "Level-1",
-    },
-    {
-      Level_NId: 2,
-      Area_Level: 2,
-      Area_Level_Name: "Level-2",
-    },
-    {
-      Level_NId: 3,
-      Area_Level: 3,
-      Area_Level_Name: "Level-3",
-    },
-    {
-      Level_NId: 4,
-      Area_Level: 4,
-      Area_Level_Name: "Level-4",
-    },
-    {
-      Level_NId: 5,
-      Area_Level: 5,
-      Area_Level_Name: "Level-5",
-    },
-  ];
+  await delay(1000);
 
-  areaLevels.forEach(async (row) => {
-    if (!row.Level_NId) {
-      console.log(row);
-      return;
-    }
-    await prisma.areaLevel.create({
-      data: {
-        Area_Level: row.Area_Level,
-        Area_Level_Name: row.Area_Level_Name,
-      },
-    });
+  await prisma.data.deleteMany({});
 
-    await delay(1000);
+  await delay(1000);
+
+  Papa.parse<DataData>(csvData, {
+    header: true,
+    complete: (results) => {
+      const rows: DataData[] = results.data;
+
+      rows.forEach(async (row)=>{
+        await delay(3000);
+        const [ius, tp, area, source] = await prisma.$transaction([
+          prisma.iUS.findFirst({
+            where: {
+              AND: [
+                {
+                  Indicator: {
+                    Indicator_GId: row.Indicator_GId,
+                  },
+                },
+                {
+                  SubgroupVal: {
+                    Subgroup_Val_GId: row.Subgroup_Val_GId,
+                  },
+                },
+                {
+                  Unit: {
+                    Unit_GId: row.Unit_GId,
+                  },
+                },
+              ],
+            },
+          }),
+          prisma.timePeriod.findFirst({
+            where:{
+              TimePeriod:row.TimePeriod
+            }
+          }),
+          prisma.area.findFirst({
+            where:{
+              Area_GId:row.Area_GId
+            }
+          }),
+          prisma.source.findFirst({
+            where:{
+              Source_GId:row.Source_GId
+            }
+          })
+        ]);
+
+        if (!tp || !ius || !area || !source) return;
+        
+
+        await delay(3000);
+
+        await prisma.data.create({
+          data:{
+            Data_Value:row.Data_Value,
+            Source_NId:source.Source_NId,
+            TimePeriod_NId:tp.TimePeriod_NId,
+            Area_NId:area.Area_NId, 
+            IUSNId:ius.IUSNId
+          }
+        })
+
+        await delay(3000);
+      });
+    },
   });
 }
 
