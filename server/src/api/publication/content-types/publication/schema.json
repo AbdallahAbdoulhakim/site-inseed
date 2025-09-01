@@ -11,6 +11,9 @@
   },
   "pluginOptions": {},
   "attributes": {
+    "parutionNumber": {
+      "type": "string"
+    },
     "title": {
       "type": "string"
     },
@@ -30,13 +33,10 @@
         "Chiffres détaillés"
       ]
     },
-    "numero_parution": {
-      "type": "integer"
-    },
-    "date_parution": {
+    "parutionDate": {
       "type": "datetime"
     },
-    "next_parution": {
+    "parutionNext": {
       "type": "datetime"
     },
     "printable": {
@@ -52,6 +52,9 @@
       "allowedTypes": [
         "files"
       ]
+    },
+    "publicationSlug": {
+      "type": "string"
     }
   }
 }

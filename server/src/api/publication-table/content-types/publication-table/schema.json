@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "publication_tables",
+  "info": {
+    "singularName": "publication-table",
+    "pluralName": "publication-tables",
+    "displayName": "publicationTable"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "dataurl": {
+      "type": "string"
+    },
+    "legend": {
+      "type": "string"
+    },
+    "publication_paragraph": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::publication-paragraph.publication-paragraph",
+      "inversedBy": "tables"
+    },
+    "orderNumber": {
+      "type": "integer",
+      "default": 1
+    },
+    "datafile": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "files"
+      ]
+    }
+  }
+}

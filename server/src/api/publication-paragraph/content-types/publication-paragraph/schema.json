@@ -1,0 +1,54 @@
+{
+  "kind": "collectionType",
+  "collectionName": "publication_paragraphs",
+  "info": {
+    "singularName": "publication-paragraph",
+    "pluralName": "publication-paragraphs",
+    "displayName": "publicationParagraph"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "link": {
+      "type": "string"
+    },
+    "content": {
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultMarkdown"
+      }
+    },
+    "orderNumber": {
+      "type": "integer",
+      "default": 1
+    },
+    "graphics": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::publication-graphic.publication-graphic",
+      "mappedBy": "publication_paragraph"
+    },
+    "tables": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::publication-table.publication-table",
+      "mappedBy": "publication_paragraph"
+    },
+    "table_graph": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::related-table-graph.related-table-graph"
+    },
+    "inSummary": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    }
+  }
+}

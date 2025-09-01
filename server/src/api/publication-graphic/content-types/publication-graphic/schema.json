@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "publication_graphics",
+  "info": {
+    "singularName": "publication-graphic",
+    "pluralName": "publication-graphics",
+    "displayName": "publicationGraphic"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "dataurl": {
+      "type": "string"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "line",
+        "scatter",
+        "compound"
+      ]
+    },
+    "legend": {
+      "type": "string"
+    },
+    "orderNumber": {
+      "type": "integer",
+      "default": 1
+    },
+    "publication_paragraph": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::publication-paragraph.publication-paragraph",
+      "inversedBy": "graphics"
+    },
+    "datafile": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "files"
+      ]
+    }
+  }
+}

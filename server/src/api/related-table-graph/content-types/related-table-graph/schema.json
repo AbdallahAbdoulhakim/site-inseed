@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "related_table_graphs",
+  "info": {
+    "singularName": "related-table-graph",
+    "pluralName": "related-table-graphs",
+    "displayName": "relatedTableGraph"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "table": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::publication-table.publication-table"
+    },
+    "graphic": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::publication-graphic.publication-graphic"
+    },
+    "orderNumber": {
+      "type": "integer",
+      "default": 1
+    }
+  }
+}

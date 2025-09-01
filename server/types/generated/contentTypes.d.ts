@@ -535,12 +535,138 @@ export interface ApiPartnerPartner extends Struct.CollectionTypeSchema {
       'api::partner.partner'
     > &
       Schema.Attribute.Private;
-    name: Schema.Attribute.String;
+    name: Schema.Attribute.String & Schema.Attribute.Unique;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     url: Schema.Attribute.String;
+  };
+}
+
+export interface ApiPublicationGraphicPublicationGraphic
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'publication_graphics';
+  info: {
+    displayName: 'publicationGraphic';
+    pluralName: 'publication-graphics';
+    singularName: 'publication-graphic';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    datafile: Schema.Attribute.Media<'files'>;
+    dataurl: Schema.Attribute.String;
+    legend: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::publication-graphic.publication-graphic'
+    > &
+      Schema.Attribute.Private;
+    orderNumber: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<1>;
+    publication_paragraph: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::publication-paragraph.publication-paragraph'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    type: Schema.Attribute.Enumeration<['line', 'scatter', 'compound']>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPublicationParagraphPublicationParagraph
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'publication_paragraphs';
+  info: {
+    displayName: 'publicationParagraph';
+    pluralName: 'publication-paragraphs';
+    singularName: 'publication-paragraph';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    content: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'defaultMarkdown';
+        }
+      >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    graphics: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::publication-graphic.publication-graphic'
+    >;
+    inSummary: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<false>;
+    link: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::publication-paragraph.publication-paragraph'
+    > &
+      Schema.Attribute.Private;
+    orderNumber: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<1>;
+    publishedAt: Schema.Attribute.DateTime;
+    table_graph: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::related-table-graph.related-table-graph'
+    >;
+    tables: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::publication-table.publication-table'
+    >;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPublicationTablePublicationTable
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'publication_tables';
+  info: {
+    displayName: 'publicationTable';
+    pluralName: 'publication-tables';
+    singularName: 'publication-table';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    datafile: Schema.Attribute.Media<'files'>;
+    dataurl: Schema.Attribute.String;
+    legend: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::publication-table.publication-table'
+    > &
+      Schema.Attribute.Private;
+    orderNumber: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<1>;
+    publication_paragraph: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::publication-paragraph.publication-paragraph'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
   };
 }
 
@@ -560,16 +686,17 @@ export interface ApiPublicationPublication extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     data: Schema.Attribute.Media<'files'>;
-    date_parution: Schema.Attribute.DateTime;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::publication.publication'
     > &
       Schema.Attribute.Private;
-    next_parution: Schema.Attribute.DateTime;
-    numero_parution: Schema.Attribute.Integer;
+    parutionDate: Schema.Attribute.DateTime;
+    parutionNext: Schema.Attribute.DateTime;
+    parutionNumber: Schema.Attribute.String;
     printable: Schema.Attribute.Media<'files'>;
+    publicationSlug: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     subtitle: Schema.Attribute.String;
     title: Schema.Attribute.String;
@@ -581,6 +708,43 @@ export interface ApiPublicationPublication extends Struct.CollectionTypeSchema {
         'Jeux de donn\u00E9es',
         'Chiffres d\u00E9taill\u00E9s',
       ]
+    >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiRelatedTableGraphRelatedTableGraph
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'related_table_graphs';
+  info: {
+    displayName: 'relatedTableGraph';
+    pluralName: 'related-table-graphs';
+    singularName: 'related-table-graph';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    graphic: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::publication-graphic.publication-graphic'
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::related-table-graph.related-table-graph'
+    > &
+      Schema.Attribute.Private;
+    orderNumber: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<1>;
+    publishedAt: Schema.Attribute.DateTime;
+    table: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::publication-table.publication-table'
     >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1138,7 +1302,11 @@ declare module '@strapi/strapi' {
       'api::category.category': ApiCategoryCategory;
       'api::main-indicator.main-indicator': ApiMainIndicatorMainIndicator;
       'api::partner.partner': ApiPartnerPartner;
+      'api::publication-graphic.publication-graphic': ApiPublicationGraphicPublicationGraphic;
+      'api::publication-paragraph.publication-paragraph': ApiPublicationParagraphPublicationParagraph;
+      'api::publication-table.publication-table': ApiPublicationTablePublicationTable;
       'api::publication.publication': ApiPublicationPublication;
+      'api::related-table-graph.related-table-graph': ApiRelatedTableGraphRelatedTableGraph;
       'api::team-member.team-member': ApiTeamMemberTeamMember;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
