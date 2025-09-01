@@ -1,0 +1,57 @@
+{
+  "kind": "collectionType",
+  "collectionName": "publications",
+  "info": {
+    "singularName": "publication",
+    "pluralName": "publications",
+    "displayName": "Publication"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "abstract": {
+      "type": "text"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "Informations Rapides",
+        "Chiffres clés",
+        "Série chronologiques",
+        "Jeux de données",
+        "Chiffres détaillés"
+      ]
+    },
+    "numero_parution": {
+      "type": "integer"
+    },
+    "date_parution": {
+      "type": "datetime"
+    },
+    "next_parution": {
+      "type": "datetime"
+    },
+    "printable": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "files"
+      ]
+    },
+    "data": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "files"
+      ]
+    }
+  }
+}
