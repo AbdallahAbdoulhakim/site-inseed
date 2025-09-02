@@ -29,7 +29,7 @@ interface SliderProps {
 export default function LatestNewsSwiper({ data }: SliderProps) {
   return (
     <div className="w-full p-5">
-      <ul className="h-fit w-full">
+      <div className="h-fit w-full">
         <Swiper
           pagination={{ type: "bullets", clickable: true }}
           autoplay={true}
@@ -75,7 +75,7 @@ export default function LatestNewsSwiper({ data }: SliderProps) {
             )
           )}
         </Swiper>
-      </ul>
+      </div>
     </div>
   );
 }

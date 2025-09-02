@@ -25,7 +25,7 @@ export default async function Header() {
         {/* BRANDING */}
         <Link href="/" className="leading-none flex items-center">
           <Image
-            className="max-h-10 mr-2 hidden lg:block"
+            className="max-h-10 w-auto mr-2 hidden lg:block"
             width={40}
             height={40}
             src="/logo_inseed_alt.png"

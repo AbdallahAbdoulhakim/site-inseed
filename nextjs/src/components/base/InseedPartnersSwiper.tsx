@@ -21,7 +21,7 @@ interface Props {
 export default function InseedPartnersSwiper({ data }: Props) {
   return (
     <div className="w-full p-5">
-      <ul className="h-fit w-full">
+      <div className="h-fit w-full">
         <Swiper
           pagination={{ type: "bullets", clickable: true }}
           autoplay={true}
@@ -41,14 +41,19 @@ export default function InseedPartnersSwiper({ data }: Props) {
           {data.map(({ id, name, url, image }) => (
             <SwiperSlide key={id}>
               <Link href={url}>
-                <div className=" w-[60px] h-[70px] lg:w-[86px] lg:h-[100px] xl:w-[115px]  xl:h-[135px]">
-                  <Image src={image} alt={name} fill />
+                <div className="relative w-[60px] h-[70px] lg:w-[86px] lg:h-[100px] xl:w-[115px]  xl:h-[135px]">
+                  <Image
+                    className="w-[60px] h-auto"
+                    src={image}
+                    alt={name}
+                    fill
+                  />
                 </div>
               </Link>
             </SwiperSlide>
           ))}
         </Swiper>
-      </ul>
+      </div>
     </div>
   );
 }

@@ -40,7 +40,7 @@ export default function LatestArticle({
   const date = new Date(publicationDate);
   return (
     <article
-      className="shadow-[0_0_15px_rgba(0,0,0,0.1)] font-montserrat! bg-background p-5 h-[500px] rounded-[10px] overflow-hidden"
+      className="shadow-[0_0_15px_rgba(0,0,0,0.1)] border border-primary/90 font-montserrat! bg-background p-5 h-[500px] rounded-[10px] overflow-hidden"
       data-aos="fade-up"
       data-aos-delay={delay}
     >

@@ -56,34 +56,6 @@ export default async function MainIndicatorsContainer() {
           />
         );
       })}
-      {/* <MainIndicator
-        Icon={<FaPeopleGroup />}
-        delay={200}
-        value={"870 038"}
-        label="Population"
-        description="Estimation de la population en 2023"
-      />
-      <MainIndicator
-        Icon={<FaMoneyBill />}
-        delay={200}
-        value={"- 2,0 %"}
-        label="Inflation"
-        description="Glissement annuel en Décembre 2023"
-      />
-      <MainIndicator
-        Icon={<FaAddressBook />}
-        delay={600}
-        value={"6,5 %"}
-        label="Chômage"
-        description="Enquête sur l'Économie Informelle - 2022"
-      />
-      <MainIndicator
-        Icon={<FaChartLine />}
-        delay={800}
-        value={"+ 3,6 %"}
-        label="Croissance"
-        description="Projection pour l'année 2023"
-      /> */}
     </div>
   );
 }

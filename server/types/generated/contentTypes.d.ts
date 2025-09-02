@@ -478,6 +478,42 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiKeyIndicatorKeyIndicator
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'key_indicators';
+  info: {
+    displayName: 'Key Indicator';
+    pluralName: 'key-indicators';
+    singularName: 'key-indicator';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    dataFile: Schema.Attribute.Media<'files'>;
+    dataUrl: Schema.Attribute.String;
+    date: Schema.Attribute.DateTime;
+    legend: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::key-indicator.key-indicator'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    subtitle: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    xAxisLegend: Schema.Attribute.String & Schema.Attribute.DefaultTo<'Date'>;
+    yAxisLegend: Schema.Attribute.String;
+  };
+}
+
 export interface ApiMainIndicatorMainIndicator
   extends Struct.CollectionTypeSchema {
   collectionName: 'main_indicators';
@@ -1300,6 +1336,7 @@ declare module '@strapi/strapi' {
       'api::article.article': ApiArticleArticle;
       'api::author.author': ApiAuthorAuthor;
       'api::category.category': ApiCategoryCategory;
+      'api::key-indicator.key-indicator': ApiKeyIndicatorKeyIndicator;
       'api::main-indicator.main-indicator': ApiMainIndicatorMainIndicator;
       'api::partner.partner': ApiPartnerPartner;
       'api::publication-graphic.publication-graphic': ApiPublicationGraphicPublicationGraphic;

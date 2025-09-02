@@ -2,30 +2,34 @@ import client from "@/lib/strapi";
 import KeyIndicatorsSwiper from "@/components/base/KeyIndicatorsSwiper";
 
 export default async function KeyIndicators() {
-  //   const partners = client.collection("partners");
+  const keyIndictors = client.collection("key-indicators");
 
-  //   const { data: listPartners } = await partners.find({
-  //     sort: "createdAt:asc",
+  const { data: listIndicators } = await keyIndictors.find({
+    sort: "date:desc",
 
-  //     populate: {
-  //       image: {
-  //         fields: ["name", "url"],
-  //       },
-  //     },
-  //   });
+    populate: {
+      dataFile: {
+        fields: ["name", "url"],
+      },
+    },
+  });
 
-  //   if (!listPartners.length) return;
+  if (!listIndicators.length) return;
 
-  //   const data = listPartners.map((partner, index) => {
-  //     return {
-  //       id: partner.id,
-  //       name: partner.name,
-  //       url: partner.url,
-  //       image: partner.image?.url
-  //         ? `${process.env.NEXT_PUBLIC_STRAPI_BASE_URL}${partner.image.url}`
-  //         : "/416x312.svg",
-  //     };
-  //   });
+  const data = listIndicators.map((indicator, index) => {
+    return {
+      id: indicator.id,
+      title: indicator.title,
+      subtitle: indicator.subtitle,
+      legend: indicator.legend,
+      yAxisLegend: indicator.yAxisLegend,
+      xAxisLegend: indicator.xAxisLegend,
+      dataUrl: indicator.dataFile?.url
+        ? `${process.env.NEXT_PUBLIC_STRAPI_BASE_URL}${indicator.dataFile.url}`
+        : indicator.dataUrl,
+      delay: (index + 1) * 100,
+    };
+  });
 
   return (
     <section className="px-15 pb-15 mt-10 overflow-hidden mb-15">
@@ -35,7 +39,7 @@ export default async function KeyIndicators() {
             Indicateurs Clés
           </h2>
         </div>
-        {/* <KeyIndicatorsSwiper data={data} /> */}
+        <KeyIndicatorsSwiper data={data} />
       </div>
     </section>
   );

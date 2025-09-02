@@ -23,6 +23,7 @@ export default function HeroLogo() {
         alt=""
         data-aos="zoom-out"
         data-aos-delay={100}
+        priority={true}
       />
     </div>
   );

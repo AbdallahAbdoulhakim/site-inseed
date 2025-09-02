@@ -1,12 +1,21 @@
 "use client";
-import { Autoplay } from "swiper/modules";
+
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Navigation } from "swiper/modules";
 
 import "swiper/css";
-import "swiper/css/pagination";
+import "swiper/css/navigation";
+import KeyIndicator from "@/components/base/KeyIndicator";
 
 interface IndicatorSlider {
   id: string;
+  title: string;
+  subtitle: string;
+  legend: string;
+  yAxisLegend: string;
+  xAxisLegend: string;
+  dataUrl: string;
+  delay: number;
 }
 
 interface Props {
@@ -16,35 +25,49 @@ interface Props {
 export default function KeyIndicatorsSwiper({ data }: Props) {
   return (
     <div className="w-full p-5">
-      <ul className="h-fit w-full">
+      <div className="h-full w-full">
         <Swiper
-          pagination={{ type: "bullets", clickable: true }}
           autoplay={true}
           loop={true}
-          modules={[Autoplay]}
-          slidesPerView={3}
-          spaceBetween={35}
+          modules={[Autoplay, Navigation]}
+          navigation={true}
+          slidesPerView={1}
+          spaceBetween={20}
           breakpoints={{
             1024: {
-              slidesPerView: 4,
+              slidesPerView: 2,
             },
             1280: {
-              slidesPerView: 6,
+              slidesPerView: 3,
             },
           }}
         >
-          {data.map(({ id }) => (
-            <SwiperSlide key={id}>
-              <div className=" w-[60px] h-[70px] lg:w-[86px] lg:h-[100px] xl:w-[115px]  xl:h-[135px]">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Recusandae non rerum earum atque sapiente possimus? Placeat
-                eligendi adipisci laudantium provident architecto. Eius
-                dignissimos similique minus modi aliquam ab voluptatibus nisi?
-              </div>
-            </SwiperSlide>
-          ))}
+          {data.map(
+            ({
+              id,
+              title,
+              subtitle,
+              legend,
+              xAxisLegend,
+              yAxisLegend,
+              dataUrl,
+              delay,
+            }) => (
+              <SwiperSlide key={id}>
+                <KeyIndicator
+                  title={title}
+                  subtitle={subtitle}
+                  legend={legend}
+                  delay={delay}
+                  yAxisLegend={yAxisLegend}
+                  xAxisLegend={xAxisLegend}
+                  dataUrl={dataUrl}
+                />
+              </SwiperSlide>
+            )
+          )}
         </Swiper>
-      </ul>
+      </div>
     </div>
   );
 }

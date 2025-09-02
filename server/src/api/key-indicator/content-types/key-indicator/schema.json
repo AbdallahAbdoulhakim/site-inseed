@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "key_indicators",
+  "info": {
+    "singularName": "key-indicator",
+    "pluralName": "key-indicators",
+    "displayName": "Key Indicator"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "dataFile": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "files"
+      ]
+    },
+    "dataUrl": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "text"
+    },
+    "legend": {
+      "type": "text"
+    },
+    "xAxisLegend": {
+      "type": "string",
+      "default": "Date"
+    },
+    "yAxisLegend": {
+      "type": "string"
+    },
+    "date": {
+      "type": "datetime"
+    }
+  }
+}
