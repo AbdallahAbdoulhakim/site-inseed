@@ -2,9 +2,9 @@
 
 import prisma from "@/lib/prisma";
 
-export const fetchMenu = async () => {
+export const fetchMenu = async (type: "MAIN" | "FOOTER") => {
   const bruteMenu = await prisma.menuItem.findMany({
-    where: { AND: [{ is_active: true, parentId: null }] },
+    where: { AND: [{ is_active: true, parentId: null , type:type }] },
     orderBy: {
       display_order: "asc",
     },

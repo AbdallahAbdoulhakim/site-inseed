@@ -1,6 +1,7 @@
 import prisma from "@/lib/prisma";
 
 type MenuItem = {
+  type?: "MAIN" | "FOOTER";
   label: string;
   description?: string;
   display_order: number;
@@ -11,6 +12,93 @@ type MenuItemType = {
   menuItem: MenuItem;
   children?: { menuItem: MenuItem; children?: MenuItemType[] }[];
 };
+
+const footer : MenuItemType[] = [
+  {
+    menuItem:{
+      label:"Liens utiles",
+      display_order:1,
+      type:"FOOTER",
+      url:""
+    },
+    children:[
+      {
+        menuItem: {
+          label:"L’INSEED",
+          display_order:1,
+          type:"FOOTER", 
+          url:"/inseed"}, 
+          children:[]
+      },
+      {
+        menuItem: {
+         label:"ACTUALITÉS",
+         display_order:2,
+         type:"FOOTER", 
+         url:"/news"}, 
+         children:[]
+      },
+      {
+        menuItem: {
+         label:"THÉMATIQUES",
+         display_order:3,
+         type:"FOOTER", 
+         url:"/themes"}, 
+         children:[]
+      },
+      {
+        menuItem: {
+         label:"SYSTÈME STATISTIQUE NATIONAL",
+         display_order:4,
+         type:"FOOTER", 
+         url:"/ssn"}, 
+         children:[]
+      }
+    ]
+  },
+  {
+    menuItem:{
+      label:"Nos Publications",
+      display_order:1,
+      type:"FOOTER",
+      url:""
+    },
+    children:[
+      {
+        menuItem: {
+          label:"BULLETIN DE CONJONCTURE",
+          display_order:1,
+          type:"FOOTER", 
+          url:"/publications/publications-database/economic-bulletin"}, 
+          children:[]
+      },
+      {
+        menuItem: {
+         label:"COMPTES NATIONAUX ET ÉTUDES ÉCONOMIQUES",
+         display_order:2,
+         type:"FOOTER", 
+         url:"/publications/publications-database/national-accounts-and-economic-studies"}, 
+         children:[]
+      },
+      {
+        menuItem: {
+         label:"NOTES DE CONJONCTURE",
+         display_order:3,
+         type:"FOOTER", 
+         url:"/publications/publications-database/memo-on-the-economy"}, 
+         children:[]
+      },
+      {
+        menuItem: {
+         label:"STATISTIQUE DU COMMERCE EXTÉRIEUR",
+         display_order:4,
+         type:"FOOTER", 
+         url:"/publications/publications-database/foreign-trade-statistics"}, 
+         children:[]
+      }
+    ]
+  }
+];
 
 const menus: MenuItemType[] = [
   {
@@ -685,6 +773,9 @@ async function createMenusElement(
       url: menuElement.menuItem.url,
       display_order: menuElement.menuItem.display_order,
       ...(parentId ? { parentId: parentId } : {}),
+      ...(menuElement.menuItem.type
+        ? { type: menuElement.menuItem.type }
+        : {}),
     },
   });
 
@@ -699,6 +790,11 @@ async function main() {
   menus.forEach((menu) => {
     createMenusElement(menu, null);
   });
+
+  footer.forEach((menu) => {
+    createMenusElement(menu, null);
+  });
+
 }
 
 main()

@@ -1,9 +1,13 @@
 -- CreateEnum
+CREATE TYPE "public"."MenuType" AS ENUM ('MAIN', 'FOOTER');
+
+-- CreateEnum
 CREATE TYPE "public"."ICType" AS ENUM ('GL', 'SC', 'SR');
 
 -- CreateTable
 CREATE TABLE "public"."MenuItem" (
     "id" TEXT NOT NULL,
+    "type" "public"."MenuType" NOT NULL DEFAULT 'MAIN',
     "label" VARCHAR(255) NOT NULL,
     "description" VARCHAR(500),
     "url" TEXT NOT NULL,

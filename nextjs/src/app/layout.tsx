@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Roboto, Roboto_Mono, Montserrat, Poppins } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/base/Header";
+import Footer from "@/components/base/Footer";
 
 const robotoSans = Roboto({
   variable: "--font-roboto-sans",
@@ -41,6 +42,7 @@ export default function RootLayout({
       >
         <Header />
         <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );

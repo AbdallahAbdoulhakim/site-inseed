@@ -14,8 +14,14 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+enum MenuType {
+  MAIN
+  FOOTER
+}
+
 model MenuItem {
   id String @id @default(cuid())
+  type MenuType @default(MAIN)
   label String @db.VarChar(255)
   description String? @db.VarChar(500)
   url String

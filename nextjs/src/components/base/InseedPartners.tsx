@@ -16,7 +16,7 @@ export default async function InseedPartners() {
 
   if (!listPartners.length) return;
 
-  const data = listPartners.map((partner, index) => {
+  const data = listPartners.map((partner) => {
     return {
       id: partner.id,
       name: partner.name,

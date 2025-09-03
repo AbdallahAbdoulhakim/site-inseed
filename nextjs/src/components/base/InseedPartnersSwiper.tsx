@@ -41,12 +41,15 @@ export default function InseedPartnersSwiper({ data }: Props) {
           {data.map(({ id, name, url, image }) => (
             <SwiperSlide key={id}>
               <Link href={url}>
-                <div className="relative w-[60px] h-[70px] lg:w-[86px] lg:h-[100px] xl:w-[115px]  xl:h-[135px]">
+                <div className="relative w-[60px] h-[100px] lg:w-[86px]  xl:w-[115px]  xl:h-[135px] flex flex-col items-center justify-center">
                   <Image
                     className="w-[60px] h-auto"
+                    loading="lazy"
                     src={image}
                     alt={name}
                     fill
+                    style={{ objectFit: "contain" }}
+                    sizes="100vw"
                   />
                 </div>
               </Link>

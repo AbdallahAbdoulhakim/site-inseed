@@ -53,6 +53,7 @@ export default function TeamMember({
             alt=""
             fill
             quality={80}
+            sizes="100vw"
           />
         </div>
 

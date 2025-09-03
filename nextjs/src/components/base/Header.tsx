@@ -17,7 +17,7 @@ export interface MenuItem {
 }
 
 export default async function Header() {
-  const menu = await fetchMenu();
+  const menu = await fetchMenu("MAIN");
   return (
     <header className="w-full mx-auto sticky top-0 bg-primary text-default z-10 transition-all duration-500">
       <Topbar />

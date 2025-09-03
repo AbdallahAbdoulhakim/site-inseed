@@ -25,7 +25,7 @@ export default function TeamContainer({ members, title }: TeamContainerProps) {
     });
   }, []);
   return (
-    <section id="team" className="px-15 pb-15 mt-10 overflow-hidden mb-15">
+    <section id="team" className="px-15 pb-10 mt-10 overflow-hidden mb-5">
       <div className="container m-auto" data-aos="fade-up">
         <div className="text-center pb-15">
           <h2 className="text-4xl font-semibold mb-5 pb-5 relative font-montserrat after:content-[''] after:absolute after:block after:w-[50px] after:h-[3px] after:bg-primary after:left-0 after:right-0 after:bottom-0 after:m-auto">
