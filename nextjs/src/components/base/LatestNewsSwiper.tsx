@@ -7,7 +7,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
 import "swiper/css/pagination";
-import LatestArticle from "@/components/base/LatestArticle";
+import NewsArticleBox from "@/components/base/NewsArticleBox";
 
 interface Slide {
   id: string;
@@ -60,7 +60,7 @@ export default function LatestNewsSwiper({ data }: SliderProps) {
               delay,
             }) => (
               <SwiperSlide key={id}>
-                <LatestArticle
+                <NewsArticleBox
                   category={category}
                   categorySlug={categorySlug}
                   thumbnail={thumbnail}

@@ -8,9 +8,34 @@ import { fetchSubMenuByUrl } from "@/actions/menu";
 export default function PageHeader() {
   const [loading, setLoading] = useState(true);
   const [menuElt, setMenuElt] = useState<MenuItem | null | undefined>();
-
+  const [labels, setLabels] = useState<{
+    label: string | undefined | null;
+    description: string | undefined | null;
+  }>({ label: "", description: "" });
   const pathname = usePathname();
   const pathParts = pathname.split("/").filter((part) => part.length > 0);
+
+  const getLabelSubTitle = (menu: MenuItem | null | undefined) => {
+    console.log(pathParts.length);
+    if (pathParts.length === 1) {
+      setLabels({
+        label: menu?.label,
+        description: menu?.description,
+      });
+    } else if (pathParts.length === 2) {
+      const subElt = menu?.children.find((elt) => elt.url === pathname);
+
+      setLabels({
+        label: subElt?.label,
+        description: subElt?.description,
+      });
+    } else {
+      setLabels({
+        label: "",
+        description: "",
+      });
+    }
+  };
 
   useEffect(() => {
     async function loadData() {
@@ -22,12 +47,21 @@ export default function PageHeader() {
     loadData();
   }, []);
 
+  useEffect(() => {
+    getLabelSubTitle(menuElt);
+    console.log(labels);
+  }, [menuElt, pathname]);
+
   return (
     <div
       className={
         loading
           ? "flex flex-col items-center justify-center"
-          : menuElt?.children.find((elt) => elt.url === pathname)
+          : !menuElt?.parentId ||
+            menuElt?.children.find((elt) => elt.url === pathname) ||
+            menuElt?.children.some((child) =>
+              child.children.find((elt) => elt.url === pathname)
+            )
           ? "flex flex-col"
           : "hidden"
       }
@@ -41,20 +75,11 @@ export default function PageHeader() {
               <div className="flex flex-col justify-center">
                 <div className="max-w-lg px-5 md:px-0  text-center">
                   <h2 className="text-5xl font-[500] text-white font-poppins">
-                    {
-                      menuElt?.children.find((elt) => elt.url === pathname)
-                        ?.label
-                    }
+                    {labels.label}
                   </h2>
 
-                  {menuElt?.children.find((elt) => elt.url === pathname)
-                    ?.description && (
-                    <p className="text-white/80">
-                      {
-                        menuElt?.children.find((elt) => elt.url === pathname)
-                          ?.description
-                      }
-                    </p>
+                  {labels.description && (
+                    <p className="text-white/80">{labels.description}</p>
                   )}
                 </div>
               </div>

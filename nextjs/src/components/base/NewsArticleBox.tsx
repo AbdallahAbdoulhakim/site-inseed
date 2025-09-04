@@ -7,7 +7,7 @@ import "aos/dist/aos.css";
 
 import { useEffect } from "react";
 
-interface LatestArticleProps {
+interface NewsArticleBoxProps {
   category: string;
   categorySlug: string;
   thumbnail: string;
@@ -19,7 +19,7 @@ interface LatestArticleProps {
   delay: number;
 }
 
-export default function LatestArticle({
+export default function NewsArticleBox({
   category,
   categorySlug,
   thumbnail,
@@ -29,7 +29,7 @@ export default function LatestArticle({
   authorImg,
   publicationDate,
   delay,
-}: LatestArticleProps) {
+}: NewsArticleBoxProps) {
   useEffect(() => {
     AOS.init({
       duration: 1000,
