@@ -16,7 +16,6 @@ export default function PageHeader() {
   const pathParts = pathname.split("/").filter((part) => part.length > 0);
 
   const getLabelSubTitle = (menu: MenuItem | null | undefined) => {
-    console.log(pathParts.length);
     if (pathParts.length === 1) {
       setLabels({
         label: menu?.label,
@@ -49,7 +48,6 @@ export default function PageHeader() {
 
   useEffect(() => {
     getLabelSubTitle(menuElt);
-    console.log(labels);
   }, [menuElt, pathname]);
 
   return (

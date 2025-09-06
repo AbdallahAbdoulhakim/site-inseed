@@ -8,55 +8,7 @@ import {
 } from "react-icons/fa6";
 
 import { fetchMenu } from "@/actions/menu";
-import { contact } from "@/lib/miscellaneous";
-
-// const socials: { id: number; type: string; link: string; icon: JSX.Element }[] =
-//   [
-//     {
-//       id: 1,
-//       type: "Twitter-X",
-//       link: "https://x.com/",
-//       icon: (
-//         <FaXTwitter
-//           className="text-background/60 hover:text-background"
-//           size={20}
-//         />
-//       ),
-//     },
-//     {
-//       id: 2,
-//       type: "Facebook",
-//       link: "https://facebook.com/",
-//       icon: (
-//         <FaFacebook
-//           className="text-background/60 hover:text-background"
-//           size={20}
-//         />
-//       ),
-//     },
-//     {
-//       id: 3,
-//       type: "Instagram",
-//       link: "https://instagram.com/",
-//       icon: (
-//         <FaInstagram
-//           className="text-background/60 hover:text-background"
-//           size={20}
-//         />
-//       ),
-//     },
-//     {
-//       id: 4,
-//       type: "LinkedIn",
-//       link: "https://linkedin.com/",
-//       icon: (
-//         <FaLinkedin
-//           className="text-background/60 hover:text-background"
-//           size={20}
-//         />
-//       ),
-//     },
-//   ];
+import { contact } from "@/lib/settings";
 
 export default async function Footer() {
   const menu = await fetchMenu("FOOTER");

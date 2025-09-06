@@ -10,7 +10,7 @@ import {
   FaHandshakeSimple,
 } from "react-icons/fa6";
 
-import { contact } from "@/lib/miscellaneous";
+import { contact } from "@/lib/settings";
 
 export default function Topbar() {
   return (

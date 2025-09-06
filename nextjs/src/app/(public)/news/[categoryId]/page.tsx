@@ -2,11 +2,14 @@ import CategoryArticles from "@/components/public/CategoryArticles";
 import { truncateString } from "@/lib/miscellaneous";
 import client from "@/lib/strapi";
 import { notFound } from "next/navigation";
+import { ITEM_PER_PAGE } from "@/lib/settings";
 
 export default async function NewsCategory({
   params,
+  searchParams,
 }: {
   params: Promise<{ categoryId: string }>;
+  searchParams: Promise<{ [key: string]: string | undefined }>;
 }) {
   const { categoryId } = await params;
 
@@ -22,7 +25,11 @@ export default async function NewsCategory({
 
   const articles = client.collection("articles");
 
-  const { data: articlesList } = await articles.find({
+  const { page } = await searchParams;
+
+  const queryPage = page ? parseInt(page) : 1;
+
+  const { data: articlesList, meta } = await articles.find({
     filters: {
       category: {
         documentId: category[0].documentId,
@@ -30,7 +37,8 @@ export default async function NewsCategory({
     },
     sort: "publicationDate:desc",
     pagination: {
-      limit: 10,
+      page: queryPage,
+      pageSize: ITEM_PER_PAGE,
     },
     populate: {
       thumbnail: {
@@ -49,6 +57,8 @@ export default async function NewsCategory({
       },
     },
   });
+
+  const { pagination } = meta;
 
   if (!articlesList.length) return;
 
@@ -75,5 +85,7 @@ export default async function NewsCategory({
     };
   });
 
-  return <CategoryArticles data={data} />;
+  return (
+    <CategoryArticles data={data} page={queryPage} count={pagination?.total!} />
+  );
 }
