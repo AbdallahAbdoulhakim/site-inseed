@@ -55,31 +55,6 @@ export default function LatestPublication({
             <p className="text-xs md:text-sm lg:text-base font-semibold text-primary hover:text-primary/60 mt-[10px]">
               <Link href={publicationSlug}>{title}</Link>
             </p>
-
-            {/* <h2 className="text-[22px] font-bold p-0 mb-[20px]">
-            <Link
-              className="text-default hover:text-primary"
-              href={articleSlug}
-            >
-              {title}
-            </Link>
-          </h2>
-
-          <div className="flex items-center">
-            <img
-              src={authorImg}
-              alt={author}
-              className="max-w-full h-auto w-[50px] rounded-[50%] mr-[15px] shrink-0"
-            />
-            <div className="post-meta">
-              <p className="font-semibold mb-[5px]">{author}</p>
-              <p className="text-[14px] text-[#3c3c3c] mb-0">
-                <time dateTime={date.toISOString()}>
-                  {date.toLocaleDateString()}
-                </time>
-              </p>
-            </div>
-          </div> */}
           </div>
         </div>
       </div>

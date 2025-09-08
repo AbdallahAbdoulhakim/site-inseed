@@ -15,6 +15,8 @@ export default function Pagination({
 }) {
   const router = useRouter();
 
+  if (count < ITEM_PER_PAGE) return;
+
   const changePage = (newPage: number) => {
     const params = new URLSearchParams(window.location.search);
     params.set("page", newPage.toString());

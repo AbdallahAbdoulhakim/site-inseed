@@ -51,7 +51,7 @@ export default function NewsArticleBox({
 
         <div className="flex flex-col justify-between grow">
           <p className="text-base text-[#6f6f6f] hover:text-[#6f6f6f]/60 mb-[10px]">
-            <Link href={categorySlug}>{category}</Link>
+            <Link href={`/news/${categorySlug}`}>{category}</Link>
           </p>
 
           <h2 className="text-[22px] font-bold p-0 mb-[20px]">
