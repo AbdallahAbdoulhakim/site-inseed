@@ -1,4 +1,5 @@
 import ArticlePage from "@/components/public/ArticlePage";
+import { truncateString } from "@/lib/miscellaneous";
 import client from "@/lib/strapi";
 import { notFound } from "next/navigation";
 import { v4 as uuid } from "uuid";
@@ -11,6 +12,8 @@ export default async function NewsArticle({
   const { articleId } = await params;
 
   const articles = client.collection("articles");
+
+  const categories = client.collection("categories");
 
   const { data: response } = await articles.find({
     filters: {
@@ -27,12 +30,33 @@ export default async function NewsArticle({
         fields: ["name", "slug"],
       },
       author: {
-        fields: ["name"],
+        fields: ["name", "description", "facebook", "instagram", "twitter"],
         populate: {
           image: {
             fields: ["name", "url"],
           },
         },
+      },
+    },
+  });
+
+  const { data: listCategories } = await categories.find({
+    populate: {
+      articles: {
+        fields: ["title"],
+      },
+    },
+  });
+
+  const { data: latestArticles } = await articles.find({
+    sort: "publicationDate:desc",
+    pagination: {
+      pageSize: 5,
+    },
+    fields: ["title", "publicationDate"],
+    populate: {
+      thumbnail: {
+        fields: ["name", "url"],
       },
     },
   });
@@ -63,7 +87,7 @@ export default async function NewsArticle({
     );
   }
 
-  const data = {
+  const contentData = {
     id: article.id,
     category: article.category?.name,
     categorySlug: article.category?.slug,
@@ -75,10 +99,45 @@ export default async function NewsArticle({
     authorImg: article.author?.image?.url
       ? `${process.env.NEXT_PUBLIC_STRAPI_BASE_URL}${article.author.image.url}`
       : "/default_avatar.png",
+    authorDesc: article.author?.description,
+    authorFacebook: article.author?.facebook,
+    authorInstagram: article.author?.instagram,
+    authorTwitter: article.author?.twitter,
     publicationDate: article.publicationDate
       ? article.publicationDate
       : article.createdAt,
   };
 
-  return <ArticlePage data={data} />;
+  const categoriesCount: {
+    id: string;
+    name: string;
+    articles: number;
+    slug: string;
+  }[] = listCategories.map((cat) => {
+    return {
+      id: cat.documentId,
+      name: cat.name,
+      articles: cat.articles ? cat.articles.length : 0,
+      slug: cat.slug,
+    };
+  });
+
+  const articlesList = latestArticles.map((article) => {
+    return {
+      id: article.documentId,
+      publicationDate: article.publicationDate,
+      thumbnail: article.thumbnail?.url
+        ? `${process.env.NEXT_PUBLIC_STRAPI_BASE_URL}${article.thumbnail.url}`
+        : "/416x312.svg",
+      title: truncateString(article.title, 110),
+    };
+  });
+
+  return (
+    <ArticlePage
+      contentData={contentData}
+      categoriesCount={categoriesCount}
+      articlesList={articlesList}
+    />
+  );
 }

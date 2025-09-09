@@ -3,6 +3,7 @@
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect } from "react";
 
 import {
@@ -63,36 +64,36 @@ export default function TeamMember({
         <span className="block text-[14px] text-[#6c757d]">{description}</span>
         <div className="mt-4 mb-2.5 flex items-center justify-around h-8 w-full">
           {twitter && (
-            <a
+            <Link
               className="text-[#a2a2a2] group hover:border-primary/90 transition-all rounded-[50%] w-[40px] h-[40px] flex items-center justify-center border border-[#bbbbbb]"
               href={twitter}
             >
               <FaXTwitter className="group-hover:text-primary/90" size={18} />
-            </a>
+            </Link>
           )}
           {facebook && (
-            <a
+            <Link
               className="text-[#a2a2a2] group hover:border-primary/90 transition-all rounded-[50%] w-[40px] h-[40px] flex items-center justify-center border border-[#bbbbbb]"
               href={facebook}
             >
               <FaFacebook className="group-hover:text-primary/90" size={18} />
-            </a>
+            </Link>
           )}
           {instagram && (
-            <a
+            <Link
               className="text-[#a2a2a2] group hover:border-primary/90 transition-all rounded-[50%] w-[40px] h-[40px] flex items-center justify-center border border-[#bbbbbb]"
               href={instagram}
             >
               <FaInstagram className="group-hover:text-primary/90" size={18} />
-            </a>
+            </Link>
           )}
           {linkedin && (
-            <a
+            <Link
               className="text-[#a2a2a2] group hover:border-primary/90 transition-all rounded-[50%] w-[40px] h-[40px] flex items-center justify-center border border-[#bbbbbb]"
               href={linkedin}
             >
               <FaLinkedin className="group-hover:text-primary/90" size={18} />
-            </a>
+            </Link>
           )}
         </div>
       </div>
