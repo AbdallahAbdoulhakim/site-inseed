@@ -11,6 +11,7 @@ interface ContentData {
   images: { id: string; url: string; name: string }[];
   title: string;
   content: string;
+  tags: { name: string; slug: string }[];
   articleSlug: string;
   author: string;
   authorImg: string;
@@ -33,18 +34,28 @@ export interface LatestArticle {
   title: string;
   publicationDate: string;
   thumbnail: string;
+  slug: string;
+  categorySlug: string;
+}
+
+export interface Tag {
+  id: string;
+  name: string;
+  slug: string;
 }
 
 interface ArticlePageProps {
   contentData: ContentData;
   categoriesCount: CategoriesCount[];
   articlesList: LatestArticle[];
+  tagsList: Tag[];
 }
 
 export default function ArticlePage({
   contentData,
   categoriesCount,
   articlesList,
+  tagsList,
 }: ArticlePageProps) {
   useEffect(() => {
     AOS.init({
@@ -59,6 +70,7 @@ export default function ArticlePage({
     images,
     title,
     content,
+    tags,
     author,
     authorImg,
     authorDesc,
@@ -89,10 +101,12 @@ export default function ArticlePage({
             authorFacebook={authorFacebook}
             authorInstagram={authorInstagram}
             publicationDate={publicationDate}
+            tags={tags}
           />
           <ArticleSidebar
             categoriesCount={categoriesCount}
             articlesList={articlesList}
+            tagsList={tagsList}
           />
         </div>
       </div>

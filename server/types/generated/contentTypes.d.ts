@@ -411,6 +411,7 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
     slug: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
+    tags: Schema.Attribute.Relation<'manyToMany', 'api::tag.tag'>;
     thumbnail: Schema.Attribute.Media<'images'>;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
@@ -787,6 +788,33 @@ export interface ApiRelatedTableGraphRelatedTableGraph
       'oneToOne',
       'api::publication-table.publication-table'
     >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiTagTag extends Struct.CollectionTypeSchema {
+  collectionName: 'tags';
+  info: {
+    displayName: 'Tag';
+    pluralName: 'tags';
+    singularName: 'tag';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    articles: Schema.Attribute.Relation<'manyToMany', 'api::article.article'>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::tag.tag'> &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1373,6 +1401,7 @@ declare module '@strapi/strapi' {
       'api::publication-table.publication-table': ApiPublicationTablePublicationTable;
       'api::publication.publication': ApiPublicationPublication;
       'api::related-table-graph.related-table-graph': ApiRelatedTableGraphRelatedTableGraph;
+      'api::tag.tag': ApiTagTag;
       'api::team-member.team-member': ApiTeamMemberTeamMember;
       'api::test.test': ApiTestTest;
       'plugin::content-releases.release': PluginContentReleasesRelease;

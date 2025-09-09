@@ -15,6 +15,8 @@ export default async function NewsArticle({
 
   const categories = client.collection("categories");
 
+  const tags = client.collection("tags");
+
   const { data: response } = await articles.find({
     filters: {
       slug: articleId,
@@ -37,6 +39,9 @@ export default async function NewsArticle({
           },
         },
       },
+      tags: {
+        fields: ["name", "slug"],
+      },
     },
   });
 
@@ -48,15 +53,22 @@ export default async function NewsArticle({
     },
   });
 
+  const { data: listTags } = await tags.find({
+    fields: ["name", "slug"],
+  });
+
   const { data: latestArticles } = await articles.find({
     sort: "publicationDate:desc",
     pagination: {
       pageSize: 5,
     },
-    fields: ["title", "publicationDate"],
+    fields: ["title", "publicationDate", "slug"],
     populate: {
       thumbnail: {
         fields: ["name", "url"],
+      },
+      category: {
+        fields: ["slug"],
       },
     },
   });
@@ -94,6 +106,11 @@ export default async function NewsArticle({
     images: imgUrls,
     title: article.title,
     content: article.content,
+    tags: article.tags
+      ? article.tags.map((tag: { [key: string]: string; name: string }) => {
+          return { name: tag.name, slug: tag.slug };
+        })
+      : [],
     articleSlug: `/news/${article?.category.slug || "default"}/${article.slug}`,
     author: article.author?.name,
     authorImg: article.author?.image?.url
@@ -130,6 +147,16 @@ export default async function NewsArticle({
         ? `${process.env.NEXT_PUBLIC_STRAPI_BASE_URL}${article.thumbnail.url}`
         : "/416x312.svg",
       title: truncateString(article.title, 110),
+      slug: article.slug,
+      categorySlug: article.category.slug,
+    };
+  });
+
+  const tagsList = listTags.map((tag) => {
+    return {
+      id: tag.documentId,
+      name: tag.name,
+      slug: tag.slug,
     };
   });
 
@@ -138,6 +165,7 @@ export default async function NewsArticle({
       contentData={contentData}
       categoriesCount={categoriesCount}
       articlesList={articlesList}
+      tagsList={tagsList}
     />
   );
 }

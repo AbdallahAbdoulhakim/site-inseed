@@ -6,6 +6,7 @@ import { MdFolderOpen } from "react-icons/md";
 import DisplayContent from "@/components/commons/DisplayContent";
 import Link from "next/link";
 import { FaXTwitter, FaFacebook, FaInstagram } from "react-icons/fa6";
+import { BsTags } from "react-icons/bs";
 
 interface Props {
   category: string;
@@ -13,6 +14,7 @@ interface Props {
   images: { id: string; url: string; name: string }[];
   title: string;
   content: string;
+  tags: { name: string; slug: string }[];
   author: string;
   authorImg: string;
   authorDesc: string;
@@ -28,6 +30,7 @@ export default function ArticleContent({
   images,
   title,
   content,
+  tags,
   author,
   authorImg,
   authorDesc,
@@ -73,7 +76,11 @@ export default function ArticleContent({
                 <LuClock4 className="text-base mr-2 leading-none text-primary" />
                 <span>
                   <time dateTime={publicationDate}>
-                    {date.toLocaleDateString()}
+                    {date.toLocaleDateString("fr-FR", {
+                      year: "numeric",
+                      month: "long",
+                      day: "numeric",
+                    })}
                   </time>
                 </span>
               </li>
@@ -84,18 +91,42 @@ export default function ArticleContent({
             />
           </div>
         </div>
-        <div className="pt-2.5 border-t border-t-[#333333]/15 flex items-center">
+        <div
+          className={`pt-2.5 border-t border-t-[#333333]/15 flex items-center ${
+            images.length > 1 && "p-5"
+          }`}
+        >
           <MdFolderOpen className="text-[#555555] inline" />
-          <ul className="list-none inline ml-2  text-[14px]">
+          <ul className="list-none inline ml-2 pr-5  text-[14px]">
             <li className="">
               <Link
                 href={`/news/${categorySlug}`}
-                className="text-[#333333]/80 hover:text-primary transition-all duration-300"
+                className="text-[#333333]/80 text-xs lg:text-base hover:text-primary transition-all duration-300"
               >
                 {category}
               </Link>
             </li>
           </ul>
+          {tags && (
+            <>
+              <BsTags className="text-[#555555] inline" />
+              <ul className="list-none flex gap-1.5 p-0 text-[14px] ml-1.5">
+                {tags.map((tag, index) => (
+                  <li
+                    key={index}
+                    className="inline-block [&:not(:first-child)]:before:content-[','] [&:not(:first-child)]:before:pr-1.5 [&:not(:first-child)]:before:text-default"
+                  >
+                    <Link
+                      className="text-[#333333]/80 text-xs lg:text-base hover:text-primary transition-all duration-300"
+                      href={`/news?tag=${tag.slug}`}
+                    >
+                      {tag.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
         </div>
       </article>
       <div className="p-5 mt-7.5 shadow-[0_4px_16px_rgba(0,0,0,0.1)] flex items-center rounded-[10px]">

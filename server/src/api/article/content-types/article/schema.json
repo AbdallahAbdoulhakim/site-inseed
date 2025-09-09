@@ -56,6 +56,12 @@
       "options": {
         "preset": "defaultHtml"
       }
+    },
+    "tags": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::tag.tag",
+      "inversedBy": "articles"
     }
   }
 }

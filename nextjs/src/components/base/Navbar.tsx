@@ -112,7 +112,7 @@ export default function Navbar({ menu }: { menu: MenuItem[] }) {
                     className={navigationMenuTriggerStyle()}
                   >
                     <Link
-                      className={`ml-[5px] bg-primary text-[16px] font-poppins font-semibold  rounded-none ${
+                      className={`ml-[5px] bg-primary text-[16px] font-montserrat font-semibold  rounded-none ${
                         isActive
                           ? "border-b border-secondary"
                           : "border-primary/10 hover:border-b-2  hover:border-secondary"
