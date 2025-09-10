@@ -14,6 +14,7 @@ export default async function NewsCategory({
   const { categoryId } = await params;
 
   const categories = client.collection("categories");
+  const tags = client.collection("tags");
 
   const { data: category } = await categories.find({
     filters: {
@@ -25,7 +26,7 @@ export default async function NewsCategory({
 
   const articles = client.collection("articles");
 
-  const { page } = await searchParams;
+  const { page, search } = await searchParams;
 
   const queryPage = page ? parseInt(page) : 1;
 
@@ -58,6 +59,18 @@ export default async function NewsCategory({
     },
   });
 
+  const { data: listTags } = await tags.find({
+    fields: ["name", "slug"],
+  });
+
+  const tagsList = listTags.map((tag) => {
+    return {
+      id: tag.documentId,
+      name: tag.name,
+      slug: tag.slug,
+    };
+  });
+
   const { pagination } = meta;
 
   if (!articlesList.length) return;
@@ -86,6 +99,11 @@ export default async function NewsCategory({
   });
 
   return (
-    <CategoryArticles data={data} page={queryPage} count={pagination?.total!} />
+    <CategoryArticles
+      data={data}
+      page={queryPage}
+      count={pagination?.total!}
+      tagsList={tagsList}
+    />
   );
 }

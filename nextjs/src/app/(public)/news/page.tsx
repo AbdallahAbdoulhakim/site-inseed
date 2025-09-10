@@ -9,6 +9,7 @@ export default async function News({
   searchParams: Promise<{ [key: string]: string | undefined }>;
 }) {
   const articles = client.collection("articles");
+  const tags = client.collection("tags");
 
   const { page } = await searchParams;
 
@@ -36,6 +37,18 @@ export default async function News({
         },
       },
     },
+  });
+
+  const { data: listTags } = await tags.find({
+    fields: ["name", "slug"],
+  });
+
+  const tagsList = listTags.map((tag) => {
+    return {
+      id: tag.documentId,
+      name: tag.name,
+      slug: tag.slug,
+    };
   });
 
   const { pagination } = meta;
@@ -66,6 +79,11 @@ export default async function News({
   });
 
   return (
-    <CategoryArticles data={data} page={queryPage} count={pagination?.total!} />
+    <CategoryArticles
+      data={data}
+      page={queryPage}
+      count={pagination?.total!}
+      tagsList={tagsList}
+    />
   );
 }

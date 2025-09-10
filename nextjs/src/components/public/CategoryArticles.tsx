@@ -5,6 +5,9 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import NewsArticleBox from "@/components/base/NewsArticleBox";
 import ArticlesPagination from "@/components/public/ArticlesPagination";
+import { IoMdSearch } from "react-icons/io";
+import ArticleSearch from "@/components/public/ArticleSearch";
+import { Tag } from "@/components/public/ArticlePage";
 
 interface ArticleBox {
   id: string;
@@ -23,12 +26,14 @@ interface CategoryArticlesProps {
   data: ArticleBox[];
   count: number;
   page: number;
+  tagsList: Tag[];
 }
 
 export default function CategoryArticles({
   data,
   count,
   page = 1,
+  tagsList,
 }: CategoryArticlesProps) {
   useEffect(() => {
     AOS.init({
@@ -36,13 +41,15 @@ export default function CategoryArticles({
       once: false,
     });
   }, []);
+
   return (
-    <section className="flex flex-col items-center">
-      <div
-        className="container mx-auto grid gap-4 grid-cols-1 md:grid-cols-2 xl:grid-cols-3 py-15"
-        data-aos="fade-up"
-        data-aos-delay={100}
-      >
+    <section
+      data-aos="fade-up"
+      data-aos-delay={100}
+      className="flex flex-col items-center container mx-auto"
+    >
+      <ArticleSearch tagsList={tagsList} />
+      <div className="grid gap-4 grid-cols-1 md:grid-cols-2 xl:grid-cols-3 py-10">
         {data.map(
           ({
             id,

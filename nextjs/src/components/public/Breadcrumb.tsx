@@ -1,13 +1,14 @@
-import { MenuItem } from "@/components/base/Header";
-
 import Link from "next/link";
 
 interface BreadcrumbProps {
-  menuElt: MenuItem | null | undefined;
-  pathParts: string[];
+  breadcrumb: {
+    id: string;
+    label: string;
+    description: string;
+    url: string;
+  }[];
 }
-export default function Breadcrumb({ menuElt, pathParts }: BreadcrumbProps) {
-  let currentPath = "";
+export default function Breadcrumb({ breadcrumb }: BreadcrumbProps) {
   return (
     <nav className="bg-[#f6f6f6] py-4">
       <div className="container mx-auto">
@@ -20,35 +21,24 @@ export default function Breadcrumb({ menuElt, pathParts }: BreadcrumbProps) {
               ACCUEIL
             </Link>
           </li>
-          {pathParts.map((part, index) => {
-            currentPath += `/${part}`;
-            const isFirst = index === 0;
-
-            const isLast = index === pathParts.length - 1;
-            const label = isFirst
-              ? menuElt?.label
-              : menuElt?.children.find((elt) => elt.url === currentPath)?.label;
-
-            const url = isFirst
-              ? menuElt?.url
-              : menuElt?.children.find((elt) => elt.url === currentPath)?.url;
-
+          {breadcrumb.map((bread, index) => {
+            const isLast = index === breadcrumb.length - 1;
             return (
               <li
                 key={index}
                 className="[&:not(:first-child)]:pl-[10px] [&:not(:last-child)]:pl-[10px]
-            [&:not(:last-child)]:before:content-['/']  [&:not(:first-child)]:before:content-['/']
+            [&:not(:last-child)]:before:content-['>']  [&:not(:first-child)]:before:content-['>']
              [&:not(:first-child)]:before:pr-[10px] [&:not(:last-child)]:before:pr-[10px]
              [&:not(:first-child)]:before:text-secondary [&:not(:last-child)]:before:text-secondary normal-case"
               >
                 {isLast ? (
-                  label
+                  bread.label
                 ) : (
                   <Link
                     className="transition duration-300 text-primary hover:underline"
-                    href={url!}
+                    href={bread.url}
                   >
-                    {label}
+                    {bread.label}
                   </Link>
                 )}
               </li>

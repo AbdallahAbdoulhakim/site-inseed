@@ -6,9 +6,13 @@ import { v4 as uuid } from "uuid";
 
 export default async function NewsArticle({
   params,
+  searchParams,
 }: {
   params: Promise<{ articleId: string }>;
+  searchParams: Promise<{ [key: string]: string | undefined }>;
 }) {
+  const { search } = await searchParams;
+
   const { articleId } = await params;
 
   const articles = client.collection("articles");
@@ -72,6 +76,30 @@ export default async function NewsArticle({
       },
     },
   });
+
+  let searchResults = null;
+
+  if (search) {
+    const searchResponse = await articles.find({
+      sort: "publicationDate:desc",
+      filters: {
+        title: { $containsi: search },
+      },
+      pagination: {
+        pageSize: 10,
+      },
+      fields: ["title", "publicationDate", "slug"],
+      populate: {
+        thumbnail: {
+          fields: ["name", "url"],
+        },
+        category: {
+          fields: ["slug"],
+        },
+      },
+    });
+    searchResults = searchResponse.data;
+  }
 
   if (response.length < 1 || !response) notFound();
 
@@ -139,18 +167,34 @@ export default async function NewsArticle({
     };
   });
 
-  const articlesList = latestArticles.map((article) => {
-    return {
-      id: article.documentId,
-      publicationDate: article.publicationDate,
-      thumbnail: article.thumbnail?.url
-        ? `${process.env.NEXT_PUBLIC_STRAPI_BASE_URL}${article.thumbnail.url}`
-        : "/416x312.svg",
-      title: truncateString(article.title, 110),
-      slug: article.slug,
-      categorySlug: article.category.slug,
-    };
-  });
+  const articlesList =
+    search === undefined
+      ? latestArticles.map((article) => {
+          return {
+            id: article.documentId,
+            publicationDate: article.publicationDate,
+            thumbnail: article.thumbnail?.url
+              ? `${process.env.NEXT_PUBLIC_STRAPI_BASE_URL}${article.thumbnail.url}`
+              : "/416x312.svg",
+            title: truncateString(article.title, 110),
+            slug: article.slug,
+            categorySlug: article.category.slug,
+          };
+        })
+      : !searchResults || searchResults.length == 0
+      ? []
+      : searchResults?.map((article) => {
+          return {
+            id: article.documentId,
+            publicationDate: article.publicationDate,
+            thumbnail: article.thumbnail?.url
+              ? `${process.env.NEXT_PUBLIC_STRAPI_BASE_URL}${article.thumbnail.url}`
+              : "/416x312.svg",
+            title: truncateString(article.title, 110),
+            slug: article.slug,
+            categorySlug: article.category.slug,
+          };
+        });
 
   const tagsList = listTags.map((tag) => {
     return {

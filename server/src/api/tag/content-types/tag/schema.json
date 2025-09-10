@@ -21,7 +21,9 @@
       "mappedBy": "tags"
     },
     "slug": {
-      "type": "string"
+      "type": "string",
+      "required": true,
+      "unique": true
     }
   }
 }
