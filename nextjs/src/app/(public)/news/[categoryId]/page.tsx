@@ -35,6 +35,7 @@ export default async function NewsCategory({
       category: {
         documentId: category[0].documentId,
       },
+      title: { $containsi: search },
     },
     sort: "publicationDate:desc",
     pagination: {
@@ -72,8 +73,6 @@ export default async function NewsCategory({
   });
 
   const { pagination } = meta;
-
-  if (!articlesList.length) return;
 
   const data = articlesList.map((article, index) => {
     return {

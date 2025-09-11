@@ -1,6 +1,7 @@
 "use client";
 import { useRouter } from "next/navigation";
 import { useState, useRef } from "react";
+import { ImSad } from "react-icons/im";
 
 import {
   CategoriesCount,
@@ -109,21 +110,7 @@ export default function ArticleSidebar({
         <div className="mt-3">
           {search && (!articlesList || articlesList.length < 1) ? (
             <div className="flex flex-col items-center justify-center py-12 px-4 text-center">
-              <svg
-                className="mx-auto h-16 w-16 text-primary"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  vectorEffect="non-scaling-stroke"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
+              <ImSad className="mx-auto h-16 w-16 text-primary" />
               <h3 className="mt-2 text-sm font-medium text-gray-900">
                 Aucun résultat trouvé
               </h3>
@@ -185,7 +172,7 @@ export default function ArticleSidebar({
             <li className="inline-block" key={tag.id}>
               <Link
                 className="text-[#555555] text-[14px] py-[6px] px-[20px] my-0 mr-[6px] mb-[8px] border border-[#d5d5d5] inline-block transition-all duration-300 rounded-[50px] hover:text-white hover:border-primary hover:bg-primary"
-                href={`/news?tag=${tag.slug}`}
+                href={`/news?tags=${tag.slug}`}
               >
                 {tag.name}
               </Link>

@@ -11,12 +11,15 @@ export default async function News({
   const articles = client.collection("articles");
   const tags = client.collection("tags");
 
-  const { page } = await searchParams;
+  const { page, search } = await searchParams;
 
   const queryPage = page ? parseInt(page) : 1;
 
   const { data: articlesList, meta } = await articles.find({
     sort: "publicationDate:desc",
+    filters: {
+      title: { $containsi: search },
+    },
     pagination: {
       page: queryPage,
       pageSize: ITEM_PER_PAGE,
@@ -52,8 +55,6 @@ export default async function News({
   });
 
   const { pagination } = meta;
-
-  if (!articlesList.length) return;
 
   const data = articlesList.map((article, index) => {
     return {

@@ -52,6 +52,7 @@ export default async function LatestNews() {
       delay: (index + 1) * 100,
     };
   });
+
   return (
     <section className="px-15 pb-15 mt-10 overflow-hidden mb-15">
       <div className="container m-auto" data-aos="fade-up">

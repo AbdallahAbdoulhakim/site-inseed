@@ -1,5 +1,5 @@
 "use client";
-import Breadcrumb from "./Breadcrumb";
+import Breadcrumb from "@/components/public/Breadcrumb";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { fetchSubMenuByUrl } from "@/actions/menu";
@@ -38,7 +38,7 @@ export default function PageHeader() {
       }
     >
       {loading ? (
-        <span className="loader"></span>
+        <span className="mt-15 loader"></span>
       ) : (
         <>
           <div className="py-15 flex items-center min-h-[20vh] relative bg-primary">

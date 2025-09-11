@@ -101,7 +101,6 @@ export const fetchSubMenuByUrl = async (url:string)=>{
 
   return breadCrumb
 
-  //return subMenu;
 }
 
 
