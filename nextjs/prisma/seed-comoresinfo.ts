@@ -717,7 +717,6 @@ async function main() {
 
       rows.forEach(async (row) => {
         if (!row.Level_NId) {
-          console.log(row);
           return;
         }
         await prisma.areaLevel.create({

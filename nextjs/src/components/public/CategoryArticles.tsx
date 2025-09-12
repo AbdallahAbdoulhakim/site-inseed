@@ -51,6 +51,10 @@ export default function CategoryArticles({
   const [search, setSearch] = useState<string | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
+  const [tagsCheck, setTagsCheck] = useState<
+    { slug: string; checked: boolean }[]
+  >([]);
+
   const setSearchParams = () => {
     if (!search) return;
     const params = new URLSearchParams(window.location.search);
@@ -62,45 +66,12 @@ export default function CategoryArticles({
   const removeSearchParams = () => {
     const params = new URLSearchParams(window.location.search);
     params.delete("search");
-    router.push(`${window.location.pathname}`);
+    router.push(`${window.location.pathname}?${params}`);
 
     setSearch(null);
     if (inputRef.current) {
       inputRef.current.value = "";
     }
-  };
-
-  const setTagsParams = (tag: string) => {
-    if (!tag) return;
-
-    const params = new URLSearchParams(window.location.search);
-    params.delete("page");
-
-    if (params.has("tags")) {
-      params.append("tags", tag);
-    } else {
-      params.set("tags", tag);
-    }
-    router.push(`${window.location.pathname}?${params}`);
-  };
-
-  const removeTagsParams = (tag: string) => {
-    if (!tag) return;
-
-    const params = new URLSearchParams(window.location.search);
-    params.delete("page");
-
-    const prevValues = params.getAll("tags");
-
-    const newValues = prevValues.filter((value) => value !== tag);
-
-    params.delete("tags");
-
-    if (newValues.length === 0) return;
-
-    newValues.forEach((value) => {
-      params.append("tags", value);
-    });
   };
 
   return (
@@ -114,10 +85,10 @@ export default function CategoryArticles({
         search={search}
         setSearchParams={setSearchParams}
         removeSearchParams={removeSearchParams}
-        setTagsParams={setTagsParams}
-        removeTagsParams={removeTagsParams}
         inputRef={inputRef}
         tagsList={tagsList}
+        tagsCheck={tagsCheck}
+        setTagsCheck={setTagsCheck}
       />
       {data.length > 0 ? (
         <div className="grid gap-4 grid-cols-1 md:grid-cols-2 xl:grid-cols-3 py-10">
@@ -162,7 +133,16 @@ export default function CategoryArticles({
           <div className="mt-6">
             <button
               type="button"
-              onClick={removeSearchParams}
+              onClick={() => {
+                removeSearchParams();
+
+                setTagsCheck((prev) => {
+                  return prev.map((elt) => ({
+                    slug: elt.slug,
+                    checked: false,
+                  }));
+                });
+              }}
               className="cursor-pointer inline-flex items-center rounded-md border border-transparent bg-primary px-4 py-2 text-sm font-medium text-white shadow-sm hover:primary/70 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2"
             >
               Réinitialiser la recherche

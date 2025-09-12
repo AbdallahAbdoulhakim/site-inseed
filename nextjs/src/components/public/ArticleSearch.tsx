@@ -15,16 +15,27 @@ import {
 
 import { Tag } from "@/components/public/ArticlePage";
 import { Dispatch, RefObject, SetStateAction } from "react";
+import { useRouter } from "next/navigation";
 
 interface Props {
   tagsList: Tag[];
   search: string | null;
   setSearchParams: () => void;
   removeSearchParams: () => void;
-  setTagsParams: (tag: string) => void;
-  removeTagsParams: (tag: string) => void;
   setSearch: Dispatch<SetStateAction<string | null>>;
   inputRef: RefObject<HTMLInputElement | null>;
+  tagsCheck: {
+    slug: string;
+    checked: boolean;
+  }[];
+  setTagsCheck: Dispatch<
+    SetStateAction<
+      {
+        slug: string;
+        checked: boolean;
+      }[]
+    >
+  >;
 }
 
 export default function ArticleSearch({
@@ -33,25 +44,60 @@ export default function ArticleSearch({
   setSearch,
   setSearchParams,
   removeSearchParams,
-  setTagsParams,
-  removeTagsParams,
   inputRef,
+  tagsCheck,
+  setTagsCheck,
 }: Props) {
-  const [tagsCheck, setTagsCheck] = useState<
-    { slug: string; checked: boolean }[]
-  >([]);
+  const router = useRouter();
+
+  const setTagsParams = (tags: string[]) => {
+    const params = new URLSearchParams(window.location.search);
+    if (!tags || tags.length === 0) {
+      params.delete("page");
+      params.delete("tags");
+      router.push(`${window.location.pathname}?${params}`);
+      return;
+    }
+
+    params.delete("page");
+    params.delete("tags");
+
+    tags.forEach((tag) => {
+      params.append("tags", tag);
+    });
+
+    router.push(`${window.location.pathname}?${params}`);
+  };
+
+  const getTagsParams = () => {
+    const params = new URLSearchParams(window.location.search);
+    return params.getAll("tags");
+  };
 
   useEffect(() => {
     tagsList.forEach((tag) => {
       setTagsCheck((prev) => {
-        const alreadyThere = prev.find((tag) => tag.slug === tag.slug);
+        const alreadyThere = prev.find((curr) => tag.slug === curr.slug);
 
         if (alreadyThere) return prev;
 
-        return [...prev, { slug: tag.slug, checked: false }];
+        const tagsInUrl = getTagsParams();
+        const tagInUrl = tagsInUrl
+          ? !!tagsInUrl.find((curr) => curr === tag.slug)
+          : false;
+
+        return [...prev, { slug: tag.slug, checked: tagInUrl }];
       });
     });
   }, [tagsList]);
+
+  useEffect(() => {
+    const checkedTags = tagsCheck
+      .filter((tag) => tag.checked)
+      .map((tag) => tag.slug);
+
+    setTagsParams(checkedTags);
+  }, [tagsCheck]);
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>, slug: string) => {
     setTagsCheck((prev) => {

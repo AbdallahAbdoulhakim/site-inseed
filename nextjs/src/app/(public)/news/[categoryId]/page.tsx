@@ -26,16 +26,27 @@ export default async function NewsCategory({
 
   const articles = client.collection("articles");
 
-  const { page, search } = await searchParams;
+  const { page, search, tags: tagArr } = await searchParams;
 
   const queryPage = page ? parseInt(page) : 1;
 
   const { data: articlesList, meta } = await articles.find({
     filters: {
-      category: {
-        documentId: category[0].documentId,
-      },
-      title: { $containsi: search },
+      $and: [
+        {
+          category: {
+            documentId: category[0].documentId,
+          },
+        },
+        {
+          title: { $containsi: search },
+        },
+        {
+          tags: {
+            slug: { $in: tagArr },
+          },
+        },
+      ],
     },
     sort: "publicationDate:desc",
     pagination: {

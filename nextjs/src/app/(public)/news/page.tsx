@@ -9,16 +9,23 @@ export default async function News({
   searchParams: Promise<{ [key: string]: string | undefined }>;
 }) {
   const articles = client.collection("articles");
-  const tags = client.collection("tags");
+  const tagCollection = client.collection("tags");
 
-  const { page, search } = await searchParams;
+  const { page, search, tags: tagArr } = await searchParams;
 
   const queryPage = page ? parseInt(page) : 1;
 
   const { data: articlesList, meta } = await articles.find({
     sort: "publicationDate:desc",
     filters: {
-      title: { $containsi: search },
+      $and: [
+        { title: { $containsi: search } },
+        {
+          tags: {
+            slug: { $in: tagArr },
+          },
+        },
+      ],
     },
     pagination: {
       page: queryPage,
@@ -42,7 +49,7 @@ export default async function News({
     },
   });
 
-  const { data: listTags } = await tags.find({
+  const { data: listTags } = await tagCollection.find({
     fields: ["name", "slug"],
   });
 
