@@ -579,6 +579,7 @@ const menus: MenuItemType[] = [
       {
         menuItem: {
           label: "BASE DE DONNÉES DES PUBLICATIONS",
+          description:"Retrouvez ci-dessous les recherches les plus fréquentes",
           display_order: 1,
           url: "/publications/publications-database",
         },

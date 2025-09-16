@@ -4,7 +4,7 @@
   "info": {
     "singularName": "publication-paragraph",
     "pluralName": "publication-paragraphs",
-    "displayName": "publicationParagraph"
+    "displayName": "Publication Paragraph"
   },
   "options": {
     "draftAndPublish": true

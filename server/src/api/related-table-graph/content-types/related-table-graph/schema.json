@@ -4,7 +4,7 @@
   "info": {
     "singularName": "related-table-graph",
     "pluralName": "related-table-graphs",
-    "displayName": "relatedTableGraph"
+    "displayName": "Related Table Graph"
   },
   "options": {
     "draftAndPublish": true

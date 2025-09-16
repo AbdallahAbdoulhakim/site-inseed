@@ -9,6 +9,7 @@
   --primary-color: #008374;
   --dropdown-color: #01433c;
   --secondary-color: #ef3340;
+  --third-color: #ffc400;
   --hover-color: #00796b;
   --primary-light-color: #008d7d;
   --primary-light-hover-color: #009786;
@@ -34,6 +35,7 @@
   --color-default: var(--default-color);
   --color-secondary: var(--secondary-color);
   --color-tertiary: var(--tertiary-color);
+  --color-third: var(--third-color);
   --color-link: var(--link-color);
   --font-roboto-sans: var(--font-roboto-sans);
   --font-roboto-mono: var(--font-roboto-mono);
@@ -106,6 +108,26 @@ body {
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+.dot-loader {
+  width: 60px;
+  aspect-ratio: 4;
+  --_g: no-repeat radial-gradient(circle closest-side, #008374 90%, #0000);
+  background: var(--_g) 0% 50%, var(--_g) 50% 50%, var(--_g) 100% 50%;
+  background-size: calc(100% / 3) 100%;
+  animation: l7 1s infinite linear;
+}
+@keyframes l7 {
+  33% {
+    background-size: calc(100% / 3) 0%, calc(100% / 3) 100%, calc(100% / 3) 100%;
+  }
+  50% {
+    background-size: calc(100% / 3) 100%, calc(100% / 3) 0%, calc(100% / 3) 100%;
+  }
+  66% {
+    background-size: calc(100% / 3) 100%, calc(100% / 3) 100%, calc(100% / 3) 0%;
   }
 }
 

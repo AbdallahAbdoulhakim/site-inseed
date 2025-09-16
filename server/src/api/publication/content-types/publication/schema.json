@@ -55,6 +55,30 @@
     },
     "publicationSlug": {
       "type": "string"
+    },
+    "publication_categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::publication-category.publication-category",
+      "inversedBy": "publications"
+    },
+    "publication_collections": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::publication-collection.publication-collection",
+      "inversedBy": "publications"
+    },
+    "publication_themes": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::publication-theme.publication-theme",
+      "inversedBy": "publications"
+    },
+    "publication_geos": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::publication-geo.publication-geo",
+      "inversedBy": "publications"
     }
   }
 }

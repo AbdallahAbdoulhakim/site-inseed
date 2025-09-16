@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "publication_categories",
+  "info": {
+    "singularName": "publication-category",
+    "pluralName": "publication-categories",
+    "displayName": "Publication Category"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "parent": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::publication-category.publication-category",
+      "inversedBy": "children"
+    },
+    "children": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::publication-category.publication-category",
+      "mappedBy": "parent"
+    },
+    "publications": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::publication.publication",
+      "mappedBy": "publication_categories"
+    },
+    "norder": {
+      "type": "integer",
+      "unique": true
+    }
+  }
+}

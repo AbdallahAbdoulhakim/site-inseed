@@ -4,7 +4,7 @@
   "info": {
     "singularName": "publication-graphic",
     "pluralName": "publication-graphics",
-    "displayName": "publicationGraphic"
+    "displayName": "Publication Graphic"
   },
   "options": {
     "draftAndPublish": true

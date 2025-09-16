@@ -77,6 +77,8 @@ export const fetchSubMenuByUrl = async (url:string)=>{
     },
   })
 
+
+
   if(!subMenu) return [];
 
   if(type === "news"){
@@ -96,6 +98,19 @@ export const fetchSubMenuByUrl = async (url:string)=>{
         }
     }
   }
+
+  if(type==="publications"){
+
+    breadCrumb.push({id:subMenu.id, label:subMenu.label, description:subMenu?.description || "", url:subMenu.url})
+
+    if(pathParts.length > 1){
+       const subCategory = subMenu.children.find(subElt=> subElt.url === `/${type}/${pathParts[1]}`)
+       if(subCategory){
+        breadCrumb.push({id:subCategory.id, label:subCategory.label, description:subCategory?.description || "", url:subCategory.url})
+       }
+    }
+  }
+
 
 
 

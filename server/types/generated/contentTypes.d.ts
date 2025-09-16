@@ -588,11 +588,148 @@ export interface ApiPartnerPartner extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiPublicationCategoryPublicationCategory
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'publication_categories';
+  info: {
+    displayName: 'Publication Category';
+    pluralName: 'publication-categories';
+    singularName: 'publication-category';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    children: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::publication-category.publication-category'
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::publication-category.publication-category'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    norder: Schema.Attribute.Integer & Schema.Attribute.Unique;
+    parent: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::publication-category.publication-category'
+    >;
+    publications: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::publication.publication'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPublicationCollectionPublicationCollection
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'publication_collections';
+  info: {
+    displayName: 'Publication Collection';
+    pluralName: 'publication-collections';
+    singularName: 'publication-collection';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    children: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::publication-collection.publication-collection'
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::publication-collection.publication-collection'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    norder: Schema.Attribute.Integer & Schema.Attribute.Unique;
+    parent: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::publication-collection.publication-collection'
+    >;
+    publications: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::publication.publication'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPublicationGeoPublicationGeo
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'publication_geos';
+  info: {
+    displayName: 'Publication Geo';
+    pluralName: 'publication-geos';
+    singularName: 'publication-geo';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    children: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::publication-geo.publication-geo'
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::publication-geo.publication-geo'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    norder: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    parent: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::publication-geo.publication-geo'
+    >;
+    publications: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::publication.publication'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiPublicationGraphicPublicationGraphic
   extends Struct.CollectionTypeSchema {
   collectionName: 'publication_graphics';
   info: {
-    displayName: 'publicationGraphic';
+    displayName: 'Publication Graphic';
     pluralName: 'publication-graphics';
     singularName: 'publication-graphic';
   };
@@ -629,7 +766,7 @@ export interface ApiPublicationParagraphPublicationParagraph
   extends Struct.CollectionTypeSchema {
   collectionName: 'publication_paragraphs';
   info: {
-    displayName: 'publicationParagraph';
+    displayName: 'Publication Paragraph';
     pluralName: 'publication-paragraphs';
     singularName: 'publication-paragraph';
   };
@@ -682,7 +819,7 @@ export interface ApiPublicationTablePublicationTable
   extends Struct.CollectionTypeSchema {
   collectionName: 'publication_tables';
   info: {
-    displayName: 'publicationTable';
+    displayName: 'Publication Table';
     pluralName: 'publication-tables';
     singularName: 'publication-table';
   };
@@ -708,6 +845,51 @@ export interface ApiPublicationTablePublicationTable
       'api::publication-paragraph.publication-paragraph'
     >;
     publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPublicationThemePublicationTheme
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'publication_themes';
+  info: {
+    displayName: 'Publication Theme';
+    pluralName: 'publication-themes';
+    singularName: 'publication-theme';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    children: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::publication-theme.publication-theme'
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::publication-theme.publication-theme'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    norder: Schema.Attribute.Integer & Schema.Attribute.Unique;
+    parent: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::publication-theme.publication-theme'
+    >;
+    publications: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::publication.publication'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -740,6 +922,22 @@ export interface ApiPublicationPublication extends Struct.CollectionTypeSchema {
     parutionNext: Schema.Attribute.DateTime;
     parutionNumber: Schema.Attribute.String;
     printable: Schema.Attribute.Media<'files'>;
+    publication_categories: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::publication-category.publication-category'
+    >;
+    publication_collections: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::publication-collection.publication-collection'
+    >;
+    publication_geos: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::publication-geo.publication-geo'
+    >;
+    publication_themes: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::publication-theme.publication-theme'
+    >;
     publicationSlug: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     subtitle: Schema.Attribute.String;
@@ -763,7 +961,7 @@ export interface ApiRelatedTableGraphRelatedTableGraph
   extends Struct.CollectionTypeSchema {
   collectionName: 'related_table_graphs';
   info: {
-    displayName: 'relatedTableGraph';
+    displayName: 'Related Table Graph';
     pluralName: 'related-table-graphs';
     singularName: 'related-table-graph';
   };
@@ -1400,9 +1598,13 @@ declare module '@strapi/strapi' {
       'api::key-indicator.key-indicator': ApiKeyIndicatorKeyIndicator;
       'api::main-indicator.main-indicator': ApiMainIndicatorMainIndicator;
       'api::partner.partner': ApiPartnerPartner;
+      'api::publication-category.publication-category': ApiPublicationCategoryPublicationCategory;
+      'api::publication-collection.publication-collection': ApiPublicationCollectionPublicationCollection;
+      'api::publication-geo.publication-geo': ApiPublicationGeoPublicationGeo;
       'api::publication-graphic.publication-graphic': ApiPublicationGraphicPublicationGraphic;
       'api::publication-paragraph.publication-paragraph': ApiPublicationParagraphPublicationParagraph;
       'api::publication-table.publication-table': ApiPublicationTablePublicationTable;
+      'api::publication-theme.publication-theme': ApiPublicationThemePublicationTheme;
       'api::publication.publication': ApiPublicationPublication;
       'api::related-table-graph.related-table-graph': ApiRelatedTableGraphRelatedTableGraph;
       'api::tag.tag': ApiTagTag;

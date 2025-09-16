@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "publication_geos",
+  "info": {
+    "singularName": "publication-geo",
+    "pluralName": "publication-geos",
+    "displayName": "Publication Geo"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "norder": {
+      "type": "integer",
+      "required": true,
+      "unique": true
+    },
+    "parent": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::publication-geo.publication-geo",
+      "inversedBy": "children"
+    },
+    "children": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::publication-geo.publication-geo",
+      "mappedBy": "parent"
+    },
+    "publications": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::publication.publication",
+      "mappedBy": "publication_geos"
+    }
+  }
+}

@@ -4,7 +4,7 @@
   "info": {
     "singularName": "publication-table",
     "pluralName": "publication-tables",
-    "displayName": "publicationTable"
+    "displayName": "Publication Table"
   },
   "options": {
     "draftAndPublish": true

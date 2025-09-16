@@ -3,6 +3,7 @@ import Breadcrumb from "@/components/public/Breadcrumb";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { fetchSubMenuByUrl } from "@/actions/menu";
+import DotLoading from "@/components/base/DotLoading";
 
 export default function PageHeader() {
   const [loading, setLoading] = useState(true);
@@ -38,7 +39,7 @@ export default function PageHeader() {
       }
     >
       {loading ? (
-        <span className="mt-15 loader"></span>
+        <DotLoading className="mt-5" />
       ) : (
         <>
           <div className="py-15 flex items-center min-h-[20vh] relative bg-primary">
