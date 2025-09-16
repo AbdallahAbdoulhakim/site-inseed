@@ -1,21 +1,20 @@
 import Critieria from "@/components/public/publications/Critieria";
 import ClassificationBox from "@/components/public/publications/ClassificationBox";
+import { Theme } from "@/components/public/publications/Publications";
 
-import {
-  selectCategories,
-  selectGeos,
-  selectThemes,
-  selectCollections,
-} from "@/lib/features/publicationFilter/publicationFilterSlice";
+interface Props {
+  themes: Theme[];
+  geos: Theme[];
+  categories: Theme[];
+  collections: Theme[];
+}
 
-import { useAppSelector, useAppDispatch, useAppStore } from "@/lib/hooks";
-
-export default function SideBar() {
-  const themes = useAppSelector((state) => selectThemes(state));
-  const geos = useAppSelector((state) => selectGeos(state));
-  const categories = useAppSelector((state) => selectCategories(state));
-  const collections = useAppSelector((state) => selectCollections(state));
-
+export default function SideBar({
+  themes,
+  geos,
+  categories,
+  collections,
+}: Props) {
   return (
     <div className="flex flex-col space-y-2">
       <Critieria />

@@ -1,4 +1,5 @@
 "use client";
+
 interface Data {
   id: string;
   norder: number;
@@ -8,7 +9,7 @@ interface Data {
   children: Data[];
 }
 import { Checkbox } from "@/components/ui/checkbox";
-import { FormItem, FormControl, FormLabel } from "@/components/ui/form";
+
 import {
   Collapsible,
   CollapsibleContent,
@@ -17,12 +18,84 @@ import {
 
 import { FaCaretDown } from "react-icons/fa6";
 
+import {
+  toggleById,
+  selectCategories,
+  selectCollections,
+  selectGeos,
+  selectThemes,
+} from "@/lib/features/publicationFilter/publicationFilterSlice";
+
+import { useAppDispatch, useAppSelector } from "@/lib/hooks";
+
 interface Props {
-  type: string;
+  type: "THÈMES" | "NIVEAU GÉOGRAPHIQUE" | "CATÉGORIES" | "COLLECTIONS";
   data: Data[];
 }
 
 export default function ClassificationBox({ type, data }: Props) {
+  const dispatch = useAppDispatch();
+
+  const getCheckValueByIdAndLevel = (
+    id: string,
+    level: 1 | 2,
+    parentId: string | null,
+    type: "THÈMES" | "NIVEAU GÉOGRAPHIQUE" | "CATÉGORIES" | "COLLECTIONS"
+  ) => {
+    if (type === "THÈMES") {
+      const themes = useAppSelector((state) => selectThemes(state));
+
+      if (level === 1) {
+        return themes.find((elt) => elt.id === id)?.checked;
+      }
+
+      if (level === 2) {
+        return themes
+          .find((elt) => elt.id === parentId)
+          ?.children.find((child) => child.id === id)?.checked;
+      }
+    }
+    if (type === "CATÉGORIES") {
+      const categories = useAppSelector((state) => selectCategories(state));
+
+      if (level === 1) {
+        return categories.find((elt) => elt.id === id)?.checked;
+      }
+
+      if (level === 2) {
+        return categories
+          .find((elt) => elt.id === parentId)
+          ?.children.find((child) => child.id === id)?.checked;
+      }
+    }
+    if (type === "COLLECTIONS") {
+      const collections = useAppSelector((state) => selectCollections(state));
+
+      if (level === 1) {
+        return collections.find((elt) => elt.id === id)?.checked;
+      }
+
+      if (level === 2) {
+        return collections
+          .find((elt) => elt.id === parentId)
+          ?.children.find((child) => child.id === id)?.checked;
+      }
+    }
+    if (type === "NIVEAU GÉOGRAPHIQUE") {
+      const geos = useAppSelector((state) => selectGeos(state));
+
+      if (level === 1) {
+        return geos.find((elt) => elt.id === id)?.checked;
+      }
+
+      if (level === 2) {
+        return geos
+          .find((elt) => elt.id === parentId)
+          ?.children.find((child) => child.id === id)?.checked;
+      }
+    }
+  };
+
   return (
     <Collapsible className="w-full">
       <CollapsibleTrigger className="w-full">
@@ -42,7 +115,29 @@ export default function ClassificationBox({ type, data }: Props) {
                       <FaCaretDown size={16} className="text-primary" />
                     </CollapsibleTrigger>
                     <li className="flex items-center leading-4 mb-3 border-t py-2">
-                      <Checkbox id={element.id} />
+                      <input
+                        type="checkbox"
+                        className="peer accent-primary cursor-pointer"
+                        checked={
+                          getCheckValueByIdAndLevel(
+                            element.id,
+                            1,
+                            null,
+                            type
+                          ) || false
+                        }
+                        id={element.id}
+                        onChange={() =>
+                          dispatch(
+                            toggleById({
+                              id: element.id,
+                              level: 1,
+                              parentId: null,
+                              type,
+                            })
+                          )
+                        }
+                      />
                       <label
                         className="ml-2 text-tertiary cursor-pointer text-sm font-bold"
                         htmlFor={element.id}
@@ -58,7 +153,29 @@ export default function ClassificationBox({ type, data }: Props) {
                         key={child.id}
                         className="flex items-center leading-4 mb-3 border-t py-2"
                       >
-                        <Checkbox id={child.id} />
+                        <input
+                          type="checkbox"
+                          className="peer accent-primary cursor-pointer"
+                          checked={
+                            getCheckValueByIdAndLevel(
+                              child.id,
+                              2,
+                              element.id,
+                              type
+                            ) || false
+                          }
+                          id={child.id}
+                          onChange={() =>
+                            dispatch(
+                              toggleById({
+                                id: child.id,
+                                level: 2,
+                                parentId: element.id,
+                                type,
+                              })
+                            )
+                          }
+                        />
                         <label
                           className="ml-2 text-tertiary cursor-pointer text-sm font-bold"
                           htmlFor={child.id}
@@ -74,7 +191,25 @@ export default function ClassificationBox({ type, data }: Props) {
                   key={element.id}
                   className="flex items-center leading-4 mb-3 border-t py-2"
                 >
-                  <Checkbox id={element.id} />
+                  <input
+                    type="checkbox"
+                    className="peer accent-primary cursor-pointer"
+                    checked={
+                      getCheckValueByIdAndLevel(element.id, 1, null, type) ||
+                      false
+                    }
+                    id={element.id}
+                    onChange={() =>
+                      dispatch(
+                        toggleById({
+                          id: element.id,
+                          level: 1,
+                          parentId: null,
+                          type,
+                        })
+                      )
+                    }
+                  />
                   <label
                     className="ml-2 text-tertiary cursor-pointer text-sm font-bold"
                     htmlFor={element.id}
