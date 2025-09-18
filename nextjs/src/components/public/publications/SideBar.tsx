@@ -6,9 +6,9 @@ import {
   selectGeos,
   selectThemes,
   selectCollections,
-} from "@/lib/features/publicationFilter/publicationFilterSlice";
+} from "@/lib/features/publication/publicationFilterSlice";
 
-import { useAppSelector, useAppDispatch, useAppStore } from "@/lib/hooks";
+import { useAppSelector } from "@/lib/hooks";
 
 export default function SideBar() {
   const themes = useAppSelector((state) => selectThemes(state));

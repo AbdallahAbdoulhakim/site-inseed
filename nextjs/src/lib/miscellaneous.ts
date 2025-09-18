@@ -7,4 +7,13 @@ export function truncateString(str: string, maxLength: number) {
 }
 
 
+export function splitNumbersFromString(str:string | undefined, sep:string="+"){
 
+  if(!str) return
+
+  const numbers = str.split("+");
+
+
+  return numbers
+
+}

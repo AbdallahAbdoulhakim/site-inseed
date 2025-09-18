@@ -11,18 +11,21 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "table": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::publication-table.publication-table"
+    "content": {
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      }
     },
     "graphic": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::publication-graphic.publication-graphic"
     },
-    "orderNumber": {
+    "norder": {
       "type": "integer",
+      "required": true,
       "default": 1
     }
   }

@@ -614,7 +614,9 @@ export interface ApiPublicationCategoryPublicationCategory
     > &
       Schema.Attribute.Private;
     name: Schema.Attribute.String;
-    norder: Schema.Attribute.Integer & Schema.Attribute.Unique;
+    norder: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
     parent: Schema.Attribute.Relation<
       'manyToOne',
       'api::publication-category.publication-category'
@@ -659,7 +661,9 @@ export interface ApiPublicationCollectionPublicationCollection
     > &
       Schema.Attribute.Private;
     name: Schema.Attribute.String;
-    norder: Schema.Attribute.Integer & Schema.Attribute.Unique;
+    norder: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
     parent: Schema.Attribute.Relation<
       'manyToOne',
       'api::publication-collection.publication-collection'
@@ -749,10 +753,12 @@ export interface ApiPublicationGraphicPublicationGraphic
       'api::publication-graphic.publication-graphic'
     > &
       Schema.Attribute.Private;
-    orderNumber: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<1>;
-    publication_paragraph: Schema.Attribute.Relation<
+    norder: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<1>;
+    publication: Schema.Attribute.Relation<
       'manyToOne',
-      'api::publication-paragraph.publication-paragraph'
+      'api::publication.publication'
     >;
     publishedAt: Schema.Attribute.DateTime;
     type: Schema.Attribute.Enumeration<['line', 'scatter', 'compound']>;
@@ -784,10 +790,6 @@ export interface ApiPublicationParagraphPublicationParagraph
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    graphics: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::publication-graphic.publication-graphic'
-    >;
     inSummary: Schema.Attribute.Boolean &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<false>;
@@ -798,53 +800,19 @@ export interface ApiPublicationParagraphPublicationParagraph
       'api::publication-paragraph.publication-paragraph'
     > &
       Schema.Attribute.Private;
-    orderNumber: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<1>;
+    norder: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<1>;
+    publication: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::publication.publication'
+    >;
     publishedAt: Schema.Attribute.DateTime;
     table_graph: Schema.Attribute.Relation<
       'oneToOne',
       'api::related-table-graph.related-table-graph'
     >;
-    tables: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::publication-table.publication-table'
-    >;
     title: Schema.Attribute.String;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiPublicationTablePublicationTable
-  extends Struct.CollectionTypeSchema {
-  collectionName: 'publication_tables';
-  info: {
-    displayName: 'Publication Table';
-    pluralName: 'publication-tables';
-    singularName: 'publication-table';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    datafile: Schema.Attribute.Media<'files'>;
-    dataurl: Schema.Attribute.String;
-    legend: Schema.Attribute.String;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::publication-table.publication-table'
-    > &
-      Schema.Attribute.Private;
-    orderNumber: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<1>;
-    publication_paragraph: Schema.Attribute.Relation<
-      'manyToOne',
-      'api::publication-paragraph.publication-paragraph'
-    >;
-    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -877,7 +845,9 @@ export interface ApiPublicationThemePublicationTheme
     > &
       Schema.Attribute.Private;
     name: Schema.Attribute.String;
-    norder: Schema.Attribute.Integer & Schema.Attribute.Unique;
+    norder: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
     parent: Schema.Attribute.Relation<
       'manyToOne',
       'api::publication-theme.publication-theme'
@@ -912,12 +882,20 @@ export interface ApiPublicationPublication extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     data: Schema.Attribute.Media<'files'>;
+    graphics: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::publication-graphic.publication-graphic'
+    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::publication.publication'
     > &
       Schema.Attribute.Private;
+    paragraphs: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::publication-paragraph.publication-paragraph'
+    >;
     parutionDate: Schema.Attribute.DateTime;
     parutionNext: Schema.Attribute.DateTime;
     parutionNumber: Schema.Attribute.String;
@@ -940,6 +918,7 @@ export interface ApiPublicationPublication extends Struct.CollectionTypeSchema {
     >;
     publicationSlug: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
+    short: Schema.Attribute.String;
     subtitle: Schema.Attribute.String;
     title: Schema.Attribute.String;
     type: Schema.Attribute.Enumeration<
@@ -969,6 +948,13 @@ export interface ApiRelatedTableGraphRelatedTableGraph
     draftAndPublish: true;
   };
   attributes: {
+    content: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'defaultHtml';
+        }
+      >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -982,12 +968,10 @@ export interface ApiRelatedTableGraphRelatedTableGraph
       'api::related-table-graph.related-table-graph'
     > &
       Schema.Attribute.Private;
-    orderNumber: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<1>;
+    norder: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<1>;
     publishedAt: Schema.Attribute.DateTime;
-    table: Schema.Attribute.Relation<
-      'oneToOne',
-      'api::publication-table.publication-table'
-    >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1603,7 +1587,6 @@ declare module '@strapi/strapi' {
       'api::publication-geo.publication-geo': ApiPublicationGeoPublicationGeo;
       'api::publication-graphic.publication-graphic': ApiPublicationGraphicPublicationGraphic;
       'api::publication-paragraph.publication-paragraph': ApiPublicationParagraphPublicationParagraph;
-      'api::publication-table.publication-table': ApiPublicationTablePublicationTable;
       'api::publication-theme.publication-theme': ApiPublicationThemePublicationTheme;
       'api::publication.publication': ApiPublicationPublication;
       'api::related-table-graph.related-table-graph': ApiRelatedTableGraphRelatedTableGraph;

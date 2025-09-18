@@ -60,13 +60,13 @@ export default function CategoryArticles({
     const params = new URLSearchParams(window.location.search);
     params.delete("page");
     params.set("search", search);
-    router.push(`${window.location.pathname}?${params}`);
+    router.push(`${window.location.pathname}?${params}`, { scroll: false });
   };
 
   const removeSearchParams = () => {
     const params = new URLSearchParams(window.location.search);
     params.delete("search");
-    router.push(`${window.location.pathname}?${params}`);
+    router.push(`${window.location.pathname}?${params}`, { scroll: false });
 
     setSearch(null);
     if (inputRef.current) {
@@ -78,7 +78,7 @@ export default function CategoryArticles({
     <section
       data-aos="fade-up"
       data-aos-delay={100}
-      className="flex flex-col items-center container mx-auto"
+      className="flex flex-col items-center container px-5 xl:mx-auto"
     >
       <ArticleSearch
         setSearch={setSearch}

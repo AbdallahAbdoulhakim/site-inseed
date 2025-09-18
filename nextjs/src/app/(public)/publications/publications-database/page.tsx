@@ -2,6 +2,8 @@ import client from "@/lib/strapi";
 
 import Publications from "@/components/public/publications/Publications";
 
+import { splitNumbersFromString } from "@/lib/miscellaneous";
+
 export default async function PublicationsDatabase({
   searchParams,
 }: {
@@ -12,7 +14,57 @@ export default async function PublicationsDatabase({
   const publicationCategories = client.collection("publication-categories");
   const publicationCollections = client.collection("publication-collections");
 
-  const { page, search, theme, geo, category, collection } = await searchParams;
+  const publications = client.collection("publications");
+
+  const { page, theme, geo, category, collection } = await searchParams;
+
+  console.log(splitNumbersFromString(theme));
+
+  const { data: publicationsList } = await publications.find({
+    populate: {
+      paragraphs: {
+        fields: ["title", "link", "content", "norder", "inSummary"],
+        populate: {
+          table_graph: {
+            fields: ["content", "norder"],
+            populate: {
+              graphic: {
+                fields: ["dataurl", "type", "legend", "norder"],
+                populate: {
+                  datafile: {
+                    fields: ["name", "url"],
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+      graphics: {
+        fields: ["dataurl", "type", "legend", "norder"],
+        populate: {
+          datafile: {
+            fields: ["name", "url"],
+          },
+        },
+      },
+      publication_categories: {
+        fields: ["name", "slug", "norder"],
+      },
+      publication_collections: {
+        fields: ["name", "slug", "norder"],
+      },
+      publication_themes: {
+        fields: ["name", "slug", "norder"],
+      },
+      publication_geos: {
+        fields: ["name", "slug", "norder"],
+      },
+    },
+    // filters: {
+    //   $and: [],
+    // },
+  });
 
   const { data: themesList } = await publicationThemes.find({
     filters: {
@@ -224,6 +276,10 @@ export default async function PublicationsDatabase({
       geos={geos}
       categories={categories}
       collections={collections}
+      initialThemeTags={theme}
+      initialGeoTags={geo}
+      initialCategoryTags={category}
+      initialCollectionTags={collection}
     />
   );
 }

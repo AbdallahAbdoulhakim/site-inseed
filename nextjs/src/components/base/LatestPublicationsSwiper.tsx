@@ -27,7 +27,7 @@ interface Slide {
     | "Série chronologiques"
     | "Jeux de données"
     | "Chiffres détaillés";
-  title: string;
+  short: string;
   publicationSlug: string;
   publicationDate: string;
   delay: number;
@@ -82,11 +82,11 @@ export default function LatestPublicationsSwiper({ data }: SliderProps) {
           }}
         >
           {data.map(
-            ({ id, type, title, publicationSlug, publicationDate, delay }) => (
+            ({ id, type, short, publicationSlug, publicationDate, delay }) => (
               <SwiperSlide key={id}>
                 <LatestPublication
                   Icon={fetchIcon(type)}
-                  title={title}
+                  short={short}
                   type={type}
                   publicationSlug={publicationSlug}
                   publicationDate={publicationDate}

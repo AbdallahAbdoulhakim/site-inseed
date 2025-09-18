@@ -16,7 +16,7 @@ interface LatestPublicationProps {
     | "Jeux de données"
     | "Chiffres détaillés";
   Icon: JSX.Element;
-  title: string;
+  short: string;
   publicationSlug: string;
   publicationDate: string;
   delay: number;
@@ -24,7 +24,7 @@ interface LatestPublicationProps {
 
 export default function LatestPublication({
   type,
-  title,
+  short,
   Icon,
   publicationSlug,
   publicationDate,
@@ -53,7 +53,7 @@ export default function LatestPublication({
             </p>
             <p className="text-xs text-primary/80 uppercase">{type}</p>
             <p className="text-xs md:text-sm lg:text-base font-semibold text-primary hover:text-primary/60 mt-[10px]">
-              <Link href={publicationSlug}>{title}</Link>
+              <Link href={publicationSlug}>{short}</Link>
             </p>
           </div>
         </div>

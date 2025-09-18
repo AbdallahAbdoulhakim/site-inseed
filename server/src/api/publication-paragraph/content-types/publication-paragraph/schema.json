@@ -15,7 +15,17 @@
       "type": "string"
     },
     "link": {
-      "type": "string"
+      "type": "string",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "inSummary"
+            },
+            true
+          ]
+        }
+      }
     },
     "content": {
       "type": "customField",
@@ -24,21 +34,11 @@
         "preset": "defaultMarkdown"
       }
     },
-    "orderNumber": {
+    "norder": {
       "type": "integer",
-      "default": 1
-    },
-    "graphics": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::publication-graphic.publication-graphic",
-      "mappedBy": "publication_paragraph"
-    },
-    "tables": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::publication-table.publication-table",
-      "mappedBy": "publication_paragraph"
+      "required": true,
+      "default": 1,
+      "unique": false
     },
     "table_graph": {
       "type": "relation",
@@ -49,6 +49,12 @@
       "type": "boolean",
       "required": true,
       "default": false
+    },
+    "publication": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::publication.publication",
+      "inversedBy": "paragraphs"
     }
   }
 }

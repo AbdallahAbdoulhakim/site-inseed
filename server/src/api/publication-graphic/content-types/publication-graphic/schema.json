@@ -25,15 +25,10 @@
     "legend": {
       "type": "string"
     },
-    "orderNumber": {
+    "norder": {
       "type": "integer",
+      "required": true,
       "default": 1
-    },
-    "publication_paragraph": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::publication-paragraph.publication-paragraph",
-      "inversedBy": "graphics"
     },
     "datafile": {
       "type": "media",
@@ -41,6 +36,12 @@
       "allowedTypes": [
         "files"
       ]
+    },
+    "publication": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::publication.publication",
+      "inversedBy": "graphics"
     }
   }
 }

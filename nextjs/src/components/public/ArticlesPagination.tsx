@@ -20,7 +20,7 @@ export default function Pagination({
   const changePage = (newPage: number) => {
     const params = new URLSearchParams(window.location.search);
     params.set("page", newPage.toString());
-    router.push(`${window.location.pathname}?${params}`);
+    router.push(`${window.location.pathname}?${params}`, { scroll: false });
   };
 
   const hasPrev = ITEM_PER_PAGE * (page - 1) > 0;

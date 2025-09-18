@@ -17,6 +17,9 @@
     "title": {
       "type": "string"
     },
+    "short": {
+      "type": "string"
+    },
     "subtitle": {
       "type": "string"
     },
@@ -79,6 +82,18 @@
       "relation": "manyToMany",
       "target": "api::publication-geo.publication-geo",
       "inversedBy": "publications"
+    },
+    "paragraphs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::publication-paragraph.publication-paragraph",
+      "mappedBy": "publication"
+    },
+    "graphics": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::publication-graphic.publication-graphic",
+      "mappedBy": "publication"
     }
   }
 }

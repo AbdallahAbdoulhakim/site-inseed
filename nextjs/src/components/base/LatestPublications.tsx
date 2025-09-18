@@ -18,7 +18,7 @@ export default async function LatestPublications() {
     return {
       id: publication.id,
       type: publication.type,
-      title: truncateString(publication.title, 150),
+      short: truncateString(publication.short, 150),
       publicationSlug: `/publications/${publication.publicationSlug}`,
       publicationDate: publication.parutionDate
         ? publication.parutionDate

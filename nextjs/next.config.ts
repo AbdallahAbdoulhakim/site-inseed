@@ -5,6 +5,9 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [new URL("http://localhost:1337/uploads/**")],
   },
+  experimental: {
+    scrollRestoration: true,
+  },
 };
 
 export default nextConfig;

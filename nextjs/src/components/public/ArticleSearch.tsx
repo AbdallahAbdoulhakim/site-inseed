@@ -55,7 +55,7 @@ export default function ArticleSearch({
     if (!tags || tags.length === 0) {
       params.delete("page");
       params.delete("tags");
-      router.push(`${window.location.pathname}?${params}`);
+      router.push(`${window.location.pathname}?${params}`, { scroll: false });
       return;
     }
 

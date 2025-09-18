@@ -81,13 +81,13 @@ export default function ArticlePage({
   } = contentData;
 
   return (
-    <section>
+    <section className="container mx-auto">
       <div
-        className="container mx-auto px-5 lg:px-0 min-h-lvh my-10"
+        className="xl:px-0 min-h-lvh my-10 items-center justify-center flex flex-col"
         data-aos="fade-up"
         data-aos-delay={100}
       >
-        <div className="grid grid-cols-1 lg:grid-cols-[840px_420px] gap-8">
+        <div className="justify-center grid grid-cols-1 lg:grid-cols-[840px_420px] gap-8">
           <ArticleContent
             category={category}
             categorySlug={categorySlug}

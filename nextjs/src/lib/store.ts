@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit'
-import publicationFilterReducer from '@/lib/features/publicationFilter/publicationFilterSlice'
+import publicationFilterReducer from '@/lib/features/publication/publicationFilterSlice'
 
 export const makeStore = () => {
   return configureStore({

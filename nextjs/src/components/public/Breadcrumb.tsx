@@ -11,7 +11,7 @@ interface BreadcrumbProps {
 export default function Breadcrumb({ breadcrumb }: BreadcrumbProps) {
   return (
     <nav className="bg-[#f6f6f6] py-4">
-      <div className="container mx-2 md:mx-auto">
+      <div className="container mx-2 md:mx-auto px-5">
         <ol className="flex flex-row flex-wrap list-none m-0 p-0  font-semibold text-default text-xs! lg:text-base!">
           <li>
             <Link

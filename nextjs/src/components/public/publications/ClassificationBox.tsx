@@ -8,7 +8,6 @@ interface Data {
   publications: number;
   children: Data[];
 }
-import { Checkbox } from "@/components/ui/checkbox";
 
 import {
   Collapsible,
@@ -20,11 +19,12 @@ import { FaCaretDown } from "react-icons/fa6";
 
 import {
   toggleById,
+  toggleOpenState,
   selectCategories,
   selectCollections,
   selectGeos,
   selectThemes,
-} from "@/lib/features/publicationFilter/publicationFilterSlice";
+} from "@/lib/features/publication/publicationFilterSlice";
 
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 
@@ -96,6 +96,28 @@ export default function ClassificationBox({ type, data }: Props) {
     }
   };
 
+  const getOpenState = (
+    id: string,
+    type: "THÈMES" | "NIVEAU GÉOGRAPHIQUE" | "CATÉGORIES" | "COLLECTIONS"
+  ) => {
+    if (type === "THÈMES") {
+      const themes = useAppSelector((state) => selectThemes(state));
+      return themes.find((elt) => elt.id === id)?.open;
+    }
+    if (type === "CATÉGORIES") {
+      const categories = useAppSelector((state) => selectCategories(state));
+      return categories.find((elt) => elt.id === id)?.open;
+    }
+    if (type === "COLLECTIONS") {
+      const collections = useAppSelector((state) => selectCollections(state));
+      return collections.find((elt) => elt.id === id)?.open;
+    }
+    if (type === "NIVEAU GÉOGRAPHIQUE") {
+      const geos = useAppSelector((state) => selectGeos(state));
+      return geos.find((elt) => elt.id === id)?.open;
+    }
+  };
+
   return (
     <Collapsible className="w-full">
       <CollapsibleTrigger className="w-full">
@@ -109,7 +131,14 @@ export default function ClassificationBox({ type, data }: Props) {
           <ul className="font-roboto-sans">
             {data.map((element) =>
               element.children.length > 0 ? (
-                <Collapsible key={element.id} className="w-full">
+                <Collapsible
+                  open={getOpenState(element.id, type)}
+                  onOpenChange={() =>
+                    dispatch(toggleOpenState({ id: element.id, type }))
+                  }
+                  key={element.id}
+                  className="w-full"
+                >
                   <div className="grid grid-cols-[1fr_10fr] items-baseline">
                     <CollapsibleTrigger className="w-full cursor-pointer">
                       <FaCaretDown size={16} className="text-primary" />

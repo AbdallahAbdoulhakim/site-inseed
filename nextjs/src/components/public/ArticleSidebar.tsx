@@ -32,7 +32,7 @@ export default function ArticleSidebar({
   const setSearchParams = (search: string) => {
     const params = new URLSearchParams(window.location.search);
     params.set("search", search);
-    router.push(`${window.location.pathname}?${params}`);
+    router.push(`${window.location.pathname}?${params}`, { scroll: false });
     if (articleTileRef.current) {
       articleTileRef.current.textContent = "Résutats de la recherche";
     }
@@ -41,7 +41,7 @@ export default function ArticleSidebar({
   const removeSearchParams = () => {
     const params = new URLSearchParams(window.location.search);
     params.delete("search");
-    router.push(`${window.location.pathname}`);
+    router.push(`${window.location.pathname}`, { scroll: false });
     if (articleTileRef.current) {
       articleTileRef.current.textContent = "Articles Récents";
     }
