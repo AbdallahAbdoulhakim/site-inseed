@@ -7,11 +7,13 @@ export function truncateString(str: string, maxLength: number) {
 }
 
 
-export function splitNumbersFromString(str:string | undefined, sep:string="+"){
+export function splitNumbersFromString(str:string | undefined, sep:string=" "){
 
   if(!str) return
 
-  const numbers = str.split("+");
+  const numbers = str.split(sep).map(elt=> +elt)
+
+  if(!numbers.every(elt=> !isNaN(elt))) return
 
 
   return numbers

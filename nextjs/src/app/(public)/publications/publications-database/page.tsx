@@ -18,7 +18,56 @@ export default async function PublicationsDatabase({
 
   const { page, theme, geo, category, collection } = await searchParams;
 
-  console.log(splitNumbersFromString(theme));
+  const themeTagsArr = splitNumbersFromString(theme) ?? [];
+  const geoTagsArr = splitNumbersFromString(geo) ?? [];
+  const categoryTagsArr = splitNumbersFromString(category) ?? [];
+  const collectionTagsArr = splitNumbersFromString(collection) ?? [];
+
+  const filters = () => {
+    if (
+      themeTagsArr.length === 0 &&
+      geoTagsArr.length === 0 &&
+      categoryTagsArr.length === 0 &&
+      collectionTagsArr.length === 0
+    )
+      return {};
+
+    let result: { $and: any[] } = { $and: [] };
+
+    if (themeTagsArr.length > 0) {
+      result.$and.push({
+        publication_themes: {
+          norder: { $in: themeTagsArr },
+        },
+      });
+    }
+
+    if (geoTagsArr.length > 0) {
+      result.$and.push({
+        publication_geos: {
+          norder: { $in: geoTagsArr },
+        },
+      });
+    }
+
+    if (categoryTagsArr.length > 0) {
+      result.$and.push({
+        publication_categories: {
+          norder: { $in: categoryTagsArr },
+        },
+      });
+    }
+
+    if (collectionTagsArr.length > 0) {
+      result.$and.push({
+        publication_collections: {
+          norder: { $in: collectionTagsArr },
+        },
+      });
+    }
+
+    return result;
+  };
 
   const { data: publicationsList } = await publications.find({
     populate: {
@@ -61,10 +110,10 @@ export default async function PublicationsDatabase({
         fields: ["name", "slug", "norder"],
       },
     },
-    // filters: {
-    //   $and: [],
-    // },
+    filters: filters(),
   });
+
+  console.log(publicationsList);
 
   const { data: themesList } = await publicationThemes.find({
     filters: {

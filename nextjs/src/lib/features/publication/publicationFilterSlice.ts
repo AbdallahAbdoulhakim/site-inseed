@@ -457,6 +457,11 @@ export const publicationFilterSlice = createSlice({
         }[]}>)=>{
             const {categories, themes, geos, collections} = action.payload
 
+            state.categoriesTags=[]
+            state.themesTags=[]
+            state.collectionsTags=[]
+            state.geosTags=[]
+
             categories.forEach(cat=>{
                 state.categoriesTags = cat.checked ? [...state.categoriesTags, cat.norder]:state.categoriesTags
 

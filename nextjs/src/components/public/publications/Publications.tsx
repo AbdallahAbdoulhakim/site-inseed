@@ -58,38 +58,34 @@ export default function Publications({
   const router = useRouter();
 
   const setTagsParams = (
-    tags: number[],
-    type: "THÈMES" | "NIVEAU GÉOGRAPHIQUE" | "CATÉGORIES" | "COLLECTIONS"
+    themes: number[] | null | undefined,
+    collections: number[] | null | undefined,
+    geos: number[] | null | undefined,
+    categories: number[] | null | undefined
   ) => {
     const params = new URLSearchParams(window.location.search);
 
-    const tagPrefix =
-      type === "THÈMES"
-        ? "theme"
-        : type === "CATÉGORIES"
-        ? "category"
-        : type === "COLLECTIONS"
-        ? "collection"
-        : type === "NIVEAU GÉOGRAPHIQUE"
-        ? "geo"
-        : "";
+    params.delete("page");
+    params.delete("theme");
+    params.delete("collection");
+    params.delete("geo");
+    params.delete("category");
 
-    if (!tagPrefix) return;
-
-    if (!tags || tags.length === 0) {
-      params.delete("page");
-      params.delete("theme");
-      params.delete("category");
-      params.delete("collection");
-      params.delete("geo");
-      router.push(`${window.location.pathname}`, { scroll: false });
-      return;
+    if (themes && themes.length > 0) {
+      params.set("theme", themes.join(" "));
     }
 
-    params.delete("page");
-    params.delete(tagPrefix);
+    if (collections && collections.length > 0) {
+      params.set("collection", collections.join(" "));
+    }
 
-    params.set(tagPrefix, tags.join(" "));
+    if (geos && geos.length > 0) {
+      params.set("geo", geos.join(" "));
+    }
+
+    if (categories && categories.length > 0) {
+      params.set("category", categories.join(" "));
+    }
 
     router.push(`${window.location.pathname}?${params}`, { scroll: false });
   };
@@ -142,6 +138,13 @@ export default function Publications({
 
   const store = useAppStore();
   const initialized = useRef(false);
+
+  const themesTags = useAppSelector((state) => selectThemesTags(state));
+  const categoriesTags = useAppSelector((state) => selectCategoriesTags(state));
+  const geosTags = useAppSelector((state) => selectGeosTags(state));
+  const collectionsTags = useAppSelector((state) =>
+    selectCollectionsTags(state)
+  );
 
   if (!initialized.current) {
     store.dispatch(
@@ -198,31 +201,13 @@ export default function Publications({
         }),
       })
     );
+
     initialized.current = true;
   }
 
-  const themesTags = useAppSelector((state) => selectThemesTags(state));
-  const categoriesTags = useAppSelector((state) => selectCategoriesTags(state));
-  const geosTags = useAppSelector((state) => selectGeosTags(state));
-  const collectionsTags = useAppSelector((state) =>
-    selectCollectionsTags(state)
-  );
-
   useEffect(() => {
-    setTagsParams(themesTags, "THÈMES");
-  }, [themesTags]);
-
-  useEffect(() => {
-    setTagsParams(categoriesTags, "CATÉGORIES");
-  }, [categoriesTags]);
-
-  useEffect(() => {
-    setTagsParams(geosTags, "NIVEAU GÉOGRAPHIQUE");
-  }, [geosTags]);
-
-  useEffect(() => {
-    setTagsParams(collectionsTags, "COLLECTIONS");
-  }, [collectionsTags]);
+    setTagsParams(themesTags, collectionsTags, geosTags, categoriesTags);
+  }, [themesTags, collectionsTags, geosTags, categoriesTags]);
 
   return (
     <div
