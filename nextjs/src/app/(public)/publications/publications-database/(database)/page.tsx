@@ -73,27 +73,25 @@ export default async function PublicationsDatabase({
     populate: {
       paragraphs: {
         fields: ["title", "link", "content", "norder", "inSummary"],
-        populate: {
-          table_graph: {
-            fields: ["content", "norder"],
-            populate: {
-              graphic: {
-                fields: ["dataurl", "type", "legend", "norder"],
-                populate: {
-                  datafile: {
-                    fields: ["name", "url"],
-                  },
-                },
-              },
-            },
-          },
-        },
       },
       graphics: {
         fields: ["dataurl", "type", "legend", "norder"],
         populate: {
           datafile: {
             fields: ["name", "url"],
+          },
+        },
+      },
+      table_graphs: {
+        fields: ["content", "norder"],
+        populate: {
+          graphic: {
+            fields: ["dataurl", "type", "legend", "norder"],
+            populate: {
+              datafile: {
+                fields: ["name", "url"],
+              },
+            },
           },
         },
       },
@@ -112,8 +110,6 @@ export default async function PublicationsDatabase({
     },
     filters: filters(),
   });
-
-  console.log(publicationsList);
 
   const { data: themesList } = await publicationThemes.find({
     filters: {
@@ -329,6 +325,8 @@ export default async function PublicationsDatabase({
       initialGeoTags={geo}
       initialCategoryTags={category}
       initialCollectionTags={collection}
+      publicationsList={publicationsList}
+      resultsCount={publicationsList.length}
     />
   );
 }

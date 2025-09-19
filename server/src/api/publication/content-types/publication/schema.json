@@ -94,6 +94,12 @@
       "relation": "oneToMany",
       "target": "api::publication-graphic.publication-graphic",
       "mappedBy": "publication"
+    },
+    "table_graphs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::related-table-graph.related-table-graph",
+      "mappedBy": "publication"
     }
   }
 }

@@ -19,7 +19,9 @@
       "enum": [
         "line",
         "scatter",
-        "compound"
+        "compound",
+        "vertical barchart",
+        "horizontal barchart"
       ]
     },
     "legend": {
@@ -42,6 +44,18 @@
       "relation": "manyToOne",
       "target": "api::publication.publication",
       "inversedBy": "graphics"
+    },
+    "title": {
+      "type": "string"
+    },
+    "yAxisLegend": {
+      "type": "string"
+    },
+    "xAxisLegend": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
     }
   }
 }

@@ -36,6 +36,8 @@ interface Props {
   initialGeoTags: string | undefined;
   initialCategoryTags: string | undefined;
   initialCollectionTags: string | undefined;
+  resultsCount: number;
+  publicationsList: any;
 }
 
 interface InitCheck {
@@ -54,6 +56,8 @@ export default function Publications({
   initialCollectionTags,
   initialGeoTags,
   initialThemeTags,
+  resultsCount,
+  publicationsList,
 }: Props) {
   const router = useRouter();
 
@@ -217,8 +221,8 @@ export default function Publications({
     >
       <SideBar />
       <div className="flex flex-col space-y-2">
-        <ResultsSnapshot />
-        <Results />
+        <ResultsSnapshot resultsCount={resultsCount} />
+        <Results publicationsList={publicationsList} />
       </div>
     </div>
   );

@@ -27,6 +27,12 @@
       "type": "integer",
       "required": true,
       "default": 1
+    },
+    "publication": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::publication.publication",
+      "inversedBy": "table_graphs"
     }
   }
 }

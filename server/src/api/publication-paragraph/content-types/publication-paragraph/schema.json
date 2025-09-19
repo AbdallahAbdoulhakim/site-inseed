@@ -40,11 +40,6 @@
       "default": 1,
       "unique": false
     },
-    "table_graph": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::related-table-graph.related-table-graph"
-    },
     "inSummary": {
       "type": "boolean",
       "required": true,

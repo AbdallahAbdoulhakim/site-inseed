@@ -761,10 +761,22 @@ export interface ApiPublicationGraphicPublicationGraphic
       'api::publication.publication'
     >;
     publishedAt: Schema.Attribute.DateTime;
-    type: Schema.Attribute.Enumeration<['line', 'scatter', 'compound']>;
+    subtitle: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+    type: Schema.Attribute.Enumeration<
+      [
+        'line',
+        'scatter',
+        'compound',
+        'vertical barchart',
+        'horizontal barchart',
+      ]
+    >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    xAxisLegend: Schema.Attribute.String;
+    yAxisLegend: Schema.Attribute.String;
   };
 }
 
@@ -808,10 +820,6 @@ export interface ApiPublicationParagraphPublicationParagraph
       'api::publication.publication'
     >;
     publishedAt: Schema.Attribute.DateTime;
-    table_graph: Schema.Attribute.Relation<
-      'oneToOne',
-      'api::related-table-graph.related-table-graph'
-    >;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -920,6 +928,10 @@ export interface ApiPublicationPublication extends Struct.CollectionTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     short: Schema.Attribute.String;
     subtitle: Schema.Attribute.String;
+    table_graphs: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::related-table-graph.related-table-graph'
+    >;
     title: Schema.Attribute.String;
     type: Schema.Attribute.Enumeration<
       [
@@ -971,6 +983,10 @@ export interface ApiRelatedTableGraphRelatedTableGraph
     norder: Schema.Attribute.Integer &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<1>;
+    publication: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::publication.publication'
+    >;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
