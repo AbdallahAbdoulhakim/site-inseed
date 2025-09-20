@@ -56,6 +56,37 @@
     },
     "subtitle": {
       "type": "string"
+    },
+    "inSummary": {
+      "type": "boolean",
+      "required": false,
+      "default": false
+    },
+    "link": {
+      "type": "string",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "inSummary"
+            },
+            true
+          ]
+        }
+      }
+    },
+    "startFrom": {
+      "type": "decimal",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "type"
+            },
+            "line"
+          ]
+        }
+      }
     }
   }
 }

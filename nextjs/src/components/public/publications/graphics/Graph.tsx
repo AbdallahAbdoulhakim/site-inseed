@@ -7,6 +7,7 @@ import Papa from "papaparse";
 
 import { useEffect, useState } from "react";
 import "aos/dist/aos.css";
+import LineChartGraphic from "./LineChartGraphic";
 
 interface Props {
   yAxisLegend: string | null | undefined;
@@ -15,6 +16,7 @@ interface Props {
   title: string | null | undefined;
   subtitle: string | null | undefined;
   legend: string | null | undefined;
+  startFrom: number | null | undefined;
   dataUrl: string;
   type:
     | "line"
@@ -23,6 +25,7 @@ interface Props {
     | "vertical barchart"
     | "horizontal barchart"
     | undefined;
+  id: string;
 }
 
 interface DataForm {
@@ -41,7 +44,9 @@ export default function Graph({
   legend,
   xAxisLegend,
   yAxisLegend,
+  startFrom,
   type,
+  id,
 }: Props) {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState<DataForm[]>([]);
@@ -64,34 +69,59 @@ export default function Graph({
     loadData();
   }, []);
 
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: false,
+    });
+  }, []);
+
   if (!dataUrl) return <p className="text-red font-semibold">No Data!</p>;
   return (
     <div
+      id={id}
       data-aos="fade-up"
-      className="border border-slate-400  h-[500px] w-[350px] sm:w-[450px] md:w-[700px] lg:w-[800px] xl:w-[900px] 2xl:w-[1024px]"
+      className="flex flex-col"
       data-aos-delay={delay}
     >
-      {loading ? (
-        <span className="loader"></span>
-      ) : type === "vertical barchart" ? (
-        <BarChartGraphic
-          data={data}
-          columns={columns}
-          xAxisLegend={xAxisLegend ?? ""}
-          yAxisLegend={yAxisLegend ?? ""}
-          type="vertical"
-        />
-      ) : type === "horizontal barchart" ? (
-        <BarChartGraphic
-          data={data}
-          columns={columns}
-          xAxisLegend={xAxisLegend ?? ""}
-          yAxisLegend={yAxisLegend ?? ""}
-          type="horizontal"
-        />
-      ) : (
-        <div> No Graph!</div>
-      )}
+      <div className="flex flex-col">
+        {title && (
+          <h1 className="text-primary font-bold text-xl self-center">
+            {title}
+          </h1>
+        )}
+      </div>
+      <div className="h-[500px] w-[350px] sm:w-[450px] md:w-[700px] lg:w-[800px] xl:w-[900px] 2xl:w-[1024px] self-center">
+        {loading ? (
+          <span className="loader"></span>
+        ) : type === "vertical barchart" ? (
+          <BarChartGraphic
+            data={data}
+            columns={columns}
+            xAxisLegend={xAxisLegend ?? ""}
+            yAxisLegend={yAxisLegend ?? ""}
+            type="vertical"
+          />
+        ) : type === "horizontal barchart" ? (
+          <BarChartGraphic
+            data={data}
+            columns={columns}
+            xAxisLegend={xAxisLegend ?? ""}
+            yAxisLegend={yAxisLegend ?? ""}
+            type="horizontal"
+          />
+        ) : type === "line" ? (
+          <LineChartGraphic
+            data={data}
+            columns={columns}
+            xAxisLegend={xAxisLegend ?? ""}
+            yAxisLegend={yAxisLegend ?? ""}
+            startFrom={startFrom ?? 0}
+          />
+        ) : (
+          <div> No Graph!</div>
+        )}
+      </div>
     </div>
   );
 }

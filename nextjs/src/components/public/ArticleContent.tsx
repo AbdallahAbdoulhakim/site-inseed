@@ -86,7 +86,7 @@ export default function ArticleContent({
               </li>
             </ul>
             <DisplayContent
-              className="mt-5 min-w-full overflow-auto"
+              className="mt-5 min-w-full overflow-auto text-justify [&_p]:text-justify"
               htmlContent={content}
             />
           </div>

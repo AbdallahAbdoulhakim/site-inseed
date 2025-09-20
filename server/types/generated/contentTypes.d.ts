@@ -746,7 +746,9 @@ export interface ApiPublicationGraphicPublicationGraphic
       Schema.Attribute.Private;
     datafile: Schema.Attribute.Media<'files'>;
     dataurl: Schema.Attribute.String;
+    inSummary: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     legend: Schema.Attribute.String;
+    link: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -761,6 +763,7 @@ export interface ApiPublicationGraphicPublicationGraphic
       'api::publication.publication'
     >;
     publishedAt: Schema.Attribute.DateTime;
+    startFrom: Schema.Attribute.Decimal;
     subtitle: Schema.Attribute.String;
     title: Schema.Attribute.String;
     type: Schema.Attribute.Enumeration<
@@ -802,6 +805,8 @@ export interface ApiPublicationParagraphPublicationParagraph
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    hasTableWithSpan: Schema.Attribute.Boolean &
+      Schema.Attribute.DefaultTo<false>;
     inSummary: Schema.Attribute.Boolean &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<false>;
@@ -974,6 +979,8 @@ export interface ApiRelatedTableGraphRelatedTableGraph
       'oneToOne',
       'api::publication-graphic.publication-graphic'
     >;
+    inSummary: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    link: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -988,6 +995,7 @@ export interface ApiRelatedTableGraphRelatedTableGraph
       'api::publication.publication'
     >;
     publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1062,7 +1070,7 @@ export interface ApiTeamMemberTeamMember extends Struct.CollectionTypeSchema {
 export interface ApiTestTest extends Struct.CollectionTypeSchema {
   collectionName: 'tests';
   info: {
-    displayName: 'test';
+    displayName: 'Test';
     pluralName: 'tests';
     singularName: 'test';
   };
@@ -1070,6 +1078,13 @@ export interface ApiTestTest extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    content: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'defaultMarkdown';
+        }
+      >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

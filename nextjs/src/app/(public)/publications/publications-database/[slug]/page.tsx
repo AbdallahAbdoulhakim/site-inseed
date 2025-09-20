@@ -14,7 +14,14 @@ export default async function page({
   const { data: publicationsList } = await publications.find({
     populate: {
       paragraphs: {
-        fields: ["title", "link", "content", "norder", "inSummary"],
+        fields: [
+          "title",
+          "link",
+          "content",
+          "norder",
+          "inSummary",
+          "hasTableWithSpan",
+        ],
       },
       graphics: {
         fields: [
@@ -26,6 +33,9 @@ export default async function page({
           "xAxisLegend",
           "title",
           "subtitle",
+          "link",
+          "inSummary",
+          "startFrom",
         ],
         populate: {
           datafile: {
@@ -34,7 +44,7 @@ export default async function page({
         },
       },
       table_graphs: {
-        fields: ["content", "norder"],
+        fields: ["content", "norder", "title", "link", "inSummary"],
         populate: {
           graphic: {
             fields: [
@@ -46,6 +56,7 @@ export default async function page({
               "xAxisLegend",
               "title",
               "subtitle",
+              "startFrom",
             ],
             populate: {
               datafile: {

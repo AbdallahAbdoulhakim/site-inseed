@@ -50,6 +50,10 @@
       "relation": "manyToOne",
       "target": "api::publication.publication",
       "inversedBy": "paragraphs"
+    },
+    "hasTableWithSpan": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

@@ -139,3 +139,13 @@ body {
 .markdown-body > * {
   all: revert;
 }
+
+.has-table td[rowspan] {
+  background-color: #757575 !important;
+  color: white !important;
+}
+
+.has-table td[colspan] {
+  background-color: #757575 !important;
+  color: white !important;
+}

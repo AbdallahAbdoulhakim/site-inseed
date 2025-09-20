@@ -33,6 +33,26 @@
       "relation": "manyToOne",
       "target": "api::publication.publication",
       "inversedBy": "table_graphs"
+    },
+    "title": {
+      "type": "string"
+    },
+    "inSummary": {
+      "type": "boolean",
+      "default": false
+    },
+    "link": {
+      "type": "string",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "inSummary"
+            },
+            true
+          ]
+        }
+      }
     }
   }
 }
