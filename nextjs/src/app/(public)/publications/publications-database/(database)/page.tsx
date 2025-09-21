@@ -2,6 +2,8 @@ import client from "@/lib/strapi";
 
 import Publications from "@/components/public/publications/Publications";
 
+import { ITEM_PER_PAGE } from "@/lib/settings";
+
 import { splitNumbersFromString } from "@/lib/miscellaneous";
 
 export default async function PublicationsDatabase({
@@ -17,6 +19,8 @@ export default async function PublicationsDatabase({
   const publications = client.collection("publications");
 
   const { page, theme, geo, category, collection } = await searchParams;
+
+  const queryPage = page ? parseInt(page) : 1;
 
   const themeTagsArr = splitNumbersFromString(theme) ?? [];
   const geoTagsArr = splitNumbersFromString(geo) ?? [];
@@ -69,43 +73,33 @@ export default async function PublicationsDatabase({
     return result;
   };
 
-  const { data: publicationsList } = await publications.find({
+  const { data: publicationsList, meta } = await publications.find({
+    fields: [
+      "short",
+      "abstract",
+      "title",
+      "type",
+      "parutionDate",
+      "parutionNumber",
+      "publicationSlug",
+    ],
+    sort: "parutionDate:desc",
+    pagination: {
+      page: queryPage,
+      pageSize: ITEM_PER_PAGE,
+    },
     populate: {
-      paragraphs: {
-        fields: ["title", "link", "content", "norder", "inSummary"],
-      },
-      graphics: {
-        fields: ["dataurl", "type", "legend", "norder"],
-        populate: {
-          datafile: {
-            fields: ["name", "url"],
-          },
-        },
-      },
-      table_graphs: {
-        fields: ["content", "norder"],
-        populate: {
-          graphic: {
-            fields: ["dataurl", "type", "legend", "norder"],
-            populate: {
-              datafile: {
-                fields: ["name", "url"],
-              },
-            },
-          },
-        },
-      },
       publication_categories: {
-        fields: ["name", "slug", "norder"],
+        fields: ["norder"],
       },
       publication_collections: {
-        fields: ["name", "slug", "norder"],
+        fields: ["norder"],
       },
       publication_themes: {
-        fields: ["name", "slug", "norder"],
+        fields: ["norder"],
       },
       publication_geos: {
-        fields: ["name", "slug", "norder"],
+        fields: ["norder"],
       },
     },
     filters: filters(),
@@ -315,6 +309,20 @@ export default async function PublicationsDatabase({
     };
   });
 
+  const listOfPublications = publicationsList.map((publication) => ({
+    id: publication.id,
+    documentId: publication.documentId,
+    title: publication.title,
+    short: publication.short,
+    abstract: publication?.abstract,
+    type: publication.type,
+    parutionDate: publication?.parutionDate,
+    parutionNumber: publication?.parutionNumber,
+    publicationSlug: publication.publicationSlug,
+  }));
+
+  const count = meta.pagination?.total ?? 0;
+
   return (
     <Publications
       themes={themes}
@@ -325,8 +333,9 @@ export default async function PublicationsDatabase({
       initialGeoTags={geo}
       initialCategoryTags={category}
       initialCollectionTags={collection}
-      publicationsList={publicationsList}
-      resultsCount={publicationsList.length}
+      publicationsList={listOfPublications}
+      resultsCount={count}
+      page={queryPage}
     />
   );
 }

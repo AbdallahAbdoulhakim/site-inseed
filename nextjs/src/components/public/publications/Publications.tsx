@@ -3,6 +3,7 @@
 import SideBar from "@/components/public/publications/SideBar";
 import Results from "@/components/public/publications/Results";
 import ResultsSnapshot from "@/components/public/publications/ResultsSnapshot";
+
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect, useRef, useState } from "react";
@@ -13,6 +14,7 @@ import {
   selectCollectionsTags,
   selectGeosTags,
   selectThemesTags,
+  selectReRender,
 } from "@/lib/features/publication/publicationFilterSlice";
 
 import { useAppSelector, useAppStore } from "@/lib/hooks";
@@ -27,6 +29,18 @@ export interface Theme {
   children: Theme[];
 }
 
+export interface Publication {
+  id: number;
+  documentId: string;
+  short: string;
+  abstract?: string;
+  title: string;
+  type: string;
+  parutionDate: string;
+  parutionNumber?: string;
+  publicationSlug: string;
+}
+
 interface Props {
   themes: Theme[];
   geos: Theme[];
@@ -37,7 +51,8 @@ interface Props {
   initialCategoryTags: string | undefined;
   initialCollectionTags: string | undefined;
   resultsCount: number;
-  publicationsList: any;
+  page: number;
+  publicationsList: Publication[];
 }
 
 interface InitCheck {
@@ -58,6 +73,7 @@ export default function Publications({
   initialThemeTags,
   resultsCount,
   publicationsList,
+  page,
 }: Props) {
   const router = useRouter();
 
@@ -65,11 +81,14 @@ export default function Publications({
     themes: number[] | null | undefined,
     collections: number[] | null | undefined,
     geos: number[] | null | undefined,
-    categories: number[] | null | undefined
+    categories: number[] | null | undefined,
+    reRender: boolean = false
   ) => {
     const params = new URLSearchParams(window.location.search);
 
-    params.delete("page");
+    if (reRender) {
+      params.delete("page");
+    }
     params.delete("theme");
     params.delete("collection");
     params.delete("geo");
@@ -150,6 +169,8 @@ export default function Publications({
     selectCollectionsTags(state)
   );
 
+  const reRender = useAppSelector((state) => selectReRender(state));
+
   if (!initialized.current) {
     store.dispatch(
       reset({
@@ -210,7 +231,14 @@ export default function Publications({
   }
 
   useEffect(() => {
-    setTagsParams(themesTags, collectionsTags, geosTags, categoriesTags);
+    console.log(reRender);
+    setTagsParams(
+      themesTags,
+      collectionsTags,
+      geosTags,
+      categoriesTags,
+      reRender
+    );
   }, [themesTags, collectionsTags, geosTags, categoriesTags]);
 
   return (
@@ -222,7 +250,11 @@ export default function Publications({
       <SideBar />
       <div className="flex flex-col space-y-2">
         <ResultsSnapshot resultsCount={resultsCount} />
-        <Results publicationsList={publicationsList} />
+        <Results
+          publicationsList={publicationsList}
+          page={page}
+          count={resultsCount}
+        />
       </div>
     </div>
   );

@@ -200,7 +200,7 @@ export default function PageHeader() {
                     )}
 
                     {heading?.subtitle && (
-                      <p className="text-white text-justify">
+                      <p className="text-white text-center">
                         {heading.subtitle}
                       </p>
                     )}

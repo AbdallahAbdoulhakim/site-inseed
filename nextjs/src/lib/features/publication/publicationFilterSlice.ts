@@ -26,6 +26,7 @@ interface PublicationFilterState {
     geosTags:number[],
     categoriesTags:number[],
     collectionsTags:number[]
+    reRender:boolean;
 
 }
 
@@ -39,6 +40,7 @@ const initialState: PublicationFilterState = {
     geosTags:[],
     categoriesTags:[],
     collectionsTags:[],
+    reRender:false
 }
 
 export const publicationFilterSlice = createSlice({
@@ -91,6 +93,7 @@ export const publicationFilterSlice = createSlice({
             state.themesTags=[]
             state.collectionsTags=[]
             state.geosTags=[]
+            state.reRender = true
        
 
         },
@@ -389,7 +392,8 @@ export const publicationFilterSlice = createSlice({
                 }
             }
 
-          
+            
+            state.reRender = true
            
             return;
           
@@ -461,6 +465,7 @@ export const publicationFilterSlice = createSlice({
             state.themesTags=[]
             state.collectionsTags=[]
             state.geosTags=[]
+     
 
             categories.forEach(cat=>{
                 state.categoriesTags = cat.checked ? [...state.categoriesTags, cat.norder]:state.categoriesTags
@@ -503,7 +508,9 @@ export const publicationFilterSlice = createSlice({
                     return returnValue
                 } ) 
                 state.collections.push({...cat, checked:cat.checked ?? false, open:newchildren.some(child=>child.checked) ?? false, level:1, parentId:null, children:newchildren})
-            })     
+            })   
+            
+            state.reRender = false
         }
     }
 })
@@ -520,6 +527,7 @@ export const selectCategoriesTags = (state: RootState) => state.publicationFilte
 export const selectThemesTags = (state: RootState) => state.publicationFilter.themesTags
 export const selectGeosTags = (state: RootState) => state.publicationFilter.geosTags
 export const selectCollectionsTags = (state: RootState) => state.publicationFilter.collectionsTags
+export const selectReRender = (state:RootState)=> state.publicationFilter.reRender
 
 
 

@@ -167,6 +167,8 @@ export const fetchPublicationDetailsBySlug = async (url:string)=>{
     }
   })
 
+  if(!publicationsList || publicationsList.length === 0) return;
+
   return {
     id:publicationsList[0].documentId,
     type:publicationsList[0].type,
