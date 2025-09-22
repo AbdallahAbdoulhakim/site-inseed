@@ -15,7 +15,7 @@ import {
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
 
-import { FaCaretDown } from "react-icons/fa6";
+import { FaCaretDown, FaCaretUp } from "react-icons/fa6";
 
 import {
   toggleById,
@@ -141,7 +141,11 @@ export default function ClassificationBox({ type, data }: Props) {
                 >
                   <div className="grid grid-cols-[1fr_10fr] items-baseline">
                     <CollapsibleTrigger className="w-full cursor-pointer">
-                      <FaCaretDown size={16} className="text-primary" />
+                      {getOpenState(element.id, type) ? (
+                        <FaCaretUp size={16} className="text-primary" />
+                      ) : (
+                        <FaCaretDown size={16} className="text-primary" />
+                      )}
                     </CollapsibleTrigger>
                     <li className="flex items-center leading-4 mb-3 border-t py-2">
                       <input

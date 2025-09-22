@@ -93,6 +93,7 @@ subtitle?: string , short?:string, type?:string, parutionNumber?:string; parutio
 
     if(pathParts.length > 2 ){
         const articleElt = await fetchArticleTitleBySlug(pathParts[2])
+        
         if(articleElt){
           breadcrumb.push({id:articleElt.id, label:articleElt.title, url:`/${type}/${pathParts[1]}/${articleElt.slug}`, description:""})
         }
@@ -141,6 +142,8 @@ export const fetchArticleTitleBySlug = async (url:string)=>{
     },
     fields:["title", "slug"]
   }) 
+
+   if(!articlesList || articlesList.length === 0) return;
 
   return {
     id:articlesList[0].documentId,

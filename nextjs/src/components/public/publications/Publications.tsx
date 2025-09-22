@@ -3,10 +3,11 @@
 import SideBar from "@/components/public/publications/SideBar";
 import Results from "@/components/public/publications/Results";
 import ResultsSnapshot from "@/components/public/publications/ResultsSnapshot";
+import PublicationsPagination from "@/components/public/publications/PublicationsPagination";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
 import {
   reset,
@@ -14,7 +15,7 @@ import {
   selectCollectionsTags,
   selectGeosTags,
   selectThemesTags,
-  selectReRender,
+  selectPage,
 } from "@/lib/features/publication/publicationFilterSlice";
 
 import { useAppSelector, useAppStore } from "@/lib/hooks";
@@ -38,7 +39,9 @@ export interface Publication {
   type: string;
   parutionDate: string;
   parutionNumber?: string;
-  publicationSlug: string;
+  publicationSlug?: string;
+  url?: string;
+  external: boolean;
 }
 
 interface Props {
@@ -82,13 +85,11 @@ export default function Publications({
     collections: number[] | null | undefined,
     geos: number[] | null | undefined,
     categories: number[] | null | undefined,
-    reRender: boolean = false
+    page: number = 1
   ) => {
     const params = new URLSearchParams(window.location.search);
 
-    if (reRender) {
-      params.delete("page");
-    }
+    params.delete("page");
     params.delete("theme");
     params.delete("collection");
     params.delete("geo");
@@ -109,6 +110,8 @@ export default function Publications({
     if (categories && categories.length > 0) {
       params.set("category", categories.join(" "));
     }
+
+    params.set("page", page.toString());
 
     router.push(`${window.location.pathname}?${params}`, { scroll: false });
   };
@@ -169,7 +172,7 @@ export default function Publications({
     selectCollectionsTags(state)
   );
 
-  const reRender = useAppSelector((state) => selectReRender(state));
+  const currentPage = useAppSelector((state) => selectPage(state));
 
   if (!initialized.current) {
     store.dispatch(
@@ -224,6 +227,7 @@ export default function Publications({
             ),
           };
         }),
+        page: page,
       })
     );
 
@@ -231,30 +235,30 @@ export default function Publications({
   }
 
   useEffect(() => {
-    console.log(reRender);
     setTagsParams(
       themesTags,
       collectionsTags,
       geosTags,
       categoriesTags,
-      reRender
+      currentPage
     );
-  }, [themesTags, collectionsTags, geosTags, categoriesTags]);
+  }, [themesTags, collectionsTags, geosTags, categoriesTags, currentPage]);
 
   return (
-    <div
-      className="container mx-2 px-5 md:mx-auto my-5 min-h-screen grid grid-cols-[1fr_1fr] md:grid-cols-[1fr_2fr] xl:grid-cols-[1fr_3fr] gap-3 "
-      data-aos="fade-up"
-      data-aos-delay={100}
-    >
-      <SideBar />
-      <div className="flex flex-col space-y-2">
-        <ResultsSnapshot resultsCount={resultsCount} />
-        <Results
-          publicationsList={publicationsList}
-          page={page}
-          count={resultsCount}
-        />
+    <div className="container mx-2 px-5 md:mx-auto my-5 flex flex-col">
+      <div
+        className=" min-h-screen grid grid-cols-[1fr_1fr] md:grid-cols-[1fr_2fr] xl:grid-cols-[1fr_3fr] gap-3 "
+        data-aos="fade-up"
+        data-aos-delay={100}
+      >
+        <SideBar />
+        <div className="flex flex-col space-y-2">
+          <ResultsSnapshot resultsCount={resultsCount} />
+          <Results publicationsList={publicationsList} />
+        </div>
+      </div>
+      <div className="flex justify-center mt-5 items-center">
+        <PublicationsPagination count={resultsCount} />
       </div>
     </div>
   );

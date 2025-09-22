@@ -1,7 +1,6 @@
 "use client";
 
 import { Publication } from "@/components/public/publications/Publications";
-import ArticlesPagination from "@/components/public/ArticlesPagination";
 
 import { ImSad } from "react-icons/im";
 
@@ -12,11 +11,9 @@ import PublicationBox from "./layout/PublicationBox";
 
 interface Props {
   publicationsList: Publication[];
-  page: number;
-  count: number;
 }
 
-export default function Results({ publicationsList, page, count }: Props) {
+export default function Results({ publicationsList }: Props) {
   const dispatch = useAppDispatch();
   if (!publicationsList || publicationsList.length === 0) {
     return (
@@ -53,10 +50,6 @@ export default function Results({ publicationsList, page, count }: Props) {
             publication={publication}
           />
         ))}
-      </div>
-
-      <div className="flex justify-center mt-5 items-center">
-        <ArticlesPagination page={page} count={count} />
       </div>
     </div>
   );

@@ -71,6 +71,8 @@ export default function PageHeader() {
     }
 
     loadData();
+
+    console.log(heading?.type);
   }, [pathname]);
 
   return (
@@ -89,7 +91,7 @@ export default function PageHeader() {
         <>
           <div className="py-15 flex items-center min-h-[20vh] relative bg-primary">
             <div className="container mx-auto relative flex flex-col items-center justify-center">
-              {heading && heading.type === "Informations Rapides" ? (
+              {heading && heading.type === "Bulletin IHPC" ? (
                 <div className="w-full grid grid-cols-1 md:grid-cols-[2fr_1fr]">
                   <div className="py-5 px-2 flex flex-col space-y-5">
                     {heading.title && (

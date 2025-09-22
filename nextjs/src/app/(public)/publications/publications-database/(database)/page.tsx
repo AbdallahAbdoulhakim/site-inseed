@@ -82,6 +82,8 @@ export default async function PublicationsDatabase({
       "parutionDate",
       "parutionNumber",
       "publicationSlug",
+      "url",
+      "external",
     ],
     sort: "parutionDate:desc",
     pagination: {
@@ -318,7 +320,9 @@ export default async function PublicationsDatabase({
     type: publication.type,
     parutionDate: publication?.parutionDate,
     parutionNumber: publication?.parutionNumber,
-    publicationSlug: publication.publicationSlug,
+    publicationSlug: publication?.publicationSlug,
+    url: publication?.url,
+    external: publication?.external,
   }));
 
   const count = meta.pagination?.total ?? 0;

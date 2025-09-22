@@ -895,6 +895,9 @@ export interface ApiPublicationPublication extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     data: Schema.Attribute.Media<'files'>;
+    external: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<false>;
     graphics: Schema.Attribute.Relation<
       'oneToMany',
       'api::publication-graphic.publication-graphic'
@@ -932,7 +935,6 @@ export interface ApiPublicationPublication extends Struct.CollectionTypeSchema {
     publicationSlug: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     short: Schema.Attribute.String;
-    subtitle: Schema.Attribute.String;
     table_graphs: Schema.Attribute.Relation<
       'oneToMany',
       'api::related-table-graph.related-table-graph'
@@ -945,11 +947,13 @@ export interface ApiPublicationPublication extends Struct.CollectionTypeSchema {
         'S\u00E9rie chronologiques',
         'Jeux de donn\u00E9es',
         'Chiffres d\u00E9taill\u00E9s',
+        'Bulletin IHPC',
       ]
     >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    url: Schema.Attribute.String;
   };
 }
 

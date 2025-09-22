@@ -40,7 +40,7 @@ export default function RootLayout({
       <body
         className={`${robotoSans.variable} ${robotoMono.variable} ${montserrat.variable} ${poppins.variable} antialiased`}
       >
-        <div className="flex flex-col min-h-screen">
+        <div className="flex flex-col min-h-screen max-w-full overflow-hidden">
           <Header />
           <main className="grow">{children}</main>
           <Footer />

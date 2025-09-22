@@ -26,7 +26,7 @@ interface PublicationFilterState {
     geosTags:number[],
     categoriesTags:number[],
     collectionsTags:number[]
-    reRender:boolean;
+    page:number
 
 }
 
@@ -40,13 +40,17 @@ const initialState: PublicationFilterState = {
     geosTags:[],
     categoriesTags:[],
     collectionsTags:[],
-    reRender:false
+    page:1
 }
 
 export const publicationFilterSlice = createSlice({
     name:"publicationFilter",
     initialState,
     reducers:{
+        setPage:(state, action:PayloadAction<{page:number}>)=>{
+            const {page} = action.payload
+            state.page = page
+        },
         uncheckAll:(state, action)=>{
             state.themes.forEach(element=>{
                 if(element.children && element.children.length){
@@ -93,7 +97,7 @@ export const publicationFilterSlice = createSlice({
             state.themesTags=[]
             state.collectionsTags=[]
             state.geosTags=[]
-            state.reRender = true
+            state.page = 1
        
 
         },
@@ -151,6 +155,7 @@ export const publicationFilterSlice = createSlice({
 
          toggleById:(state, action:PayloadAction<{id:string,  level: 1|2, parentId:string | null, type: "CATÉGORIES" | "NIVEAU GÉOGRAPHIQUE" | "THÈMES" | "COLLECTIONS"}>)=>{
             const {id,  type, level, parentId} = action.payload
+            state.page = 1
 
             if(type === "THÈMES"){
                 if(level === 1){
@@ -393,7 +398,6 @@ export const publicationFilterSlice = createSlice({
             }
 
             
-            state.reRender = true
            
             return;
           
@@ -458,13 +462,14 @@ export const publicationFilterSlice = createSlice({
                 checked?:boolean;
                 publications: number;
             }[]
-        }[]}>)=>{
-            const {categories, themes, geos, collections} = action.payload
+        }[], page:number}>)=>{
+            const {categories, themes, geos, collections, page} = action.payload
 
             state.categoriesTags=[]
             state.themesTags=[]
             state.collectionsTags=[]
             state.geosTags=[]
+            state.page = page
      
 
             categories.forEach(cat=>{
@@ -510,13 +515,13 @@ export const publicationFilterSlice = createSlice({
                 state.collections.push({...cat, checked:cat.checked ?? false, open:newchildren.some(child=>child.checked) ?? false, level:1, parentId:null, children:newchildren})
             })   
             
-            state.reRender = false
+
         }
     }
 })
 
 
-export const { uncheckAll,toggleOpenState, toggleById, reset} = publicationFilterSlice.actions
+export const { uncheckAll,toggleOpenState, toggleById, reset, setPage} = publicationFilterSlice.actions
 
 export const selectCategories = (state: RootState) => state.publicationFilter.categories
 export const selectThemes = (state: RootState) => state.publicationFilter.themes
@@ -527,7 +532,7 @@ export const selectCategoriesTags = (state: RootState) => state.publicationFilte
 export const selectThemesTags = (state: RootState) => state.publicationFilter.themesTags
 export const selectGeosTags = (state: RootState) => state.publicationFilter.geosTags
 export const selectCollectionsTags = (state: RootState) => state.publicationFilter.collectionsTags
-export const selectReRender = (state:RootState)=> state.publicationFilter.reRender
+export const selectPage = (state:RootState)=> state.publicationFilter.page
 
 
 

@@ -20,9 +20,6 @@
     "short": {
       "type": "string"
     },
-    "subtitle": {
-      "type": "string"
-    },
     "abstract": {
       "type": "text"
     },
@@ -33,7 +30,8 @@
         "Chiffres clés",
         "Série chronologiques",
         "Jeux de données",
-        "Chiffres détaillés"
+        "Chiffres détaillés",
+        "Bulletin IHPC"
       ]
     },
     "parutionDate": {
@@ -57,7 +55,17 @@
       ]
     },
     "publicationSlug": {
-      "type": "string"
+      "type": "string",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "external"
+            },
+            false
+          ]
+        }
+      }
     },
     "publication_categories": {
       "type": "relation",
@@ -100,6 +108,24 @@
       "relation": "oneToMany",
       "target": "api::related-table-graph.related-table-graph",
       "mappedBy": "publication"
+    },
+    "external": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "url": {
+      "type": "string",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "external"
+            },
+            true
+          ]
+        }
+      }
     }
   }
 }
