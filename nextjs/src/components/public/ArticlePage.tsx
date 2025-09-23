@@ -60,7 +60,7 @@ export default function ArticlePage({
   useEffect(() => {
     AOS.init({
       duration: 1000,
-      once: false,
+      once: true,
     });
   }, []);
 

@@ -71,8 +71,6 @@ export default function PageHeader() {
     }
 
     loadData();
-
-    console.log(heading?.type);
   }, [pathname]);
 
   return (

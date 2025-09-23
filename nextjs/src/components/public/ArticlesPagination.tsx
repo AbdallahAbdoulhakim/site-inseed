@@ -68,11 +68,11 @@ export default function Pagination({
           changePage(page - 1);
         }}
         disabled={!hasPrev}
-        className="cursor-pointer py-[7px] px-[16px] flex flex-row items-center justify-center mx-[5px] transition duration-300 rounded-[10px] border border-primary-light text-primary-light hover:bg-primary/70 hover:text-white  font-semibold disabled:opacity-50 disabled:cursor-not-allowed active:scale-95 disabled:active:scale-100"
+        className="cursor-pointer py-[4px] px-[8px] md:py-[7px] md:px-[16px] flex flex-row items-center justify-center mx-[5px] transition duration-300 rounded-[10px] border border-primary-light text-primary-light hover:bg-primary/70 hover:text-white  font-semibold disabled:opacity-50 disabled:cursor-not-allowed active:scale-95 disabled:active:scale-100"
       >
         <>
           <ChevronLeft className="h-4 w-4" />
-          <span>Previous</span>
+          <span className="hidden md:block">Previous</span>
         </>
       </button>
       <div className="flex items-center gap-2 text-sm">
@@ -81,8 +81,8 @@ export default function Pagination({
             <button
               className={`px-2 rounded-sm  ${
                 elt === page
-                  ? " text-slate-100 py-[7px] px-[16px] flex flex-row items-center justify-center mx-[5px] transition duration-300 rounded-[10px] bg-primary/90 hover:bg-primary/70 disabled active:scale-100 cursor-not-allowed"
-                  : " border border-primary-light text-primary-light py-[7px] px-[16px] flex flex-row items-center justify-center cursor-pointer active:scale-95 mx-[5px] transition duration-300 rounded-[10px] hover:bg-primary hover:text-white"
+                  ? " text-slate-100 py-[4px] px-[8px] md:py-[7px] md:px-[16px] flex flex-row items-center justify-center mx-[5px] transition duration-300 rounded-[10px] bg-primary/90 hover:bg-primary/70 disabled active:scale-100 cursor-not-allowed"
+                  : " border border-primary-light text-primary-light py-[4px] px-[8px] md:py-[7px] md:px-[16px] flex flex-row items-center justify-center cursor-pointer active:scale-95 mx-[5px] transition duration-300 rounded-[10px] hover:bg-primary hover:text-white"
               }`}
               key={index}
               onClick={() => changePage(elt)}
@@ -102,10 +102,10 @@ export default function Pagination({
           changePage(page + 1);
         }}
         disabled={!hasNext}
-        className="cursor-pointer py-[7px] px-[16px] flex flex-row items-center justify-center mx-[5px] transition duration-300 rounded-[10px] border border-primary-light text-primary-light hover:bg-primary/70 hover:text-white  font-semibold disabled:opacity-50 disabled:cursor-not-allowed active:scale-95 disabled:active:scale-100"
+        className="cursor-pointer py-[4px] px-[8px] md:py-[7px] md:px-[16px] flex flex-row items-center justify-center mx-[5px] transition duration-300 rounded-[10px] border border-primary-light text-primary-light hover:bg-primary/70 hover:text-white  font-semibold disabled:opacity-50 disabled:cursor-not-allowed active:scale-95 disabled:active:scale-100"
       >
         <>
-          <span>Next</span>
+          <span className="hidden md:block">Next</span>
           <ChevronRight className="h-4 w-4" />
         </>
       </button>

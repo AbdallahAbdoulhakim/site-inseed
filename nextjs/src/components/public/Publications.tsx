@@ -24,7 +24,7 @@ import { toggleOpen } from "@/lib/features/publication/publicationMobileSlice";
 import { useAppSelector, useAppStore } from "@/lib/hooks";
 import { useRouter } from "next/navigation";
 import useWindowSize from "@/hooks/useWindowSize";
-import MobileSideBar from "./MobileSideBar";
+import MobileSideBar from "@/components/public/publications/MobileSideBar";
 
 export interface Theme {
   id: string;
@@ -254,16 +254,15 @@ export default function Publications({
   return (
     <div className="container mx-auto px-5  my-5 flex flex-col">
       <div className="flex md:justify-end justify-between mb-5">
-        {width && width <= 768 && <MobileSideBar />}
         <ResultsSnapshot resultsCount={resultsCount} />
       </div>
 
       <div
-        className="min-h-fit grid grid-cols-1 md:grid-cols-[1fr_2fr] xl:grid-cols-[1fr_3fr] gap-3 "
+        className="relative min-h-screen grid grid-cols-1 md:grid-cols-[1fr_2fr] xl:grid-cols-[1fr_3fr] gap-3 "
         data-aos="fade-up"
         data-aos-delay={100}
       >
-        {width && width > 768 && <SideBar />}
+        {width && width > 768 ? <SideBar /> : <MobileSideBar />}
         <Results publicationsList={publicationsList} />
       </div>
       <div className="flex justify-center mt-5 items-center">

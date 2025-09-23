@@ -25,7 +25,11 @@ interface ArrType {
   children: ArrType[];
 }
 
-export default function Critieria() {
+interface Props {
+  layout?: "mobile" | "desktop";
+}
+
+export default function Critieria({ layout = "desktop" }: Props) {
   const dispatch = useAppDispatch();
   const themes = useAppSelector((state) => selectThemes(state));
   const categories = useAppSelector((state) => selectCategories(state));
@@ -99,8 +103,16 @@ export default function Critieria() {
 
   return (
     <div>
-      <div className="bg-primary-light-hover p-4 rounded-t flex justify-around items-center">
-        <h1 className="text-white uppercase font-bold font-roboto-sans">
+      <div
+        className={`${
+          layout === "desktop" ? "bg-primary-light-hover " : "bg-white"
+        } p-4 rounded-t flex justify-around items-center`}
+      >
+        <h1
+          className={`${
+            layout === "desktop" ? "text-white" : "text-primary"
+          }  uppercase font-bold font-roboto-sans`}
+        >
           Mes critères
         </h1>
         <button

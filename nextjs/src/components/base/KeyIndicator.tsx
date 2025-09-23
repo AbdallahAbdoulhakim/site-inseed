@@ -41,7 +41,7 @@ export default function KeyIndicator({
   useEffect(() => {
     AOS.init({
       duration: delay,
-      once: false,
+      once: true,
     });
   }, []);
 

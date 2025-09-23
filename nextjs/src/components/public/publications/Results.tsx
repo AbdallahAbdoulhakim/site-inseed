@@ -17,7 +17,7 @@ export default function Results({ publicationsList }: Props) {
   const dispatch = useAppDispatch();
   if (!publicationsList || publicationsList.length === 0) {
     return (
-      <div className="flex flex-col items-center justify-center py-12 px-4 text-center">
+      <div className="flex flex-col  py-12 px-4 text-center">
         <ImSad className="mx-auto h-16 w-16 text-primary" />
         <h3 className="mt-2 text-sm font-medium text-gray-900">
           Aucun résultat trouvé

@@ -31,9 +31,14 @@ import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 interface Props {
   type: "THÈMES" | "NIVEAU GÉOGRAPHIQUE" | "CATÉGORIES" | "COLLECTIONS";
   data: Data[];
+  layout?: "mobile" | "desktop";
 }
 
-export default function ClassificationBox({ type, data }: Props) {
+export default function ClassificationBox({
+  type,
+  data,
+  layout = "desktop",
+}: Props) {
   const dispatch = useAppDispatch();
 
   const getCheckValueByIdAndLevel = (
@@ -121,7 +126,13 @@ export default function ClassificationBox({ type, data }: Props) {
   return (
     <Collapsible className="w-full">
       <CollapsibleTrigger className="w-full">
-        <div className="p-5 bg-primary text-white font-bold grid grid-cols-[9fr_1fr]  content-start gap-2 cursor-pointer rounded-t w-full">
+        <div
+          className={`p-5 ${
+            layout === "desktop"
+              ? "bg-primary text-white"
+              : "bg-white text-primary"
+          }  font-bold grid grid-cols-[9fr_1fr]  content-start gap-2 cursor-pointer rounded-t w-full`}
+        >
           <span className="text-start">{type}</span>
           <FaCaretDown size={16} className="" />
         </div>

@@ -10,7 +10,6 @@ export default function HeroLogo() {
   useEffect(() => {
     AOS.init({
       duration: 1000,
-      once: false,
     });
   }, []);
   return (
