@@ -32,17 +32,17 @@ export default function KeyIndictorGraph({
     return <p className="text-red font-semibold">Bad csv!</p>;
   }
   return (
-    <div className="flex flex-col w-full lg:h-[350px] h-[400px] grow ">
+    <div className="flex flex-col w-full lg:h-[360px] h-[400px] grow ">
       <ResponsiveContainer width="100%" height="100%">
         <LineChart
           width={390}
-          height={350}
+          height={360}
           data={data}
           margin={{
             top: 5,
             right: 30,
             left: 20,
-            bottom: 5,
+            bottom: 8,
           }}
         >
           <CartesianGrid strokeDasharray="3 3" />

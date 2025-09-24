@@ -11,6 +11,7 @@ import {
   VscRepo,
   VscGraphLine,
   VscBrowser,
+  VscPreview,
 } from "react-icons/vsc";
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -26,7 +27,8 @@ interface Slide {
     | "Chiffres clés"
     | "Série chronologiques"
     | "Jeux de données"
-    | "Chiffres détaillés";
+    | "Chiffres détaillés"
+    | "Bulletin IHPC";
   short: string;
   publicationSlug: string;
   publicationDate: string;
@@ -38,6 +40,10 @@ interface SliderProps {
 }
 
 const fetchIcon = (type: string): JSX.Element => {
+  if (type === "Bulletin IHPC") {
+    return <VscPreview className="w-[70px] h-[70px] text-primary" />;
+  }
+
   if (type === "Informations Rapides") {
     return <VscGraphLine className="w-[70px] h-[70px] text-primary" />;
   }

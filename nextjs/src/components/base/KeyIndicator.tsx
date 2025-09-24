@@ -64,7 +64,7 @@ export default function KeyIndicator({
 
   return (
     <article
-      className="font-montserrat! bg-background p-5 min-h-[500px] rounded-[10px] overflow-hidden border border-primary/90 flex flex-col items-center justify-center hover:bg-primary/10 cursor-pointer shadow-[0_0_15px_rgba(0,0,0,0.1)]"
+      className="font-montserrat! bg-background p-5 min-h-[520px] rounded-[10px] overflow-hidden border border-primary/90 flex flex-col items-center justify-center hover:bg-primary/10 cursor-pointer shadow-[0_0_15px_rgba(0,0,0,0.1)]"
       data-aos="fade-up"
       data-aos-delay={delay}
     >
