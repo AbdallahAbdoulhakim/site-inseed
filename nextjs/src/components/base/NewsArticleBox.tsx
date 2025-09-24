@@ -40,7 +40,7 @@ export default function NewsArticleBox({
   const date = new Date(publicationDate);
   return (
     <article
-      className="shadow-[0_0_15px_rgba(0,0,0,0.1)] border border-primary/90 font-montserrat! bg-background p-5 h-[500px] rounded-[10px] overflow-hidden"
+      className="shadow-[0_0_15px_rgba(0,0,0,0.1)] border border-primary/90 font-montserrat! bg-background p-5 h-[400px] md:h-[500px] rounded-[10px] overflow-hidden"
       data-aos="fade-up"
       data-aos-delay={delay}
     >
@@ -54,7 +54,7 @@ export default function NewsArticleBox({
             <Link href={`/news/${categorySlug}`}>{category}</Link>
           </p>
 
-          <h2 className="text-[22px] font-bold p-0 mb-[20px]">
+          <h2 className="text-base md:text-[22px] font-bold p-0 mb-[20px]">
             <Link
               className="text-default hover:text-primary"
               href={articleSlug}
@@ -70,8 +70,10 @@ export default function NewsArticleBox({
               className="max-w-full h-auto w-[50px] rounded-[50%] mr-[15px] shrink-0"
             />
             <div className="post-meta">
-              <p className="font-semibold mb-[5px]">{author}</p>
-              <p className="text-[14px] text-[#3c3c3c] mb-0">
+              <p className="text-xs md:text-base font-semibold mb-[5px]">
+                {author}
+              </p>
+              <p className="text-xs md:text-[14px] text-[#3c3c3c] mb-0">
                 <time dateTime={date.toISOString()}>
                   {date.toLocaleDateString()}
                 </time>

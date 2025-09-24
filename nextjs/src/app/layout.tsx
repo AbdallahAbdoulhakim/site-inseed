@@ -3,6 +3,8 @@ import { Roboto, Roboto_Mono, Montserrat, Poppins } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/base/Header";
 import Footer from "@/components/base/Footer";
+import ScrollToTopButton from "@/components/base/ScrollToTopButton";
+import Topbar from "@/components/base/Topbar";
 
 const robotoSans = Roboto({
   variable: "--font-roboto-sans",
@@ -40,11 +42,13 @@ export default function RootLayout({
       <body
         className={`${robotoSans.variable} ${robotoMono.variable} ${montserrat.variable} ${poppins.variable} antialiased`}
       >
-        <div className="flex flex-col min-h-screen max-w-full overflow-hidden">
-          <Header />
-          <main className="grow">{children}</main>
-          <Footer />
-        </div>
+        {/* <div className="relative flex flex-col min-h-screen max-w-full overflow-hidden"> */}
+        <Topbar />
+        <Header />
+        <main className="grow">{children}</main>
+        <Footer />
+        {/* </div> */}
+        <ScrollToTopButton />
       </body>
     </html>
   );

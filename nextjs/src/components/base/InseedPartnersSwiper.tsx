@@ -27,9 +27,11 @@ export default function InseedPartnersSwiper({ data }: Props) {
           autoplay={true}
           loop={true}
           modules={[Autoplay]}
-          slidesPerView={3}
+          slidesPerView={1}
           spaceBetween={35}
+          centeredSlides={true}
           breakpoints={{
+            768: { slidesPerView: 3 },
             1024: {
               slidesPerView: 4,
             },
@@ -40,8 +42,8 @@ export default function InseedPartnersSwiper({ data }: Props) {
         >
           {data.map(({ id, name, url, image }) => (
             <SwiperSlide key={id}>
-              <Link href={url}>
-                <div className="relative w-[60px] h-[100px] lg:w-[86px]  xl:w-[115px]  xl:h-[135px] flex flex-col items-center justify-center">
+              <Link className="" href={url}>
+                <div className="w-[60px] h-[100px] lg:w-[86px]  xl:w-[115px]  xl:h-[135px] flex flex-col items-center justify-center">
                   <Image
                     className="w-[60px] h-auto"
                     loading="lazy"

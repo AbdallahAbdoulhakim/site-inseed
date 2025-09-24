@@ -54,8 +54,8 @@ export default async function LatestNews() {
   });
 
   return (
-    <section className="px-15 pb-15 mt-10 overflow-hidden mb-15">
-      <div className="container m-auto">
+    <section className="md:px-15 pb-15 mt-10 overflow-hidden mb-15">
+      <div className="container mx-auto">
         <div className="text-center pb-15">
           <h2 className="text-4xl font-semibold mb-5 pb-5 relative font-montserrat after:content-[''] after:absolute after:block after:w-[50px] after:h-[3px] after:bg-primary after:left-0 after:right-0 after:bottom-0 after:m-auto">
             Actualités

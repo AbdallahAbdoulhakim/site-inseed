@@ -35,7 +35,7 @@ export default function PublicationBox({ publication }: Props) {
   return (
     <a
       className={`border-t border-r border-l last:border-b even:bg-[#f6f6f6]  py-4 px-3 cursor-pointer hover:bg-[#ebeff3]  border-[#e0e0e0] flex flex-col space-y-2 ${
-        collapsed ? "h-[320px] lg:h-[260px]" : "h-fit"
+        collapsed ? "h-[400px] lg:h-[260px]" : "h-fit"
       } overflow-clip duration-[300] transition-all`}
       href={
         publication.external

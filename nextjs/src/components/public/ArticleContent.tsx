@@ -170,7 +170,11 @@ export default function ArticleContent({
               </Link>
             )}
           </div>
-          {authorDesc && <p className="text-[#6c757d]/80 mb-0">{authorDesc}</p>}
+          {authorDesc && (
+            <p className="text-xs md:text-base text-[#6c757d]/80 mb-0">
+              {authorDesc}
+            </p>
+          )}
         </div>
       </div>
     </div>

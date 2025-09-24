@@ -4,7 +4,6 @@ import SideBar from "@/components/public/publications/SideBar";
 import Results from "@/components/public/publications/Results";
 import ResultsSnapshot from "@/components/public/publications/ResultsSnapshot";
 import PublicationsPagination from "@/components/public/publications/PublicationsPagination";
-import { FaFilter } from "react-icons/fa6";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -18,8 +17,6 @@ import {
   selectThemesTags,
   selectPage,
 } from "@/lib/features/publication/publicationFilterSlice";
-
-import { toggleOpen } from "@/lib/features/publication/publicationMobileSlice";
 
 import { useAppSelector, useAppStore } from "@/lib/hooks";
 import { useRouter } from "next/navigation";

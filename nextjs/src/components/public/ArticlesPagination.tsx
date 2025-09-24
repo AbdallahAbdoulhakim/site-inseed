@@ -27,20 +27,17 @@ export default function Pagination({
   const hasNext = ITEM_PER_PAGE * (page - 1) + ITEM_PER_PAGE < count;
 
   const pagesToShow: NumberOrEllipsis[] =
-    Math.ceil(count / ITEM_PER_PAGE) < 8
+    Math.ceil(count / ITEM_PER_PAGE) < 6
       ? Array.from(
           { length: Math.ceil(count / ITEM_PER_PAGE) },
           (_, index) => index + 1
         )
-      : page < 7
-      ? [1, 2, 3, 4, 5, 6, 7, "...", Math.ceil(count / ITEM_PER_PAGE)]
-      : page > Math.ceil(count / ITEM_PER_PAGE) - 7
+      : page < 4
+      ? [1, 2, 3, 4, "...", Math.ceil(count / ITEM_PER_PAGE)]
+      : page > Math.ceil(count / ITEM_PER_PAGE) - 3
       ? [
           1,
           "...",
-          Math.ceil(count / ITEM_PER_PAGE) - 6,
-          Math.ceil(count / ITEM_PER_PAGE) - 5,
-          Math.ceil(count / ITEM_PER_PAGE) - 4,
           Math.ceil(count / ITEM_PER_PAGE) - 3,
           Math.ceil(count / ITEM_PER_PAGE) - 2,
           Math.ceil(count / ITEM_PER_PAGE) - 1,
@@ -49,11 +46,9 @@ export default function Pagination({
       : [
           1,
           "...",
-          page - 2,
           page - 1,
           page,
           page + 1,
-          page + 2,
           "...",
           Math.ceil(count / ITEM_PER_PAGE),
         ];
@@ -68,21 +63,21 @@ export default function Pagination({
           changePage(page - 1);
         }}
         disabled={!hasPrev}
-        className="cursor-pointer py-[4px] px-[8px] md:py-[7px] md:px-[16px] flex flex-row items-center justify-center mx-[5px] transition duration-300 rounded-[10px] border border-primary-light text-primary-light hover:bg-primary/70 hover:text-white  font-semibold disabled:opacity-50 disabled:cursor-not-allowed active:scale-95 disabled:active:scale-100"
+        className="cursor-pointer text-[11px] lg:text-base py-[7px] px-[10px] flex flex-row items-center justify-center lg:mx-[5px] transition duration-300 rounded-[10px] border border-primary-light text-primary-light hover:bg-primary/70 hover:text-white  font-semibold disabled:opacity-50 disabled:cursor-not-allowed active:scale-95 disabled:active:scale-100"
       >
         <>
-          <ChevronLeft className="h-4 w-4" />
-          <span className="hidden md:block">Previous</span>
+          <ChevronLeft className="lg:h-4 lg:w-4 w-2 h-2" />
+          <span className="hidden lg:block">Previous</span>
         </>
       </button>
-      <div className="flex items-center gap-2 text-sm">
+      <div className="flex items-center gap-1 lg:gap-2 text-sm">
         {pagesToShow.map((elt, index) =>
           elt !== "..." ? (
             <button
-              className={`px-2 rounded-sm  ${
+              className={`rounded-sm text-[11px] lg:text-base py-[3px] px-[8px] lg:py-[7px] lg:px-[16px] lg:mx-[5px]  ${
                 elt === page
-                  ? " text-slate-100 py-[4px] px-[8px] md:py-[7px] md:px-[16px] flex flex-row items-center justify-center mx-[5px] transition duration-300 rounded-[10px] bg-primary/90 hover:bg-primary/70 disabled active:scale-100 cursor-not-allowed"
-                  : " border border-primary-light text-primary-light py-[4px] px-[8px] md:py-[7px] md:px-[16px] flex flex-row items-center justify-center cursor-pointer active:scale-95 mx-[5px] transition duration-300 rounded-[10px] hover:bg-primary hover:text-white"
+                  ? " text-slate-100 flex flex-row items-center justify-center  transition duration-300 rounded-[10px] bg-primary/90 hover:bg-primary/70 disabled active:scale-100 cursor-not-allowed"
+                  : " border border-primary-light text-primary-light flex flex-row items-center justify-center cursor-pointer active:scale-95 transition duration-300 rounded-[10px] hover:bg-primary hover:text-white"
               }`}
               key={index}
               onClick={() => changePage(elt)}
@@ -90,7 +85,7 @@ export default function Pagination({
               {elt}
             </button>
           ) : (
-            <MoreHorizontal key={index} className="h-4 w-4" />
+            <MoreHorizontal key={index} className="lg:h-4 lg:w-4 w-2 h-2" />
           )
         )}
       </div>
@@ -102,11 +97,11 @@ export default function Pagination({
           changePage(page + 1);
         }}
         disabled={!hasNext}
-        className="cursor-pointer py-[4px] px-[8px] md:py-[7px] md:px-[16px] flex flex-row items-center justify-center mx-[5px] transition duration-300 rounded-[10px] border border-primary-light text-primary-light hover:bg-primary/70 hover:text-white  font-semibold disabled:opacity-50 disabled:cursor-not-allowed active:scale-95 disabled:active:scale-100"
+        className="cursor-pointer text-[11px] lg:text-base py-[7px] px-[10px] flex flex-row items-center justify-center mx-[5px] transition duration-300 rounded-[10px] border border-primary-light text-primary-light hover:bg-primary/70 hover:text-white  font-semibold disabled:opacity-50 disabled:cursor-not-allowed active:scale-95 disabled:active:scale-100"
       >
         <>
-          <span className="hidden md:block">Next</span>
-          <ChevronRight className="h-4 w-4" />
+          <span className="hidden lg:block">Next</span>
+          <ChevronRight className="lg:h-4 lg:w-4 w-2 h-2" />
         </>
       </button>
     </div>

@@ -18,15 +18,21 @@ export default function Topbar() {
       <div className="container mx-auto px-4 flex justify-center lg:justify-between">
         <div className="flex items-center space-x-6">
           <div className="flex items-center text-white space-x-2">
-            <FaRegEnvelope className="" />
-            <Link className="hover:underline" href={`mailto:${contact.email}`}>
+            <FaRegEnvelope className="text-xs sm:text-base" />
+            <Link
+              className="text-[10px] sm:text-base hover:underline"
+              href={`mailto:${contact.email}`}
+            >
               {contact.email}
             </Link>
           </div>
 
           <div className="flex items-center text-white space-x-2">
-            <CiMobile1 className="" />
-            <Link href={`tel:${contact.telephone.replace(/\s+/g, "")}`}>
+            <CiMobile1 className="text-xs sm:text-base" />
+            <Link
+              className="text-[10px] sm:text-base"
+              href={`tel:${contact.telephone.replace(/\s+/g, "")}`}
+            >
               {contact.telephone}
             </Link>
           </div>

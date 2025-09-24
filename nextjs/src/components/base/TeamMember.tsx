@@ -47,7 +47,7 @@ export default function TeamMember({
       data-aos-delay={delay}
     >
       <div className="flex flex-col items-center justify-around">
-        <div className="relative h-[276px] w-[276px]">
+        <div className="relative h-[184px] w-[184px] md:h-[276px] md:w-[276px]">
           <Image
             src={img}
             className="rounded-[10px] overflow-hidden object-cover max-w-full h-auto"
@@ -58,41 +58,43 @@ export default function TeamMember({
           />
         </div>
 
-        <h4 className="font-bold font-montserrat mt-4 mb-0.5 text-xl">
+        <h4 className="text-xs font-bold font-montserrat mt-4 mb-0.5 md:text-xl">
           {name}
         </h4>
-        <span className="block text-[14px] text-[#6c757d]">{description}</span>
-        <div className="mt-4 mb-2.5 flex items-center justify-around h-8 w-full">
+        <span className="text-[10px] block text-xs md:text-[14px] text-[#6c757d]">
+          {description}
+        </span>
+        <div className="mt-4 mb-2.5  flex items-center justify-around h-8 w-full">
           {twitter && (
             <Link
-              className="text-[#a2a2a2] group hover:border-primary/90 transition-all rounded-[50%] w-[40px] h-[40px] flex items-center justify-center border border-[#bbbbbb]"
+              className="text-[#a2a2a2] group hover:border-primary/90 transition-all rounded-[50%] w-[25px] h-[25px] md:w-[40px] md:h-[40px] flex items-center justify-center border border-[#bbbbbb]"
               href={twitter}
             >
-              <FaXTwitter className="group-hover:text-primary/90" size={18} />
+              <FaXTwitter className="group-hover:text-primary/90 text-[12px] md:text-[18px]" />
             </Link>
           )}
           {facebook && (
             <Link
-              className="text-[#a2a2a2] group hover:border-primary/90 transition-all rounded-[50%] w-[40px] h-[40px] flex items-center justify-center border border-[#bbbbbb]"
+              className="text-[#a2a2a2] group hover:border-primary/90 transition-all rounded-[50%] w-[25px] h-[25px] md:w-[40px] md:h-[40px] flex items-center justify-center border border-[#bbbbbb]"
               href={facebook}
             >
-              <FaFacebook className="group-hover:text-primary/90" size={18} />
+              <FaFacebook className="group-hover:text-primary/90  text-[12px] md:text-[18px]" />
             </Link>
           )}
           {instagram && (
             <Link
-              className="text-[#a2a2a2] group hover:border-primary/90 transition-all rounded-[50%] w-[40px] h-[40px] flex items-center justify-center border border-[#bbbbbb]"
+              className="text-[#a2a2a2] group hover:border-primary/90 transition-all rounded-[50%] w-[25px] h-[25px] md:w-[40px] md:h-[40px] flex items-center justify-center border border-[#bbbbbb]"
               href={instagram}
             >
-              <FaInstagram className="group-hover:text-primary/90" size={18} />
+              <FaInstagram className="group-hover:text-primary/90  text-[12px] md:text-[18px]" />
             </Link>
           )}
           {linkedin && (
             <Link
-              className="text-[#a2a2a2] group hover:border-primary/90 transition-all rounded-[50%] w-[40px] h-[40px] flex items-center justify-center border border-[#bbbbbb]"
+              className="text-[#a2a2a2] group hover:border-primary/90 transition-all rounded-[50%] w-[25px] h-[25px] md:w-[40px] md:h-[40px] flex items-center justify-center border border-[#bbbbbb]"
               href={linkedin}
             >
-              <FaLinkedin className="group-hover:text-primary/90" size={18} />
+              <FaLinkedin className="group-hover:text-primary/90  text-[12px] md:text-[18px]" />
             </Link>
           )}
         </div>
