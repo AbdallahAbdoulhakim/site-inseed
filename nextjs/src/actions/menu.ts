@@ -79,7 +79,11 @@ subtitle?: string , short?:string, type?:string, parutionNumber?:string; parutio
   })
 
 
+
+
   if(!subMenu) return {breadcrumb:[]};
+
+
 
   if(type === "news"){
     breadcrumb.push({id:subMenu.id, label:subMenu.label, description:subMenu?.description || "", url:subMenu.url})
@@ -127,6 +131,33 @@ subtitle?: string , short?:string, type?:string, parutionNumber?:string; parutio
 
       return {breadcrumb:breadcrumb , title:breadcrumb.at(-1)?.label, subtitle:breadcrumb.at(-1)?.description, type:"publication"}
   }
+
+  if(type === "information"){
+   breadcrumb.push({id:subMenu.id, label:subMenu.label, description:subMenu?.description || "", url:subMenu.url})
+   const informationBase = await fetchInformationDetailsBySlug("information")
+
+
+
+    if(pathParts.length > 1){
+      const subCategory = subMenu.children.find(subElt=> subElt.url === `/${type}/${pathParts[1]}`)
+       if(subCategory){
+        breadcrumb.push({id:subCategory.id, label:subCategory.label, description:subCategory?.description || "", url:subCategory.url})
+       }
+
+       const informationElt = await fetchInformationDetailsBySlug(pathParts[1])
+
+       console.log(informationElt)
+
+       return {breadcrumb:breadcrumb, title:informationElt?.title,parutionDate:informationElt?.publicationDate, subtitle:informationElt?.abstract, type:"L'INSEED"}
+    }
+
+    if (pathParts.length > 2){
+      console.log("ici")
+    }
+
+    return {breadcrumb:breadcrumb , title:informationBase?.title, parutionDate:informationBase?.publicationDate, type:informationBase?.title}
+  }
+
 
    return {breadcrumb:breadcrumb , title:breadcrumb.at(-1)?.label, subtitle:breadcrumb.at(-1)?.description, type:"default"}
 
@@ -187,3 +218,66 @@ export const fetchPublicationDetailsBySlug = async (url:string)=>{
     printableSize : publicationsList[0].printable?.size,
   }
 }
+
+
+export const fetchInformationDetailsBySlug = async (url:string)=>{
+  const informations = client.collection("informations");
+  const {data: informationsList} = await informations.find({
+    filters:{
+      slug:url
+    },
+    fields:["abstract", "title", "slug", "publicationDate"],
+    // populate:{
+    //   printables:{
+    //     fields:["name", "url", "size"]
+    //   },
+    //   parent:{
+    //     fields:["name", "slug"],
+    //     populate:{
+    //       parent:{
+    //         fields:["name", "slug"],
+    //         populate:{
+    //           parent:{
+    //             fields:["name","slug"]
+    //           }
+    //         }
+    //       }
+    //     }
+    //   }
+      
+    // }
+  })
+
+  if(!informationsList || informationsList.length === 0) return;
+
+  return {
+    id:informationsList[0].documentId,
+    title:informationsList[0].title,
+    abstract:informationsList[0].abstract,
+    slug:informationsList[0].slug,
+    publicationDate:informationsList[0].publicationDate,
+    printables:informationsList[0].printables ? informationsList[0].printables .map((elt:{documentId:string, size:string, url:string}) =>({id:elt.documentId, size:elt.size, url:elt.url})) : [] 
+  }
+}
+
+
+//  parent:informationsList[0].parent ? {
+//       id:informationsList[0].parent?.parent?.documentId,
+//       title:informationsList[0].parent?.parent?.title,
+//       slug:informationsList[0].parent?.parent?.slug,
+//       parent:informationsList[0].parent?.parent ? {
+//         id:informationsList[0].parent?.documentId,
+//       title:informationsList[0].parent?.title,
+//       slug:informationsList[0].parent?.slug,
+//       parent:informationsList[0].parent?.parent?.parent ?{
+//          id:informationsList[0].parent?.parent?.documentId,
+//       title:informationsList[0].parent?.parent?.title,
+//       slug:informationsList[0].parent?.parent?.slug,
+//       parent:informationsList[0].parent?.parent ? {
+//         id:informationsList[0].parent?.parent?.parent?.documentId,
+//       title:informationsList[0].parent?.parent?.parent?.title,
+//       slug:informationsList[0].parent?.slug,
+//       }:{}
+//       } : {}
+
+//     } :{}

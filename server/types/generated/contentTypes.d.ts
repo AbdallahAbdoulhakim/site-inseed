@@ -497,6 +497,7 @@ export interface ApiInformationInformation extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    abstract: Schema.Attribute.Text;
     children: Schema.Attribute.Relation<
       'manyToMany',
       'api::information.information'
@@ -523,6 +524,7 @@ export interface ApiInformationInformation extends Struct.CollectionTypeSchema {
       'api::information.information'
     >;
     printables: Schema.Attribute.Media<'files', true>;
+    publicationDate: Schema.Attribute.Date;
     publishedAt: Schema.Attribute.DateTime;
     short: Schema.Attribute.String;
     slug: Schema.Attribute.String &

@@ -3,14 +3,8 @@ import InformationPage from "@/components/public/informations/InformationPage";
 import client from "@/lib/strapi";
 import { notFound } from "next/navigation";
 
-export default async function page({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
+export default async function page() {
   const informations = client.collection("informations");
-
-  const { slug } = await params;
 
   const { data: informationsList } = await informations.find({
     populate: {
@@ -24,7 +18,7 @@ export default async function page({
     },
     filters: {
       slug: {
-        $eq: slug,
+        $eq: "information",
       },
     },
   });

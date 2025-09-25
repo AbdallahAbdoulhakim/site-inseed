@@ -52,6 +52,12 @@
       "type": "integer",
       "required": true,
       "unique": false
+    },
+    "publicationDate": {
+      "type": "date"
+    },
+    "abstract": {
+      "type": "text"
     }
   }
 }

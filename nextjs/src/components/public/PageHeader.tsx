@@ -33,6 +33,12 @@ export default function PageHeader() {
 
   const pathname = usePathname();
 
+  const extendedPageHeader = (type: string) =>
+    ["Bulletin IHPC", "L'INSEED"].includes(type);
+
+  const parutionOrpublication = (type: string) =>
+    ["Bulletin IHPC"].includes(type);
+
   useEffect(() => {
     async function loadData() {
       const breadCrumbresponse = await fetchSubMenuByUrl(pathname);
@@ -52,6 +58,8 @@ export default function PageHeader() {
         dataSize,
         type,
       } = breadCrumbresponse;
+
+      console.log(type);
 
       setHeading({
         breadcrumb,
@@ -89,7 +97,7 @@ export default function PageHeader() {
         <>
           <div className="py-15 flex items-center min-h-[20vh] relative bg-primary">
             <div className="container mx-auto relative flex flex-col items-center justify-center">
-              {heading && heading.type === "Bulletin IHPC" ? (
+              {heading && extendedPageHeader(heading.type || "default") ? (
                 <div className="w-full grid grid-cols-1 md:grid-cols-[2fr_1fr]">
                   <div className="py-5 px-2 flex flex-col space-y-5">
                     {heading.title && (
@@ -104,7 +112,7 @@ export default function PageHeader() {
                       </h1>
                     )}
                     {heading.subtitle && (
-                      <h2 className="font-semibold text-[18px] text-white font-poppins">
+                      <h2 className=" text-white font-poppins text-justify  text-base lg:text-[18px]">
                         {heading.subtitle}
                       </h2>
                     )}
@@ -125,7 +133,11 @@ export default function PageHeader() {
                     )}
                     {heading.parutionDate && (
                       <p className="text-white text-[13px]">
-                        Paru le :{" "}
+                        {` ${
+                          parutionOrpublication(heading.type || "default")
+                            ? "Paru le : "
+                            : "Date de publication: "
+                        }  `}
                         {new Date(heading.parutionDate).toLocaleDateString()}
                       </p>
                     )}
@@ -200,7 +212,7 @@ export default function PageHeader() {
                     )}
 
                     {heading?.subtitle && (
-                      <p className="text-white text-center">
+                      <p className="text-white text-center text-xs lg:text-base">
                         {heading.subtitle}
                       </p>
                     )}

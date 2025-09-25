@@ -27,7 +27,7 @@ const footer : MenuItemType[] = [
           label:"L’INSEED",
           display_order:1,
           type:"FOOTER", 
-          url:"/inseed"}, 
+          url:"/information"}, 
           children:[]
       },
       {
@@ -106,162 +106,177 @@ const menus: MenuItemType[] = [
       label: "L'INSEED",
       description: "Connaître l'INSEED",
       display_order: 1,
-      url: "/inseed",
+      url: "/information",
     },
     children: [
-      {
-        menuItem: {
-          label: "CONNAÎTRE L’INSEED",
-          display_order: 8,
-          url: "/inseed/know-inseed",
-        },
+        {
+          menuItem: {
+            label: "CONNAÎTRE L’INSEED",
+            display_order: 4,
+            url: "/information/know-inseed",
+          },
+          children: [
+            {
+            menuItem: {
+              label: "UN PEU D’HISTOIRE",
+              display_order: 1,
+              url: "/information/history",
+            },
+            children: [],
+          },
+          {
+            menuItem: {
+              label: "MOT DU DIRECTEUR GÉNÉRAL",
+              display_order: 2,
+              url: "/information/word-from-general-director",
+            },
+            children: [],
+          },
+           {
+          menuItem: {
+            label: "ORGANISATION ET FONCTIONNEMENT",
+            display_order: 3,
+            url: "/information/organization-and-operation",
+          },
         children: [],
       },
-      {
-        menuItem: {
-          label: "UN PEU D’HISTOIRE",
-          display_order: 7,
-          url: "/inseed/story",
-        },
-        children: [],
-      },
-      {
-        menuItem: {
-          label: "MOT DU DIRECTEUR GÉNÉRAL",
-          display_order: 6,
-          url: "/inseed/word-from-general-manager",
-        },
-        children: [],
+      ],
       },
       {
         menuItem: {
           label: "LES ACTIVITÉS DE L’INSEED",
           display_order: 1,
-          url: "/inseed/activities",
+          url: "/information/activities",
         },
         children: [
           {
             menuItem: {
-              label: "ETABLIR LES DIAGNOSTICS CONJONCTURELS",
+              label: "SUIVRE L’ÉCONOMIE COMORIENNE",
               display_order: 1,
-              url: "/inseed/activities/establishing-economic-diagnoses",
+              url: "/information/monitor-the-comorian-economy",
             },
           },
           {
             menuItem: {
-              label: "CONNAITRE LE SYSTÈME PRODUCTIF",
+              label: "CONNAÎTRE LES ENTREPRISES",
               display_order: 2,
-              url: "/inseed/activities/know-the-productive-system",
+              url: "/information/know-the-companies",
             },
           },
           {
             menuItem: {
               label: "OBSERVER L’ÉVOLUTION DE LA SOCIÉTÉ",
               display_order: 3,
-              url: "/inseed/activities/observing-the-evolution-of-society",
+              url: "/information/observing-the-evolution-of-society",
             },
           },
           {
             menuItem: {
               label: "REALISER LE RECENSEMENT DE LA POPULATION",
               display_order: 4,
-              url: "/inseed/activities/conduct-the-population-census",
+              url: "/information/conduct-the-population-census",
             },
           },
           {
             menuItem: {
               label: "DÉCRIRE ET ANALYSER LES RÉGIONS ET LES TERRITOIRES",
               display_order: 5,
-              url: "/inseed/activities/describe-and-analyze-regions-and-territories",
+              url: "/information/describe-and-analyze-regions-and-territories",
             },
           },
           {
             menuItem: {
               label: "GÉRER DES GRANDS RÉPERTOIRES",
               display_order: 6,
-              url: "/inseed/activities/manage-large-directories",
+              url: "/information/manage-large-directories",
             },
           },
           {
             menuItem: {
               label: "DIFFUSER SES STATISTIQUES ET SES ETUDES",
               display_order: 7,
-              url: "/inseed/activities/disseminate-your-statistics-and-studies",
+              url: "/information/disseminate-statistics-and-studies",
             },
           },
           {
             menuItem: {
               label: "PERFECTIONNER SES MÉTHODES ET EVALUER LA QUALITÉ",
               display_order: 8,
-              url: "/inseed/activities/improve-your-methods-and-evaluate-quality",
+              url: "/information/improve-methods-and-evaluate-quality",
+            },
+          },
+          {
+            menuItem: {
+              label: "CONTRIBUER À LA STATISTIQUE RÉGIONALE, AFRICAINE ET INTERNATIONALE",
+              display_order: 9,
+              url: "/information/contribute-to-international-statistics",
             },
           },
         ],
       },
       {
         menuItem: {
-          label: "ORGANISATION ET FONCTIONNEMENT",
-          display_order: 5,
-          url: "/inseed/organization-and-operation",
-        },
-        children: [],
-      },
-      {
-        menuItem: {
           label: "PLANNIFICATION STRATÉGIQUE",
-          display_order: 4,
-          url: "/inseed/strategic-planning",
+          display_order: 3,
+          url: "/information/strategic-planning",
         },
         children: [
           {
             menuItem: {
               label: "PLAN D’ACTIONS",
               display_order: 1,
-              url: "/inseed/strategic-planning/action-plan",
+              url: "/information/action-plan",
             },
           },
           {
             menuItem: {
               label: "RAPPORT D’ACTIVITÉS",
               display_order: 2,
-              url: "/inseed/strategic-planning/activity-report",
+              url: "/information/activity-report",
             },
           },
+          {
+          menuItem: {
+            label: "DIAGNOSTIC DU SYSTÈME STATISTIQUE",
+            display_order: 3,
+            url: "/information/statistical-system-diagnosis",
+          },
+        },
         ],
       },
       {
         menuItem: {
           label: "LA STATISTIQUE PUBLIQUE",
           display_order: 2,
-          url: "/inseed/public-statistics",
+          url: "/information/public-statistics",
         },
         children: [
           {
             menuItem: {
               label: "CADRE JURIDIQUE ET INSTITUTIONNEL",
               display_order: 1,
-              url: "/inseed/public-statistics/legal-and-institutional-framework",
+              url: "/information/legal-and-institutional-framework",
             },
           },
           {
             menuItem: {
-              label: "LE SERVICE STATISTIQUE PUBLIC",
+              label: "LE SYSTÈME STATISTIQUE NATIONAL",
               display_order: 2,
-              url: "/inseed/public-statistics/the-public-statistical-service",
+              url: "/information/ssn",
             },
           },
           {
             menuItem: {
               label: "SECRET STATISTIQUE ET PROTECTION DES DONNÉES",
               display_order: 3,
-              url: "/inseed/public-statistics/statistical-secrecy-and-data-protection",
+              url: "/information/statistical-secrecy-and-data-protection",
             },
           },
           {
             menuItem: {
               label: "ACCÈS AUX DONNÉES PUBLIQUES",
               display_order: 4,
-              url: "/inseed/public-statistics/access-to-public-data",
+              url: "/information/access-to-public-data",
             },
           },
         ],
@@ -270,21 +285,21 @@ const menus: MenuItemType[] = [
         menuItem: {
           label: "L’INSEED DANS LE SYSTÈME STATISTIQUE AFRICAIN",
           display_order: 3,
-          url: "/inseed/inseed-in-the-african-statistical-system",
+          url: "/information/inseed-in-the-african-statistical-system",
         },
         children: [
           {
             menuItem: {
               label: "TEXTES DE RÉFÉRENCE",
               display_order: 1,
-              url: "/inseed/inseed-in-the-african-statistical-system/reference-texts",
+              url: "/information/reference-texts",
             },
           },
           {
             menuItem: {
               label: "LE PROJET DE LA CHARTE AFRICAINE DE LA STATISTIQUE",
               display_order: 2,
-              url: "/inseed/inseed-in-the-african-statistical-system/the-draft-african-charter-on-statistics",
+              url: "/information/the-draft-african-charter-on-statistics",
             },
           },
         ],
@@ -529,45 +544,45 @@ const menus: MenuItemType[] = [
       },
     ],
   },
-  {
-    menuItem: {
-      label: "SYSTÈME STATISTIQUE",
-      description:
-        "Fonctionnement et spécifités du système statistique national",
-      display_order: 5,
-      url: "/nss",
-    },
-    children: [
-      {
-        menuItem: {
-          label: "GÉNÉRALITÉS SUR LES COMORES",
-          display_order: 1,
-          url: "/nss/general-information-about-the-comoros",
-        },
-      },
-      {
-        menuItem: {
-          label: "TEXTES RÉGLEMENTAIRES",
-          display_order: 2,
-          url: "/nss/regulatory-texts",
-        },
-      },
-      {
-        menuItem: {
-          label: "DIAGNOSTIC DU SYSTÈME STATISTIQUE",
-          display_order: 3,
-          url: "/nss/statistical-system-diagnosis",
-        },
-      },
-      {
-        menuItem: {
-          label: "DOCUMENTS ET RAPPORTS",
-          display_order: 4,
-          url: "/nss/documents-and-reports",
-        },
-      },
-    ],
-  },
+  // {
+  //   menuItem: {
+  //     label: "SYSTÈME STATISTIQUE",
+  //     description:
+  //       "Fonctionnement et spécifités du système statistique national",
+  //     display_order: 5,
+  //     url: "/nss",
+  //   },
+  //   children: [
+  //     {
+  //       menuItem: {
+  //         label: "GÉNÉRALITÉS SUR LES COMORES",
+  //         display_order: 1,
+  //         url: "/nss/general-information-about-the-comoros",
+  //       },
+  //     },
+  //     {
+  //       menuItem: {
+  //         label: "TEXTES RÉGLEMENTAIRES",
+  //         display_order: 2,
+  //         url: "/nss/regulatory-texts",
+  //       },
+  //     },
+  //     {
+  //       menuItem: {
+  //         label: "DIAGNOSTIC DU SYSTÈME STATISTIQUE",
+  //         display_order: 3,
+  //         url: "/nss/statistical-system-diagnosis",
+  //       },
+  //     },
+  //     {
+  //       menuItem: {
+  //         label: "DOCUMENTS ET RAPPORTS",
+  //         display_order: 4,
+  //         url: "/nss/documents-and-reports",
+  //       },
+  //     },
+  //   ],
+  // },
   {
     menuItem: {
       label: "PUBLICATIONS",
@@ -807,3 +822,6 @@ main()
     await prisma.$disconnect();
     process.exit(1);
   });
+
+
+
