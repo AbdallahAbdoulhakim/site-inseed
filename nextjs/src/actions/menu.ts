@@ -47,7 +47,8 @@ subtitle?: string , short?:string, type?:string, parutionNumber?:string; parutio
   const pathParts = url.split("/").filter((part) => part.length > 0);
 
   const type = pathParts[0]
-  
+
+
   const subMenu = await prisma.menuItem.findFirst({
     where:{AND:[{url:`/${type}`},{type:"MAIN"}]},
     orderBy:{
@@ -133,29 +134,55 @@ subtitle?: string , short?:string, type?:string, parutionNumber?:string; parutio
   }
 
   if(type === "information"){
-   breadcrumb.push({id:subMenu.id, label:subMenu.label, description:subMenu?.description || "", url:subMenu.url})
+
    const informationBase = await fetchInformationDetailsBySlug("information")
 
+   if (!informationBase) return {breadcrumb : breadcrumb, title:breadcrumb.at(-1)?.label, subtitle:breadcrumb.at(-1)?.description, type:"L'INSEED"} 
 
+    if(pathParts.length > 2 || pathParts.length === 1){
+      return {breadcrumb:breadcrumb, title:informationBase.information?.title, parutionDate:informationBase.information?.publicationDate, subtitle:informationBase.information?.abstract, type:"L'INSEED"}
+    }
 
-    if(pathParts.length > 1){
+    const informationElt = await fetchInformationDetailsBySlug(pathParts.at(-1) ?? "default")
+
+    if (!informationElt) {
+       return {breadcrumb:breadcrumb, title:informationBase.information?.title, parutionDate:informationBase.information?.publicationDate, subtitle:informationBase.information?.abstract, type:"L'INSEED"}
+    }
+
+   informationElt.parentsList.forEach(elt=> 
+    breadcrumb.push({id:elt.id, label:elt.title, description:"", url:`/information/${elt.slug}`})
+   )
+
+   return {breadcrumb:breadcrumb, title:informationElt.information?.title, parutionDate:informationElt.information?.publicationDate, subtitle:informationElt.information?.abstract, type:"L'INSEED"}
+
+    
+
+   
+
+    /*
+    if(pathParts.length === 1){
       const subCategory = subMenu.children.find(subElt=> subElt.url === `/${type}/${pathParts[1]}`)
        if(subCategory){
         breadcrumb.push({id:subCategory.id, label:subCategory.label, description:subCategory?.description || "", url:subCategory.url})
        }
 
        const informationElt = await fetchInformationDetailsBySlug(pathParts[1])
+     
 
-       console.log(informationElt)
 
        return {breadcrumb:breadcrumb, title:informationElt?.title,parutionDate:informationElt?.publicationDate, subtitle:informationElt?.abstract, type:"L'INSEED"}
     }
 
-    if (pathParts.length > 2){
-      console.log("ici")
+    if (pathParts.length === 2){
+
+       const informationElt = await fetchInformationDetailsBySlug(pathParts[1]);
+     
     }
 
-    return {breadcrumb:breadcrumb , title:informationBase?.title, parutionDate:informationBase?.publicationDate, type:informationBase?.title}
+    */
+
+    //return {breadcrumb:breadcrumb , title:informationBase?.title, parutionDate:informationBase?.publicationDate, type:informationBase?.title}
+
   }
 
 
@@ -219,6 +246,32 @@ export const fetchPublicationDetailsBySlug = async (url:string)=>{
   }
 }
 
+interface Information {
+  id:string;
+  title:string;
+  abstract:string;
+  short:string;
+  slug:string;
+  publicationDate:string;
+  parent?:Information
+}
+
+function traverseParents(element:Information, arr:{id:string, slug:string, title:string}[]) {
+
+  let parents :{id:string, slug:string, title:string}[] = []
+
+  arr.unshift({id:element.id, title:element.title, slug:element.slug})
+
+
+  // Process the current node
+  if(element.parent){
+    traverseParents(element.parent, arr)
+  }
+  
+  
+  return parents
+}
+
 
 export const fetchInformationDetailsBySlug = async (url:string)=>{
   const informations = client.collection("informations");
@@ -226,38 +279,61 @@ export const fetchInformationDetailsBySlug = async (url:string)=>{
     filters:{
       slug:url
     },
-    fields:["abstract", "title", "slug", "publicationDate"],
-    // populate:{
-    //   printables:{
-    //     fields:["name", "url", "size"]
-    //   },
-    //   parent:{
-    //     fields:["name", "slug"],
-    //     populate:{
-    //       parent:{
-    //         fields:["name", "slug"],
-    //         populate:{
-    //           parent:{
-    //             fields:["name","slug"]
-    //           }
-    //         }
-    //       }
-    //     }
-    //   }
-      
-    // }
+    fields:["abstract", "short", "title", "slug", "publicationDate"],
+    populate:{
+      parent:{
+        fields:["title", "slug"],
+        populate:{
+          parent:{
+            fields:["title", "slug"],
+            populate:{
+              parent:{
+                fields:["title", "slug"]
+              }
+            }
+          }
+        }
+      }
+    }
   })
+
+
 
   if(!informationsList || informationsList.length === 0) return;
 
-  return {
+ const information = {
     id:informationsList[0].documentId,
     title:informationsList[0].title,
     abstract:informationsList[0].abstract,
+    short:informationsList[0].short,
     slug:informationsList[0].slug,
     publicationDate:informationsList[0].publicationDate,
-    printables:informationsList[0].printables ? informationsList[0].printables .map((elt:{documentId:string, size:string, url:string}) =>({id:elt.documentId, size:elt.size, url:elt.url})) : [] 
+    printables:informationsList[0].printables ? informationsList[0].printables .map((elt:{documentId:string, size:string, url:string}) =>({id:elt.documentId, size:elt.size, url:elt.url})) : [] ,
+    parent:informationsList[0].parent ? {
+      id:informationsList[0].parent?.documentId,
+      title:informationsList[0].parent?.title,
+      slug:informationsList[0].parent?.slug,
+      parent:informationsList[0].parent?.parent ? {
+         id:informationsList[0].parent?.parent?.documentId,
+      title:informationsList[0].parent?.parent?.title,
+      slug:informationsList[0].parent?.parent?.slug,
+      parent: informationsList[0].parent?.parent?.parent ? {
+          id:informationsList[0].parent?.parent?.parent?.documentId,
+      title:informationsList[0].parent?.parent?.parent?.title,
+      slug:informationsList[0].parent?.parent?.parent?.slug,
+      } : null
+      }:null
+    }:null,
   }
+
+  let parentsList : {id:string, slug:string, title:string}[] = []
+  traverseParents(information as unknown as Information, parentsList)
+
+
+
+
+
+  return {information:information, parentsList:parentsList}
 }
 
 

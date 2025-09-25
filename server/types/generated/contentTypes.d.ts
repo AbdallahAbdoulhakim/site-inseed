@@ -499,7 +499,7 @@ export interface ApiInformationInformation extends Struct.CollectionTypeSchema {
   attributes: {
     abstract: Schema.Attribute.Text;
     children: Schema.Attribute.Relation<
-      'manyToMany',
+      'oneToMany',
       'api::information.information'
     >;
     content: Schema.Attribute.RichText &
@@ -520,7 +520,7 @@ export interface ApiInformationInformation extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     norder: Schema.Attribute.Integer & Schema.Attribute.Required;
     parent: Schema.Attribute.Relation<
-      'manyToMany',
+      'manyToOne',
       'api::information.information'
     >;
     printables: Schema.Attribute.Media<'files', true>;

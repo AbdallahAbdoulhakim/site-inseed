@@ -15,7 +15,7 @@ export default function Breadcrumb({ breadcrumb }: BreadcrumbProps) {
         <ol className="flex flex-row flex-wrap list-none m-0 p-0  font-semibold text-default text-xs! lg:text-base!">
           <li>
             <Link
-              className="transition duration-300 text-primary hover:underline"
+              className="transition duration-300 text-primary hover:underline uppercase"
               href="/"
             >
               ACCUEIL
@@ -29,13 +29,13 @@ export default function Breadcrumb({ breadcrumb }: BreadcrumbProps) {
                 className="[&:not(:first-child)]:pl-[10px] [&:not(:last-child)]:pl-[10px]
             [&:not(:last-child)]:before:content-['>']  [&:not(:first-child)]:before:content-['>']
              [&:not(:first-child)]:before:pr-[10px] [&:not(:last-child)]:before:pr-[10px]
-             [&:not(:first-child)]:before:text-secondary [&:not(:last-child)]:before:text-secondary normal-case"
+             [&:not(:first-child)]:before:text-secondary [&:not(:last-child)]:before:text-secondary uppercase"
               >
                 {isLast ? (
                   bread.label
                 ) : (
                   <Link
-                    className="transition duration-300 text-primary hover:underline"
+                    className="transition duration-300 text-primary hover:underline uppercase"
                     href={bread.url}
                   >
                     {bread.label}

@@ -250,7 +250,10 @@ export default function Publications({
 
   return (
     <div className="container mx-auto px-5  my-5 flex flex-col">
-      <div className="flex md:justify-end justify-between mb-5">
+      <div
+        className="flex md:justify-end justify-between mb-5 "
+        data-aos="fade-up"
+      >
         {width && width <= 768 && <MobileSideBar />}
         <ResultsSnapshot resultsCount={resultsCount} />
       </div>

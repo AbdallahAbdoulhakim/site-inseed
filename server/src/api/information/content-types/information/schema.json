@@ -24,18 +24,6 @@
         "preset": "defaultHtml"
       }
     },
-    "parent": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::information.information",
-      "inversedBy": "children"
-    },
-    "children": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::information.information",
-      "mappedBy": "parent"
-    },
     "printables": {
       "type": "media",
       "multiple": true,
@@ -58,6 +46,18 @@
     },
     "abstract": {
       "type": "text"
+    },
+    "parent": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::information.information",
+      "inversedBy": "children"
+    },
+    "children": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::information.information",
+      "mappedBy": "parent"
     }
   }
 }

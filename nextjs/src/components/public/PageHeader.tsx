@@ -59,8 +59,6 @@ export default function PageHeader() {
         type,
       } = breadCrumbresponse;
 
-      console.log(type);
-
       setHeading({
         breadcrumb,
         title: title,
