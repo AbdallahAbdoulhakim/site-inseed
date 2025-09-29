@@ -363,107 +363,100 @@ const menus: MenuItemType[] = [
         menuItem: {
           label: "STATISTIQUES ÉCONOMIQUES",
           display_order: 1,
-          url: "/themes/economic-statistics",
+          url: "/publications/publications-database?theme=100+101+102+103+104+105+106",
         },
         children: [
           {
             menuItem: {
               label: "COMPTES NATIONAUX",
               display_order: 1,
-              url: "/themes/economic-statistics/national-accounts",
+              url: "/publications/publications-database?theme=103",
             },
           },
           {
             menuItem: {
               label: "STATISTIQUES CONJONCTURELLES",
               display_order: 2,
-              url: "/themes/economic-statistics/conjunctural-statistics",
+              url: "/publications/publications-database?theme=102",
             },
           },
           {
             menuItem: {
               label: "COMMERCES EXTÉRIEURS",
               display_order: 3,
-              url: "/themes/economic-statistics/foreign-trade",
+              url: "/publications/publications-database?theme=106",
             },
           },
           {
             menuItem: {
               label: "STATISTIQUES D’ENTREPRISES",
               display_order: 4,
-              url: "/themes/economic-statistics/business-statistics",
+              url: "/publications/publications-database?theme=600+601+602+603",
             },
           },
           {
             menuItem: {
               label: "SYNTHÈSE ÉCONOMIQUE",
               display_order: 5,
-              url: "/themes/economic-statistics/economic-summary",
+              url: "/publications/publications-database?theme=101+103+104",
             },
           },
-          {
-            menuItem: {
-              label: "CROISSANCE ÉCONOMIQUE",
-              display_order: 6,
-              url: "/themes/economic-statistics/economic-growth",
-            },
-          },
+          // {
+          //   menuItem: {
+          //     label: "CROISSANCE ÉCONOMIQUE",
+          //     display_order: 6,
+          //     url: "/themes/economic-statistics/economic-growth",
+          //   },
+          // },
         ],
       },
       {
         menuItem: {
           label: "STATISTIQUES DÉMOGRAPHIQUES",
           display_order: 2,
-          url: "/themes/demographic-statistics",
+          url: "/publications/publications-database?theme=200+201+202+203+205+204+206",
         },
         children: [
           {
             menuItem: {
               label: "POPULATION",
               display_order: 1,
-              url: "/themes/demographic-statistics/population",
+              url: "/publications/publications-database?theme=201",
             },
           },
           {
             menuItem: {
-              label: "NATALITÉ",
+              label: "NAISSANCES – FÉCONDITÉ",
               display_order: 2,
-              url: "/themes/demographic-statistics/birth-rate",
+              url: "/publications/publications-database?theme=202",
             },
           },
           {
             menuItem: {
-              label: "FÉCONDITÉ",
+              label: "DÉCÈS – MORTALITÉ – ESPÉRANCE DE VIE",
               display_order: 3,
-              url: "/themes/demographic-statistics/fertility",
+              url: "/publications/publications-database?theme=203",
             },
           },
           {
             menuItem: {
-              label: "MORTALITÉ",
+              label: "MIGRATION – URBANISATION",
               display_order: 4,
-              url: "/themes/demographic-statistics/mortality",
+              url: "/publications/publications-database?theme=204",
             },
           },
           {
             menuItem: {
-              label: "MIGRATION ET URBANISATION",
+              label: "SANTÉ MATRIMONIALE – NUPTIALITÉ",
               display_order: 5,
-              url: "/themes/demographic-statistics/migration-and-urbanization",
+              url: "/publications/publications-database?theme=205",
             },
           },
           {
             menuItem: {
               label: "SCOLARISATION, ALPHABÉTISATION ET NIVEAU D’INSTRUCTION",
               display_order: 6,
-              url: "/themes/demographic-statistics/schooling-literacy-and-educational-level",
-            },
-          },
-          {
-            menuItem: {
-              label: "SANTÉ MATRIMONIALE ET NUPTIALITÉ",
-              display_order: 7,
-              url: "/themes/demographic-statistics/marital-health-and-marriage",
+              url: "/publications/publications-database?theme=206",
             },
           },
         ],
@@ -472,42 +465,42 @@ const menus: MenuItemType[] = [
         menuItem: {
           label: "STATISTIQUES SOCIALES",
           display_order: 3,
-          url: "/themes/social-statistics",
+          url: "/publications/publications-database?theme=400+401+402+403+405+406+407+408+500+501+502+503",
         },
         children: [
           {
             menuItem: {
-              label: "INDICATEURS GÉNÉRAUX",
+              label: "REVENUS – POUVOIR D'ACHAT – CONSOMMATION",
               display_order: 1,
-              url: "/themes/demographic-statistics/general-indicators",
+              url: "/publications/publications-database?theme=300+301+302+303+304+305",
             },
           },
           {
             menuItem: {
               label: "PAUVRETÉ ET CONDITION DE VIE",
               display_order: 2,
-              url: "/themes/demographic-statistics/poverty-and-living-conditions",
+              url: "/publications/publications-database?theme=400+401+402+403+405+406+407+408",
             },
           },
           {
             menuItem: {
               label: "EMPLOI ET TRAVAIL",
               display_order: 3,
-              url: "/themes/demographic-statistics/employment-and-labor",
+              url: "/publications/publications-database?theme=500+501+502+503",
             },
           },
           {
             menuItem: {
               label: "ÉDUCATION",
               display_order: 4,
-              url: "/themes/demographic-statistics/education",
+              url: "/publications/publications-database?theme=402+206",
             },
           },
           {
             menuItem: {
               label: "HABITAT ET CADRE DE VIE",
               display_order: 5,
-              url: "/themes/demographic-statistics/housing-and-living-environment",
+              url: "/publications/publications-database?theme=304+305+403+406+408",
             },
           },
         ],
@@ -516,31 +509,61 @@ const menus: MenuItemType[] = [
         menuItem: {
           label: "ANNUAIRES STATISTIQUES",
           display_order: 4,
-          url: "/themes/statistical-directories",
+          url: "/information/statistical-yearbooks",
         },
         children: [
           {
             menuItem: {
               label: "ANNUAIRE STATISTIQUE NATIONAL",
               display_order: 1,
-              url: "/themes/statistical-directories/national-statistical-directory",
+              url: "/information/national-statistical-yearbook",
             },
           },
           {
             menuItem: {
               label: "ANNUAIRE STATISTIQUE SANITAIRE",
               display_order: 2,
-              url: "/themes/statistical-directories/health-statistical-directory",
+              url: "/information/health-data-book",
             },
           },
         ],
       },
       {
         menuItem: {
-          label: "DÉFINITIONS, MÉTHODES ET QUALITÉ",
+          label: "DÉFINITIONS ET MÉTHODES",
           display_order: 5,
-          url: "/themes/definitions-methods-and-quality",
+          url: "/information/definitions-and-methods",
         },
+         children: [
+          {
+            menuItem: {
+              label: "DÉFINITIONS",
+              display_order: 1,
+              url: "/information/definitions",
+            },
+          },
+          {
+            menuItem: {
+              label: "SOURCES STATISTIQUES ET INDICATEURS",
+              display_order: 2,
+              url: "/information/statistical-sources-and-indicators",
+            },
+          },
+          {
+            menuItem: {
+              label: "NOMENCLATURES",
+              display_order: 3,
+              url: "/information/nomenclatures",
+            },
+          },
+          {
+            menuItem: {
+              label: "MODÈLES, MÉTHODES ET OUTILS STATISTIQUES",
+              display_order: 4,
+              url: "/information/statistical-models-methods-and-tools",
+            },
+          },
+        ],
       },
     ],
   },
@@ -601,39 +624,39 @@ const menus: MenuItemType[] = [
         children: [
           {
             menuItem: {
-              label: "BULLETIN DE CONJONCTURE",
+              label: "NOTES ET POINTS DE CONJONCTURE",
               display_order: 1,
-              url: "/publications/publications-database/economic-bulletin",
+              url: "/publications/publications-database?collection=80",
             },
           },
           {
             menuItem: {
               label: "BULLETIN MENSUEL DE L’INDICE DE PRIX A LA CONSOMMATION",
               display_order: 2,
-              url: "/publications/publications-database/monthly-consumer-price-index-report",
+              url: "/publications/publications-database?theme=105",
             },
           },
           {
             menuItem: {
-              label: "COMPTES NATIONAUX ET ÉTUDES ÉCONOMIQUES",
+              label: "ÉCONOMIE ET STATISTIQUE",
               display_order: 3,
-              url: "/publications/publications-database/national-accounts-and-economic-studies",
+              url: "/publications/publications-database?collection=60",
             },
           },
           {
             menuItem: {
-              label: "NOTES DE CONJONCTURE",
+              label: "SÉRIES CHRONOLOGIQUES",
               display_order: 4,
-              url: "/publications/publications-database/memo-on-the-economy",
+              url: "/publications/publications-database?category=14",
             },
           },
-          {
-            menuItem: {
-              label: "STATISTIQUE DU COMMERCE EXTÉRIEUR",
-              display_order: 5,
-              url: "/publications/publications-database/foreign-trade-statistics",
-            },
-          },
+          // {
+          //   menuItem: {
+          //     label: "STATISTIQUE DU COMMERCE EXTÉRIEUR",
+          //     display_order: 5,
+          //     url: "/publications/publications-database/foreign-trade-statistics",
+          //   },
+          // },
           {
             menuItem: {
               label: "PHOTOÈQUE",
@@ -654,28 +677,28 @@ const menus: MenuItemType[] = [
         menuItem: {
           label: "ÉTUDES ET PROJETS",
           display_order: 2,
-          url: "/publications/studies-and-projects",
+          url: "/information/studies-and-projects",
         },
         children: [
           {
             menuItem: {
               label: "MÉTHODOLOGIE",
               display_order: 1,
-              url: "/publications/studies-and-projects/methodology",
+              url: "/information/methodology",
             },
           },
           {
             menuItem: {
               label: "ANALYSES",
               display_order: 2,
-              url: "/publications/studies-and-projects/analyses",
+              url: "/information/analytics",
             },
           },
           {
             menuItem: {
               label: "PROJET STATCAP-KM",
               display_order: 3,
-              url: "/publications/studies-and-projects/statcap-km",
+              url: "/information/statcap-km",
             },
           },
         ],
@@ -684,42 +707,42 @@ const menus: MenuItemType[] = [
         menuItem: {
           label: "ENQUÊTES ET RECENSEMENTS",
           display_order: 3,
-          url: "/publications/surveys-and-censuses",
+          url: "/publications/publications-database?collection=40",
         },
         children: [
-          {
-            menuItem: {
-              label: "EHCVM – 2024",
-              display_order: 1,
-              url: "/publications/surveys-and-censuses/ehcvm-2024",
-            },
-          },
+          // {
+          //   menuItem: {
+          //     label: "EHCVM – 2024",
+          //     display_order: 1,
+          //     url: "/publications/surveys-and-censuses/ehcvm-2024",
+          //   },
+          // },
           {
             menuItem: {
               label: "MICS – 2022",
               display_order: 2,
-              url: "/publications/surveys-and-censuses/mics-2022",
+              url: "https://www.nada.inseed-comores.org/index.php/catalog/16",
             },
           },
           {
             menuItem: {
               label: "EEIC – 2021",
               display_order: 3,
-              url: "/publications/surveys-and-censuses/eeic-2021",
+              url: "https://www.nada.inseed-comores.org/index.php/catalog/12",
             },
           },
           {
             menuItem: {
               label: "EHCVM – 2020",
               display_order: 4,
-              url: "/publications/surveys-and-censuses/ehcvm-2020",
+              url: "https://www.nada.inseed-comores.org/index.php/catalog/13",
             },
           },
           {
             menuItem: {
               label: "RGPH – 2017",
               display_order: 5,
-              url: "/publications/surveys-and-censuses/rgph-2017",
+              url: "https://www.nada.inseed-comores.org/index.php/catalog/17",
             },
           },
           {

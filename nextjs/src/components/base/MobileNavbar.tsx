@@ -105,23 +105,46 @@ const renderMobileMenuItem = (item: MenuItem) => {
   }
 
   return (
-    <Link
-      key={item.id}
-      href={item.url}
-      className="text-md font-semibold text-background/70 hover:text-background"
-    >
-      {item.label}
-    </Link>
+    <React.Fragment key={item.id}>
+      {item.url.includes("?") ? (
+        <a
+          key={item.id}
+          href={item.url}
+          className="text-md font-semibold text-background/70 hover:text-background"
+        >
+          {item.label}
+        </a>
+      ) : (
+        <Link
+          key={item.id}
+          href={item.url}
+          className="text-md font-semibold text-background/70 hover:text-background"
+        >
+          {item.label}
+        </Link>
+      )}
+    </React.Fragment>
   );
 };
 
 const SubMenuLink = ({ item }: { item: MenuItem }) => {
   return (
-    <Link
-      className="text-background/70 hover:text-background font-semibold"
-      href={item.url}
-    >
-      {item.label}
-    </Link>
+    <React.Fragment>
+      {item.url.includes("?") ? (
+        <a
+          className="text-background/70 hover:text-background font-semibold"
+          href={item.url}
+        >
+          {item.label}
+        </a>
+      ) : (
+        <Link
+          className="text-background/70 hover:text-background font-semibold"
+          href={item.url}
+        >
+          {item.label}
+        </Link>
+      )}
+    </React.Fragment>
   );
 };

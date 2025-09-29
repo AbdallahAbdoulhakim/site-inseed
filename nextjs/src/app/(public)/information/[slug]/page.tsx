@@ -67,7 +67,7 @@ export default async function page({
           content={information.content}
         />
       ) : (
-        <InformationPage />
+        <InformationPage content={information.content} />
       )}
     </section>
   );

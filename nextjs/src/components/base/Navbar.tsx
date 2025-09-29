@@ -54,12 +54,21 @@ export default function Navbar({ menu }: { menu: MenuItem[] }) {
                               key={secondary.id}
                             >
                               <NavigationMenuLink asChild>
-                                <Link
-                                  className="text-[15px] w-[200px] font-semibold"
-                                  href={secondary.url}
-                                >
-                                  {secondary.label}
-                                </Link>
+                                {secondary.url.includes("?") ? (
+                                  <a
+                                    className="text-[15px] w-[200px] font-semibold"
+                                    href={secondary.url}
+                                  >
+                                    {secondary.label}
+                                  </a>
+                                ) : (
+                                  <Link
+                                    className="text-[15px] w-[200px] font-semibold"
+                                    href={secondary.url}
+                                  >
+                                    {secondary.label}
+                                  </Link>
+                                )}
                               </NavigationMenuLink>
                             </li>
                           ))}
@@ -89,12 +98,21 @@ export default function Navbar({ menu }: { menu: MenuItem[] }) {
                               <ul className="flex flex-col gap-1 ml-5">
                                 {component.children.map((child) => (
                                   <li key={child.id}>
-                                    <Link
-                                      className="text-link text-[12px] font-normal hover:text-secondary hover:underline"
-                                      href={child.url}
-                                    >
-                                      {child.label}
-                                    </Link>
+                                    {child.url.includes("?") ? (
+                                      <a
+                                        className="text-link text-[12px] font-normal hover:text-secondary hover:underline"
+                                        href={child.url}
+                                      >
+                                        {child.label}
+                                      </a>
+                                    ) : (
+                                      <Link
+                                        className="text-link text-[12px] font-normal hover:text-secondary hover:underline"
+                                        href={child.url}
+                                      >
+                                        {child.label}
+                                      </Link>
+                                    )}
                                   </li>
                                 ))}
                               </ul>
@@ -111,16 +129,29 @@ export default function Navbar({ menu }: { menu: MenuItem[] }) {
                     asChild
                     className={navigationMenuTriggerStyle()}
                   >
-                    <Link
-                      className={`ml-[5px] bg-primary text-[16px] font-montserrat font-semibold  rounded-none ${
-                        isActive
-                          ? "border-b border-secondary"
-                          : "border-primary/10 hover:border-b-2  hover:border-secondary"
-                      } text-background/70 hover:text-background cursor-pointer transition-all duration-300 ease-in-out`}
-                      href={princip.url}
-                    >
-                      {princip.label}
-                    </Link>
+                    {princip.url.includes("?") ? (
+                      <a
+                        className={`ml-[5px] bg-primary text-[16px] font-montserrat font-semibold  rounded-none ${
+                          isActive
+                            ? "border-b border-secondary"
+                            : "border-primary/10 hover:border-b-2  hover:border-secondary"
+                        } text-background/70 hover:text-background cursor-pointer transition-all duration-300 ease-in-out`}
+                        href={princip.url}
+                      >
+                        {princip.label}
+                      </a>
+                    ) : (
+                      <Link
+                        className={`ml-[5px] bg-primary text-[16px] font-montserrat font-semibold  rounded-none ${
+                          isActive
+                            ? "border-b border-secondary"
+                            : "border-primary/10 hover:border-b-2  hover:border-secondary"
+                        } text-background/70 hover:text-background cursor-pointer transition-all duration-300 ease-in-out`}
+                        href={princip.url}
+                      >
+                        {princip.label}
+                      </Link>
+                    )}
                   </NavigationMenuLink>
                 </NavigationMenuItem>
               )}
@@ -141,9 +172,15 @@ function ListItem({
   return (
     <li {...props}>
       <NavigationMenuLink asChild>
-        <Link className="hover:text-secondary" href={href}>
-          {title}
-        </Link>
+        {href.includes("?") ? (
+          <a className="hover:text-secondary" href={href}>
+            {title}
+          </a>
+        ) : (
+          <Link className="hover:text-secondary" href={href}>
+            {title}
+          </Link>
+        )}
       </NavigationMenuLink>
       {children}
     </li>

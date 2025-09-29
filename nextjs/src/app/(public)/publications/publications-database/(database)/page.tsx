@@ -2,7 +2,7 @@ import client from "@/lib/strapi";
 
 import Publications from "@/components/public/publications/Publications";
 
-import { ITEM_PER_PAGE } from "@/lib/settings";
+import { PUBLICATIONS_ITEM_PER_PAGE } from "@/lib/settings";
 
 import { splitNumbersFromString } from "@/lib/miscellaneous";
 
@@ -88,7 +88,7 @@ export default async function PublicationsDatabase({
     sort: "parutionDate:desc",
     pagination: {
       page: queryPage,
-      pageSize: ITEM_PER_PAGE,
+      pageSize: PUBLICATIONS_ITEM_PER_PAGE,
     },
     populate: {
       publication_categories: {

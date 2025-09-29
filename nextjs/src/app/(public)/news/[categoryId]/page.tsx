@@ -2,7 +2,7 @@ import CategoryArticles from "@/components/public/CategoryArticles";
 import { truncateString } from "@/lib/miscellaneous";
 import client from "@/lib/strapi";
 import { notFound } from "next/navigation";
-import { ITEM_PER_PAGE } from "@/lib/settings";
+import { NEWS_ITEM_PER_PAGE } from "@/lib/settings";
 
 export default async function NewsCategory({
   params,
@@ -51,7 +51,7 @@ export default async function NewsCategory({
     sort: "publicationDate:desc",
     pagination: {
       page: queryPage,
-      pageSize: ITEM_PER_PAGE,
+      pageSize: NEWS_ITEM_PER_PAGE,
     },
     populate: {
       thumbnail: {

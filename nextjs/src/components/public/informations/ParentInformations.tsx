@@ -39,7 +39,7 @@ export default function ParentInformations({ children, content }: Props) {
           />
         </div>
       )}
-      <div className="grid grid-cols-2 lg:grid-cols-3 gap-5">
+      <div className="grid grid-cols-2 lg:grid-cols-3 gap-5 px-5">
         {children.map((child) => (
           <InformationBox
             key={child.id}

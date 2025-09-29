@@ -1,6 +1,6 @@
 "use client";
 
-import { ITEM_PER_PAGE } from "@/lib/settings";
+import { NEWS_ITEM_PER_PAGE } from "@/lib/settings";
 import { useRouter } from "next/navigation";
 import { ChevronLeft, ChevronRight, MoreHorizontal } from "lucide-react";
 
@@ -15,7 +15,7 @@ export default function Pagination({
 }) {
   const router = useRouter();
 
-  if (count < ITEM_PER_PAGE) return;
+  if (count < NEWS_ITEM_PER_PAGE) return;
 
   const changePage = (newPage: number) => {
     const params = new URLSearchParams(window.location.search);
@@ -23,25 +23,25 @@ export default function Pagination({
     router.push(`${window.location.pathname}?${params}`, { scroll: false });
   };
 
-  const hasPrev = ITEM_PER_PAGE * (page - 1) > 0;
-  const hasNext = ITEM_PER_PAGE * (page - 1) + ITEM_PER_PAGE < count;
+  const hasPrev = NEWS_ITEM_PER_PAGE * (page - 1) > 0;
+  const hasNext = NEWS_ITEM_PER_PAGE * (page - 1) + NEWS_ITEM_PER_PAGE < count;
 
   const pagesToShow: NumberOrEllipsis[] =
-    Math.ceil(count / ITEM_PER_PAGE) < 6
+    Math.ceil(count / NEWS_ITEM_PER_PAGE) < 6
       ? Array.from(
-          { length: Math.ceil(count / ITEM_PER_PAGE) },
+          { length: Math.ceil(count / NEWS_ITEM_PER_PAGE) },
           (_, index) => index + 1
         )
       : page < 4
-      ? [1, 2, 3, 4, "...", Math.ceil(count / ITEM_PER_PAGE)]
-      : page > Math.ceil(count / ITEM_PER_PAGE) - 3
+      ? [1, 2, 3, 4, "...", Math.ceil(count / NEWS_ITEM_PER_PAGE)]
+      : page > Math.ceil(count / NEWS_ITEM_PER_PAGE) - 3
       ? [
           1,
           "...",
-          Math.ceil(count / ITEM_PER_PAGE) - 3,
-          Math.ceil(count / ITEM_PER_PAGE) - 2,
-          Math.ceil(count / ITEM_PER_PAGE) - 1,
-          Math.ceil(count / ITEM_PER_PAGE),
+          Math.ceil(count / NEWS_ITEM_PER_PAGE) - 3,
+          Math.ceil(count / NEWS_ITEM_PER_PAGE) - 2,
+          Math.ceil(count / NEWS_ITEM_PER_PAGE) - 1,
+          Math.ceil(count / NEWS_ITEM_PER_PAGE),
         ]
       : [
           1,
@@ -50,7 +50,7 @@ export default function Pagination({
           page,
           page + 1,
           "...",
-          Math.ceil(count / ITEM_PER_PAGE),
+          Math.ceil(count / NEWS_ITEM_PER_PAGE),
         ];
 
   return (

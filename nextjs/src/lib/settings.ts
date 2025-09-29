@@ -39,4 +39,5 @@ export const contact: {
   ],
 };
 
-export const ITEM_PER_PAGE = 1;
+export const NEWS_ITEM_PER_PAGE = 9;
+export const PUBLICATIONS_ITEM_PER_PAGE = 10;
