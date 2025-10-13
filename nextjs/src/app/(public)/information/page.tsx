@@ -12,8 +12,13 @@ export default async function page() {
         fields: ["title", "short", "slug", "norder"],
         sort: "norder:asc",
       },
-      printables: {
-        fields: ["name", "url"],
+      information_documents: {
+        fields: ["title", "description", "type", "category"],
+        populate: {
+          file: {
+            fields: ["name", "url", "size"],
+          },
+        },
       },
     },
     filters: {
@@ -24,6 +29,39 @@ export default async function page() {
   });
 
   if (!informationsList || informationsList.length === 0) return notFound();
+
+  const documents =
+    informationsList[0].information_documents &&
+    informationsList[0].information_documents.length > 0
+      ? informationsList[0].information_documents
+          .filter((elt: { position: string }) => elt.position === "list")
+          .map(
+            (elt: {
+              id: string;
+              documentId: string;
+              title: string;
+              description: string;
+              type: string;
+              category: string;
+              file: {
+                name: string;
+                url: string;
+                size: string | number;
+              };
+            }) => ({
+              id: elt.documentId,
+              title: elt.title,
+              description: elt.description,
+              type: elt.type,
+              category: elt.category,
+              fileName: elt.file.name,
+              fileUrl: elt.file.url
+                ? `${process.env.NEXT_PUBLIC_STRAPI_BASE_URL}${elt.file.url}`
+                : "#",
+              fileSize: elt.file.size,
+            })
+          )
+      : [];
 
   const information = {
     id: informationsList[0].documentId,
@@ -61,7 +99,10 @@ export default async function page() {
           content={information.content}
         />
       ) : (
-        <InformationPage />
+        <InformationPage
+          content={information.content}
+          listOfFiles={documents}
+        />
       )}
     </section>
   );

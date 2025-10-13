@@ -52,3 +52,20 @@ export function splitString(str:string, lineWidth:number=30):string[]{
 
 return result
 }
+
+
+// interface DataForm {
+//   [key: string]: string | number;
+// }
+
+// export function filterDataObjectByExcludedKey(originalObject:DataForm, excludedKey:string) {
+//   const newObject : DataForm = {};
+//   for (const key in originalObject) {
+//     if (Object.prototype.hasOwnProperty.call(originalObject, key)) {
+//       if (key !== excludedKey) {
+//         newObject[key] = originalObject[key];
+//       }
+//     }
+//   }
+//   return newObject;
+// }

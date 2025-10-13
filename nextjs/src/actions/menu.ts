@@ -41,7 +41,7 @@ export const fetchMenu = async (type: "MAIN" | "FOOTER") => {
 
 
 export const fetchSubMenuByUrl = async (url:string)  : Promise<{breadcrumb:{id:string, label:string, description:string, url:string}[] , title?:string , 
-subtitle?: string , short?:string, type?:string, parutionNumber?:string; parutionDate?:string , printableUrl? : string, printableSize?:string,  dataUrl? : string, dataSize?:string; }>=>{
+subtitle?: string , short?:string, type?:string, parutionNumber?:string; parutionDate?:string , printableUrl? : string, printableSize?:string, printableType?:string, printableTitle?:string,  dataUrl? : string, dataSize?:string, dataType?: string, dataTitle?:string; }>=>{
   let breadcrumb : {id:string, label:string, description:string, url:string}[] =[]
 
   const pathParts = url.split("/").filter((part) => part.length > 0);
@@ -137,6 +137,7 @@ subtitle?: string , short?:string, type?:string, parutionNumber?:string; parutio
 
    const informationBase = await fetchInformationDetailsBySlug("information")
 
+
    if (!informationBase) return {breadcrumb : breadcrumb, title:breadcrumb.at(-1)?.label, subtitle:breadcrumb.at(-1)?.description, type:"L'INSEED"} 
 
     if(pathParts.length > 2 || pathParts.length === 1){
@@ -144,6 +145,8 @@ subtitle?: string , short?:string, type?:string, parutionNumber?:string; parutio
     }
 
     const informationElt = await fetchInformationDetailsBySlug(pathParts.at(-1) ?? "default")
+
+   
 
     if (!informationElt) {
        return {breadcrumb:breadcrumb, title:informationBase.information?.title, parutionDate:informationBase.information?.publicationDate, subtitle:informationBase.information?.abstract, type:"L'INSEED"}
@@ -153,35 +156,9 @@ subtitle?: string , short?:string, type?:string, parutionNumber?:string; parutio
     breadcrumb.push({id:elt.id, label:elt.title, description:"", url:`/information/${elt.slug}`})
    )
 
-   return {breadcrumb:breadcrumb, title:informationElt.information?.title, parutionDate:informationElt.information?.publicationDate, subtitle:informationElt.information?.abstract, type:"L'INSEED"}
 
-    
+   return {breadcrumb:breadcrumb, title:informationElt.information?.title, parutionDate:informationElt.information?.publicationDate, subtitle:informationElt.information?.abstract, type:"L'INSEED", printableType:informationElt.information?.printable?.type, printableUrl:informationElt.information?.printable?.fileUrl, printableSize:informationElt.information?.printable?.fileSize, printableTitle:informationElt.information?.printable?.title}
 
-   
-
-    /*
-    if(pathParts.length === 1){
-      const subCategory = subMenu.children.find(subElt=> subElt.url === `/${type}/${pathParts[1]}`)
-       if(subCategory){
-        breadcrumb.push({id:subCategory.id, label:subCategory.label, description:subCategory?.description || "", url:subCategory.url})
-       }
-
-       const informationElt = await fetchInformationDetailsBySlug(pathParts[1])
-     
-
-
-       return {breadcrumb:breadcrumb, title:informationElt?.title,parutionDate:informationElt?.publicationDate, subtitle:informationElt?.abstract, type:"L'INSEED"}
-    }
-
-    if (pathParts.length === 2){
-
-       const informationElt = await fetchInformationDetailsBySlug(pathParts[1]);
-     
-    }
-
-    */
-
-    //return {breadcrumb:breadcrumb , title:informationBase?.title, parutionDate:informationBase?.publicationDate, type:informationBase?.title}
 
   }
 
@@ -281,6 +258,14 @@ export const fetchInformationDetailsBySlug = async (url:string)=>{
     },
     fields:["abstract", "short", "title", "slug", "publicationDate"],
     populate:{
+      information_documents: {
+        fields: ["title", "description", "type", "category", "position"],
+        populate: {
+          file: {
+            fields: ["name", "url", "size"],
+          },
+        },
+      },
       parent:{
         fields:["title", "slug"],
         populate:{
@@ -301,6 +286,39 @@ export const fetchInformationDetailsBySlug = async (url:string)=>{
 
   if(!informationsList || informationsList.length === 0) return;
 
+    const documents : {id:string, title:string, description:string, type:string, category:string, fileName:string, fileUrl:string, fileSize:string|undefined}[] =
+    informationsList[0].information_documents &&
+    informationsList[0].information_documents.length > 0
+      ? informationsList[0].information_documents
+          .filter((elt: { position: string }) => elt.position === "main")
+          .map(
+            (elt: {
+              id: string;
+              documentId: string;
+              title: string;
+              description: string;
+              type: string;
+              category: string;
+              file: {
+                name: string;
+                url: string;
+                size: string | number;
+              };
+            }) => ({
+              id: elt.documentId,
+              title: elt.title,
+              description: elt.description,
+              type: elt.type,
+              category: elt.category,
+              fileName: elt.file.name,
+              fileUrl: elt.file.url
+                ? `${process.env.NEXT_PUBLIC_STRAPI_BASE_URL}${elt.file.url}`
+                : "#",
+              fileSize: elt.file.size,
+            })
+          )
+      : [];
+
  const information = {
     id:informationsList[0].documentId,
     title:informationsList[0].title,
@@ -308,7 +326,7 @@ export const fetchInformationDetailsBySlug = async (url:string)=>{
     short:informationsList[0].short,
     slug:informationsList[0].slug,
     publicationDate:informationsList[0].publicationDate,
-    printables:informationsList[0].printables ? informationsList[0].printables .map((elt:{documentId:string, size:string, url:string}) =>({id:elt.documentId, size:elt.size, url:elt.url})) : [] ,
+    printable:documents[0] ,
     parent:informationsList[0].parent ? {
       id:informationsList[0].parent?.documentId,
       title:informationsList[0].parent?.title,
@@ -329,31 +347,6 @@ export const fetchInformationDetailsBySlug = async (url:string)=>{
   let parentsList : {id:string, slug:string, title:string}[] = []
   traverseParents(information as unknown as Information, parentsList)
 
-
-
-
-
   return {information:information, parentsList:parentsList}
 }
 
-
-//  parent:informationsList[0].parent ? {
-//       id:informationsList[0].parent?.parent?.documentId,
-//       title:informationsList[0].parent?.parent?.title,
-//       slug:informationsList[0].parent?.parent?.slug,
-//       parent:informationsList[0].parent?.parent ? {
-//         id:informationsList[0].parent?.documentId,
-//       title:informationsList[0].parent?.title,
-//       slug:informationsList[0].parent?.slug,
-//       parent:informationsList[0].parent?.parent?.parent ?{
-//          id:informationsList[0].parent?.parent?.documentId,
-//       title:informationsList[0].parent?.parent?.title,
-//       slug:informationsList[0].parent?.parent?.slug,
-//       parent:informationsList[0].parent?.parent ? {
-//         id:informationsList[0].parent?.parent?.parent?.documentId,
-//       title:informationsList[0].parent?.parent?.parent?.title,
-//       slug:informationsList[0].parent?.slug,
-//       }:{}
-//       } : {}
-
-//     } :{}

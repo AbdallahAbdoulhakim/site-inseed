@@ -116,7 +116,7 @@ export default function LineChartGraphic({
         <Legend wrapperStyle={{ fontSize: "14px", bottom: 0 }} offset={15} />
 
         {columns
-          .filter((_, index) => index !== 0)
+          .filter((_, index) => index !== 0 && index !== columns.length - 1)
           .map((col, index) => {
             return (
               <Line

@@ -31,7 +31,9 @@
         "Série chronologiques",
         "Jeux de données",
         "Chiffres détaillés",
-        "Bulletin IHPC"
+        "Bulletin IHPC",
+        "Rapport d'analyse",
+        "Comptes Nationaux"
       ]
     },
     "parutionDate": {
@@ -126,6 +128,10 @@
           ]
         }
       }
+    },
+    "hasSummary": {
+      "type": "boolean",
+      "default": true
     }
   }
 }

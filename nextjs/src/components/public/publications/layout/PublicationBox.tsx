@@ -50,11 +50,17 @@ export default function PublicationBox({ publication }: Props) {
               ? "bg-[#fe6d00]"
               : publication.type === "Jeux de données"
               ? "bg-[#50299f]"
+              : publication.type === "Rapport d'analyse"
+              ? "bg-[#03afff]"
+              : publication.type === "Informations Rapides"
+              ? "bg-[#0f417a]"
+              : publication.type === "Comptes Nationaux"
+              ? "bg-[#dc143c]"
               : ""
           } rounded-xs text-center px-[7px] my-2.5 mr-[6px] text-[11px] lg:text-[13px] text-white`}
         >
           {publication.type}
-          {publication.type === "Bulletin IHPC"
+          {["Bulletin IHPC", "Comptes Nationaux"].includes(publication.type)
             ? ` - N° ${publication.parutionNumber}`
             : ""}
         </div>

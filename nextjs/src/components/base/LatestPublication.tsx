@@ -8,13 +8,17 @@ import "aos/dist/aos.css";
 
 import { useEffect } from "react";
 
+export type PublicationType =
+  | "Informations Rapides"
+  | "Chiffres clés"
+  | "Série chronologiques"
+  | "Jeux de données"
+  | "Chiffres détaillés"
+  | "Bulletin IHPC"
+  | "Comptes Nationaux";
+
 interface LatestPublicationProps {
-  type:
-    | "Informations Rapides"
-    | "Chiffres clés"
-    | "Série chronologiques"
-    | "Jeux de données"
-    | "Chiffres détaillés";
+  type: PublicationType;
   Icon: JSX.Element;
   short: string;
   publicationSlug: string;

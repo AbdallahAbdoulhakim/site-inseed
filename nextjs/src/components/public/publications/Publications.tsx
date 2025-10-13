@@ -1,9 +1,11 @@
 "use client";
 
 import SideBar from "@/components/public/publications/SideBar";
-import Results from "@/components/public/publications/Results";
+
+const Results = lazy(() => import("@/components/public/publications/Results"));
 import ResultsSnapshot from "@/components/public/publications/ResultsSnapshot";
 import PublicationsPagination from "@/components/public/publications/PublicationsPagination";
+import { lazy, Suspense } from "react";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -22,6 +24,7 @@ import { useAppSelector, useAppStore } from "@/lib/hooks";
 import { useRouter } from "next/navigation";
 import useWindowSize from "@/hooks/useWindowSize";
 import MobileSideBar from "./MobileSideBar";
+import ConcentrincLoading from "@/components/base/ConcentringLoading";
 
 export interface Theme {
   id: string;
@@ -264,7 +267,9 @@ export default function Publications({
         data-aos-delay={100}
       >
         {width && width > 768 && <SideBar />}
-        <Results publicationsList={publicationsList} />
+        <Suspense fallback={<ConcentrincLoading className="mt-5" />}>
+          <Results publicationsList={publicationsList} />
+        </Suspense>
       </div>
       <div className="flex justify-center mt-5 items-center">
         <PublicationsPagination count={resultsCount} />

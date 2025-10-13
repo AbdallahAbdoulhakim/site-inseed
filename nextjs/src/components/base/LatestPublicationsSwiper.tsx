@@ -11,24 +11,22 @@ import {
   VscRepo,
   VscGraphLine,
   VscBrowser,
-  VscPreview,
 } from "react-icons/vsc";
+
+import { MdAccountBalance } from "react-icons/md";
+
+import { FaMoneyBillTrendUp } from "react-icons/fa6";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
 import "swiper/css/pagination";
 import LatestPublication from "@/components/base/LatestPublication";
+import type { PublicationType } from "@/components/base/LatestPublication";
 
 interface Slide {
   id: string;
-  type:
-    | "Informations Rapides"
-    | "Chiffres clés"
-    | "Série chronologiques"
-    | "Jeux de données"
-    | "Chiffres détaillés"
-    | "Bulletin IHPC";
+  type: PublicationType;
   short: string;
   publicationSlug: string;
   publicationDate: string;
@@ -41,7 +39,7 @@ interface SliderProps {
 
 const fetchIcon = (type: string): JSX.Element => {
   if (type === "Bulletin IHPC") {
-    return <VscPreview className="w-[70px] h-[70px] text-primary" />;
+    return <FaMoneyBillTrendUp className="w-[70px] h-[70px] text-primary" />;
   }
 
   if (type === "Informations Rapides") {
@@ -62,6 +60,10 @@ const fetchIcon = (type: string): JSX.Element => {
 
   if (type === "Chiffres détaillés") {
     return <VscCalendar className="w-[70px] h-[70px] text-primary" />;
+  }
+
+  if (type === "Comptes Nationaux") {
+    return <MdAccountBalance className="w-[70px] h-[70px] text-primary" />;
   }
 
   return <VscBrowser className="w-[70px] h-[70px] text-primary" />;

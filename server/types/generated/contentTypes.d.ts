@@ -486,6 +486,57 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiInformationDocumentInformationDocument
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'information_documents';
+  info: {
+    displayName: 'Information Document';
+    pluralName: 'information-documents';
+    singularName: 'information-document';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    category: Schema.Attribute.Enumeration<
+      [
+        'Rapport',
+        'Documentation',
+        'Texte l\u00E9gislatif ou r\u00E9glementaire',
+      ]
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'Rapport'>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.String;
+    file: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
+      Schema.Attribute.Required;
+    information: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::information.information'
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::information-document.information-document'
+    > &
+      Schema.Attribute.Private;
+    position: Schema.Attribute.Enumeration<['main', 'list']> &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'list'>;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    type: Schema.Attribute.Enumeration<['PDF', 'XLSX', 'CSV', 'DOCX']> &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'PDF'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiInformationInformation extends Struct.CollectionTypeSchema {
   collectionName: 'informations';
   info: {
@@ -512,6 +563,10 @@ export interface ApiInformationInformation extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    information_documents: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::information-document.information-document'
+    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -523,7 +578,6 @@ export interface ApiInformationInformation extends Struct.CollectionTypeSchema {
       'manyToOne',
       'api::information.information'
     >;
-    printables: Schema.Attribute.Media<'files', true>;
     publicationDate: Schema.Attribute.Date;
     publishedAt: Schema.Attribute.DateTime;
     short: Schema.Attribute.String;
@@ -792,6 +846,7 @@ export interface ApiPublicationGraphicPublicationGraphic
     draftAndPublish: true;
   };
   attributes: {
+    compoundLineKey: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -824,6 +879,7 @@ export interface ApiPublicationGraphicPublicationGraphic
         'compound',
         'vertical barchart',
         'horizontal barchart',
+        'compound stacked barchart',
       ]
     >;
     updatedAt: Schema.Attribute.DateTime;
@@ -850,7 +906,7 @@ export interface ApiPublicationParagraphPublicationParagraph
       Schema.Attribute.CustomField<
         'plugin::ckeditor5.CKEditor',
         {
-          preset: 'defaultMarkdown';
+          preset: 'defaultHtml';
         }
       >;
     createdAt: Schema.Attribute.DateTime;
@@ -953,6 +1009,7 @@ export interface ApiPublicationPublication extends Struct.CollectionTypeSchema {
       'oneToMany',
       'api::publication-graphic.publication-graphic'
     >;
+    hasSummary: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -999,6 +1056,8 @@ export interface ApiPublicationPublication extends Struct.CollectionTypeSchema {
         'Jeux de donn\u00E9es',
         'Chiffres d\u00E9taill\u00E9s',
         'Bulletin IHPC',
+        "Rapport d'analyse",
+        'Comptes Nationaux',
       ]
     >;
     updatedAt: Schema.Attribute.DateTime;
@@ -1634,6 +1693,7 @@ declare module '@strapi/strapi' {
       'api::article.article': ApiArticleArticle;
       'api::author.author': ApiAuthorAuthor;
       'api::category.category': ApiCategoryCategory;
+      'api::information-document.information-document': ApiInformationDocumentInformationDocument;
       'api::information.information': ApiInformationInformation;
       'api::key-indicator.key-indicator': ApiKeyIndicatorKeyIndicator;
       'api::main-indicator.main-indicator': ApiMainIndicatorMainIndicator;

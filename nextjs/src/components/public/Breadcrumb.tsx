@@ -1,3 +1,4 @@
+import { truncateString } from "@/lib/miscellaneous";
 import Link from "next/link";
 
 interface BreadcrumbProps {
@@ -9,6 +10,10 @@ interface BreadcrumbProps {
   }[];
 }
 export default function Breadcrumb({ breadcrumb }: BreadcrumbProps) {
+  const overallStrLen = breadcrumb
+    .map((bread) => bread.label)
+    .reduce((acc, curr) => acc + curr.length, 0);
+
   return (
     <nav className="bg-[#f6f6f6] py-4">
       <div className="container mx-2 md:mx-auto px-5">
@@ -32,7 +37,10 @@ export default function Breadcrumb({ breadcrumb }: BreadcrumbProps) {
              [&:not(:first-child)]:before:text-secondary [&:not(:last-child)]:before:text-secondary uppercase"
               >
                 {isLast ? (
-                  bread.label
+                  truncateString(
+                    bread.label,
+                    118 - overallStrLen + bread.label.length
+                  )
                 ) : (
                   <Link
                     className="transition duration-300 text-primary hover:underline uppercase"

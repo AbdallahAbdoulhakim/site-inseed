@@ -24,13 +24,6 @@
         "preset": "defaultHtml"
       }
     },
-    "printables": {
-      "type": "media",
-      "multiple": true,
-      "allowedTypes": [
-        "files"
-      ]
-    },
     "slug": {
       "type": "string",
       "required": true,
@@ -58,6 +51,12 @@
       "relation": "oneToMany",
       "target": "api::information.information",
       "mappedBy": "parent"
+    },
+    "information_documents": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::information-document.information-document",
+      "mappedBy": "information"
     }
   }
 }

@@ -689,9 +689,9 @@ const menus: MenuItemType[] = [
           },
           {
             menuItem: {
-              label: "ANALYSES",
+              label: "RAPPORTS D'ANALYSES",
               display_order: 2,
-              url: "/information/analytics",
+              url: "/publications/publications-database?collection=50",
             },
           },
           {

@@ -21,7 +21,8 @@
         "scatter",
         "compound",
         "vertical barchart",
-        "horizontal barchart"
+        "horizontal barchart",
+        "compound stacked barchart"
       ]
     },
     "legend": {
@@ -87,6 +88,9 @@
           ]
         }
       }
+    },
+    "compoundLineKey": {
+      "type": "string"
     }
   }
 }

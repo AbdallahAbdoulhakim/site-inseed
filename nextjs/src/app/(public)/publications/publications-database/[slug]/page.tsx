@@ -36,6 +36,7 @@ export default async function page({
           "link",
           "inSummary",
           "startFrom",
+          "compoundLineKey",
         ],
         populate: {
           datafile: {
@@ -57,6 +58,7 @@ export default async function page({
               "title",
               "subtitle",
               "startFrom",
+              "compoundLineKey",
             ],
             populate: {
               datafile: {
@@ -81,6 +83,7 @@ export default async function page({
     paragraphs: publicationsList[0].paragraphs,
     graphics: publicationsList[0].graphics,
     table_graphs: publicationsList[0].table_grarphs,
+    hasSummary: publicationsList[0].hasSummary,
   };
   return <DefaultPublicationPage publication={publication} />;
 }

@@ -9,6 +9,7 @@ import DefaultPublicationSummary from "@/components/public/publications/layout/D
 interface Props {
   publication: {
     id: string;
+    hasSummary: boolean | undefined;
     paragraphs: {
       id: number;
       documentId: string;
@@ -31,6 +32,7 @@ interface Props {
       link: string | null | undefined;
       inSummary: boolean;
       startFrom: number | null | undefined;
+      compoundLineKey: string | null | undefined;
       type:
         | "line"
         | "scatter"
@@ -63,6 +65,7 @@ interface Props {
         title: string | null | undefined;
         subtitle: string | null | undefined;
         startFrom: number | null | undefined;
+        compoundLineKey: string | null | undefined;
         type:
           | "line"
           | "scatter"
@@ -99,6 +102,7 @@ interface Element {
       yAxisLegend: string | null | undefined;
       link: string | null | undefined;
       startFrom: number | null | undefined;
+      compoundLineKey: string | null | undefined;
       type:
         | "line"
         | "scatter"
@@ -136,6 +140,7 @@ interface Element {
         xAxisLegend: string | null | undefined;
         yAxisLegend: string | null | undefined;
         startFrom: number | null | undefined;
+        compoundLineKey: string | null | undefined;
         type:
           | "line"
           | "scatter"
@@ -201,6 +206,7 @@ export default function DefaultPublicationPage({ publication }: Props) {
             yAxisLegend: elt.yAxisLegend,
             type: elt.type,
             startFrom: elt.startFrom,
+            compoundLineKey: elt.compoundLineKey,
             datafile: {
               id: elt.datafile.id,
               documentId: elt.datafile.documentId,
@@ -235,6 +241,7 @@ export default function DefaultPublicationPage({ publication }: Props) {
             yAxisLegend: elt.graphic.yAxisLegend,
             type: elt.graphic.type,
             startFrom: elt.graphic.startFrom,
+            compoundLineKey: elt.graphic.compoundLineKey,
             datafile: {
               id: elt.graphic.datafile.id,
               documentId: elt.graphic.datafile.documentId,
@@ -283,11 +290,13 @@ export default function DefaultPublicationPage({ publication }: Props) {
   return (
     <section className="container mx-auto">
       <div
-        className="px-5 min-h-lvh my-10 justify-center flex flex-col space-y-10"
+        className="px-5  my-10  flex flex-col space-y-10"
         data-aos="fade-up"
         data-aos-delay={100}
       >
-        <DefaultPublicationSummary elements={summaryElements} />
+        {publication.hasSummary && (
+          <DefaultPublicationSummary elements={summaryElements} />
+        )}
         {elements.map((elt) => {
           if (elt.type === "paragraph") {
             return (
@@ -315,6 +324,7 @@ export default function DefaultPublicationPage({ publication }: Props) {
                 subtitle={elt.content.graphic?.subtitle}
                 type={elt.content.graphic?.type}
                 startFrom={elt.content.graphic?.startFrom}
+                compoundLineKey={elt.content.graphic?.compoundLineKey}
                 dataUrl={
                   elt.content.graphic?.datafile.url
                     ? `${process.env.NEXT_PUBLIC_STRAPI_BASE_URL}${elt.content.graphic?.datafile?.url}`

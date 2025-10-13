@@ -5,8 +5,8 @@ import { usePathname } from "next/navigation";
 import { fetchSubMenuByUrl } from "@/actions/menu";
 import DotLoading from "@/components/base/DotLoading";
 import Link from "next/link";
-import { BsFilePdf } from "react-icons/bs";
-import { BsFiletypeXlsx } from "react-icons/bs";
+import { BsFilePdf, BsFiletypeXlsx } from "react-icons/bs";
+
 import byteSize from "byte-size";
 
 export default function PageHeader() {
@@ -20,6 +20,8 @@ export default function PageHeader() {
     parutionNumber?: string;
     printableUrl?: string;
     printableSize?: string;
+    printableType?: string;
+    printableTitle?: string;
     dataUrl?: string;
     dataSize?: string;
     type?: string;
@@ -34,7 +36,13 @@ export default function PageHeader() {
   const pathname = usePathname();
 
   const extendedPageHeader = (type: string) =>
-    ["Bulletin IHPC", "L'INSEED"].includes(type);
+    [
+      "Bulletin IHPC",
+      "L'INSEED",
+      "Rapport d'analyse",
+      "Informations Rapides",
+      "Comptes Nationaux",
+    ].includes(type);
 
   const parutionOrpublication = (type: string) =>
     ["Bulletin IHPC"].includes(type);
@@ -54,6 +62,8 @@ export default function PageHeader() {
         parutionNumber,
         printableUrl,
         printableSize,
+        printableTitle,
+        printableType,
         dataUrl,
         dataSize,
         type,
@@ -68,6 +78,8 @@ export default function PageHeader() {
         parutionNumber,
         printableUrl,
         printableSize,
+        printableTitle,
+        printableType,
         dataSize,
         dataUrl,
         type,
@@ -148,10 +160,18 @@ export default function PageHeader() {
                         >
                           <div className="flex flex-col justify-end items-end">
                             <p className="text-primary text-[13px] uppercase group-hover:underline">
-                              Version Imprimable
+                              {heading.printableTitle
+                                ? heading.printableTitle
+                                : heading.type &&
+                                  [
+                                    "Bulletin IHPC",
+                                    "Comptes Nationaux",
+                                  ].includes(heading.type)
+                                ? "Version Imprimable"
+                                : "Télécharger le rapport"}
                             </p>
                             <p className="text-neutral-500 text-[13px] group-hover:underline">
-                              {`(pdf ${
+                              {`(pdf${
                                 !isNaN(Number(heading.printableSize))
                                   ? `, ${byteSize(
                                       Number(heading.printableSize) * 1024
@@ -177,7 +197,7 @@ export default function PageHeader() {
                               Données
                             </p>
                             <p className="text-neutral-500 text-[13px] group-hover:underline">
-                              {`(xlsx ${
+                              {`(xlsx${
                                 !isNaN(Number(heading.dataSize))
                                   ? `, ${byteSize(
                                       Number(heading.dataSize) * 1024

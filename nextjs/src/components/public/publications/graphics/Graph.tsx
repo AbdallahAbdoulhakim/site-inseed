@@ -8,6 +8,7 @@ import Papa from "papaparse";
 import { useEffect, useState } from "react";
 import "aos/dist/aos.css";
 import LineChartGraphic from "./LineChartGraphic";
+import StackedBarComposedGraphic from "./StackedBarComposedGraphic";
 
 interface Props {
   yAxisLegend: string | null | undefined;
@@ -17,6 +18,7 @@ interface Props {
   subtitle: string | null | undefined;
   legend: string | null | undefined;
   startFrom: number | null | undefined;
+  compoundLineKey: string | null | undefined;
   dataUrl: string;
   type:
     | "line"
@@ -24,6 +26,7 @@ interface Props {
     | "compound"
     | "vertical barchart"
     | "horizontal barchart"
+    | "compound stacked barchart"
     | undefined;
   id: string;
 }
@@ -45,6 +48,7 @@ export default function Graph({
   xAxisLegend,
   yAxisLegend,
   startFrom,
+  compoundLineKey,
   type,
   id,
 }: Props) {
@@ -118,8 +122,17 @@ export default function Graph({
             yAxisLegend={yAxisLegend ?? ""}
             startFrom={startFrom ?? 0}
           />
+        ) : type === "compound stacked barchart" ? (
+          <StackedBarComposedGraphic
+            data={data}
+            columns={columns}
+            compoundLineKey={compoundLineKey}
+          />
         ) : (
           <div> No Graph!</div>
+        )}
+        {legend && (
+          <div className="text-center text-sm text-primary">{legend}</div>
         )}
       </div>
     </div>
