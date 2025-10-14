@@ -40,7 +40,7 @@ export default function PublicationBox({ publication }: Props) {
       href={
         publication.external
           ? publication.url
-          : `/publications/publications-database/${publication.publicationSlug}`
+          : `/publications/${publication.publicationSlug}`
       }
     >
       <div className="flex items-center">

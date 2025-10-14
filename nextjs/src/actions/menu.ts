@@ -112,18 +112,11 @@ subtitle?: string , short?:string, type?:string, parutionNumber?:string; parutio
 
     breadcrumb.push({id:subMenu.id, label:subMenu.label, description:subMenu?.description || "", url:subMenu.url})
 
-    if(pathParts.length > 1){
-       const subCategory = subMenu.children.find(subElt=> subElt.url === `/${type}/${pathParts[1]}`)
-       if(subCategory){
-        breadcrumb.push({id:subCategory.id, label:subCategory.label, description:subCategory?.description || "", url:subCategory.url})
-       }
-    }
-
-    if (pathParts.length > 2){
-      const publicationElt = await fetchPublicationDetailsBySlug(pathParts[2])
+    if (pathParts.length > 1){
+      const publicationElt = await fetchPublicationDetailsBySlug(pathParts[1])
       
       if (publicationElt){
-        breadcrumb.push({id:publicationElt.id, label:publicationElt.title, url:`/${pathParts[1]}/${publicationElt.slug}`, description:publicationElt.title})
+        breadcrumb.push({id:publicationElt.id, label:publicationElt.title, url:`/${publicationElt.slug}`, description:publicationElt.title})
 
          return {breadcrumb:breadcrumb , title:publicationElt.short,  parutionNumber:publicationElt.parutionNumber, 
           printableUrl:publicationElt.printableUrl ? `${process.env.NEXT_PUBLIC_STRAPI_BASE_URL}${publicationElt.printableUrl}` : "", dataUrl:publicationElt.dataUrl ? `${process.env.NEXT_PUBLIC_STRAPI_BASE_URL}${publicationElt.dataUrl}` : "", type: publicationElt.type, subtitle:publicationElt.title, short:publicationElt.abstract, parutionDate:publicationElt.parutionDate, dataSize:publicationElt.dataSize, printableSize:publicationElt.printableSize }

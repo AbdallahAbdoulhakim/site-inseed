@@ -69,7 +69,7 @@ const footer : MenuItemType[] = [
           label:"BULLETIN DE CONJONCTURE",
           display_order:1,
           type:"FOOTER", 
-          url:"/publications/publications-database/economic-bulletin"}, 
+          url:"/publications/economic-bulletin"}, 
           children:[]
       },
       {
@@ -77,7 +77,7 @@ const footer : MenuItemType[] = [
          label:"COMPTES NATIONAUX ET ÉTUDES ÉCONOMIQUES",
          display_order:2,
          type:"FOOTER", 
-         url:"/publications/publications-database/national-accounts-and-economic-studies"}, 
+         url:"/publications/national-accounts-and-economic-studies"}, 
          children:[]
       },
       {
@@ -85,7 +85,7 @@ const footer : MenuItemType[] = [
          label:"NOTES DE CONJONCTURE",
          display_order:3,
          type:"FOOTER", 
-         url:"/publications/publications-database/memo-on-the-economy"}, 
+         url:"/publications/memo-on-the-economy"}, 
          children:[]
       },
       {
@@ -93,7 +93,7 @@ const footer : MenuItemType[] = [
          label:"STATISTIQUE DU COMMERCE EXTÉRIEUR",
          display_order:4,
          type:"FOOTER", 
-         url:"/publications/publications-database/foreign-trade-statistics"}, 
+         url:"/publications/foreign-trade-statistics"}, 
          children:[]
       }
     ]
@@ -363,42 +363,42 @@ const menus: MenuItemType[] = [
         menuItem: {
           label: "STATISTIQUES ÉCONOMIQUES",
           display_order: 1,
-          url: "/publications/publications-database?theme=100+101+102+103+104+105+106",
+          url: "/publications?theme=100+101+102+103+104+105+106",
         },
         children: [
           {
             menuItem: {
               label: "COMPTES NATIONAUX",
               display_order: 1,
-              url: "/publications/publications-database?theme=103",
+              url: "/publications?theme=103",
             },
           },
           {
             menuItem: {
               label: "STATISTIQUES CONJONCTURELLES",
               display_order: 2,
-              url: "/publications/publications-database?theme=102",
+              url: "/publications?theme=102",
             },
           },
           {
             menuItem: {
               label: "COMMERCES EXTÉRIEURS",
               display_order: 3,
-              url: "/publications/publications-database?theme=106",
+              url: "/publications?theme=106",
             },
           },
           {
             menuItem: {
               label: "STATISTIQUES D’ENTREPRISES",
               display_order: 4,
-              url: "/publications/publications-database?theme=600+601+602+603",
+              url: "/publications?theme=600+601+602+603",
             },
           },
           {
             menuItem: {
               label: "SYNTHÈSE ÉCONOMIQUE",
               display_order: 5,
-              url: "/publications/publications-database?theme=101+103+104",
+              url: "/publications?theme=101+103+104",
             },
           },
           // {
@@ -414,49 +414,49 @@ const menus: MenuItemType[] = [
         menuItem: {
           label: "STATISTIQUES DÉMOGRAPHIQUES",
           display_order: 2,
-          url: "/publications/publications-database?theme=200+201+202+203+205+204+206",
+          url: "/publications?theme=200+201+202+203+205+204+206",
         },
         children: [
           {
             menuItem: {
               label: "POPULATION",
               display_order: 1,
-              url: "/publications/publications-database?theme=201",
+              url: "/publications?theme=201",
             },
           },
           {
             menuItem: {
               label: "NAISSANCES – FÉCONDITÉ",
               display_order: 2,
-              url: "/publications/publications-database?theme=202",
+              url: "/publications?theme=202",
             },
           },
           {
             menuItem: {
               label: "DÉCÈS – MORTALITÉ – ESPÉRANCE DE VIE",
               display_order: 3,
-              url: "/publications/publications-database?theme=203",
+              url: "/publications?theme=203",
             },
           },
           {
             menuItem: {
               label: "MIGRATION – URBANISATION",
               display_order: 4,
-              url: "/publications/publications-database?theme=204",
+              url: "/publications?theme=204",
             },
           },
           {
             menuItem: {
               label: "SANTÉ MATRIMONIALE – NUPTIALITÉ",
               display_order: 5,
-              url: "/publications/publications-database?theme=205",
+              url: "/publications?theme=205",
             },
           },
           {
             menuItem: {
               label: "SCOLARISATION, ALPHABÉTISATION ET NIVEAU D’INSTRUCTION",
               display_order: 6,
-              url: "/publications/publications-database?theme=206",
+              url: "/publications?theme=206",
             },
           },
         ],
@@ -465,42 +465,42 @@ const menus: MenuItemType[] = [
         menuItem: {
           label: "STATISTIQUES SOCIALES",
           display_order: 3,
-          url: "/publications/publications-database?theme=400+401+402+403+405+406+407+408+500+501+502+503",
+          url: "/publications?theme=400+401+402+403+405+406+407+408+500+501+502+503",
         },
         children: [
           {
             menuItem: {
               label: "REVENUS – POUVOIR D'ACHAT – CONSOMMATION",
               display_order: 1,
-              url: "/publications/publications-database?theme=300+301+302+303+304+305",
+              url: "/publications?theme=300+301+302+303+304+305",
             },
           },
           {
             menuItem: {
               label: "PAUVRETÉ ET CONDITION DE VIE",
               display_order: 2,
-              url: "/publications/publications-database?theme=400+401+402+403+405+406+407+408",
+              url: "/publications?theme=400+401+402+403+405+406+407+408",
             },
           },
           {
             menuItem: {
               label: "EMPLOI ET TRAVAIL",
               display_order: 3,
-              url: "/publications/publications-database?theme=500+501+502+503",
+              url: "/publications?theme=500+501+502+503",
             },
           },
           {
             menuItem: {
               label: "ÉDUCATION",
               display_order: 4,
-              url: "/publications/publications-database?theme=402+206",
+              url: "/publications?theme=402+206",
             },
           },
           {
             menuItem: {
               label: "HABITAT ET CADRE DE VIE",
               display_order: 5,
-              url: "/publications/publications-database?theme=304+305+403+406+408",
+              url: "/publications?theme=304+305+403+406+408",
             },
           },
         ],
@@ -611,7 +611,7 @@ const menus: MenuItemType[] = [
       label: "PUBLICATIONS",
       description: "Toutes les publications de l'INSEED",
       display_order: 3,
-      url: "/publications",
+      url: "",
     },
     children: [
       {
@@ -619,56 +619,56 @@ const menus: MenuItemType[] = [
           label: "BASE DE DONNÉES DES PUBLICATIONS",
           description:"Retrouvez ci-dessous les recherches les plus fréquentes",
           display_order: 1,
-          url: "/publications/publications-database",
+          url: "/publications",
         },
         children: [
           {
             menuItem: {
               label: "NOTES ET POINTS DE CONJONCTURE",
               display_order: 1,
-              url: "/publications/publications-database?collection=80",
+              url: "/publications?collection=80",
             },
           },
           {
             menuItem: {
               label: "BULLETIN MENSUEL DE L’INDICE DE PRIX A LA CONSOMMATION",
               display_order: 2,
-              url: "/publications/publications-database?theme=105",
+              url: "/publications?theme=105",
             },
           },
           {
             menuItem: {
               label: "ÉCONOMIE ET STATISTIQUE",
               display_order: 3,
-              url: "/publications/publications-database?collection=60",
+              url: "/publications?collection=60",
             },
           },
           {
             menuItem: {
               label: "SÉRIES CHRONOLOGIQUES",
               display_order: 4,
-              url: "/publications/publications-database?category=14",
+              url: "/publications?category=14",
             },
           },
           // {
           //   menuItem: {
           //     label: "STATISTIQUE DU COMMERCE EXTÉRIEUR",
           //     display_order: 5,
-          //     url: "/publications/publications-database/foreign-trade-statistics",
+          //     url: "/publications/foreign-trade-statistics",
           //   },
           // },
           {
             menuItem: {
               label: "PHOTOÈQUE",
               display_order: 6,
-              url: "/publications/publications-database/photo-library",
+              url: "/publications/photo-library",
             },
           },
           {
             menuItem: {
               label: "VIDÉOTHÈQUE",
               display_order: 7,
-              url: "/publications/publications-database/video-library",
+              url: "/publications/video-library",
             },
           },
         ],
@@ -691,7 +691,7 @@ const menus: MenuItemType[] = [
             menuItem: {
               label: "RAPPORTS D'ANALYSES",
               display_order: 2,
-              url: "/publications/publications-database?collection=50",
+              url: "/publications?collection=50",
             },
           },
           {
@@ -707,7 +707,7 @@ const menus: MenuItemType[] = [
         menuItem: {
           label: "ENQUÊTES ET RECENSEMENTS",
           display_order: 3,
-          url: "/publications/publications-database?collection=40",
+          url: "/publications?collection=40",
         },
         children: [
           // {
