@@ -2,6 +2,11 @@ import CategoryArticles from "@/components/public/CategoryArticles";
 import { truncateString } from "@/lib/miscellaneous";
 import client from "@/lib/strapi";
 import { NEWS_ITEM_PER_PAGE } from "@/lib/settings";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Actualités",
+};
 
 export default async function News({
   searchParams,

@@ -13,6 +13,8 @@ import {
   VscBrowser,
 } from "react-icons/vsc";
 
+import { IoInformationSharp } from "react-icons/io5";
+
 import { MdAccountBalance } from "react-icons/md";
 
 import { FaMoneyBillTrendUp } from "react-icons/fa6";
@@ -43,7 +45,7 @@ const fetchIcon = (type: string): JSX.Element => {
   }
 
   if (type === "Informations Rapides") {
-    return <VscGraphLine className="w-[70px] h-[70px] text-primary" />;
+    return <IoInformationSharp className="w-[70px] h-[70px] text-primary" />;
   }
 
   if (type === "Chiffres clés") {
@@ -64,6 +66,9 @@ const fetchIcon = (type: string): JSX.Element => {
 
   if (type === "Comptes Nationaux") {
     return <MdAccountBalance className="w-[70px] h-[70px] text-primary" />;
+  }
+  if (type === "Séries chronologiques") {
+    return <VscGraphLine className="w-[70px] h-[70px] text-primary" />;
   }
 
   return <VscBrowser className="w-[70px] h-[70px] text-primary" />;

@@ -3,6 +3,12 @@ import InformationPage from "@/components/public/informations/InformationPage";
 import client from "@/lib/strapi";
 import { notFound } from "next/navigation";
 
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Informations",
+};
+
 export default async function page() {
   const informations = client.collection("informations");
 

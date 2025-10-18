@@ -4,6 +4,24 @@ import client from "@/lib/strapi";
 import { notFound } from "next/navigation";
 import { NEWS_ITEM_PER_PAGE } from "@/lib/settings";
 
+import { Metadata } from "next";
+import { fetchMetaData } from "@/actions/metaData";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ categoryId: string }>;
+}): Promise<Metadata> {
+  const { categoryId } = await params;
+
+  const metaData = await fetchMetaData(categoryId, "categories");
+
+  return {
+    title: metaData ? metaData.title : "Actualité",
+    description: metaData ? metaData.description : "Page d'Actualité",
+  };
+}
+
 export default async function NewsCategory({
   params,
   searchParams,

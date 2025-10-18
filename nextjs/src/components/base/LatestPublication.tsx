@@ -11,7 +11,7 @@ import { useEffect } from "react";
 export type PublicationType =
   | "Informations Rapides"
   | "Chiffres clés"
-  | "Série chronologiques"
+  | "Séries chronologiques"
   | "Jeux de données"
   | "Chiffres détaillés"
   | "Bulletin IHPC"

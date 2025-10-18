@@ -6,6 +6,12 @@ import { PUBLICATIONS_ITEM_PER_PAGE } from "@/lib/settings";
 
 import { splitNumbersFromString } from "@/lib/miscellaneous";
 
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Base de données des publications",
+};
+
 export default async function PublicationsDatabase({
   searchParams,
 }: {

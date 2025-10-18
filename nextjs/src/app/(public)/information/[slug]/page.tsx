@@ -3,6 +3,24 @@ import InformationPage from "@/components/public/informations/InformationPage";
 import client from "@/lib/strapi";
 import { notFound } from "next/navigation";
 
+import { Metadata } from "next";
+import { fetchMetaData } from "@/actions/metaData";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+
+  const metaData = await fetchMetaData(slug, "informations");
+
+  return {
+    title: metaData ? metaData.title : "Information",
+    description: metaData ? metaData.description : "Page d'",
+  };
+}
+
 export default async function page({
   params,
 }: {

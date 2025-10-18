@@ -3,6 +3,24 @@ import DefaultPublicationPage from "@/components/public/publications/layout/Defa
 import client from "@/lib/strapi";
 import { notFound } from "next/navigation";
 
+import { Metadata } from "next";
+import { fetchMetaData } from "@/actions/metaData";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ articleId: string }>;
+}): Promise<Metadata> {
+  const { articleId } = await params;
+
+  const metaData = await fetchMetaData(articleId, "publications");
+
+  return {
+    title: metaData ? metaData.title : "Publication",
+    description: metaData ? metaData.description : "Page de Publication",
+  };
+}
+
 export default async function page({
   params,
 }: {

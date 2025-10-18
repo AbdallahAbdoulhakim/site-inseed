@@ -4,6 +4,24 @@ import client from "@/lib/strapi";
 import { notFound } from "next/navigation";
 import { v4 as uuid } from "uuid";
 
+import { Metadata } from "next";
+import { fetchMetaData } from "@/actions/metaData";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ articleId: string }>;
+}): Promise<Metadata> {
+  const { articleId } = await params;
+
+  const metaData = await fetchMetaData(articleId, "articles");
+
+  return {
+    title: metaData ? metaData.title : "Article",
+    description: metaData ? metaData.description : "Page d'Article",
+  };
+}
+
 export default async function NewsArticle({
   params,
   searchParams,
