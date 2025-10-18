@@ -34,11 +34,15 @@ export default function InformationPage({ content, listOfFiles }: Props) {
     <section
       data-aos="fade-up"
       data-aos-delay={100}
-      className="container mx-auto my-10 p-5  flex flex-col items-center justify-center w-full shadow-[0_4px_16px_rgba(0,0,0,0.1)] rounded-[10px]"
+      className={`container mx-auto my-10 p-5  flex flex-col items-center justify-center w-full ${
+        listOfFiles.length > 0 || content
+          ? "shadow-[0_4px_16px_rgba(0,0,0,0.1)] rounded-[10px]"
+          : ""
+      }`}
     >
       {content && (
         <DisplayContent
-          className="min-w-full text-justify grid grid-cols-1 [&_strong]:text-primary [&_span]:text-[18px]! [&_p]:text-[18px]! [&_p]:mt-[-5px] [&_ul]:mt-[-5px] [&_li]:text-[18px]"
+          className="min-w-full text-justify grid grid-cols-1 [&_strong]:text-primary [&_span]:text-[18px]! [&_p]:text-[18px]! [&_p]:mt-[-5px] [&_h2]:mt-[-5px] [&_ul]:mt-[-5px] [&_li]:text-[18px] [&_a]:text-primary-light [&_a]:no-underline [&_a]:hover:underline"
           htmlContent={content}
         />
       )}

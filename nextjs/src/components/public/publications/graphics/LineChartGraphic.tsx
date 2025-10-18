@@ -1,4 +1,5 @@
 import useWindowSize from "@/hooks/useWindowSize";
+import { Ref } from "react";
 import {
   XAxis,
   YAxis,
@@ -50,12 +51,14 @@ export default function LineChartGraphic({
   xAxisLegend,
   yAxisLegend,
   startFrom,
+  ref,
 }: {
   data: DataForm[];
   columns: string[] | undefined | null;
   xAxisLegend: string;
   yAxisLegend: string;
   startFrom: number | undefined | null;
+  ref: Ref<SVGSVGElement> | undefined;
 }) {
   if (!columns) {
     return <p className="text-red font-semibold">No Graph!</p>;
@@ -83,6 +86,7 @@ export default function LineChartGraphic({
           left: 35,
           bottom: 50,
         }}
+        ref={ref}
       >
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis
@@ -116,7 +120,7 @@ export default function LineChartGraphic({
         <Legend wrapperStyle={{ fontSize: "14px", bottom: 0 }} offset={15} />
 
         {columns
-          .filter((_, index) => index !== 0 && index !== columns.length - 1)
+          .filter((_, index) => index !== 0)
           .map((col, index) => {
             return (
               <Line

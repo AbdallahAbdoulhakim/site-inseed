@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { fetchSubMenuByUrl } from "@/actions/menu";
 import DotLoading from "@/components/base/DotLoading";
 import Link from "next/link";
-import { BsFilePdf, BsFiletypeXlsx } from "react-icons/bs";
+import { BsFilePdf, BsFiletypeXlsx, BsFiletypeCsv } from "react-icons/bs";
 
 import byteSize from "byte-size";
 
@@ -42,10 +42,11 @@ export default function PageHeader() {
       "Rapport d'analyse",
       "Informations Rapides",
       "Comptes Nationaux",
+      "Séries chronologiques",
     ].includes(type);
 
   const parutionOrpublication = (type: string) =>
-    ["Bulletin IHPC"].includes(type);
+    ["Bulletin IHPC", "Séries chronologiques"].includes(type);
 
   useEffect(() => {
     async function loadData() {
@@ -171,7 +172,7 @@ export default function PageHeader() {
                                 : "Télécharger le rapport"}
                             </p>
                             <p className="text-neutral-500 text-[13px] group-hover:underline">
-                              {`(pdf${
+                              {`(${heading.printableType ?? "PDF"}${
                                 !isNaN(Number(heading.printableSize))
                                   ? `, ${byteSize(
                                       Number(heading.printableSize) * 1024
@@ -181,7 +182,17 @@ export default function PageHeader() {
                             </p>
                           </div>
                           <div className="ml-5">
-                            <BsFilePdf color="#008374" size={35} />
+                            {heading.printableType ? (
+                              heading.printableType === "XLSX" ? (
+                                <BsFiletypeXlsx color="#008374" size={35} />
+                              ) : heading.printableType === "CSV" ? (
+                                <BsFiletypeCsv color="#008374" size={35} />
+                              ) : (
+                                <BsFilePdf color="#008374" size={35} />
+                              )
+                            ) : (
+                              <BsFilePdf color="#008374" size={35} />
+                            )}
                           </div>
                         </Link>
                       </div>

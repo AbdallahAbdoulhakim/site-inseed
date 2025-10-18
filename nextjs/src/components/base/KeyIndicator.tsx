@@ -6,6 +6,7 @@ import Papa from "papaparse";
 import { useEffect, useState } from "react";
 import "aos/dist/aos.css";
 import KeyIndictorGraph from "./KeyIndictorGraph";
+import Link from "next/link";
 
 interface Data {
   [key: string]: string | number;
@@ -19,6 +20,7 @@ interface Props {
   subtitle: string;
   legend: string;
   dataUrl: string;
+  publication: string;
 }
 
 interface DataForm {
@@ -33,6 +35,7 @@ export default function KeyIndicator({
   legend,
   xAxisLegend,
   yAxisLegend,
+  publication,
 }: Props) {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState<DataForm[]>([]);
@@ -73,9 +76,12 @@ export default function KeyIndicator({
       ) : (
         <div className="self-start flex flex-col grow items-center justify-center w-full h-full">
           {title && (
-            <p className="text-lg font-semibold text-primary hover:text-primary/60 mb-1]">
+            <Link
+              href={publication ? `/publications/${publication}` : ""}
+              className="text-lg font-semibold text-primary hover:text-primary/60 mb-1]"
+            >
               {title}
-            </p>
+            </Link>
           )}
           <p className="text-xs text-[#6f6f6f] hover:text-[#6f6f6f]/60 mb-2 whitespace-pre-wrap">
             {subtitle}

@@ -1,3 +1,4 @@
+import ChronologicalSerie from "@/components/public/publications/layout/ChronologicalSerie";
 import DefaultPublicationPage from "@/components/public/publications/layout/DefaultPublicationPage";
 import client from "@/lib/strapi";
 import { notFound } from "next/navigation";
@@ -13,6 +14,9 @@ export default async function page({
 
   const { data: publicationsList } = await publications.find({
     populate: {
+      data: {
+        fields: ["name", "url"],
+      },
       paragraphs: {
         fields: [
           "title",
@@ -47,24 +51,8 @@ export default async function page({
       table_graphs: {
         fields: ["content", "norder", "title", "link", "inSummary"],
         populate: {
-          graphic: {
-            fields: [
-              "dataurl",
-              "type",
-              "legend",
-              "norder",
-              "yAxisLegend",
-              "xAxisLegend",
-              "title",
-              "subtitle",
-              "startFrom",
-              "compoundLineKey",
-            ],
-            populate: {
-              datafile: {
-                fields: ["name", "url"],
-              },
-            },
+          datafile: {
+            fields: ["name", "url"],
           },
         },
       },
@@ -80,10 +68,16 @@ export default async function page({
 
   const publication = {
     id: publicationsList[0].documentId,
+    type: publicationsList[0].type,
     paragraphs: publicationsList[0].paragraphs,
     graphics: publicationsList[0].graphics,
-    table_graphs: publicationsList[0].table_grarphs,
+    table_graphs: publicationsList[0].table_graphs,
     hasSummary: publicationsList[0].hasSummary,
   };
-  return <DefaultPublicationPage publication={publication} />;
+
+  return publication.type === "Séries chronologiques" ? (
+    <ChronologicalSerie publication={publication} />
+  ) : (
+    <DefaultPublicationPage publication={publication} />
+  );
 }

@@ -18,11 +18,6 @@
         "preset": "defaultHtml"
       }
     },
-    "graphic": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::publication-graphic.publication-graphic"
-    },
     "norder": {
       "type": "integer",
       "required": true,
@@ -53,6 +48,13 @@
           ]
         }
       }
+    },
+    "datafile": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "files"
+      ]
     }
   }
 }

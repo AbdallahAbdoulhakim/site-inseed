@@ -1,4 +1,5 @@
 import useWindowSize from "@/hooks/useWindowSize";
+import { Ref } from "react";
 
 import {
   Bar,
@@ -30,10 +31,12 @@ export default function StackedBarComposedGraphic({
   data,
   columns,
   compoundLineKey,
+  ref,
 }: {
   data: DataForm[];
   columns: string[] | undefined | null;
   compoundLineKey: string | undefined | null;
+  ref: Ref<SVGSVGElement> | undefined;
 }) {
   if (!columns || !compoundLineKey) {
     return <p className="text-red font-semibold">No Graph!</p>;
@@ -60,11 +63,17 @@ export default function StackedBarComposedGraphic({
           left: 20,
           bottom: 5,
         }}
+        ref={ref}
       >
-        <XAxis dataKey={newColumns[0]} />
-        <YAxis />
+        <XAxis
+          dataKey={newColumns[0]}
+          style={{ fontSize: width && width < 768 ? "10px" : "16px" }}
+        />
+        <YAxis style={{ fontSize: width && width < 768 ? "10px" : "16px" }} />
         <Tooltip />
-        <Legend />
+        <Legend
+          wrapperStyle={{ fontSize: width && width < 768 ? "10px" : "16px" }}
+        />
         {newColumns
           .filter((_, index) => index !== 0)
           .map((col, index) => {

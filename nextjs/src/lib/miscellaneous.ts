@@ -54,18 +54,8 @@ return result
 }
 
 
-// interface DataForm {
-//   [key: string]: string | number;
-// }
+export function capitalizeAndDeslugify(str:string){
+  const capitalized = `${str.charAt(0).toLocaleUpperCase()}${str.slice(1)}`
 
-// export function filterDataObjectByExcludedKey(originalObject:DataForm, excludedKey:string) {
-//   const newObject : DataForm = {};
-//   for (const key in originalObject) {
-//     if (Object.prototype.hasOwnProperty.call(originalObject, key)) {
-//       if (key !== excludedKey) {
-//         newObject[key] = originalObject[key];
-//       }
-//     }
-//   }
-//   return newObject;
-// }
+  return capitalized.replace(/[_-]/g, " ")
+}

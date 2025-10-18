@@ -616,6 +616,10 @@ export interface ApiKeyIndicatorKeyIndicator
       'api::key-indicator.key-indicator'
     > &
       Schema.Attribute.Private;
+    publication: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::publication.publication'
+    >;
     publishedAt: Schema.Attribute.DateTime;
     subtitle: Schema.Attribute.Text;
     title: Schema.Attribute.String;
@@ -1052,7 +1056,7 @@ export interface ApiPublicationPublication extends Struct.CollectionTypeSchema {
       [
         'Informations Rapides',
         'Chiffres cl\u00E9s',
-        'S\u00E9rie chronologiques',
+        'S\u00E9ries chronologiques',
         'Jeux de donn\u00E9es',
         'Chiffres d\u00E9taill\u00E9s',
         'Bulletin IHPC',
@@ -1089,10 +1093,7 @@ export interface ApiRelatedTableGraphRelatedTableGraph
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    graphic: Schema.Attribute.Relation<
-      'oneToOne',
-      'api::publication-graphic.publication-graphic'
-    >;
+    datafile: Schema.Attribute.Media<'files'>;
     inSummary: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     link: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;

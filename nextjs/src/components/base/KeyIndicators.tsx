@@ -11,6 +11,9 @@ export default async function KeyIndicators() {
       dataFile: {
         fields: ["name", "url"],
       },
+      publication: {
+        fields: ["publicationSlug"],
+      },
     },
   });
 
@@ -28,6 +31,7 @@ export default async function KeyIndicators() {
         ? `${process.env.NEXT_PUBLIC_STRAPI_BASE_URL}${indicator.dataFile.url}`
         : indicator.dataUrl,
       delay: (index + 1) * 100,
+      publication: indicator?.publication?.publicationSlug ?? "",
     };
   });
 

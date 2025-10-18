@@ -16,6 +16,7 @@ interface IndicatorSlider {
   xAxisLegend: string;
   dataUrl: string;
   delay: number;
+  publication: string;
 }
 
 interface Props {
@@ -52,6 +53,7 @@ export default function KeyIndicatorsSwiper({ data }: Props) {
               yAxisLegend,
               dataUrl,
               delay,
+              publication,
             }) => (
               <SwiperSlide key={id}>
                 <KeyIndicator
@@ -62,6 +64,7 @@ export default function KeyIndicatorsSwiper({ data }: Props) {
                   yAxisLegend={yAxisLegend}
                   xAxisLegend={xAxisLegend}
                   dataUrl={dataUrl}
+                  publication={publication}
                 />
               </SwiperSlide>
             )

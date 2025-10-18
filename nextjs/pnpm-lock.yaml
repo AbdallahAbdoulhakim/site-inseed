@@ -15,11 +15,11 @@ importers:
         specifier: ^5.2.1
         version: 5.2.1(react-hook-form@7.62.0(react@19.1.0))
       '@prisma/client':
-        specifier: ^6.14.0
-        version: 6.14.0(prisma@6.15.0(typescript@5.9.2))(typescript@5.9.2)
+        specifier: ^6.17.1
+        version: 6.17.1(prisma@6.17.1(typescript@5.9.2))(typescript@5.9.2)
       '@prisma/extension-accelerate':
         specifier: ^2.0.2
-        version: 2.0.2(@prisma/client@6.14.0(prisma@6.15.0(typescript@5.9.2))(typescript@5.9.2))
+        version: 2.0.2(@prisma/client@6.17.1(prisma@6.17.1(typescript@5.9.2))(typescript@5.9.2))
       '@radix-ui/react-accordion':
         specifier: ^1.2.11
         version: 1.2.11(@types/react-dom@19.1.7(@types/react@19.1.9))(@types/react@19.1.9)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -44,6 +44,9 @@ importers:
       '@radix-ui/react-slot':
         specifier: ^1.2.3
         version: 1.2.3(@types/react@19.1.9)(react@19.1.0)
+      '@radix-ui/react-tabs':
+        specifier: ^1.1.13
+        version: 1.1.13(@types/react-dom@19.1.7(@types/react@19.1.9))(@types/react@19.1.9)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@reduxjs/toolkit':
         specifier: ^2.9.0
         version: 2.9.0(react-redux@9.2.0(@types/react@19.1.9)(react@19.1.0)(redux@5.0.1))(react@19.1.0)
@@ -53,6 +56,9 @@ importers:
       '@strapi/client':
         specifier: ^1.4.0
         version: 1.4.0
+      '@tanstack/react-table':
+        specifier: ^8.21.3
+        version: 8.21.3(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@types/papaparse':
         specifier: ^5.3.16
         version: 5.3.16
@@ -68,6 +74,9 @@ importers:
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
+      file-saver:
+        specifier: ^2.0.5
+        version: 2.0.5
       lucide-react:
         specifier: ^0.536.0
         version: 0.536.0(react@19.1.0)
@@ -98,6 +107,9 @@ importers:
       recharts:
         specifier: ^3.1.2
         version: 3.1.2(@types/react@19.1.9)(react-dom@19.1.0(react@19.1.0))(react-is@16.13.1)(react@19.1.0)(redux@5.0.1)
+      recharts-to-png:
+        specifier: ^3.0.1
+        version: 3.0.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(recharts@3.1.2(@types/react@19.1.9)(react-dom@19.1.0(react@19.1.0))(react-is@16.13.1)(react@19.1.0)(redux@5.0.1))
       remark-gfm:
         specifier: ^4.0.1
         version: 4.0.1
@@ -132,6 +144,9 @@ importers:
       '@types/byte-size':
         specifier: ^8.1.2
         version: 8.1.2
+      '@types/file-saver':
+        specifier: ^2.0.7
+        version: 2.0.7
       '@types/node':
         specifier: ^20
         version: 20.19.9
@@ -151,8 +166,8 @@ importers:
         specifier: 15.4.5
         version: 15.4.5(eslint@9.32.0(jiti@2.5.1))(typescript@5.9.2)
       prisma:
-        specifier: ^6.15.0
-        version: 6.15.0(typescript@5.9.2)
+        specifier: ^6.17.1
+        version: 6.17.1(typescript@5.9.2)
       tailwindcss:
         specifier: ^4
         version: 4.1.11
@@ -818,8 +833,8 @@ packages:
     resolution: {integrity: sha512-nn5ozdjYQpUCZlWGuxcJY/KpxkWQs4DcbMCmKojjyrYDEAGy4Ce19NN4v5MduafTwJlbKc99UA8YhSVqq9yPZA==}
     engines: {node: '>=12.4.0'}
 
-  '@prisma/client@6.14.0':
-    resolution: {integrity: sha512-8E/Nk3eL5g7RQIg/LUj1ICyDmhD053STjxrPxUtCRybs2s/2sOEcx9NpITuAOPn07HEpWBfhAVe1T/HYWXUPOw==}
+  '@prisma/client@6.17.1':
+    resolution: {integrity: sha512-zL58jbLzYamjnNnmNA51IOZdbk5ci03KviXCuB0Tydc9btH2kDWsi1pQm2VecviRTM7jGia0OPPkgpGnT3nKvw==}
     engines: {node: '>=18.18'}
     peerDependencies:
       prisma: '*'
@@ -830,17 +845,17 @@ packages:
       typescript:
         optional: true
 
-  '@prisma/config@6.15.0':
-    resolution: {integrity: sha512-KMEoec9b2u6zX0EbSEx/dRpx1oNLjqJEBZYyK0S3TTIbZ7GEGoVyGyFRk4C72+A38cuPLbfQGQvgOD+gBErKlA==}
+  '@prisma/config@6.17.1':
+    resolution: {integrity: sha512-fs8wY6DsvOCzuiyWVckrVs1LOcbY4LZNz8ki4uUIQ28jCCzojTGqdLhN2Jl5lDnC1yI8/gNIKpsWDM8pLhOdwA==}
 
-  '@prisma/debug@6.15.0':
-    resolution: {integrity: sha512-y7cSeLuQmyt+A3hstAs6tsuAiVXSnw9T55ra77z0nbNkA8Lcq9rNcQg6PI00by/+WnE/aMRJ/W7sZWn2cgIy1g==}
+  '@prisma/debug@6.17.1':
+    resolution: {integrity: sha512-Vf7Tt5Wh9XcndpbmeotuqOMLWPTjEKCsgojxXP2oxE1/xYe7PtnP76hsouG9vis6fctX+TxgmwxTuYi/+xc7dQ==}
 
-  '@prisma/engines-version@6.15.0-5.85179d7826409ee107a6ba334b5e305ae3fba9fb':
-    resolution: {integrity: sha512-a/46aK5j6L3ePwilZYEgYDPrhBQ/n4gYjLxT5YncUTJJNRnTCVjPF86QdzUOLRdYjCLfhtZp9aum90W0J+trrg==}
+  '@prisma/engines-version@6.17.1-1.272a37d34178c2894197e17273bf937f25acdeac':
+    resolution: {integrity: sha512-17140E3huOuD9lMdJ9+SF/juOf3WR3sTJMVyyenzqUPbuH+89nPhSWcrY+Mf7tmSs6HvaO+7S+HkELinn6bhdg==}
 
-  '@prisma/engines@6.15.0':
-    resolution: {integrity: sha512-opITiR5ddFJ1N2iqa7mkRlohCZqVSsHhRcc29QXeldMljOf4FSellLT0J5goVb64EzRTKcIDeIsJBgmilNcKxA==}
+  '@prisma/engines@6.17.1':
+    resolution: {integrity: sha512-D95Ik3GYZkqZ8lSR4EyFOJ/tR33FcYRP8kK61o+WMsyD10UfJwd7+YielflHfKwiGodcqKqoraWw8ElAgMDbPw==}
 
   '@prisma/extension-accelerate@2.0.2':
     resolution: {integrity: sha512-yZK6/k7uOEFpEsKoZezQS1CKDboPtBCQ0NyI70e1Un8tDiRgg80iWGyjsJmRpps2ZIut3MroHP+dyR3wVKh8lA==}
@@ -848,11 +863,11 @@ packages:
     peerDependencies:
       '@prisma/client': '>=4.16.1'
 
-  '@prisma/fetch-engine@6.15.0':
-    resolution: {integrity: sha512-xcT5f6b+OWBq6vTUnRCc7qL+Im570CtwvgSj+0MTSGA1o9UDSKZ/WANvwtiRXdbYWECpyC3CukoG3A04VTAPHw==}
+  '@prisma/fetch-engine@6.17.1':
+    resolution: {integrity: sha512-AYZiHOs184qkDMiTeshyJCtyL4yERkjfTkJiSJdYuSfc24m94lTNL5+GFinZ6vVz+ktX4NJzHKn1zIFzGTWrWg==}
 
-  '@prisma/get-platform@6.15.0':
-    resolution: {integrity: sha512-Jbb+Xbxyp05NSR1x2epabetHiXvpO8tdN2YNoWoA/ZsbYyxxu/CO/ROBauIFuMXs3Ti+W7N7SJtWsHGaWte9Rg==}
+  '@prisma/get-platform@6.17.1':
+    resolution: {integrity: sha512-AKEn6fsfz0r482S5KRDFlIGEaq9wLNcgalD1adL+fPcFFblIKs1sD81kY/utrHdqKuVC6E1XSRpegDK3ZLL4Qg==}
 
   '@radix-ui/primitive@1.1.2':
     resolution: {integrity: sha512-XnbHrrprsNqZKQhStrSwgRUQzoCI1glLzdw79xiZPoofhGICeZRSQ3dIxAKH1gb3OHfNf4d6f+vAv3kil2eggA==}
@@ -1183,6 +1198,19 @@ packages:
       '@types/react':
         optional: true
 
+  '@radix-ui/react-tabs@1.1.13':
+    resolution: {integrity: sha512-7xdcatg7/U+7+Udyoj2zodtI9H/IIopqo+YOIcZOq1nJwXWBZ9p8xiu5llXlekDbZkca79a/fozEYQXIA4sW6A==}
+    peerDependencies:
+      '@types/react': '*'
+      '@types/react-dom': '*'
+      react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+      react-dom: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      '@types/react-dom':
+        optional: true
+
   '@radix-ui/react-use-callback-ref@1.1.1':
     resolution: {integrity: sha512-FkBMwD+qbGQeMu1cOHnuGB6x4yzPjho8ap5WtbEJ26umhgqVXbhekKUQO+hZEL1vU92a3wHwdp0HAcqAUF5iDg==}
     peerDependencies:
@@ -1400,6 +1428,17 @@ packages:
     peerDependencies:
       tailwindcss: '>=3.0.0 || insiders || >=4.0.0-alpha.20 || >=4.0.0-beta.1'
 
+  '@tanstack/react-table@8.21.3':
+    resolution: {integrity: sha512-5nNMTSETP4ykGegmVkhjcS8tTLW6Vl4axfEGQN3v0zdHYbK4UfoqfPChclTrJ4EoK9QynqAu9oUf8VEmrpZ5Ww==}
+    engines: {node: '>=12'}
+    peerDependencies:
+      react: '>=16.8'
+      react-dom: '>=16.8'
+
+  '@tanstack/table-core@8.21.3':
+    resolution: {integrity: sha512-ldZXEhOBb8Is7xLs01fR3YEc3DERiz5silj8tnGkFZytt1abEvl/GhUmCE0PMLaMPTa3Jk4HbKmRlHmu+gCftg==}
+    engines: {node: '>=12'}
+
   '@tybys/wasm-util@0.10.0':
     resolution: {integrity: sha512-VyyPYFlOMNylG45GoAe0xDoLwWuowvf92F9kySqzYh8vmYm7D2u4iUJKa1tOUpS70Ku13ASrOkS4ScXFsTaCNQ==}
 
@@ -1450,6 +1489,9 @@ packages:
 
   '@types/estree@1.0.8':
     resolution: {integrity: sha512-dWHzHa2WqEXI/O1E9OjrocMTKJl2mSrEolh1Iomrv6U+JuNwaHXsXx9bLu5gG7BUWFIN0skIQJQ/L1rIex4X6w==}
+
+  '@types/file-saver@2.0.7':
+    resolution: {integrity: sha512-dNKVfHd/jk0SkR/exKGj2ggkB45MAkzvWCaqLUUgkyjITkGNzH8H+yUwr+BLJUBjZOe9w8X3wgmXhZDRg1ED6A==}
 
   '@types/hast@3.0.4':
     resolution: {integrity: sha512-WPs+bbQw5aCj+x6laNGWLH3wviHtoCv/P3+otBhbOhJgG8qtpdAMlTCxLtsTWA7LH1Oh/bFCHsBn0TPS5m30EQ==}
@@ -1742,6 +1784,10 @@ packages:
   balanced-match@1.0.2:
     resolution: {integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==}
 
+  base64-arraybuffer@1.0.2:
+    resolution: {integrity: sha512-I3yl4r9QB5ZRY3XuJVEPfc2XhZO6YweFPI+UovAzn+8/hb3oJ6lnysaFcjVpkCPfVWFUDvoZ8kmVDP7WyRtYtQ==}
+    engines: {node: '>= 0.6.0'}
+
   blurhash@2.0.5:
     resolution: {integrity: sha512-cRygWd7kGBQO3VEhPiTgq4Wc43ctsM+o46urrmPOiuAe+07fzlSB9OJVdpgDL0jPqXUVQ9ht7aq7kxOeJHRK+w==}
 
@@ -1878,6 +1924,9 @@ packages:
   cross-spawn@7.0.6:
     resolution: {integrity: sha512-uV2QOWP2nWzsy2aMp8aRibhi9dlzF5Hgh5SHaB9OiTGEyDTiJJyx0uy51QXdyWbtAHNua4XJzUKca3OzKUd3vA==}
     engines: {node: '>= 8'}
+
+  css-line-break@2.1.0:
+    resolution: {integrity: sha512-FHcKFCZcAha3LwfVBhCQbW2nCNbkZXn7KVUJcsT5/P8YmfsVja0FMPJr0B903j/E69HUphKiV9iQArX8SDYA4w==}
 
   cssesc@3.0.0:
     resolution: {integrity: sha512-/Tb/JcjK111nNScGob5MNtsntNM1aCNUDipB/TkwZFhyDrrE47SOx/18wF2bbjgc3ZzCSKW1T5nt5EbFoAz/Vg==}
@@ -2254,6 +2303,9 @@ packages:
     resolution: {integrity: sha512-XXTUwCvisa5oacNGRP9SfNtYBNAMi+RPwBFmblZEF7N7swHYQS6/Zfk7SRwx4D5j3CH211YNRco1DEMNVfZCnQ==}
     engines: {node: '>=16.0.0'}
 
+  file-saver@2.0.5:
+    resolution: {integrity: sha512-P9bmyZ3h/PRG+Nzga+rbdI4OEpNDzAVyy74uVO9ATgzLK6VtAsYybF/+TOCvrc0MO793d6+42lLyZTw7/ArVzA==}
+
   fill-range@7.1.1:
     resolution: {integrity: sha512-YsGpe3WHLK8ZYi4tWDg2Jy3ebRz2rXowDxnld4bkQB00cc/1Zw9AWnC0i9ztDJitivtQvaI9KaLyKrc+hBW0yg==}
     engines: {node: '>=8'}
@@ -2420,6 +2472,10 @@ packages:
 
   html-void-elements@3.0.0:
     resolution: {integrity: sha512-bEqo66MRXsUGxWHV5IP0PUiAWwoEjba4VCzg0LjFJBpchPaTfyfCKTG6bc5F8ucKec3q5y6qOdGyYTSBEvhCrg==}
+
+  html2canvas@1.4.1:
+    resolution: {integrity: sha512-fPU6BHNpsyIhr8yyMpTLLxAbkaK8ArIBcmZIRiBLiDhjeqvXolaEmDGmELFuX9I4xDcaKKcJl+TKZLqruBbmWA==}
+    engines: {node: '>=8.0.0'}
 
   ignore@5.3.2:
     resolution: {integrity: sha512-hsBTNUqQTDwkWtcdYI2i06Y/nUBEsNEDJKjWdigLvegy8kDuJAS8uRlpkkcQpyEXL0Z/pjDy5HBmMjRCJ2gq+g==}
@@ -3050,8 +3106,8 @@ packages:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
     engines: {node: '>= 0.8.0'}
 
-  prisma@6.15.0:
-    resolution: {integrity: sha512-E6RCgOt+kUVtjtZgLQDBJ6md2tDItLJNExwI0XJeBc1FKL+Vwb+ovxXxuok9r8oBgsOXBA33fGDuE/0qDdCWqQ==}
+  prisma@6.17.1:
+    resolution: {integrity: sha512-ac6h0sM1Tg3zu8NInY+qhP/S9KhENVaw9n1BrGKQVFu05JT5yT5Qqqmb8tMRIE3ZXvVj4xcRA5yfrsy4X7Yy5g==}
     engines: {node: '>=18.18'}
     hasBin: true
     peerDependencies:
@@ -3157,6 +3213,16 @@ packages:
   readdirp@4.1.2:
     resolution: {integrity: sha512-GDhwkLfywWL2s6vEjyhri+eXmfH6j1L7JE27WhqLeYzoh/A3DBaYGEj2H/HFZCn/kMfim73FXxEJTw06WtxQwg==}
     engines: {node: '>= 14.18.0'}
+
+  recharts-to-png@3.0.1:
+    resolution: {integrity: sha512-Y2B3idCkzMgHEk+lLjVxcNzr7LzdenzLh/Rzkbe2dzewInJa7gN7vzKOzIrFhKBuuKPydK7bWu50XzuWjULdGQ==}
+    peerDependencies:
+      react: '>=16.8.3'
+      react-dom: '>=16.8.3'
+      recharts: ^3.0.0
+    peerDependenciesMeta:
+      recharts:
+        optional: true
 
   recharts@3.1.2:
     resolution: {integrity: sha512-vhNbYwaxNbk/IATK0Ki29k3qvTkGqwvCgyQAQ9MavvvBwjvKnMTswdbklJpcOAoMPN/qxF3Lyqob0zO+ZXkZ4g==}
@@ -3404,6 +3470,9 @@ packages:
     resolution: {integrity: sha512-5S7Va8hKfV7W5U6g3aYxXmlPoZVAwUMy9AOKyF2fVuZa2UD3qZjg578OrLRt8PcNN1PleVaL/5/yYATNL0ICUw==}
     engines: {node: '>=18'}
 
+  text-segmentation@1.0.3:
+    resolution: {integrity: sha512-iOiPUo/BGnZ6+54OsWxZidGCsdU8YbE4PSpdPinp7DeMtUJNJBoJ/ouUSTJjHkh1KntHaltHl/gDs2FC4i5+Nw==}
+
   tiny-invariant@1.3.3:
     resolution: {integrity: sha512-+FbBPE1o9QAYvviau/qC5SE3caw21q3xkvWKBtja5vgqOWIHHJ3ioaq1VPfn/Szqctz2bU/oYeKd9/z5BL+PVg==}
 
@@ -3533,6 +3602,9 @@ packages:
 
   util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
+
+  utrie@1.0.2:
+    resolution: {integrity: sha512-1MLa5ouZiOmQzUbjbu9VmjLzn1QLXBhwpUa7kdLUQK+KQ5KA9I1vk5U4YHe/X2Ch7PYnJfWuWT+VbuxbGwljhw==}
 
   uuid@12.0.0:
     resolution: {integrity: sha512-USe1zesMYh4fjCA8ZH5+X5WIVD0J4V1Jksm1bFTVBX2F/cwSXt0RO5w/3UXbdLKmZX65MiWV+hwhSS8p6oBTGA==}
@@ -4599,12 +4671,12 @@ snapshots:
 
   '@nolyfill/is-core-module@1.0.39': {}
 
-  '@prisma/client@6.14.0(prisma@6.15.0(typescript@5.9.2))(typescript@5.9.2)':
+  '@prisma/client@6.17.1(prisma@6.17.1(typescript@5.9.2))(typescript@5.9.2)':
     optionalDependencies:
-      prisma: 6.15.0(typescript@5.9.2)
+      prisma: 6.17.1(typescript@5.9.2)
       typescript: 5.9.2
 
-  '@prisma/config@6.15.0':
+  '@prisma/config@6.17.1':
     dependencies:
       c12: 3.1.0
       deepmerge-ts: 7.1.5
@@ -4613,30 +4685,30 @@ snapshots:
     transitivePeerDependencies:
       - magicast
 
-  '@prisma/debug@6.15.0': {}
+  '@prisma/debug@6.17.1': {}
 
-  '@prisma/engines-version@6.15.0-5.85179d7826409ee107a6ba334b5e305ae3fba9fb': {}
+  '@prisma/engines-version@6.17.1-1.272a37d34178c2894197e17273bf937f25acdeac': {}
 
-  '@prisma/engines@6.15.0':
+  '@prisma/engines@6.17.1':
     dependencies:
-      '@prisma/debug': 6.15.0
-      '@prisma/engines-version': 6.15.0-5.85179d7826409ee107a6ba334b5e305ae3fba9fb
-      '@prisma/fetch-engine': 6.15.0
-      '@prisma/get-platform': 6.15.0
+      '@prisma/debug': 6.17.1
+      '@prisma/engines-version': 6.17.1-1.272a37d34178c2894197e17273bf937f25acdeac
+      '@prisma/fetch-engine': 6.17.1
+      '@prisma/get-platform': 6.17.1
 
-  '@prisma/extension-accelerate@2.0.2(@prisma/client@6.14.0(prisma@6.15.0(typescript@5.9.2))(typescript@5.9.2))':
+  '@prisma/extension-accelerate@2.0.2(@prisma/client@6.17.1(prisma@6.17.1(typescript@5.9.2))(typescript@5.9.2))':
     dependencies:
-      '@prisma/client': 6.14.0(prisma@6.15.0(typescript@5.9.2))(typescript@5.9.2)
+      '@prisma/client': 6.17.1(prisma@6.17.1(typescript@5.9.2))(typescript@5.9.2)
 
-  '@prisma/fetch-engine@6.15.0':
+  '@prisma/fetch-engine@6.17.1':
     dependencies:
-      '@prisma/debug': 6.15.0
-      '@prisma/engines-version': 6.15.0-5.85179d7826409ee107a6ba334b5e305ae3fba9fb
-      '@prisma/get-platform': 6.15.0
+      '@prisma/debug': 6.17.1
+      '@prisma/engines-version': 6.17.1-1.272a37d34178c2894197e17273bf937f25acdeac
+      '@prisma/get-platform': 6.17.1
 
-  '@prisma/get-platform@6.15.0':
+  '@prisma/get-platform@6.17.1':
     dependencies:
-      '@prisma/debug': 6.15.0
+      '@prisma/debug': 6.17.1
 
   '@radix-ui/primitive@1.1.2': {}
 
@@ -4977,6 +5049,22 @@ snapshots:
     optionalDependencies:
       '@types/react': 19.1.9
 
+  '@radix-ui/react-tabs@1.1.13(@types/react-dom@19.1.7(@types/react@19.1.9))(@types/react@19.1.9)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
+    dependencies:
+      '@radix-ui/primitive': 1.1.3
+      '@radix-ui/react-context': 1.1.2(@types/react@19.1.9)(react@19.1.0)
+      '@radix-ui/react-direction': 1.1.1(@types/react@19.1.9)(react@19.1.0)
+      '@radix-ui/react-id': 1.1.1(@types/react@19.1.9)(react@19.1.0)
+      '@radix-ui/react-presence': 1.1.5(@types/react-dom@19.1.7(@types/react@19.1.9))(@types/react@19.1.9)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      '@radix-ui/react-primitive': 2.1.3(@types/react-dom@19.1.7(@types/react@19.1.9))(@types/react@19.1.9)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      '@radix-ui/react-roving-focus': 1.1.11(@types/react-dom@19.1.7(@types/react@19.1.9))(@types/react@19.1.9)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      '@radix-ui/react-use-controllable-state': 1.2.2(@types/react@19.1.9)(react@19.1.0)
+      react: 19.1.0
+      react-dom: 19.1.0(react@19.1.0)
+    optionalDependencies:
+      '@types/react': 19.1.9
+      '@types/react-dom': 19.1.7(@types/react@19.1.9)
+
   '@radix-ui/react-use-callback-ref@1.1.1(@types/react@19.1.9)(react@19.1.0)':
     dependencies:
       react: 19.1.0
@@ -5158,6 +5246,14 @@ snapshots:
       postcss-selector-parser: 6.0.10
       tailwindcss: 4.1.11
 
+  '@tanstack/react-table@8.21.3(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
+    dependencies:
+      '@tanstack/table-core': 8.21.3
+      react: 19.1.0
+      react-dom: 19.1.0(react@19.1.0)
+
+  '@tanstack/table-core@8.21.3': {}
+
   '@tybys/wasm-util@0.10.0':
     dependencies:
       tslib: 2.8.1
@@ -5206,6 +5302,8 @@ snapshots:
       '@types/estree': 1.0.8
 
   '@types/estree@1.0.8': {}
+
+  '@types/file-saver@2.0.7': {}
 
   '@types/hast@3.0.4':
     dependencies:
@@ -5523,6 +5621,8 @@ snapshots:
 
   balanced-match@1.0.2: {}
 
+  base64-arraybuffer@1.0.2: {}
+
   blurhash@2.0.5: {}
 
   brace-expansion@1.1.12:
@@ -5718,6 +5818,10 @@ snapshots:
       path-key: 3.1.1
       shebang-command: 2.0.0
       which: 2.0.2
+
+  css-line-break@2.1.0:
+    dependencies:
+      utrie: 1.0.2
 
   cssesc@3.0.0: {}
 
@@ -6236,6 +6340,8 @@ snapshots:
     dependencies:
       flat-cache: 4.0.1
 
+  file-saver@2.0.5: {}
+
   fill-range@7.1.1:
     dependencies:
       to-regex-range: 5.0.1
@@ -6482,6 +6588,11 @@ snapshots:
   html-url-attributes@3.0.1: {}
 
   html-void-elements@3.0.0: {}
+
+  html2canvas@1.4.1:
+    dependencies:
+      css-line-break: 2.1.0
+      text-segmentation: 1.0.3
 
   ignore@5.3.2: {}
 
@@ -7304,10 +7415,10 @@ snapshots:
 
   prelude-ls@1.2.1: {}
 
-  prisma@6.15.0(typescript@5.9.2):
+  prisma@6.17.1(typescript@5.9.2):
     dependencies:
-      '@prisma/config': 6.15.0
-      '@prisma/engines': 6.15.0
+      '@prisma/config': 6.17.1
+      '@prisma/engines': 6.17.1
     optionalDependencies:
       typescript: 5.9.2
     transitivePeerDependencies:
@@ -7408,6 +7519,14 @@ snapshots:
   react@19.1.0: {}
 
   readdirp@4.1.2: {}
+
+  recharts-to-png@3.0.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(recharts@3.1.2(@types/react@19.1.9)(react-dom@19.1.0(react@19.1.0))(react-is@16.13.1)(react@19.1.0)(redux@5.0.1)):
+    dependencies:
+      html2canvas: 1.4.1
+      react: 19.1.0
+      react-dom: 19.1.0(react@19.1.0)
+    optionalDependencies:
+      recharts: 3.1.2(@types/react@19.1.9)(react-dom@19.1.0(react@19.1.0))(react-is@16.13.1)(react@19.1.0)(redux@5.0.1)
 
   recharts@3.1.2(@types/react@19.1.9)(react-dom@19.1.0(react@19.1.0))(react-is@16.13.1)(react@19.1.0)(redux@5.0.1):
     dependencies:
@@ -7775,6 +7894,10 @@ snapshots:
       mkdirp: 3.0.1
       yallist: 5.0.0
 
+  text-segmentation@1.0.3:
+    dependencies:
+      utrie: 1.0.2
+
   tiny-invariant@1.3.3: {}
 
   tinyexec@1.0.1: {}
@@ -7950,6 +8073,10 @@ snapshots:
       react: 19.1.0
 
   util-deprecate@1.0.2: {}
+
+  utrie@1.0.2:
+    dependencies:
+      base64-arraybuffer: 1.0.2
 
   uuid@12.0.0: {}
 

@@ -39,6 +39,11 @@
     },
     "date": {
       "type": "datetime"
+    },
+    "publication": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::publication.publication"
     }
   }
 }

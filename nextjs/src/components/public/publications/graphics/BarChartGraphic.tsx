@@ -1,5 +1,6 @@
 import useWindowSize from "@/hooks/useWindowSize";
 import { splitString, truncateString } from "@/lib/miscellaneous";
+import { Ref } from "react";
 import {
   BarChart,
   Bar,
@@ -91,12 +92,14 @@ export default function BarChartGraphic({
   xAxisLegend,
   yAxisLegend,
   type,
+  ref,
 }: {
   data: DataForm[];
   columns: string[] | undefined | null;
   xAxisLegend: string;
   yAxisLegend: string;
   type: "vertical" | "horizontal";
+  ref: Ref<SVGSVGElement> | undefined;
 }) {
   if (!columns) {
     return <p className="text-red font-semibold">No Graph!</p>;
@@ -125,6 +128,7 @@ export default function BarChartGraphic({
           left: 35,
           bottom: type === "vertical" ? 10 : 50,
         }}
+        ref={ref}
       >
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis

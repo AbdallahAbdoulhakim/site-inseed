@@ -6,7 +6,7 @@ import Graph from "@/components/public/publications/graphics/Graph";
 import DefaultParagraph from "@/components/public/publications/layout/DefaultParagraph";
 import DefaultPublicationSummary from "@/components/public/publications/layout/DefaultPublicationSummary";
 
-interface Props {
+export interface PublicationProps {
   publication: {
     id: string;
     hasSummary: boolean | undefined;
@@ -54,38 +54,19 @@ interface Props {
       content: string | null | undefined;
       norder: number;
       link: string | null | undefined;
+      title: string | null | undefined;
       inSummary: boolean;
-      graphic: {
+      datafile: {
         id: number;
         documentId: string;
-        dataurl: string | null | undefined;
-        legend: string | null | undefined;
-        xAxisLegend: string | null | undefined;
-        yAxisLegend: string | null | undefined;
-        title: string | null | undefined;
-        subtitle: string | null | undefined;
-        startFrom: number | null | undefined;
-        compoundLineKey: string | null | undefined;
-        type:
-          | "line"
-          | "scatter"
-          | "compound"
-          | "vertical barchart"
-          | "horizontal barchart"
-          | undefined;
-        norder: number;
-        datafile: {
-          id: number;
-          documentId: string;
-          name: string;
-          url: string;
-        };
+        name: string;
+        url: string;
       };
     }[];
   };
 }
 
-interface Element {
+export interface PublicationElement {
   id: string;
   norder: number;
   type: string;
@@ -130,36 +111,20 @@ interface Element {
       documentId: string;
       content: string | null | undefined;
       link: string | null | undefined;
-      graphic: {
+      title: string | null | undefined;
+      datafile: {
         id: number;
         documentId: string;
-        dataurl: string | null | undefined;
-        legend: string | null | undefined;
-        title: string | null | undefined;
-        subtitle: string | null | undefined;
-        xAxisLegend: string | null | undefined;
-        yAxisLegend: string | null | undefined;
-        startFrom: number | null | undefined;
-        compoundLineKey: string | null | undefined;
-        type:
-          | "line"
-          | "scatter"
-          | "compound"
-          | "vertical barchart"
-          | "horizontal barchart"
-          | undefined;
-        datafile: {
-          id: number;
-          documentId: string;
-          name: string;
-          url: string;
-        };
+        name: string;
+        url: string;
       };
     };
   };
 }
 
-export default function DefaultPublicationPage({ publication }: Props) {
+export default function DefaultPublicationPage({
+  publication,
+}: PublicationProps) {
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -181,7 +146,6 @@ export default function DefaultPublicationPage({ publication }: Props) {
             title: elt.title,
             link: elt.link,
             content: elt.content,
-            inSummary: elt.inSummary,
             hasTableWithSpan: elt.hasTableWithSpan,
           },
         },
@@ -223,30 +187,20 @@ export default function DefaultPublicationPage({ publication }: Props) {
         norder: elt.norder,
         inSummary: elt.inSummary,
         type: "table_graph",
+        link: elt.link,
+        title: elt.title,
         content: {
-          id: elt.id,
-          documentId: elt.documentId,
-          content: elt.documentId,
-          inSummary: elt.inSummary,
-          link: elt.link,
-          graphic: {
-            id: elt.graphic.id,
-            documentId: elt.graphic.documentId,
-            norder: elt.graphic.norder,
-            dataurl: elt.graphic.dataurl,
-            legend: elt.graphic.legend,
-            title: elt.graphic.title,
-            subtitle: elt.graphic.subtitle,
-            xAxisLegend: elt.graphic.xAxisLegend,
-            yAxisLegend: elt.graphic.yAxisLegend,
-            type: elt.graphic.type,
-            startFrom: elt.graphic.startFrom,
-            compoundLineKey: elt.graphic.compoundLineKey,
+          table_graph: {
+            id: elt.id,
+            documentId: elt.documentId,
+            content: elt.content,
+            link: elt.link,
+            title: elt.title,
             datafile: {
-              id: elt.graphic.datafile.id,
-              documentId: elt.graphic.datafile.documentId,
-              name: elt.graphic.datafile.name,
-              url: elt.graphic.datafile.url,
+              id: elt.datafile.id,
+              documentId: elt.datafile.documentId,
+              name: elt.datafile.name,
+              url: elt.datafile.url,
             },
           },
         },
@@ -254,7 +208,7 @@ export default function DefaultPublicationPage({ publication }: Props) {
   ]
     .filter((elt) => elt !== undefined && elt !== null)
     .flat()
-    .sort((a, b) => a.norder - b.norder) as unknown as Element[];
+    .sort((a, b) => a.norder - b.norder) as unknown as PublicationElement[];
 
   const summaryElements = elements
     .filter((elt) => elt.inSummary)
@@ -278,7 +232,7 @@ export default function DefaultPublicationPage({ publication }: Props) {
         return {
           id: elt.id ?? "",
           link: elt.content.table_graph?.link ?? "",
-          title: elt.content.table_graph?.graphic.title ?? "",
+          title: elt.content.table_graph?.title ?? "",
         };
       }
     }) as {

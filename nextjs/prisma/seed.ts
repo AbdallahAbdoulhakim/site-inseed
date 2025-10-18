@@ -124,22 +124,22 @@ const menus: MenuItemType[] = [
             },
             children: [],
           },
-          {
-            menuItem: {
-              label: "MOT DU DIRECTEUR GÉNÉRAL",
-              display_order: 2,
-              url: "/information/word-from-general-director",
-            },
-            children: [],
-          },
-           {
-          menuItem: {
-            label: "ORGANISATION ET FONCTIONNEMENT",
-            display_order: 3,
-            url: "/information/organization-and-operation",
-          },
-        children: [],
-      },
+          // {
+          //   menuItem: {
+          //     label: "MOT DU DIRECTEUR GÉNÉRAL",
+          //     display_order: 2,
+          //     url: "/information/word-from-general-director",
+          //   },
+          //   children: [],
+          // },
+      //      {
+      //     menuItem: {
+      //       label: "ORGANISATION ET FONCTIONNEMENT",
+      //       display_order: 3,
+      //       url: "/information/organization-and-operation",
+      //     },
+      //   children: [],
+      // },
       ],
       },
       {
@@ -177,13 +177,13 @@ const menus: MenuItemType[] = [
               url: "/information/conduct-the-population-census",
             },
           },
-          {
-            menuItem: {
-              label: "DÉCRIRE ET ANALYSER LES RÉGIONS ET LES TERRITOIRES",
-              display_order: 5,
-              url: "/information/describe-and-analyze-regions-and-territories",
-            },
-          },
+          // {
+          //   menuItem: {
+          //     label: "DÉCRIRE ET ANALYSER LES RÉGIONS ET LES TERRITOIRES",
+          //     display_order: 5,
+          //     url: "/information/describe-and-analyze-regions-and-territories",
+          //   },
+          // },
           {
             menuItem: {
               label: "GÉRER DES GRANDS RÉPERTOIRES",
@@ -228,13 +228,13 @@ const menus: MenuItemType[] = [
               url: "/information/action-plan",
             },
           },
-          {
-            menuItem: {
-              label: "RAPPORT D’ACTIVITÉS",
-              display_order: 2,
-              url: "/information/activity-report",
-            },
-          },
+          // {
+          //   menuItem: {
+          //     label: "RAPPORT D’ACTIVITÉS",
+          //     display_order: 2,
+          //     url: "/information/activity-report",
+          //   },
+          // },
           {
           menuItem: {
             label: "DIAGNOSTIC DU SYSTÈME STATISTIQUE",
@@ -288,13 +288,13 @@ const menus: MenuItemType[] = [
           url: "/information/inseed-in-the-african-statistical-system",
         },
         children: [
-          {
-            menuItem: {
-              label: "TEXTES DE RÉFÉRENCE",
-              display_order: 1,
-              url: "/information/reference-texts",
-            },
-          },
+          // {
+          //   menuItem: {
+          //     label: "TEXTES DE RÉFÉRENCE",
+          //     display_order: 1,
+          //     url: "/information/reference-texts",
+          //   },
+          // },
           {
             menuItem: {
               label: "LE PROJET DE LA CHARTE AFRICAINE DE LA STATISTIQUE",
@@ -519,52 +519,52 @@ const menus: MenuItemType[] = [
               url: "/information/national-statistical-yearbook",
             },
           },
-          {
-            menuItem: {
-              label: "ANNUAIRE STATISTIQUE SANITAIRE",
-              display_order: 2,
-              url: "/information/health-data-book",
-            },
-          },
+          // {
+          //   menuItem: {
+          //     label: "ANNUAIRE STATISTIQUE SANITAIRE",
+          //     display_order: 2,
+          //     url: "/information/health-data-book",
+          //   },
+          // },
         ],
       },
-      {
-        menuItem: {
-          label: "DÉFINITIONS ET MÉTHODES",
-          display_order: 5,
-          url: "/information/definitions-and-methods",
-        },
-         children: [
-          {
-            menuItem: {
-              label: "DÉFINITIONS",
-              display_order: 1,
-              url: "/information/definitions",
-            },
-          },
-          {
-            menuItem: {
-              label: "SOURCES STATISTIQUES ET INDICATEURS",
-              display_order: 2,
-              url: "/information/statistical-sources-and-indicators",
-            },
-          },
-          {
-            menuItem: {
-              label: "NOMENCLATURES",
-              display_order: 3,
-              url: "/information/nomenclatures",
-            },
-          },
-          {
-            menuItem: {
-              label: "MODÈLES, MÉTHODES ET OUTILS STATISTIQUES",
-              display_order: 4,
-              url: "/information/statistical-models-methods-and-tools",
-            },
-          },
-        ],
-      },
+      // {
+      //   menuItem: {
+      //     label: "DÉFINITIONS ET MÉTHODES",
+      //     display_order: 5,
+      //     url: "/information/definitions-and-methods",
+      //   },
+      //    children: [
+      //     {
+      //       menuItem: {
+      //         label: "DÉFINITIONS",
+      //         display_order: 1,
+      //         url: "/information/definitions",
+      //       },
+      //     },
+      //     {
+      //       menuItem: {
+      //         label: "SOURCES STATISTIQUES ET INDICATEURS",
+      //         display_order: 2,
+      //         url: "/information/statistical-sources-and-indicators",
+      //       },
+      //     },
+      //     {
+      //       menuItem: {
+      //         label: "NOMENCLATURES",
+      //         display_order: 3,
+      //         url: "/information/nomenclatures",
+      //       },
+      //     },
+      //     {
+      //       menuItem: {
+      //         label: "MODÈLES, MÉTHODES ET OUTILS STATISTIQUES",
+      //         display_order: 4,
+      //         url: "/information/statistical-models-methods-and-tools",
+      //       },
+      //     },
+      //   ],
+      // },
     ],
   },
   // {
@@ -611,7 +611,7 @@ const menus: MenuItemType[] = [
       label: "PUBLICATIONS",
       description: "Toutes les publications de l'INSEED",
       display_order: 3,
-      url: "",
+      url: "/publications",
     },
     children: [
       {
@@ -622,13 +622,13 @@ const menus: MenuItemType[] = [
           url: "/publications",
         },
         children: [
-          {
-            menuItem: {
-              label: "NOTES ET POINTS DE CONJONCTURE",
-              display_order: 1,
-              url: "/publications?collection=80",
-            },
-          },
+          // {
+          //   menuItem: {
+          //     label: "NOTES ET POINTS DE CONJONCTURE",
+          //     display_order: 1,
+          //     url: "/publications?collection=80",
+          //   },
+          // },
           {
             menuItem: {
               label: "BULLETIN MENSUEL DE L’INDICE DE PRIX A LA CONSOMMATION",
@@ -659,18 +659,25 @@ const menus: MenuItemType[] = [
           // },
           {
             menuItem: {
-              label: "PHOTOÈQUE",
+              label: "RAPPORTS D'ANALYSES",
               display_order: 6,
-              url: "/publications/photo-library",
+              url: "/publications?collection=50",
             },
           },
-          {
-            menuItem: {
-              label: "VIDÉOTHÈQUE",
-              display_order: 7,
-              url: "/publications/video-library",
-            },
-          },
+          // {
+          //   menuItem: {
+          //     label: "PHOTOÈQUE",
+          //     display_order: 7,
+          //     url: "/publications/photo-library",
+          //   },
+          // },
+          // {
+          //   menuItem: {
+          //     label: "VIDÉOTHÈQUE",
+          //     display_order: 8,
+          //     url: "/publications/video-library",
+          //   },
+          // },
         ],
       },
       {
@@ -680,24 +687,17 @@ const menus: MenuItemType[] = [
           url: "/information/studies-and-projects",
         },
         children: [
-          {
-            menuItem: {
-              label: "MÉTHODOLOGIE",
-              display_order: 1,
-              url: "/information/methodology",
-            },
-          },
-          {
-            menuItem: {
-              label: "RAPPORTS D'ANALYSES",
-              display_order: 2,
-              url: "/publications?collection=50",
-            },
-          },
+          // {
+          //   menuItem: {
+          //     label: "MÉTHODOLOGIE",
+          //     display_order: 1,
+          //     url: "/information/methodology",
+          //   },
+          // },
           {
             menuItem: {
               label: "PROJET STATCAP-KM",
-              display_order: 3,
+              display_order: 2,
               url: "/information/statcap-km",
             },
           },

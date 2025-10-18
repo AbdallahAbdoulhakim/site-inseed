@@ -56,6 +56,8 @@ export default function PublicationBox({ publication }: Props) {
               ? "bg-[#0f417a]"
               : publication.type === "Comptes Nationaux"
               ? "bg-[#dc143c]"
+              : publication.type === "Séries chronologiques"
+              ? "bg-[#0d9f09]"
               : ""
           } rounded-xs text-center px-[7px] my-2.5 mr-[6px] text-[11px] lg:text-[13px] text-white`}
         >
