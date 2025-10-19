@@ -74,8 +74,18 @@ export default function NewsArticleBox({
                 {author}
               </p>
               <p className="text-xs md:text-[14px] text-[#3c3c3c] mb-0">
-                <time dateTime={date.toISOString()}>
-                  {date.toLocaleDateString()}
+                <time
+                  dateTime={new Date(date).toLocaleDateString("fr-FR", {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  })}
+                >
+                  {new Date(date).toLocaleDateString("fr-FR", {
+                    year: "numeric",
+                    month: "numeric",
+                    day: "numeric",
+                  })}
                 </time>
               </p>
             </div>
