@@ -130,7 +130,7 @@ export default async function NewsCategory({
     <CategoryArticles
       data={data}
       page={queryPage}
-      count={pagination?.total!}
+      count={pagination?.total ?? 1}
       tagsList={tagsList}
     />
   );

@@ -135,7 +135,7 @@ export default function Publications({
       ? []
       : initialCategoryTags.split(" ").map((elt) => +elt);
 
-    let result: InitCheck = {
+    const result: InitCheck = {
       themes: { level1: [], level2: [] },
       collections: { level1: [], level2: [] },
       categories: { level1: [], level2: [] },
@@ -246,7 +246,14 @@ export default function Publications({
       categoriesTags,
       currentPage
     );
-  }, [themesTags, collectionsTags, geosTags, categoriesTags, currentPage]);
+  }, [
+    themesTags,
+    collectionsTags,
+    geosTags,
+    categoriesTags,
+    currentPage,
+    setTagsParams,
+  ]);
 
   return (
     <div className="container mx-auto px-5  my-5 flex flex-col">

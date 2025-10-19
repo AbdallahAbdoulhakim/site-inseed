@@ -37,7 +37,7 @@ export default function Critieria({ layout = "desktop" }: Props) {
   const geos = useAppSelector((state) => selectGeos(state));
 
   const getCheckedItem = () => {
-    let arr: ArrType[] = [];
+    const arr: ArrType[] = [];
 
     themes.forEach((theme) => {
       if (!theme.children || theme.children.length === 0) {

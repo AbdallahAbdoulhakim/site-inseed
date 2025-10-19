@@ -138,7 +138,7 @@ export default function Publications({
       ? []
       : initialCategoryTags.split(" ").map((elt) => +elt);
 
-    let result: InitCheck = {
+    const result: InitCheck = {
       themes: { level1: [], level2: [] },
       collections: { level1: [], level2: [] },
       categories: { level1: [], level2: [] },

@@ -42,7 +42,7 @@ export const fetchMenu = async (type: "MAIN" | "FOOTER") => {
 
 export const fetchSubMenuByUrl = async (url:string)  : Promise<{breadcrumb:{id:string, label:string, description:string, url:string}[] , title?:string , 
 subtitle?: string , short?:string, type?:string, parutionNumber?:string; parutionDate?:string , printableUrl? : string, printableSize?:string, printableType?:string, printableTitle?:string,  dataUrl? : string, dataSize?:string, dataType?: string, dataTitle?:string; }>=>{
-  let breadcrumb : {id:string, label:string, description:string, url:string}[] =[]
+  const breadcrumb : {id:string, label:string, description:string, url:string}[] =[]
 
   const pathParts = url.split("/").filter((part) => part.length > 0);
 
@@ -228,7 +228,7 @@ interface Information {
 
 function traverseParents(element:Information, arr:{id:string, slug:string, title:string}[]) {
 
-  let parents :{id:string, slug:string, title:string}[] = []
+  const parents :{id:string, slug:string, title:string}[] = []
 
   arr.unshift({id:element.id, title:element.title, slug:element.slug})
 
@@ -337,7 +337,7 @@ export const fetchInformationDetailsBySlug = async (url:string)=>{
     }:null,
   }
 
-  let parentsList : {id:string, slug:string, title:string}[] = []
+  const parentsList : {id:string, slug:string, title:string}[] = []
   traverseParents(information as unknown as Information, parentsList)
 
   return {information:information, parentsList:parentsList}

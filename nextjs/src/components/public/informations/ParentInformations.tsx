@@ -9,7 +9,7 @@ import DisplayContent from "@/components/commons/DisplayContent";
 
 interface Props {
   content: string;
-  children: {
+  childs: {
     id: string;
     title: string;
     short: string;
@@ -17,7 +17,7 @@ interface Props {
   }[];
 }
 
-export default function ParentInformations({ children, content }: Props) {
+export default function ParentInformations({ childs, content }: Props) {
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -40,7 +40,7 @@ export default function ParentInformations({ children, content }: Props) {
         </div>
       )}
       <div className="grid grid-cols-2 lg:grid-cols-3 gap-5 px-5">
-        {children.map((child) => (
+        {childs.map((child) => (
           <InformationBox
             key={child.id}
             title={child.title}

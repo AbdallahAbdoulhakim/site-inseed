@@ -60,6 +60,7 @@ export default function LineChartGraphic({
   startFrom: number | undefined | null;
   ref: Ref<SVGSVGElement> | undefined;
 }) {
+  const { width } = useWindowSize();
   if (!columns) {
     return <p className="text-red font-semibold">No Graph!</p>;
   }
@@ -73,8 +74,6 @@ export default function LineChartGraphic({
       <p className="text-red font-semibold">Too much columns in the data!</p>
     );
   }
-
-  const { width } = useWindowSize();
 
   return (
     <ResponsiveContainer width="100%" height="100%">

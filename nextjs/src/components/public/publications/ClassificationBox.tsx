@@ -41,6 +41,11 @@ export default function ClassificationBox({
 }: Props) {
   const dispatch = useAppDispatch();
 
+  const themes = useAppSelector((state) => selectThemes(state));
+  const categories = useAppSelector((state) => selectCategories(state));
+  const collections = useAppSelector((state) => selectCollections(state));
+  const geos = useAppSelector((state) => selectGeos(state));
+
   const getCheckValueByIdAndLevel = (
     id: string,
     level: 1 | 2,
@@ -48,8 +53,6 @@ export default function ClassificationBox({
     type: "THÈMES" | "NIVEAU GÉOGRAPHIQUE" | "CATÉGORIES" | "COLLECTIONS"
   ) => {
     if (type === "THÈMES") {
-      const themes = useAppSelector((state) => selectThemes(state));
-
       if (level === 1) {
         return themes.find((elt) => elt.id === id)?.checked;
       }
@@ -61,8 +64,6 @@ export default function ClassificationBox({
       }
     }
     if (type === "CATÉGORIES") {
-      const categories = useAppSelector((state) => selectCategories(state));
-
       if (level === 1) {
         return categories.find((elt) => elt.id === id)?.checked;
       }
@@ -74,8 +75,6 @@ export default function ClassificationBox({
       }
     }
     if (type === "COLLECTIONS") {
-      const collections = useAppSelector((state) => selectCollections(state));
-
       if (level === 1) {
         return collections.find((elt) => elt.id === id)?.checked;
       }
@@ -87,8 +86,6 @@ export default function ClassificationBox({
       }
     }
     if (type === "NIVEAU GÉOGRAPHIQUE") {
-      const geos = useAppSelector((state) => selectGeos(state));
-
       if (level === 1) {
         return geos.find((elt) => elt.id === id)?.checked;
       }
@@ -106,19 +103,15 @@ export default function ClassificationBox({
     type: "THÈMES" | "NIVEAU GÉOGRAPHIQUE" | "CATÉGORIES" | "COLLECTIONS"
   ) => {
     if (type === "THÈMES") {
-      const themes = useAppSelector((state) => selectThemes(state));
       return themes.find((elt) => elt.id === id)?.open;
     }
     if (type === "CATÉGORIES") {
-      const categories = useAppSelector((state) => selectCategories(state));
       return categories.find((elt) => elt.id === id)?.open;
     }
     if (type === "COLLECTIONS") {
-      const collections = useAppSelector((state) => selectCollections(state));
       return collections.find((elt) => elt.id === id)?.open;
     }
     if (type === "NIVEAU GÉOGRAPHIQUE") {
-      const geos = useAppSelector((state) => selectGeos(state));
       return geos.find((elt) => elt.id === id)?.open;
     }
   };

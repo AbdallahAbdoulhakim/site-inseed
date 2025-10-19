@@ -118,7 +118,7 @@ export default async function page({
     <section className="">
       {information.children.length > 0 ? (
         <ParentInformations
-          children={information.children}
+          childs={information.children}
           content={information.content}
         />
       ) : (

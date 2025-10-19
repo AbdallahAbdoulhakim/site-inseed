@@ -101,6 +101,8 @@ export default function BarChartGraphic({
   type: "vertical" | "horizontal";
   ref: Ref<SVGSVGElement> | undefined;
 }) {
+  const size = useWindowSize();
+
   if (!columns) {
     return <p className="text-red font-semibold">No Graph!</p>;
   }
@@ -114,8 +116,6 @@ export default function BarChartGraphic({
       <p className="text-red font-semibold">Too much columns in the data!</p>
     );
   }
-
-  const size = useWindowSize();
 
   return (
     <ResponsiveContainer width="100%" height="100%">

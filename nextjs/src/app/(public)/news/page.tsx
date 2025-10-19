@@ -95,7 +95,7 @@ export default async function News({
     <CategoryArticles
       data={data}
       page={queryPage}
-      count={pagination?.total!}
+      count={pagination?.total ?? 1}
       tagsList={tagsList}
     />
   );

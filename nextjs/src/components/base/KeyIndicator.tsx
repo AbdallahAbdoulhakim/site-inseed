@@ -46,7 +46,7 @@ export default function KeyIndicator({
       duration: delay,
       once: true,
     });
-  }, []);
+  }, [delay]);
 
   useEffect(() => {
     async function loadData() {
@@ -63,7 +63,7 @@ export default function KeyIndicator({
     }
 
     loadData();
-  }, []);
+  }, [dataUrl]);
 
   return (
     <article

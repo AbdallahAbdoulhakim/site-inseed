@@ -21,7 +21,6 @@ export default function PrintableBox({
   type,
   fileUrl,
   fileSize,
-  category,
 }: Props) {
   return (
     <div className="flex flex-col  w-full md:w-[50%]">

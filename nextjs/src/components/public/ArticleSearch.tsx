@@ -1,6 +1,6 @@
 "use client";
 
-import { ChangeEvent, useEffect, useState } from "react";
+import { ChangeEvent, useEffect } from "react";
 
 import { IoMdSearch } from "react-icons/io";
 import { FaCheck } from "react-icons/fa";
@@ -97,7 +97,7 @@ export default function ArticleSearch({
       .map((tag) => tag.slug);
 
     setTagsParams(checkedTags);
-  }, [tagsCheck]);
+  }, [tagsCheck, setTagsCheck]);
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>, slug: string) => {
     setTagsCheck((prev) => {

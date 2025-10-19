@@ -115,8 +115,8 @@ export default function ArticleSidebar({
                 Aucun résultat trouvé
               </h3>
               <p className="mt-1 text-sm text-gray-500">
-                Nous n'avons trouvé aucun élément correspondant à votre
-                recherche. Essayez d'ajuster vos termes de recherche.
+                Nous n&apos;avons trouvé aucun élément correspondant à votre
+                recherche. Essayez d&apos;ajuster vos termes de recherche.
               </p>
               <div className="mt-6">
                 <button

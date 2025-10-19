@@ -23,8 +23,8 @@ export default function Results({ publicationsList }: Props) {
           Aucun résultat trouvé
         </h3>
         <p className="mt-1 text-sm text-gray-500">
-          Nous n'avons trouvé aucun élément correspondant à votre recherche.
-          Essayez d'ajuster votre recherche.
+          Nous n&apos;avons trouvé aucun élément correspondant à votre
+          recherche. Essayez d&apos;ajuster votre recherche.
         </p>
         <div className="mt-6">
           <button

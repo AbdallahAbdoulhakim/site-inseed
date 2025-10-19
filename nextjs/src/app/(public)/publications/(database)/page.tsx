@@ -42,7 +42,7 @@ export default async function PublicationsDatabase({
     )
       return {};
 
-    let result: { $and: any[] } = { $and: [] };
+    const result: { $and: any[] } = { $and: [] };
 
     if (themeTagsArr.length > 0) {
       result.$and.push({

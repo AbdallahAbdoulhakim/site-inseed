@@ -13,13 +13,13 @@ export default function NotFound() {
           </p>
           <p className="mb-4 text-lg font-light text-gray-500">
             Désolé, nous ne trouvons pas cette page. Vous trouverez beaucoup de
-            choses à explorer sur la page d'accueil.{" "}
+            choses à explorer sur la page d&apos;accueil.{" "}
           </p>
           <Link
             href="/"
             className="inline-flex text-white bg-primary hover:bg-primary/80 focus:ring-4 focus:outline-none focus:ring-primary/30 font-medium rounded-lg text-sm px-5 py-2.5 text-center my-4"
           >
-            Retour à la page d'accueil
+            Retour à la page d&apos;accueil
           </Link>
         </div>
       </div>

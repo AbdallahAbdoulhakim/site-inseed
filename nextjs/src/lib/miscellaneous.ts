@@ -23,7 +23,7 @@ export function splitNumbersFromString(str:string | undefined, sep:string=" "){
 export function splitString(str:string, lineWidth:number=30):string[]{
   
 
-  let result = []
+  const result = []
   let runningStr=str
   let strLen = str.length
 

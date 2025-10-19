@@ -38,6 +38,7 @@ export default function StackedBarComposedGraphic({
   compoundLineKey: string | undefined | null;
   ref: Ref<SVGSVGElement> | undefined;
 }) {
+  const { width } = useWindowSize();
   if (!columns || !compoundLineKey) {
     return <p className="text-red font-semibold">No Graph!</p>;
   }
@@ -45,8 +46,6 @@ export default function StackedBarComposedGraphic({
   if (columns.length < 1) {
     return <p className="text-red font-semibold">Bad csv!</p>;
   }
-
-  const { width } = useWindowSize();
 
   const newColumns = columns.filter((elt) => elt !== compoundLineKey);
 
