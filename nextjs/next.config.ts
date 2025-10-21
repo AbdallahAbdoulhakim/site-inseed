@@ -11,3 +11,18 @@ const nextConfig: NextConfig = {
 };
 
 export default nextConfig;
+
+
+// import type { NextConfig } from "next";
+
+// const nextConfig: NextConfig = {
+//   /* config options here */
+//   images: {
+//     remotePatterns: [new URL("https://www.inseed-comores.org/backend/uploads/**")],
+//   },
+//   experimental: {
+//     scrollRestoration: true,
+//   },
+// };
+
+// export default nextConfig;
