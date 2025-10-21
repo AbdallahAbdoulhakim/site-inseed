@@ -13,6 +13,8 @@ import { IoMdSearch } from "react-icons/io";
 import Link from "next/link";
 import Image from "next/image";
 
+import Time from "@/components/base/Time";
+
 interface Props {
   categoriesCount: CategoriesCount[];
   articlesList: LatestArticle[];
@@ -154,10 +156,7 @@ export default function ArticleSidebar({
                     className="block ml-[95px] italic text-[14px] text-[#333333]/40"
                     dateTime={article.publicationDate}
                   >
-                    {new Date(article.publicationDate).toLocaleDateString(
-                      "fr-FR",
-                      { year: "numeric", month: "short", day: "numeric" }
-                    )}
+                    <Time dateString={article.publicationDate} />
                   </time>
                 </div>
               </div>

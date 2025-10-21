@@ -8,6 +8,8 @@ import "aos/dist/aos.css";
 
 import { useEffect } from "react";
 
+import Time from "@/components/base/Time";
+
 export type PublicationType =
   | "Informations Rapides"
   | "Chiffres clés"
@@ -41,7 +43,6 @@ export default function LatestPublication({
     });
   }, []);
 
-  const date = new Date(publicationDate);
   return (
     <article
       className="shadow-[0_0_15px_rgba(0,0,0,0.1)] border border-primary/90 hover:bg-primary/10 cursor-pointer font-montserrat! bg-background p-5 h-[220px]  rounded-[10px] overflow-hidden"
@@ -53,7 +54,7 @@ export default function LatestPublication({
           <div className="w-[100px] h-[100px] p-2">{Icon}</div>
           <div className="flex flex-col grow">
             <p className="text-xs text-primary/80">
-              {date.toLocaleDateString("fr-FR")}
+              <Time dateString={publicationDate} />;
             </p>
             <p className="text-xs text-primary/80 uppercase">{type}</p>
             <p className="text-xs md:text-sm lg:text-base font-semibold text-primary hover:text-primary/60 mt-[10px]">

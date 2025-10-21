@@ -8,6 +8,8 @@ import Link from "next/link";
 import { FaXTwitter, FaFacebook, FaInstagram } from "react-icons/fa6";
 import { BsTags } from "react-icons/bs";
 
+import Time from "@/components/base/Time";
+
 interface Props {
   category: string;
   categorySlug: string;
@@ -39,7 +41,6 @@ export default function ArticleContent({
   authorInstagram,
   publicationDate,
 }: Props) {
-  const date = new Date(publicationDate);
   return (
     <div className="">
       <article
@@ -76,11 +77,7 @@ export default function ArticleContent({
                 <LuClock4 className="text-base mr-2 leading-none text-primary" />
                 <span>
                   <time dateTime={publicationDate}>
-                    {date.toLocaleDateString("fr-FR", {
-                      year: "numeric",
-                      month: "long",
-                      day: "numeric",
-                    })}
+                    <Time dateString={publicationDate} long={true} />
                   </time>
                 </span>
               </li>

@@ -124,14 +124,14 @@ const menus: MenuItemType[] = [
             },
             children: [],
           },
-          // {
-          //   menuItem: {
-          //     label: "MOT DU DIRECTEUR GÉNÉRAL",
-          //     display_order: 2,
-          //     url: "/information/word-from-general-director",
-          //   },
-          //   children: [],
-          // },
+          {
+            menuItem: {
+              label: "MOT DU DIRECTEUR GÉNÉRAL",
+              display_order: 2,
+              url: "/information/word-from-general-director",
+            },
+            children: [],
+          },
       //      {
       //     menuItem: {
       //       label: "ORGANISATION ET FONCTIONNEMENT",

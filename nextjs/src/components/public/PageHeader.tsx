@@ -9,6 +9,8 @@ import { BsFilePdf, BsFiletypeXlsx, BsFiletypeCsv } from "react-icons/bs";
 
 import byteSize from "byte-size";
 
+import Time from "@/components/base/Time";
+
 export default function PageHeader() {
   const [loading, setLoading] = useState(true);
 
@@ -43,6 +45,7 @@ export default function PageHeader() {
       "Informations Rapides",
       "Comptes Nationaux",
       "Séries chronologiques",
+      "Chiffres détaillés",
     ].includes(type);
 
   const parutionOrpublication = (type: string) =>
@@ -149,7 +152,7 @@ export default function PageHeader() {
                             ? "Paru le : "
                             : "Date de publication: "
                         }  `}
-                        {new Date(heading.parutionDate).toLocaleDateString()}
+                        <Time dateString={heading.parutionDate} />
                       </p>
                     )}
 

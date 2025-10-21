@@ -6,6 +6,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 import { useEffect } from "react";
+import Time from "@/components/base/Time";
 
 interface NewsArticleBoxProps {
   category: string;
@@ -37,7 +38,6 @@ export default function NewsArticleBox({
     });
   }, []);
 
-  const date = new Date(publicationDate);
   return (
     <article
       className="shadow-[0_0_15px_rgba(0,0,0,0.1)] border border-primary/90 font-montserrat! bg-background p-5 h-[400px] md:h-[500px] rounded-[10px] overflow-hidden"
@@ -74,19 +74,7 @@ export default function NewsArticleBox({
                 {author}
               </p>
               <p className="text-xs md:text-[14px] text-[#3c3c3c] mb-0">
-                <time
-                  dateTime={new Date(date).toLocaleDateString("fr-FR", {
-                    year: "numeric",
-                    month: "long",
-                    day: "numeric",
-                  })}
-                >
-                  {new Date(date).toLocaleDateString("fr-FR", {
-                    year: "numeric",
-                    month: "numeric",
-                    day: "numeric",
-                  })}
-                </time>
+                <Time dateString={publicationDate} />
               </p>
             </div>
           </div>

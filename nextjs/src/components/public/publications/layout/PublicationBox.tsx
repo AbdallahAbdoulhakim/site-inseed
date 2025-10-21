@@ -8,6 +8,8 @@ import { Publication } from "@/components/public/publications/Publications";
 import { PiCaretDown, PiCaretUp } from "react-icons/pi";
 import { FiExternalLink } from "react-icons/fi";
 
+import Time from "@/components/base/Time";
+
 interface Props {
   publication: Publication;
 }
@@ -58,6 +60,8 @@ export default function PublicationBox({ publication }: Props) {
               ? "bg-[#dc143c]"
               : publication.type === "Séries chronologiques"
               ? "bg-[#0d9f09]"
+              : publication.type === "Chiffres détaillés"
+              ? "bg-[#0d8faf]"
               : ""
           } rounded-xs text-center px-[7px] my-2.5 mr-[6px] text-[11px] lg:text-[13px] text-white`}
         >
@@ -67,7 +71,7 @@ export default function PublicationBox({ publication }: Props) {
             : ""}
         </div>
         <div className="text-xs text-primary grow">
-          {new Date(publication.parutionDate).toLocaleDateString()}
+          <Time dateString={publication.parutionDate} />
         </div>
 
         {publication.external && (

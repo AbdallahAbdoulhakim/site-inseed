@@ -9,11 +9,11 @@ import { fetchMetaData } from "@/actions/metaData";
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ articleId: string }>;
+  params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
-  const { articleId } = await params;
+  const { slug } = await params;
 
-  const metaData = await fetchMetaData(articleId, "publications");
+  const metaData = await fetchMetaData(slug, "publications");
 
   return {
     title: metaData ? metaData.title : "Publication",
